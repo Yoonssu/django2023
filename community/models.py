@@ -27,7 +27,7 @@ class Major(models.Model):
 
 class Post(models.Model):
     id = models.BigAutoField(primary_key=True)
-    major = models.ForeignKey(Major, on_delete=models.SET_NULL, null=True, blank=True)
+    major = models.ForeignKey(Major, on_delete=models.PROTECT, null=True, blank=True)
     title = models.CharField(max_length=255)
     content = models.TextField()
     img = models.TextField(null=True)
