@@ -37,6 +37,7 @@ class Post(models.Model):
         return f'[{self.pk}]{self.title}'
 
 class Scrap(models.Model):
+    id = models.BigAutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     def __str__(self):
