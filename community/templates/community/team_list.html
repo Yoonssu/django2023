@@ -1,0 +1,26 @@
+<!-- http://127.0.0.1:8000/community/team -->
+
+{% extends 'community/base.html' %}
+
+{% block main_area %}
+
+  <h1>게시글 목록 게시판</h1>
+  {% if team_list.exists %}
+
+    {% for team in team_list %}
+        <div>
+        <h2>{{ team.title }}</h2>
+        <p>{{ team.content }}</p>
+        <p>작성 시간: {{ team.time }}</p>
+        </div>
+        <hr>
+    {% endfor %}
+
+  {% else %}
+
+    <h3>아직 팀 게시글이 없습니다.</h3>
+    
+  {% endif %}
+
+{% endblock %}
+

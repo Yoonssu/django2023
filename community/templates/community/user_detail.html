@@ -1,0 +1,35 @@
+<!-- url 예시 http://127.0.0.1:8000/community/mypage/user.pk -->
+
+{% extends 'community/base.html' %}
+
+{% block main_area %}
+
+
+  <h1>마이페이지</h1>
+  
+  <p>아이디: {{ user.username }}</p>
+  <p>이메일: {{ user.email }}</p>
+
+  <h2>관심 전공 목록</h2>
+  <ul>
+    {% for major in majors %}
+      <li>{{ major.majorname }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>맞춤 키워드 목록</h2>
+  <ul>
+    {% for keyword in keywords %}
+      <li>{{ keyword.keywordname }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>스크랩한 활동 목록</h2>
+  <ul>
+    {% for scrap in scraps %}
+      <li>{{ scrap.post.title }}</li>
+    {% endfor %}
+  </ul>
+
+
+{% endblock %}

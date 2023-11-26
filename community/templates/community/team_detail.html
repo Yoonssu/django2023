@@ -1,0 +1,17 @@
+<!-- url 예시 http://127.0.0.1:8000/community/team/3 -->
+
+{% extends 'community/base.html' %}
+
+{% block main_area %}
+
+    <!-- Post title-->
+    <section class="mb-5">
+        <h2 class="fs-5 mb-4"> {{ team.title }} </h2>
+    </section>
+
+    <!-- Post content-->
+    <section class="mb-5">
+        <p class="fs-5 mb-4"> {{ team.content }} </p>
+    </section>
+
+{% endblock %}
