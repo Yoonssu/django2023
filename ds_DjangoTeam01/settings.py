@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'ds_DjangoTeam01.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ds_django_db',     # 여기에 실제 데이터베이스 이름을 입력하세요.
-        'USER': 'dsadmin',     # 여기에 실제 데이터베이스 사용자 이름을 입력하세요.
-        'PASSWORD': 'dsadmin', # 여기에 실제 데이터베이스 비밀번호를 입력하세요.
+        'NAME': 'ds_django_db2',     # 여기에 실제 데이터베이스 이름을 입력하세요.
+        'USER': 'dsadmin2',     # 여기에 실제 데이터베이스 사용자 이름을 입력하세요.
+        'PASSWORD': 'duksung!', # 여기에 실제 데이터베이스 비밀번호를 입력하세요.
         'HOST': 'localhost',              # 또는 데이터베이스 서버의 주소
         'PORT': '5432',                   # PostgreSQL의 기본 포트는 5432입니다.
     }
