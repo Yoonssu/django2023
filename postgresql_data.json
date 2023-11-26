@@ -299,11 +299,596 @@
     }
 },
 {
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2023-11-26T15:35:18.915",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "[1]사이버보안 post 1 (test)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2023-11-26T15:35:32.841",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "사이버보안",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2023-11-26T15:35:38.586",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "3",
+        "object_repr": "컴퓨터공학",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2023-11-26T15:35:52.890",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "6",
+        "object_repr": "마케팅",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2023-11-26T15:35:58.737",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "5",
+        "object_repr": "인공지능",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2023-11-26T15:36:06.583",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "4",
+        "object_repr": "보안",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2023-11-26T15:39:15.004",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "4",
+        "object_repr": "국어국문전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2023-11-26T15:40:39.761",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "5",
+        "object_repr": "일어일문전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2023-11-26T15:42:11.663",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "6",
+        "object_repr": "중어중문전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2023-11-26T15:42:54.378",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "7",
+        "object_repr": "영어영문전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2023-11-26T15:43:35.957",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "8",
+        "object_repr": "불어불문정공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2023-11-26T15:43:46.917",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "9",
+        "object_repr": "독어독문전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2023-11-26T15:43:53.590",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "10",
+        "object_repr": "스페인어전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2023-11-26T15:44:01.477",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "11",
+        "object_repr": "사학전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2023-11-26T15:44:07.610",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "12",
+        "object_repr": "철학전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+        "action_time": "2023-11-26T15:44:13.898",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "13",
+        "object_repr": "미술사학전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+        "action_time": "2023-11-26T15:44:23.091",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "14",
+        "object_repr": "문화인류전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+        "action_time": "2023-11-26T15:44:31.981",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "15",
+        "object_repr": "경영학전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+        "action_time": "2023-11-26T15:44:39.694",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "16",
+        "object_repr": "회계학전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+        "action_time": "2023-11-26T15:44:45.679",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "17",
+        "object_repr": "국제통상학전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+        "action_time": "2023-11-26T15:44:52.638",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "18",
+        "object_repr": "법학전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+        "action_time": "2023-11-26T15:45:00.793",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "19",
+        "object_repr": "사회화전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+        "action_time": "2023-11-26T15:45:08.991",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "19",
+        "object_repr": "사회학전공",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Majorname\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+        "action_time": "2023-11-26T15:45:15.569",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "20",
+        "object_repr": "문헌정보학전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+        "action_time": "2023-11-26T15:45:23.076",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "21",
+        "object_repr": "심리학전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+        "action_time": "2023-11-26T15:45:32.728",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "22",
+        "object_repr": "아동가족학전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+        "action_time": "2023-11-26T15:45:40.483",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "23",
+        "object_repr": "사회복지전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+        "action_time": "2023-11-26T15:45:49.869",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "24",
+        "object_repr": "정치외교전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+        "action_time": "2023-11-26T15:45:57.710",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "25",
+        "object_repr": "의상디자인전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+        "action_time": "2023-11-26T15:46:05.203",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "26",
+        "object_repr": "유아교육전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+        "action_time": "2023-11-26T15:46:12.597",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "27",
+        "object_repr": "컴퓨터전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+        "action_time": "2023-11-26T15:46:22.030",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "28",
+        "object_repr": "IT미디어전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+        "action_time": "2023-11-26T15:46:30.034",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "29",
+        "object_repr": "바이오공학전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+        "action_time": "2023-11-26T15:46:39.288",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "30",
+        "object_repr": "사이버보안전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+        "action_time": "2023-11-26T15:46:45.968",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "31",
+        "object_repr": "소프트웨어전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+        "action_time": "2023-11-26T15:46:56.877",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "32",
+        "object_repr": "생활체육전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+        "action_time": "2023-11-26T15:47:06.671",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "33",
+        "object_repr": "식품영양전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+        "action_time": "2023-11-26T15:47:13.310",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "34",
+        "object_repr": "정보통계전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+        "action_time": "2023-11-26T15:47:20.517",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "35",
+        "object_repr": "화학전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+        "action_time": "2023-11-26T15:47:28.314",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "36",
+        "object_repr": "수학전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+        "action_time": "2023-11-26T15:47:37.337",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "37",
+        "object_repr": "동양화전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+        "action_time": "2023-11-26T15:47:44.548",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "38",
+        "object_repr": "서양화전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+        "action_time": "2023-11-26T15:47:54.476",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "39",
+        "object_repr": "실내디자인전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+        "action_time": "2023-11-26T15:48:04.226",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "40",
+        "object_repr": "시각디자인전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+        "action_time": "2023-11-26T15:48:14.469",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "41",
+        "object_repr": "택스타이디자인전공",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
     "model": "auth.user",
     "pk": 1,
     "fields": {
-        "password": "pbkdf2_sha256$600000$fsdaicCBckidFsm4XlvMEe$cYkufabNJ9+0mfQReHAqM92o3H4zLUJVEWDLxy8oISs=",
-        "last_login": "2023-11-25T22:17:48.346",
+        "password": "pbkdf2_sha256$216000$kSfmVBkXX9SD$7sEUdjIlSBMJWteLibtIU4yBUD47cRjsn6Vd7WetDr0=",
+        "last_login": "2023-11-26T14:58:41.756",
         "is_superuser": true,
         "username": "dsadmin",
         "first_name": "",
@@ -318,6 +903,14 @@
 },
 {
     "model": "sessions.session",
+    "pk": "2bf0fpkq29iz96la7atnwyquzfpp8mg4",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSHDQx4u3fcbCAyDVA0kpV0Z_12bdKHbe865LxbittawDVrCnNmFCXb63VLEB7Ud5Htst86xt3WZE98VftDBp57peT3cv4MaR_3WxbtUXLbkCawmF0Fod7ZeQyKvDLpowQlPWZZEChUpT9IkkIAKDRT2_gDmJjfn:1r78AD:brr3wzz3IAysBdJL_LsyjfpVbO7L-QAWS297wnyQkeQ",
+        "expire_date": "2023-12-10T14:58:41.761"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "j2i9u3owmpsz4ilun918fgl2drkpxrvb",
     "fields": {
         "session_data": ".eJxVjDsOwjAQBe_iGlnYxj9K-pzB2uyucQDZUpxUiLuTSCmgfTPz3iLBupS0dp7TROIqlDj9biPgk-sO6AH13iS2uszTKHdFHrTLoRG_bof7d1Cgl61mHRUjB2syadTKXMhRBmDQmNmAQw9hJB1DcDniOUa2HjbO0RoCLz5fF9k5Yw:1r6C5z:7tT-TBQc-ZSxhD1lcIHKWFJOomKHFqX2yXUr3aGGKqY",
@@ -326,18 +919,18 @@
 },
 {
     "model": "sessions.session",
-    "pk": "l59tu5bhrogyyks0wgxgxatd18zvkkmm",
-    "fields": {
-        "session_data": ".eJxVjLsOwjAMAP8lM4qSWG5cRna-IbJjQwsolfqYEP-OKnWA9e50b1d4W4eyLTaXUd3ZRXf6ZcL1aW0X-uB2n3yd2jqP4vfEH3bx10ntdTnav8HAy7BvNfQGHG8GQiljNOgEicBIesxckbjWDIpd7SNqhhSiaApAQgjkPl_bUjdJ:1r683p:B_HNnK_cMrpvErKuU7E16kDD4NGJyhXMLIeaVf4dO3E",
-        "expire_date": "2023-12-07T20:39:57.566"
-    }
-},
-{
-    "model": "sessions.session",
     "pk": "n3xl32k9w57foyhd6d5h5rkxgiak5sd6",
     "fields": {
         "session_data": ".eJxVjLsOwjAMAP8lM4qSWG5cRna-IbJjQwsolfqYEP-OKnWA9e50b1d4W4eyLTaXUd3ZRXf6ZcL1aW0X-uB2n3yd2jqP4vfEH3bx10ntdTnav8HAy7BvNfQGHG8GQiljNOgEicBIesxckbjWDIpd7SNqhhSiaApAQgjkPl_bUjdJ:1r5uas:QSX9n2ZMQ1DBovKndNd87cxgY3PKnx9RpetensAS4uQ",
         "expire_date": "2023-12-07T06:17:10.112"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "qmjq46sxsskiu534s3bm2zaptrcqrz8e",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQAP-FsyHyWlqP3v0GsuyCVA0kpT0Z_92Q9KDXmcm8RcB9K2HvaQ0Li4tQ4vTLItIz1SH4gfXeJLW6rUuUI5GH7fLWOL2uR_s3KNjL2LqoeQbSkLydYlaOJ8_sDUdCyIbPgNEDW28cJa05K9AqEQGSny2Izxf0cThp:1r78AB:lHn-fK68sNZ3D8SM9n7dAXJnu5Hp586yJi7YhnSXeU4",
+        "expire_date": "2023-12-10T14:58:39.640"
     }
 },
 {
@@ -355,65 +948,274 @@
         "username": "duksung1",
         "password": "duksung1",
         "email": "duksung@duksung.ac.kr",
-        "major": [
-            2
-        ],
-        "keyword": [
-            4
-        ]
+        "major": [],
+        "keyword": []
     }
 },
 {
-    "model": "community.keyword",
-    "pk": 4,
+    "model": "community.major",
+    "pk": 1,
     "fields": {
-        "keywordname": "보안",
-        "ismake": false,
-        "category": "IT"
-    }
-},
-{
-    "model": "community.keyword",
-    "pk": 5,
-    "fields": {
-        "keywordname": "인공지능",
-        "ismake": false,
-        "category": "IT"
-    }
-},
-{
-    "model": "community.keyword",
-    "pk": 6,
-    "fields": {
-        "keywordname": "마케팅",
-        "ismake": true,
-        "category": "경영"
+        "majorname": "국어국문전공"
     }
 },
 {
     "model": "community.major",
     "pk": 2,
     "fields": {
-        "majorname": "사이버보안"
+        "majorname": "일어일문전공"
     }
 },
 {
     "model": "community.major",
     "pk": 3,
     "fields": {
-        "majorname": "컴퓨터공학"
+        "majorname": "중어중문전공"
     }
 },
 {
-    "model": "community.post",
-    "pk": 1,
+    "model": "community.major",
+    "pk": 4,
     "fields": {
-        "major": 2,
-        "title": "사이버보안 post 1 (test)",
-        "content": "사이버보안 post 1 test content 입니다.",
-        "img": "img url",
-        "time": "2023-11-23T22:22:53",
-        "isduksung": true
+        "majorname": "영어영문전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 5,
+    "fields": {
+        "majorname": "불어불문정공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 6,
+    "fields": {
+        "majorname": "독어독문전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 7,
+    "fields": {
+        "majorname": "스페인어전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 8,
+    "fields": {
+        "majorname": "사학전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 9,
+    "fields": {
+        "majorname": "철학전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 10,
+    "fields": {
+        "majorname": "미술사학전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 11,
+    "fields": {
+        "majorname": "문화인류전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 12,
+    "fields": {
+        "majorname": "경영학전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 13,
+    "fields": {
+        "majorname": "회계학전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 14,
+    "fields": {
+        "majorname": "국제통상학전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 15,
+    "fields": {
+        "majorname": "법학전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 16,
+    "fields": {
+        "majorname": "사회학전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 17,
+    "fields": {
+        "majorname": "문헌정보학전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 18,
+    "fields": {
+        "majorname": "심리학전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 19,
+    "fields": {
+        "majorname": "아동가족학전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 20,
+    "fields": {
+        "majorname": "사회복지전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 21,
+    "fields": {
+        "majorname": "정치외교전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 22,
+    "fields": {
+        "majorname": "의상디자인전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 23,
+    "fields": {
+        "majorname": "유아교육전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 24,
+    "fields": {
+        "majorname": "컴퓨터전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 25,
+    "fields": {
+        "majorname": "IT미디어전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 26,
+    "fields": {
+        "majorname": "바이오공학전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 27,
+    "fields": {
+        "majorname": "사이버보안전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 28,
+    "fields": {
+        "majorname": "소프트웨어전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 29,
+    "fields": {
+        "majorname": "생활체육전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 30,
+    "fields": {
+        "majorname": "식품영양전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 31,
+    "fields": {
+        "majorname": "정보통계전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 32,
+    "fields": {
+        "majorname": "화학전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 33,
+    "fields": {
+        "majorname": "수학전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 34,
+    "fields": {
+        "majorname": "동양화전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 35,
+    "fields": {
+        "majorname": "서양화전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 36,
+    "fields": {
+        "majorname": "실내디자인전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 37,
+    "fields": {
+        "majorname": "시각디자인전공"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 38,
+    "fields": {
+        "majorname": "택스타일디자인전공"
     }
 },
 {
@@ -1326,36 +2128,6 @@
         "img": null,
         "time": "2023-11-26T03:13:56.067",
         "isduksung": true
-    }
-},
-{
-    "model": "community.scrap",
-    "pk": 1,
-    "fields": {
-        "user": 2,
-        "post": 1
-    }
-},
-{
-    "model": "community.team",
-    "pk": 1,
-    "fields": {
-        "post": 1,
-        "user": 2,
-        "title": "팀원 구합니다",
-        "content": "팀원 구해요 크크",
-        "time": "2023-11-23T22:28:55.815"
-    }
-},
-{
-    "model": "community.comment",
-    "pk": 1,
-    "fields": {
-        "user": 2,
-        "team": 1,
-        "content": "저 해도 되나요?",
-        "time": "2023-11-23T22:29:13.189",
-        "issecret": true
     }
 }
 ]
