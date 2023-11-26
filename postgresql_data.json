@@ -884,11 +884,24 @@
     }
 },
 {
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+        "action_time": "2023-11-26T21:51:18.640",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "5",
+        "object_repr": "불어불문전공",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Majorname\"]}}]"
+    }
+},
+{
     "model": "auth.user",
     "pk": 1,
     "fields": {
-        "password": "pbkdf2_sha256$216000$kSfmVBkXX9SD$7sEUdjIlSBMJWteLibtIU4yBUD47cRjsn6Vd7WetDr0=",
-        "last_login": "2023-11-26T14:58:41.756",
+        "password": "pbkdf2_sha256$600000$zg2PPTVnCy6zJ6Y9StCYbA$enceuJYMVcwiNFALo89JoLIS84ASOWKoY2iPoQcnVEU=",
+        "last_login": "2023-11-26T21:51:03.048",
         "is_superuser": true,
         "username": "dsadmin",
         "first_name": "",
@@ -947,6 +960,14 @@
     "fields": {
         "session_data": ".eJxVjDsOwjAQBe_iGlnYxj9K-pzB2uyucQDZUpxUiLuTSCmgfTPz3iLBupS0dp7TROIqlDj9biPgk-sO6AH13iS2uszTKHdFHrTLoRG_bof7d1Cgl61mHRUjB2syadTKXMhRBmDQmNmAQw9hJB1DcDniOUa2HjbO0RoCLz5fF9k5Yw:1r67jh:NYIdUCfGIWxPscs51cEGiuSZ9i92IvayrPHxn26N6iY",
         "expire_date": "2023-12-07T20:19:09.338"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "vz8pnqobc5841xgo0oqqc012fi4oyumu",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGln-xJ-lpM8ZrLW9xgHkSHFSIe5OIqWA9s3Me7OA21rD1mkJU2ZXJtnld4uYntQOkB_Y7jNPc1uXKfJD4SftfJwzvW6n-3dQsde9FrJYL-1gCXMhAZqcsdpYIcAnFykONhafEQyCUl4bDdJDSkqAoz1jny_MjTcD:1r7EbH:Q8uLEAnqBxaAdduUziLKoAH529zX-KtKClPZSgLv8Vo",
+        "expire_date": "2023-12-10T21:51:03.049"
     }
 },
 {
@@ -1019,7 +1040,7 @@
     "model": "community.major",
     "pk": 5,
     "fields": {
-        "majorname": "불어불문정공"
+        "majorname": "불어불문전공"
     }
 },
 {
