@@ -58,3 +58,12 @@ class TeamDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super(TeamDetail, self).get_context_data()
         return context
+
+class RecommendView(ListView):
+    model = Post 
+    ordering = '-pk'
+    template_name = 'community/recommend.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(RecommendView, self).get_context_data()
+        return context 

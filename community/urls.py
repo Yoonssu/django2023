@@ -7,5 +7,5 @@ urlpatterns = [
     path('mypage/<int:pk>/', views.UserDetail.as_view(), name='user_detail'),
     path('team/', views.TeamList.as_view()),
     path('team/<int:pk>/', views.TeamDetail.as_view(), name='team_detail'),
-    # path('recommend/<int:pk>/', views.RecommendView.as_view(), name='recommend'),
+    path('recommend/<int:pk>/', views.RecommendView.as_view(), name='recommend'),
 ]
