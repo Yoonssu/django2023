@@ -1,10 +1,11 @@
 <!-- url 예시 http://127.0.0.1:8000/community/3/ -->
+<link rel="stylesheet" href="../../static/community/postDetailStyle.css" />
 
 {% extends 'community/base.html' %} {% block main_area %}
 <div class="wrapper">
   <div class="content_wrapper">
     <div class="title">
-      <h1>{{post.title}}</h1>
+      <h2>{{post.title}}</h2>
       <br />
     </div>
     <div class="content_nav">
@@ -12,10 +13,7 @@
       <a href="#">팀원모집</a>
       <button style="color: white; font-size: 14px">스크랩</button>
     </div>
-    <div class="content_box">
-      {{post.content|linebreaksbr}} <br />
-      <img src="{{post.image.url}}" alt="이미지" />
-    </div>
+    <div class="content_box">{{post.content|linebreaksbr}} <br /></div>
   </div>
 </div>
 {% endblock %}
