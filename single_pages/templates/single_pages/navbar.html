@@ -18,7 +18,7 @@
           >
         </li>
         <li class="nav-item ml-3 mr-3">
-          <a class="nav-link" href="{% url 'user_detail' pk=user.pk %}"
+          <a class="nav-link" href="{% url 'user_detail' pk=request.user.pk %}"
             >마이페이지</a
           >
         </li>

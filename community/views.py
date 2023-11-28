@@ -6,7 +6,6 @@ from django.db.models import Count
 from django.shortcuts import get_object_or_404
 
 # Create your views here.
-
 class PostList(ListView):
     model = Post
     ordering = '-pk'
@@ -25,15 +24,16 @@ class PostDetail(DetailView):
 
 class UserDetail(DetailView):
     model = User
-    # template_name = 'your_app_name/user_detail.html'  # 실제 템플릿 파일 경로로 수정
+    template_name = 'community/user_detail.html'  
 
     def get_context_data(self, **kwargs):
         context = super(UserDetail, self).get_context_data(**kwargs)
         
         # 여기에서 유저의 관심전공, 맞춤 키워드, 스크랩한 활동 등을 가져와 context에 추가
-        user = self.get_object()
+        user = self.object
 
         # 예시: 유저의 관심전공 목록
+        majors = user.major.all()
         context['majors'] = user.major.all()
 
         # 예시: 유저의 맞춤 키워드 목록
@@ -59,11 +59,12 @@ class TeamDetail(DetailView):
         context = super(TeamDetail, self).get_context_data()
         return context
 
-class RecommendView(ListView):
-    model = Post 
-    ordering = '-pk'
-    template_name = 'community/recommend.html'
+def recommend(request, pk):
+    posts = Post.objects.all()
+    user = User.objects.all()
 
-    def get_context_data(self, **kwargs):
-        context = super(RecommendView, self).get_context_data()
-        return context 
+    context = {
+        'posts': posts,
+        'user': user
+    }
+    return render(request, 'community/recommend.html', context)

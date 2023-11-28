@@ -1,4 +1,7 @@
 <!-- url 예시 http://127.0.0.1:8000/community/recommend/user.pk -->
 
-{% extends 'community/base.html' %} {%block main_area %} 떠야하는데? 뜨는 지 안
-뜨는 지 봅시다. {% endblock %}
+{% extends 'community/base.html' %} {%block main_area %}
+<div class="title">
+  <h2>추천 게시물</h2>
+</div>
+{{user.major}} {% endblock %}
