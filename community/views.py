@@ -5,6 +5,8 @@ from .models import Post, User, Team, Major, Keyword
 from django.db.models import Count
 from django.shortcuts import get_object_or_404
 from django.db.models import Q 
+from functools import reduce
+import operator 
 
 # Create your views here.
 class PostList(ListView):
@@ -66,9 +68,22 @@ def recommend(request, pk):
 
     # 사용자가 선택한 키워드에 맞는 게시글 3개 가져오기(제가 임의로 최신 3개라는 추천 로직을 쓴 거고, 실제 로직을 이 틀에서 변형해서 구현하셔야 해요 )
     selected_keywords = user.keyword.all()
+
+    # 여러 키워드에 대해 OR 연산을 수행하여 하나 이상의 키워드가 제목 또는 내용에 포함된 게시물을 찾습니다.
     recommended_posts = Post.objects.filter(
-        Q(title__icontains=selected_keywords) | Q(content__icontains=selected_keywords)
-    ).order_by('-time')[:3]
+        reduce(
+            operator.or_,
+            (Q(title__icontains=keyword) | Q(content__icontains=keyword) for keyword in selected_keywords)
+        )
+    ).order_by('-time')
+
+
+    #각각 3개씩 나오게는 성공
+    test_posts_dic = {}
+    for keyword in selected_keywords:
+        test_posts = Post.objects.filter(Q(title__icontains=keyword) | Q(content__icontains=keyword)).order_by('-time')[:3]
+        test_posts_dic[keyword] = test_posts
+
 
     # 사용자가 선택한 전공에 맞는 게시물들 가져오기
     selected_majors = user.major.all()
@@ -76,12 +91,17 @@ def recommend(request, pk):
     for major in selected_majors:
         posts = Post.objects.filter(major=major)
         major_posts[major] = posts
+    
+    major_list = list(major_posts.keys())
 
     context = {
-        'selected_majors': selected_majors,
         'user': user,
-        'recommended_posts': recommended_posts,
+        # 'recommended_posts': recommended_posts,
         'major_posts': major_posts,
+        'major_list': major_list,
+        'selected_keywords': selected_keywords,
+        # 'test_posts': test_posts,
+        "test_posts_dic": test_posts_dic,
     }
 
     return render(request, 'community/recommend.html', context)
