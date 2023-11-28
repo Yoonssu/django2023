@@ -78,6 +78,7 @@ def recommend(request, pk):
         major_posts[major] = posts
 
     context = {
+        'selected_majors': selected_majors,
         'user': user,
         'recommended_posts': recommended_posts,
         'major_posts': major_posts,

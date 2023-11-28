@@ -1,7 +1,15 @@
 <!-- url 예시 http://127.0.0.1:8000/community/recommend/user.pk -->
 
-{% extends 'community/base.html' %} {%block main_area %}
-<div class="title">
-  <h2>추천 게시물</h2>
-</div>
-{{major_posts}} {% endblock %}
+{% extends 'community/base.html' %} {% block main_area %}
+
+<h2>추천 게시물</h2>
+{{ selected_majors }} {{ selected_majors|length }}
+<h2>전공 게시판 모음</h2>
+{% for major, posts in major_posts.items %} {% if major %}
+<h3>{{ major }}</h3>
+<ul>
+  {% for post in posts %}
+  <li>{{ post.title }}</li>
+  {% endfor %}
+</ul>
+{% endif %} {% endfor %} {%endblock%}
