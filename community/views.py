@@ -85,7 +85,7 @@ class Recommend(LoginRequiredMixin, ListView):
         selected_majors = current_user.major.all()
         major_posts = {}
         for major in selected_majors:
-            posts = Post.objects.filter(major=major)
+            posts = Post.objects.filter(major=major).order_by('-created_at')
             major_posts[major] = posts
 
         major_list = list(major_posts.keys())
