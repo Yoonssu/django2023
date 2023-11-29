@@ -67,13 +67,12 @@ class Recommend(LoginRequiredMixin, ListView):
         # 사용자가 선택한 키워드에 맞는 게시글 3개 가져오기
         selected_keywords = current_user.keyword.all()
 
-        # 여러 키워드에 대해 OR 연산을 수행하여 하나 이상의 키워드가 제목 또는 내용에 포함된 게시물을 찾습니다.
-        # recommended_posts = Post.objects.filter(
-        #     reduce(
-        #         operator.or_,
-        #         (Q(title__icontains=keyword.keywordname) | Q(content__icontains=keyword.keywordname) for keyword in selected_keywords)
-        #     )
-        # ).order_by('-time')
+        recommended_posts = Post.objects.filter(
+            reduce(
+                operator.or_,
+                [Q(title__icontains=keyword.keywordname) | Q(content__icontains=keyword.keywordname) for keyword in selected_keywords]
+            )
+        ).order_by('-time')
 
         # 각각 3개씩 나오게는 성공
         test_posts_dic = {}
@@ -83,21 +82,16 @@ class Recommend(LoginRequiredMixin, ListView):
 
         # 사용자가 선택한 전공에 맞는 게시물들 가져오기
         selected_majors = current_user.major.all()
-        major_posts = {}
-        for major in selected_majors:
-            posts = Post.objects.filter(major=major).order_by('-created_at')
-            major_posts[major] = posts
-
-        major_list = list(major_posts.keys())
-
+        all_major_posts = Post.objects.filter(major__in=selected_majors).order_by('-created_at')
+        
         context.update({
             'user': current_user,
-            # 'recommended_posts': recommended_posts,
-            'major_posts': major_posts,
-            'major_list': major_list,
+            'all_major_posts': all_major_posts,
             'selected_keywords': selected_keywords,
             'test_posts_dic': test_posts_dic,
+            'recommended_posts': recommended_posts,
         })
+
 
         return context
 
