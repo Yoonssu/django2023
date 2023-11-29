@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Bootstrap Simple Login Form with Blue Background</title>
+<title>DUKJOB LOGIN</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="{% static 'community/css/login.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,7 +17,13 @@
 <div class="login-form">
     <form method="post" action="{% url 'community:login' %}">
         {% csrf_token %}
-        <h2 class="text-center">Login</h2>   
+        <h2 class="text-center">Login</h2>
+        <!-- 로그인 실패 시 원인 출력 -->
+        {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
         <div class="form-group has-error">
         	<input type="text" class="form-control" name="username" id="username" value="{{ form.username.value|default_if_none:'' }}" placeholder="username">
         </div>
