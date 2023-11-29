@@ -5,6 +5,7 @@ from .models import Post, User, Team
 from django.db.models import Count
 from django.shortcuts import get_object_or_404
 
+
 # Create your views here.
 
 class PostList(ListView):
