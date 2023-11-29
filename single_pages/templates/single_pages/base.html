@@ -8,6 +8,8 @@
 
     <link href="{% static 'community/bootstrap/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/726bbd6862.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'single_pages/single_pages.css' %}">
+    
 </head>
 <body>
 <!-- navbar.html 모듈 -->
@@ -15,6 +17,13 @@
 
 <!-- main_area -->
     {% block main_area %}
+
+<!-- landing.html 모듈 -->
+
+    {% include 'single_pages/landing.html' %}
+
+<!-- about_we.html모듈 -->
+    {% include 'single_pages/about_we.html' %}
     
     {% endblock %}
 

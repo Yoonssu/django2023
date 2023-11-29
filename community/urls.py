@@ -7,7 +7,7 @@ app_name = 'community'
 
 urlpatterns = [
     path('', views.PostList.as_view()),
-    path('<int:pk>/', views.PostDetail.as_view()),
+    path('<int:pk>/', views.PostDetail.as_view(), name='post_detail'),
 
     # mypage관련 url
     path('mypage/<int:pk>/', views.UserDetail.as_view(), name='user_detail'),
@@ -21,6 +21,6 @@ urlpatterns = [
     path('signup/', views.signup, name='signup'),
     path('login/', auth_views.LoginView.as_view(template_name='community/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    # path('recommend/<int:pk>/', views.RecommendView.as_view(), name='recommend'),
+    path('recommend/<int:pk>/', views.Recommend.as_view(), name='recommend'),
 ]
 
