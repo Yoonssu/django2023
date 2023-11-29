@@ -760,3 +760,11 @@ input {
 .list_table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+
+.list_table th.num, .list_table td.num {
+    text-align: center;
+}
+
+.list_table th.ti, .list_table td.ti {
+    text-align: center;
+}
