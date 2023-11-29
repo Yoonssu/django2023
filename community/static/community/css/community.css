@@ -677,6 +677,7 @@
   }
 }
 
+/* post_list 스타일  */
 
 /* Styles for one_line */
 .one_line {
@@ -739,4 +740,23 @@ input {
     padding: 6px 10px;
 }
 
-/* 나머지 스타일은 그대로 유지합니다. */
+/* post_list 목록 스타일  */
+.list_table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px; /* 여유 여백 조절 */
+}
+
+.list_table th, .list_table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.list_table th {
+    background-color: #f2f2f2;
+}
+
+.list_table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

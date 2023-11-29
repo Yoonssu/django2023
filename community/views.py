@@ -6,6 +6,7 @@ from django.db.models import Count
 from .forms import UserForm
 from django.contrib.auth import authenticate,login
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.views import View
 
 
 
@@ -80,30 +81,55 @@ def signup(request):
 
 
 
-
-
-
-
-def post_list(request):
-    page = request.GET.get('page', 1)
+class PostListView(View):
+    template_name = 'community/post_list.html'
     posts_per_page = 10
+
+    def get(self, request, *args, **kwargs):
+        page = request.GET.get('page', 1)
+        category = request.GET.get('category')
+
+        if category == 'internal':
+            post_list = Post.objects.filter(is_duksung=True)
+        elif category == 'external':
+            post_list = Post.objects.filter(is_duksung=False)
+        else:
+            post_list = Post.objects.all()
+
+        paginator = Paginator(post_list, self.posts_per_page)
+
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            posts = paginator.page(1)
+        except EmptyPage:
+            posts = paginator.page(paginator.num_pages)
+
+        context = {'post_list': posts}
+        return render(request, self.template_name, context)
+
+
+
+# def post_list(request):
+#     page = request.GET.get('page', 1)
+#     posts_per_page = 10
     
-    if request.GET.get('category') == 'internal':
-        post_list = Post.objects.filter(is_duksung=True)
-    elif request.GET.get('category') == 'external':
-        post_list = Post.objects.filter(is_duksung=False)
-    else:
-        post_list = Post.objects.all()
+#     if request.GET.get('category') == 'internal':
+#         post_list = Post.objects.filter(is_duksung=True)
+#     elif request.GET.get('category') == 'external':
+#         post_list = Post.objects.filter(is_duksung=False)
+#     else:
+#         post_list = Post.objects.all()
 
-    paginator = Paginator(post_list, posts_per_page)
+#     paginator = Paginator(post_list, posts_per_page)
 
-    try:
-        post_list = paginator.page(page)
-    except PageNotAnInteger:
-        post_list = paginator.page(1)
-    except EmptyPage:
-        post_list = paginator.page(paginator.num_pages)
+#     try:
+#         post_list = paginator.page(page)
+#     except PageNotAnInteger:
+#         post_list = paginator.page(1)
+#     except EmptyPage:
+#         post_list = paginator.page(paginator.num_pages)
 
-    context = {'post_list': post_list}
-    return render(request, 'community/post_list.html', context)
+#     context = {'post_list': post_list}
+#     return render(request, 'community/post_list.html', context)
 

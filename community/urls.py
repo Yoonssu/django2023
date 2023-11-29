@@ -2,7 +2,8 @@ from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
 from .views import signup
-from .views import post_list
+
+from .views import PostListView
 
 app_name = 'community'
 
@@ -17,6 +18,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='community/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     # path('recommend/<int:pk>/', views.RecommendView.as_view(), name='recommend'),
-     path('community/', post_list, name='post_list'),
+    #  path('community/', post_list, name='post_list'),
+    path('post_list/', PostListView.as_view(), name='post_list'),
 ]
 

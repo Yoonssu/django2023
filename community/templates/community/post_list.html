@@ -2,6 +2,49 @@
 
 {% extends 'community/base.html' %}
 
+{% block scripts %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 페이지가 로드될 때 실행되는 코드
+            // 이 부분에 클라이언트 측 JavaScript 코드를 작성
+
+            //  클릭 이벤트를 사용하여 data-filter 값을 확인하고 필터링
+            var filterItems = document.querySelectorAll('.choose_one li');
+
+            filterItems.forEach(function (item) {
+                item.addEventListener('click', function () {
+                    var filterValue = item.getAttribute('data-filter');
+
+                    // 이 부분에서 filterValue 값을 사용하여 적절한 처리를 수행
+                    console.log('Selected filter:', filterValue);
+
+                    // 필터 적용을 위한 함수 호출
+                    applyFilter(filterValue);
+                });
+            });
+
+            function applyFilter(filter) {
+                // 이 부분에서 실제 필터링을 구현
+                // filter 값에 따라 적절한 처리를 수행
+                var tableRows = document.querySelectorAll('.list_table tbody tr');
+
+                tableRows.forEach(function (row) {
+                var dataFilter = row.getAttribute('data-filter');
+
+                // 모든 행을 숨김
+                row.style.display = 'none';
+
+                // 선택된 필터와 일치하는 경우 해당 행을 보여줌
+                if (filter === 'all' || dataFilter === filter) {
+                    row.style.display = '';
+                }
+            });
+            }
+        });
+    </script>
+{% endblock %}
+
+
 {% block main_area %}
     
     
@@ -9,15 +52,15 @@
     <hr>
     
         <div class="choose_one">
-            <li class="first">
-                <a href="post_list">전체 /</a>
+            <li class="first" data-filter="all">
+                <a href="#">전체 /</a>
             </li>
-            <li class="second">
-                <a href="post_list">교내 /</a>
+            <li class="second" data-filter="isduksung">
+                <a href="#">교내 /</a>
             </li>
-            <li class="third">
-                <a href="post_list"> 대외</a>
-            </li>
+            <li class="third" data-filter="notIsduksung">
+                <a href="#">대외</a>
+            </li>            
         </div>
 
 
@@ -40,14 +83,28 @@
     
       
 
-        {% for post in post_list %}
-            <div class="whole_list">
-                <!-- <h2 class="p_title">{{ post.title }}</h2> -->
-                <h2 class="p_title"><a href="{{ post.content }}" target="_blank">{{ post.title }}</a></h2>
-                <p class="p_time">작성 시간: {{ post.time }}</p>
-            </div>
-            <hr>
-        {% endfor %}
+        <table class="list_table">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성날짜</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in post_list %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td><a href="{{ post.content }}" target="_blank">{{ post.title }}</a></td>
+                        <td>{{ post.time }}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><hr></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
 
         <!-- post_list.html -->
 
