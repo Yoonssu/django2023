@@ -57,6 +57,7 @@ class UserDetail(LoginRequiredMixin, DetailView):
 class Recommend(LoginRequiredMixin, ListView):
     model = User
     template_name = 'community/recommend_list.html'
+    ordering = '-pk'
 
     def get_context_data(self, **kwargs):
         context = super(Recommend, self).get_context_data(**kwargs)
@@ -81,12 +82,10 @@ class Recommend(LoginRequiredMixin, ListView):
             test_posts_dic[keyword] = test_posts
 
         # 사용자가 선택한 전공에 맞는 게시물들 가져오기
-        selected_majors = current_user.major.all()
-        all_major_posts = Post.objects.filter(major__in=selected_majors).order_by('-created_at')
+        selected_majors = current_user.major.all().order_by(-pk)
         
         context.update({
             'user': current_user,
-            'all_major_posts': all_major_posts,
             'selected_keywords': selected_keywords,
             'test_posts_dic': test_posts_dic,
             'recommended_posts': recommended_posts,

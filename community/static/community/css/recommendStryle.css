@@ -12,11 +12,11 @@ body {
 .major-wrapper {
   width: 1000px;
   height: auto;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
 }
 
 .major-title {
-  background-color: bisque;
+  /* background-color: bisque; */
 }
 
 .major-nav,
@@ -25,18 +25,19 @@ body {
 }
 .major-nav {
   display: flex;
-  background-color: hotpink;
-  height: 50px;
+  /* background-color: hotpink; */
+  height: 70px;
   justify-content: space-around;
   align-items: center;
 }
 
 .major-nav button {
   width: 150px;
-  height: 25px;
+  height: 35px;
   border: 0px;
   background-color: rgb(255, 255, 255);
-  font-size: 15px;
+  border-radius: 25px;
+  font-size: 17px;
 }
 
 .major-nav button:hover {
@@ -46,20 +47,43 @@ body {
 }
 
 .major-content {
-  background-color: gold;
+  /* background-color: gold; */
   flex-direction: column;
   justify-content: center;
 }
 
-.major-content div {
-  background-color: salmon;
-  width: 100%;
-  height: 50px;
-  border: 1px solid black;
-  padding-left: 10px;
+.major-content-nav,
+.major-content-box {
+  display: flex;
+  flex-direction: row;
+  /* background-color: aqua; */
+}
+
+.major-content-nav {
+  background-color: #5a32fb;
+  color: white;
+}
+
+.major-post-pk,
+.major-post-title,
+.major-post-date {
+  border-top: 1px solid black;
   box-sizing: border-box;
   display: flex;
   align-items: center;
+  height: 50px;
+}
+
+.major-post-pk,
+.major-post-date {
+  width: 100px;
+  justify-content: center;
+}
+
+.major-post-title {
+  /* background-color: rgb(234, 250, 114); */
+  width: 700px;
+  height: 50px;
 }
 
 .hidden {

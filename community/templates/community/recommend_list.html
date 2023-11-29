@@ -1,8 +1,5 @@
 <!-- url 예시 http://127.0.0.1:8000/community/recommend/user.pk -->
-<link
-  rel="stylesheet"
-  href="../../static/community/css/recommendStryle.css?after"
-/>
+<link rel="stylesheet" href="../../static/community/css/recommendStryle.css" />
 
 {% extends 'community/base.html' %} {% block main_area %}
 
@@ -52,17 +49,20 @@
       </button>
       {% endfor %}
     </div>
-
-    <div class="major-content" id="content_all">
-      {% for post in all_major_posts %}
-      <div>{{ post.title }}</div>
-      {% endfor %}
+    <div class="major-content-nav">
+      <div class="major-post-pk">번호</div>
+      <div class="major-post-title" style="justify-content: center">제목</div>
+      <div class="major-post-date">등록 날짜</div>
     </div>
 
     {% for major, posts in major_posts.items %} {% if major %}
     <div class="major-content hidden" id="content_{{ major }}">
       {% for post in posts %}
-      <div>{{ post.title }}</div>
+      <div class="major-content-box">
+        <div class="major-post-pk">{{post.pk}}</div>
+        <div class="major-post-title">{{ post.title }}</div>
+        <div class="major-post-date">{{ post.time|date:"Y.m.d" }}</div>
+      </div>
       {% endfor %}
     </div>
     {% endif %} {% endfor %}
