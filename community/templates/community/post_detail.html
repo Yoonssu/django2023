@@ -1,17 +1,19 @@
 <!-- url 예시 http://127.0.0.1:8000/community/3/ -->
+<link rel="stylesheet" href="../../static/community/css/postDetailStyle.css" />
 
-{% extends 'community/base.html' %}
-
-{% block main_area %}
-
-    <!-- Post title-->
-    <section class="mb-5">
-        <h2 class="fs-5 mb-4"> {{ post.title }} </h2>
-    </section>
-
-    <!-- Post content-->
-    <section class="mb-5">
-        <p class="fs-5 mb-4"> {{ post.content }} </p>
-    </section>
-
+{% extends 'community/base.html' %} {% block main_area %}
+<div class="wrapper">
+  <div class="content_wrapper">
+    <div class="title">
+      <h2>{{post.title}}</h2>
+      <br />
+    </div>
+    <div class="content_nav">
+      <a href="#">상세정보</a>
+      <a href="#">팀원모집</a>
+      <button style="color: white; font-size: 14px">스크랩</button>
+    </div>
+    <div class="content_box">{{post.content|linebreaksbr}} <br /></div>
+  </div>
+</div>
 {% endblock %}
