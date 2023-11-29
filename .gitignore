@@ -1,2 +1,9 @@
 # Ignore the following files and directories:
 ds_DjangoTeam01/settings.py
+
+ds_DjangoTeam01/__pycache__
+community/__pycache__
+single_pages/__pycache__
+
+community/migrations/
+single_pages/migrations/
