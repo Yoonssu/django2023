@@ -5,13 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DUKJOB</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'single_pages/single_pages.css' %}">
 </head>
 <body>
 <!-- navbar.html 모듈 -->
-    {% include 'single_pages/navbar.html' %}
+    {% include 'community/navbar.html' %}
 
 <!-- main_area -->
     {% block main_area %}
+
+<!-- landing.html 모듈 -->
+
+    {% include 'single_pages/landing.html' %}
+
+<!-- about_we.html모듈 -->
+    {% include 'single_pages/about_we.html' %}
     
     {% endblock %}
 </body>

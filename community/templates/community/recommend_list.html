@@ -1,0 +1,44 @@
+<!-- url 예시 http://127.0.0.1:8000/community/recommend/user.pk -->
+<link rel="stylesheet" href="../../static/community/css/recommendStryle.css" />
+
+{% extends 'community/base.html' %} {% block main_area %}
+
+<h1>환영해, {{ user.username }}!</h1>
+<!-- 
+<h2>추천게시물</h2>
+<p>{{selected_keywords}}</p>
+<ul>
+  {% for post in recommended_posts %}
+  <li>{{ post.title }}</li>
+  <p>{{ post.content }}</p>
+  {% empty %}
+  <p>추천 포스트가 없습니다</p>
+  {% endfor %}
+</ul> -->
+
+<!-- selected_keywords를 for문으로 돌리면 어떻게 나오나? -->
+{% for keyword in selected_keywords %}
+<li>{{ keyword }}</li>
+{% endfor %}
+
+<!-- 각 키워드마다 따로 한 다음에 for문에 넣으면 잘 나옴 -->
+<h2>테스트 추천</h2>
+<p>{{selected_keywords}}</p>
+{% for keyword, posts in test_posts_dic.items %} {% if keyword %}
+<h3>{{ keyword }}</h3>
+<ul>
+  {% for post in posts %}
+  <li>{{ post.title }}</li>
+  {% endfor %}
+</ul>
+{% endif %} {% endfor %}
+
+<h2>전공 게시판 모음</h2>
+{% for major, posts in major_posts.items %} {% if major %}
+<h3>{{ major }}</h3>
+<ul>
+  {% for post in posts %}
+  <li>{{ post.title }}</li>
+  {% endfor %}
+</ul>
+{% endif %} {% endfor %} {%endblock%}

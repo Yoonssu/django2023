@@ -1,13 +1,10 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-# Create your models here.
-class User(models.Model):
-    id = models.BigAutoField(primary_key=True)
+class User(AbstractUser):
     major = models.ManyToManyField('Major', related_name='users')
     keyword = models.ManyToManyField('Keyword', related_name='users')
-    username = models.CharField(max_length=225)
-    password = models.CharField(max_length=255)
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     def __str__(self):
         return f'[{self.pk}]{self.username}'
 
@@ -17,7 +14,7 @@ class Keyword(models.Model):
     ismake = models.BooleanField()
     category = models.CharField(max_length=255, null=True, blank=True)
     def __str__(self):
-        return f'[{self.pk}]{self.keywordname}'
+        return f'{self.keywordname}'
 
 class Major(models.Model):
     id = models.BigAutoField(primary_key=True)
