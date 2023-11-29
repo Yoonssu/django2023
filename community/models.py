@@ -14,7 +14,7 @@ class Keyword(models.Model):
     ismake = models.BooleanField()
     category = models.CharField(max_length=255, null=True, blank=True)
     def __str__(self):
-        return f'[{self.pk}]{self.keywordname}'
+        return f'{self.keywordname}'
 
 class Major(models.Model):
     id = models.BigAutoField(primary_key=True)
