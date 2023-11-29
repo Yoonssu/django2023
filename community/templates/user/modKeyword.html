@@ -3,103 +3,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>키워드 수정</title>
 
     <link href="{% static 'community/bootstrap/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'community/css/modKeyword.css' %}" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/726bbd6862.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
-    <style>
-        body {
-            color: #fff;
-            font-family: 'Roboto', sans-serif;
-        }
-        .form-control {
-            min-height: 41px;
-            box-shadow: none;
-            border-color: #ddd;
-        }
-        .form-control, .btn {        
-            border-radius: 3px;
-        }
-        .signup-form {
-            width: 425px;
-            margin: 0 auto;
-            padding: 30px 0;
-        }
-        .signup-form form {
-            color: #999;
-            border-radius: 3px;
-            margin-bottom: 15px;
-            background: #fff;
-            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-            padding: 30px;
-        }
-        .signup-form h2 {
-            color: #333;
-            font-weight: bold;
-            margin-top: 0;
-        }
-        .signup-form hr {
-            margin: 0 -30px 20px;
-        }
-        .signup-form .form-group {
-            margin-bottom: 20px;
-        }
-        .signup-form label {
-            font-weight: normal;
-            font-size: 14px;
-        } 
-        .signup-form .btn-primary {        
-            font-size: 16px;
-            font-weight: bold;
-            background: #5A32FB;
-            border: none;
-            min-width: 140px;
-        }
-        .signup-form a {
-            color: #fff;
-            text-decoration: underline;
-        }
-        .signup-form a:hover {
-            text-decoration: none;
-        }
-        .signup-form form a {
-            color: black;
-            text-decoration: none;
-        }
-        .btn-secondary{
-            color: black;
-            background-color: white;
-            width: 360px;
-            --bs-btn-hover-color: black;
-            --bs-btn-hover-bg: white;
-        }
-        /* 초기 버튼 스타일 */
-        .toggle-button {
-            background-color: #fff;
-            padding: 10px 20px;
-            border: 1px solid #ccc;
-            cursor: pointer;
-        }
-
-        /* 선택된 상태의 버튼 스타일 */
-        .selected {
-            background-color: #5A32FB;
-            color: #fff;
-        }
-        </style>
+    
 </head>
 <body>
     {% include 'community/navbar.html' %}
 
     <div class="signup-form">
-        <form action="/examples/actions/confirmation.php" method="post">
+        <form action="{% url 'community:save_keywords' %}" method="post">
             <h2>키워드 수정</h2>
             <p>Please fill in this form to create an account!</p>
             <hr>
             <div class="form-group">
                 <label>관심 분야</label> <br>
-                <select class="form-select" aria-label="Default select example" style="min-width: 300px;" id="categorySelect" onchange="getKeywords()">
+                <select class="form-control" aria-label="Default select example" style="min-width: 300px;" id="categorySelect" onchange="getKeywords()">
                     <option selected>선택</option>
                     <option value="1">활동 분야</option>
                     <option value="2">언론/미디어</option>
@@ -110,23 +32,23 @@
                   </select>
             </div>
             <div class="form-group">
-                <label>키워드</label> <br>
                 <div id="keywordList">
-                    <!-- 버튼 -->
-                    <!-- <div id="buttonContainer"></div> -->
+
                 </div>
             </div>
 
             <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" name="password" required="required">
+                <label>관심 키워드 직접 입력하기</label>
+                <input type="text" class="form-control" id="makeKeyword">
             </div>
             <div class="form-group">
-                <label>Confirm Password</label>
-                <input type="password" class="form-control" name="confirm_password" required="required">
+                <div id="makeKeywordList">
+                    <!-- 토글 버튼 -->
+                </div>
             </div>
+
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                <button type="submit" class="btn btn-primary btn-lg">변경</button>
             </div>
         </form>
     </div>
@@ -134,12 +56,54 @@
 
 
     <script>
+        // 직접 입력한 키워드 화면에 띄우기 //
+        const inputKeyword = document.getElementById('makeKeyword');
+        const makeKeywordList = document.getElementById('makeKeywordList');
+        let buttonCount = 0;
+
+        // 엔터 눌렀을 때
+        inputKeyword.addEventListener('keydown', function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault(); // 폼 제출 방지
+
+                // 1.1. 작성된 키워드가 10개 이상일 때
+                if (buttonCount >= 10) {
+                    alert('직접 입력할 수 있는 키워드는 최대 10개입니다.');
+                    event.target.value = '';
+                    return;
+                }
+
+                // 1.2. 아무 입력값 없이 엔터를 눌렀을 때
+                const inputValue = event.target.value.trim(); // 입력값의 앞뒤 공백 제거
+                if (inputValue === '') {
+                    alert('키워드를 입력해주세요.');
+                    return;
+                }
+
+                // 2.1. html에 토글 버튼 생성
+                const newButton = document.createElement('button');
+                newButton.textContent = event.target.value;
+                newButton.classList.add('toggle-button');
+                newButton.classList.toggle('selected');
+                makeKeywordList.appendChild(newButton); // 생성한 버튼을 리스트에 추가
+                event.target.value = ''; // 입력한 내용 리셋
+                buttonCount++; // 버튼 개수 증가
+
+                // 2.2. 생성된 토글 버튼을 다시 클릭해 생성 취소
+                newButton.addEventListener('click', function(event) {
+                    event.preventDefault(); // 폼 제출 방지 (옵션)
+                    event.target.parentNode.removeChild(event.target);
+                    buttonCount--;
+                });
+
+            }  
+        });
+
+
+        // 카테고리 선택 후 카테고리 키워드 가져오기
         function getKeywords() {
             const selectedCategory = document.getElementById('categorySelect').value;
-            
-            
-            const url = `/get-keywords/`;
-            console.log(url);
+            const url = '/community/keywords/';
 
             $.ajax({
                 url: url,
@@ -148,6 +112,21 @@
                 data: {'category': selectedCategory},
                 success: function(data){
                     console.log(data);
+                    // 받아온 키워드 데이터를 화면에 출력
+                    const keywordList = document.getElementById('keywordList');
+                    keywordList.innerHTML = '<label>키워드</label> <br>';
+
+                    data.keywords.forEach(keyword => {
+                    const keywordElement = document.createElement('button');
+                    keywordElement.textContent = keyword.keywordname;
+                    keywordElement.classList.add('toggle-button');
+                    keywordList.appendChild(keywordElement);
+
+                    keywordElement.addEventListener('click', function() {
+                    event.preventDefault(); // 폼 제출 방지
+                    this.classList.toggle('selected');
+                    });  
+                });
                 },beforeSend:function(){
                     console.log("i am waiting");
                 },complete:function(){
@@ -157,38 +136,6 @@
                 }
             });
         }
-
-            // AJAX를 이용해 선택된 카테고리에 해당하는 키워드를 서버로 요청
-        //     fetch(url)
-        //         .then(response => response.json())
-        //         .then(data => {
-        //             const keywordList = document.getElementById('keywordList');
-        //             keywordList.innerHTML = ''; // 기존 내용 비우기
-
-        //             // 받아온 키워드 데이터를 화면에 출력
-        //             data.keywords.forEach(keyword => {
-        //                 const keywordElement = document.createElement('p');
-        //                 keywordElement.textContent = keyword.keywordname;
-        //                 keywordList.appendChild(keywordElement);
-        //             });
-        //         })
-        //         .catch(error => console.error('Error:', error));
-       
-
-        // //키워드 생성
-        // const buttonContainer = document.getElementById('buttonContainer');
-        // const buttonCount = 10;
-
-        // for (let i = 0; i < buttonCount; i++) {
-        //     const button = document.createElement('button');
-        //     button.textContent = `토글 버튼 ${i + 1}`;
-        //     button.classList.add('toggle-button');
-        //     buttonContainer.appendChild(button);
-
-        //     button.addEventListener('click', function() {
-        //         this.classList.toggle('selected');
-        //     });  
-        // }
     </script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

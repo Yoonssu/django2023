@@ -57,6 +57,7 @@ ROOT_URLCONF = 'ds_DjangoTeam01.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], 
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -79,7 +80,7 @@ WSGI_APPLICATION = 'ds_DjangoTeam01.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ds_django_db',     # 여기에 실제 데이터베이스 이름을 입력하세요.
+        'NAME': 'test2',     # 여기에 실제 데이터베이스 이름을 입력하세요.
         'USER': 'leeys',     # 여기에 실제 데이터베이스 사용자 이름을 입력하세요.
         'PASSWORD': '1206', # 여기에 실제 데이터베이스 비밀번호를 입력하세요.
         'HOST': 'localhost',              # 또는 데이터베이스 서버의 주소
@@ -131,3 +132,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL= '/'
+LOGOUT_REDIRECT_URL= '/'
+AUTH_USER_MODEL = 'community.User'

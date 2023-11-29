@@ -1,10 +1,80 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>관심전공 수정</title>
+
+    <link href="{% static 'community/bootstrap/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'community/css/modKeyword.css' %}" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/726bbd6862.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+
 </head>
 <body>
-    <h1>major</h1>
+    {% include 'community/navbar.html' %}
+
+    <div class="signup-form">
+        <form action="{% url 'community:save_keywords' %}" method="post">
+            <h2>관심전공 수정</h2>
+            <p>Please fill in this form to create an account!</p>
+            <hr>
+
+            <div class="form-group">
+                <label>글로벌융합대학</label> <br>
+                    {% for m in majors %}
+                        {% if m.line == "글로벌융합대학" %}
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="major_{{ m.id }}" value="{{ m.id }}">
+                            <label class="form-check-label" for="major_{{ m.id }}">{{ m.majorname }}</label>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+            </div>
+
+            <div class="form-group">
+                <label>과학기술대학</label> <br>
+                    {% for m in majors %}
+                        {% if m.line == "과학기술대학" %}
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="major_{{ m.id }}" value="{{ m.id }}">
+                            <label class="form-check-label" for="major_{{ m.id }}">{{ m.majorname }}</label>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+            </div>
+
+            <div class="form-group">
+                <label>Art & Design 대학</label> <br>
+                    {% for m in majors %}
+                        {% if m.line == "Art & Design 대학" %}
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="major_{{ m.id }}" value="{{ m.id }}">
+                            <label class="form-check-label" for="major_{{ m.id }}">{{ m.majorname }}</label>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg">변경</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const checkboxes = document.querySelectorAll('.form-check-input');
+        const maxAllowed = 4;
+    
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const checkedCheckboxes = document.querySelectorAll('.form-check-input:checked');
+                if (checkedCheckboxes.length > maxAllowed) {
+                    this.checked = false;
+                    alert(`선택할 수 있는 관심전공은 최대 ${maxAllowed}개입니다.`);
+                }
+            });
+        });
+    </script>
 </body>
 </html>

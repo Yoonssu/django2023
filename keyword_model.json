@@ -3,135 +3,135 @@
     "model": "community.keyword",
     "pk": 1,
     "fields": {
-        "keywordname": "Ä·ÇÁ",
+        "keywordname": "ìº í”„",
         "ismake": false,
-        "category": "È°µ¿ ºĞ¾ß"
+        "category": "í™œë™ ë¶„ì•¼"
     }
 },
 {
     "model": "community.keyword",
     "pk": 2,
     "fields": {
-        "keywordname": "ÀÎÅÏ½Ê",
+        "keywordname": "ì¸í„´ì‹­",
         "ismake": false,
-        "category": "È°µ¿ ºĞ¾ß"
+        "category": "í™œë™ ë¶„ì•¼"
     }
 },
 {
     "model": "community.keyword",
     "pk": 3,
     "fields": {
-        "keywordname": "°ø¸ğÀü",
+        "keywordname": "ê³µëª¨ì „",
         "ismake": false,
-        "category": "È°µ¿ ºĞ¾ß"
+        "category": "í™œë™ ë¶„ì•¼"
     }
 },
 {
     "model": "community.keyword",
     "pk": 4,
     "fields": {
-        "keywordname": "Ä·ÇÁ",
+        "keywordname": "ìº í”„",
         "ismake": false,
-        "category": "È°µ¿ ºĞ¾ß"
+        "category": "í™œë™ ë¶„ì•¼"
     }
 },
 {
     "model": "community.keyword",
     "pk": 5,
     "fields": {
-        "keywordname": "°­¿¬",
+        "keywordname": "ê°•ì—°",
         "ismake": false,
-        "category": "È°µ¿ ºĞ¾ß"
+        "category": "í™œë™ ë¶„ì•¼"
     }
 },
 {
     "model": "community.keyword",
     "pk": 6,
     "fields": {
-        "keywordname": "ºÀ»çÈ°µ¿",
+        "keywordname": "ë´‰ì‚¬í™œë™",
         "ismake": false,
-        "category": "È°µ¿ ºĞ¾ß"
+        "category": "í™œë™ ë¶„ì•¼"
     }
 },
 {
     "model": "community.keyword",
     "pk": 7,
     "fields": {
-        "keywordname": "¸àÅä¸µ",
+        "keywordname": "ë©˜í† ë§",
         "ismake": false,
-        "category": "È°µ¿ ºĞ¾ß"
+        "category": "í™œë™ ë¶„ì•¼"
     }
 },
 {
     "model": "community.keyword",
     "pk": 8,
     "fields": {
-        "keywordname": "±âÀÚ´Ü",
+        "keywordname": "ê¸°ìë‹¨",
         "ismake": false,
-        "category": "¾ğ·Ğ/¹Ìµğ¾î"
+        "category": "ì–¸ë¡ /ë¯¸ë””ì–´"
     }
 },
 {
     "model": "community.keyword",
     "pk": 9,
     "fields": {
-        "keywordname": "Å©¸®¿¡ÀÌÅÍ",
+        "keywordname": "í¬ë¦¬ì—ì´í„°",
         "ismake": false,
-        "category": "¾ğ·Ğ/¹Ìµğ¾î"
+        "category": "ì–¸ë¡ /ë¯¸ë””ì–´"
     }
 },
 {
     "model": "community.keyword",
     "pk": 10,
     "fields": {
-        "keywordname": "À¯Æ©ºê",
+        "keywordname": "ìœ íŠœë¸Œ",
         "ismake": false,
-        "category": "¾ğ·Ğ/¹Ìµğ¾î"
+        "category": "ì–¸ë¡ /ë¯¸ë””ì–´"
     }
 },
 {
     "model": "community.keyword",
     "pk": 11,
     "fields": {
-        "keywordname": "Æ÷Åä¼¥",
+        "keywordname": "í¬í† ìƒµ",
         "ismake": false,
-        "category": "µğÀÚÀÎ/»çÁø/¿¹¼ú/¿µ»ó"
+        "category": "ë””ìì¸/ì‚¬ì§„/ì˜ˆìˆ /ì˜ìƒ"
     }
 },
 {
     "model": "community.keyword",
     "pk": 12,
     "fields": {
-        "keywordname": "¿µ»óÆíÁı",
+        "keywordname": "ì˜ìƒí¸ì§‘",
         "ismake": false,
-        "category": "µğÀÚÀÎ/»çÁø/¿¹¼ú/¿µ»ó"
+        "category": "ë””ìì¸/ì‚¬ì§„/ì˜ˆìˆ /ì˜ìƒ"
     }
 },
 {
     "model": "community.keyword",
     "pk": 13,
     "fields": {
-        "keywordname": "ÇÁ¸®¹Ì¾î",
+        "keywordname": "í”„ë¦¬ë¯¸ì–´",
         "ismake": false,
-        "category": "µğÀÚÀÎ/»çÁø/¿¹¼ú/¿µ»ó"
+        "category": "ë””ìì¸/ì‚¬ì§„/ì˜ˆìˆ /ì˜ìƒ"
     }
 },
 {
     "model": "community.keyword",
     "pk": 14,
     "fields": {
-        "keywordname": "¾ÖÇÁÅÍÀÌÆåÆ®",
+        "keywordname": "ì• í”„í„°ì´í™íŠ¸",
         "ismake": false,
-        "category": "µğÀÚÀÎ/»çÁø/¿¹¼ú/¿µ»ó"
+        "category": "ë””ìì¸/ì‚¬ì§„/ì˜ˆìˆ /ì˜ìƒ"
     }
 },
 {
     "model": "community.keyword",
     "pk": 15,
     "fields": {
-        "keywordname": "ÀÏ·¯½ºÆ®",
+        "keywordname": "ì¼ëŸ¬ìŠ¤íŠ¸",
         "ismake": false,
-        "category": "µğÀÚÀÎ/»çÁø/¿¹¼ú/¿µ»ó"
+        "category": "ë””ìì¸/ì‚¬ì§„/ì˜ˆìˆ /ì˜ìƒ"
     }
 },
 {
@@ -140,43 +140,43 @@
     "fields": {
         "keywordname": "UX/UI",
         "ismake": false,
-        "category": "µğÀÚÀÎ/»çÁø/¿¹¼ú/¿µ»ó"
+        "category": "ë””ìì¸/ì‚¬ì§„/ì˜ˆìˆ /ì˜ìƒ"
     }
 },
 {
     "model": "community.keyword",
     "pk": 17,
     "fields": {
-        "keywordname": "±İÀ¶¿¬¼ö",
+        "keywordname": "ê¸ˆìœµì—°ìˆ˜",
         "ismake": false,
-        "category": "°æÁ¦/±İÀ¶"
+        "category": "ê²½ì œ/ê¸ˆìœµ"
     }
 },
 {
     "model": "community.keyword",
     "pk": 18,
     "fields": {
-        "keywordname": "Á¦Å×Å©",
+        "keywordname": "ì œí…Œí¬",
         "ismake": false,
-        "category": "°æÁ¦/±İÀ¶"
+        "category": "ê²½ì œ/ê¸ˆìœµ"
     }
 },
 {
     "model": "community.keyword",
     "pk": 19,
     "fields": {
-        "keywordname": "È¸°è",
+        "keywordname": "íšŒê³„",
         "ismake": false,
-        "category": "°æÁ¦/±İÀ¶"
+        "category": "ê²½ì œ/ê¸ˆìœµ"
     }
 },
 {
     "model": "community.keyword",
     "pk": 20,
     "fields": {
-        "keywordname": "¼¼¹«",
+        "keywordname": "ì„¸ë¬´",
         "ismake": false,
-        "category": "°æÁ¦/±İÀ¶"
+        "category": "ê²½ì œ/ê¸ˆìœµ"
     }
 },
 {
@@ -185,70 +185,70 @@
     "fields": {
         "keywordname": "FAT",
         "ismake": false,
-        "category": "°æÁ¦/±İÀ¶"
+        "category": "ê²½ì œ/ê¸ˆìœµ"
     }
 },
 {
     "model": "community.keyword",
     "pk": 22,
     "fields": {
-        "keywordname": "±İÀ¶",
+        "keywordname": "ê¸ˆìœµ",
         "ismake": false,
-        "category": "°æÁ¦/±İÀ¶"
+        "category": "ê²½ì œ/ê¸ˆìœµ"
     }
 },
 {
     "model": "community.keyword",
     "pk": 23,
     "fields": {
-        "keywordname": "±âÈ¹",
+        "keywordname": "ê¸°íš",
         "ismake": false,
-        "category": "°æ¿µ/ÄÁ¼³ÆÃ"
+        "category": "ê²½ì˜/ì»¨ì„¤íŒ…"
     }
 },
 {
     "model": "community.keyword",
     "pk": 24,
     "fields": {
-        "keywordname": "¸¶ÄÉÆÃ",
+        "keywordname": "ë§ˆì¼€íŒ…",
         "ismake": false,
-        "category": "°æ¿µ/ÄÁ¼³ÆÃ"
+        "category": "ê²½ì˜/ì»¨ì„¤íŒ…"
     }
 },
 {
     "model": "community.keyword",
     "pk": 25,
     "fields": {
-        "keywordname": "¸¶ÄÉÅÍ",
+        "keywordname": "ë§ˆì¼€í„°",
         "ismake": false,
-        "category": "°æ¿µ/ÄÁ¼³ÆÃ"
+        "category": "ê²½ì˜/ì»¨ì„¤íŒ…"
     }
 },
 {
     "model": "community.keyword",
     "pk": 26,
     "fields": {
-        "keywordname": "¼­Æ÷ÅÍÁî",
+        "keywordname": "ì„œí¬í„°ì¦ˆ",
         "ismake": false,
-        "category": "°æ¿µ/ÄÁ¼³ÆÃ"
+        "category": "ê²½ì˜/ì»¨ì„¤íŒ…"
     }
 },
 {
     "model": "community.keyword",
     "pk": 27,
     "fields": {
-        "keywordname": "ºê·£µå",
+        "keywordname": "ë¸Œëœë“œ",
         "ismake": false,
-        "category": "°æ¿µ/ÄÁ¼³ÆÃ"
+        "category": "ê²½ì˜/ì»¨ì„¤íŒ…"
     }
 },
 {
     "model": "community.keyword",
     "pk": 28,
     "fields": {
-        "keywordname": "ÄÁ¼³ÆÃ",
+        "keywordname": "ì»¨ì„¤íŒ…",
         "ismake": false,
-        "category": "°æ¿µ/ÄÁ¼³ÆÃ"
+        "category": "ê²½ì˜/ì»¨ì„¤íŒ…"
     }
 },
 {
@@ -257,7 +257,7 @@
     "fields": {
         "keywordname": "ESG",
         "ismake": false,
-        "category": "°æ¿µ/ÄÁ¼³ÆÃ"
+        "category": "ê²½ì˜/ì»¨ì„¤íŒ…"
     }
 },
 {
@@ -266,124 +266,124 @@
     "fields": {
         "keywordname": "UI/UX",
         "ismake": false,
-        "category": "°úÇĞ/°øÇĞ/±â¼ú/IT"
+        "category": "ê³¼í•™/ê³µí•™/ê¸°ìˆ /IT"
     }
 },
 {
     "model": "community.keyword",
     "pk": 31,
     "fields": {
-        "keywordname": "¼­ºñ½º±âÈ¹",
+        "keywordname": "ì„œë¹„ìŠ¤ê¸°íš",
         "ismake": false,
-        "category": "°úÇĞ/°øÇĞ/±â¼ú/IT"
+        "category": "ê³¼í•™/ê³µí•™/ê¸°ìˆ /IT"
     }
 },
 {
     "model": "community.keyword",
     "pk": 32,
     "fields": {
-        "keywordname": "Å¬¶ó¿ìµå",
+        "keywordname": "í´ë¼ìš°ë“œ",
         "ismake": false,
-        "category": "°úÇĞ/°øÇĞ/±â¼ú/IT"
+        "category": "ê³¼í•™/ê³µí•™/ê¸°ìˆ /IT"
     }
 },
 {
     "model": "community.keyword",
     "pk": 33,
     "fields": {
-        "keywordname": "ÀÚ¹Ù",
+        "keywordname": "ìë°”",
         "ismake": false,
-        "category": "°úÇĞ/°øÇĞ/±â¼ú/IT"
+        "category": "ê³¼í•™/ê³µí•™/ê¸°ìˆ /IT"
     }
 },
 {
     "model": "community.keyword",
     "pk": 34,
     "fields": {
-        "keywordname": "ÆÄÀÌ½ã",
+        "keywordname": "íŒŒì´ì¬",
         "ismake": false,
-        "category": "°úÇĞ/°øÇĞ/±â¼ú/IT"
+        "category": "ê³¼í•™/ê³µí•™/ê¸°ìˆ /IT"
     }
 },
 {
     "model": "community.keyword",
     "pk": 35,
     "fields": {
-        "keywordname": "ºòµ¥ÀÌÅÍ",
+        "keywordname": "ë¹…ë°ì´í„°",
         "ismake": false,
-        "category": "°úÇĞ/°øÇĞ/±â¼ú/IT"
+        "category": "ê³¼í•™/ê³µí•™/ê¸°ìˆ /IT"
     }
 },
 {
     "model": "community.keyword",
     "pk": 36,
     "fields": {
-        "keywordname": "ÇØÄ¿Åæ",
+        "keywordname": "í•´ì»¤í†¤",
         "ismake": false,
-        "category": "°úÇĞ/°øÇĞ/±â¼ú/IT"
+        "category": "ê³¼í•™/ê³µí•™/ê¸°ìˆ /IT"
     }
 },
 {
     "model": "community.keyword",
     "pk": 37,
     "fields": {
-        "keywordname": "¹é¿£µå",
+        "keywordname": "ë°±ì—”ë“œ",
         "ismake": false,
-        "category": "°úÇĞ/°øÇĞ/±â¼ú/IT"
+        "category": "ê³¼í•™/ê³µí•™/ê¸°ìˆ /IT"
     }
 },
 {
     "model": "community.keyword",
     "pk": 38,
     "fields": {
-        "keywordname": "ÇÁ·ĞÆ®¿£µå",
+        "keywordname": "í”„ë¡ íŠ¸ì—”ë“œ",
         "ismake": false,
-        "category": "°úÇĞ/°øÇĞ/±â¼ú/IT"
+        "category": "ê³¼í•™/ê³µí•™/ê¸°ìˆ /IT"
     }
 },
 {
     "model": "community.keyword",
     "pk": 39,
     "fields": {
-        "keywordname": "À¥°³¹ß",
+        "keywordname": "ì›¹ê°œë°œ",
         "ismake": false,
-        "category": "°úÇĞ/°øÇĞ/±â¼ú/IT"
+        "category": "ê³¼í•™/ê³µí•™/ê¸°ìˆ /IT"
     }
 },
 {
     "model": "community.keyword",
     "pk": 40,
     "fields": {
-        "keywordname": "½ºÇÁ¸µ",
+        "keywordname": "ìŠ¤í”„ë§",
         "ismake": false,
-        "category": "°úÇĞ/°øÇĞ/±â¼ú/IT"
+        "category": "ê³¼í•™/ê³µí•™/ê¸°ìˆ /IT"
     }
 },
 {
     "model": "community.keyword",
     "pk": 41,
     "fields": {
-        "keywordname": "¸®¾×Æ®",
+        "keywordname": "ë¦¬ì•¡íŠ¸",
         "ismake": false,
-        "category": "°úÇĞ/°øÇĞ/±â¼ú/IT"
+        "category": "ê³¼í•™/ê³µí•™/ê¸°ìˆ /IT"
     }
 },
 {
     "model": "community.keyword",
     "pk": 42,
     "fields": {
-        "keywordname": "À¯´ÏÆ¼",
+        "keywordname": "ìœ ë‹ˆí‹°",
         "ismake": false,
-        "category": "°úÇĞ/°øÇĞ/±â¼ú/IT"
+        "category": "ê³¼í•™/ê³µí•™/ê¸°ìˆ /IT"
     }
 },
 {
     "model": "community.keyword",
     "pk": 43,
     "fields": {
-        "keywordname": "»ç¹°ÀÎÅÍ³İ",
+        "keywordname": "ì‚¬ë¬¼ì¸í„°ë„·",
         "ismake": false,
-        "category": "°úÇĞ/°øÇĞ/±â¼ú/IT"
+        "category": "ê³¼í•™/ê³µí•™/ê¸°ìˆ /IT"
     }
 },
 {
@@ -392,7 +392,7 @@
     "fields": {
         "keywordname": "AI",
         "ismake": false,
-        "category": "°úÇĞ/°øÇĞ/±â¼ú/IT"
+        "category": "ê³¼í•™/ê³µí•™/ê¸°ìˆ /IT"
     }
 },
 {
@@ -401,7 +401,7 @@
     "fields": {
         "keywordname": "PM",
         "ismake": false,
-        "category": "°úÇĞ/°øÇĞ/±â¼ú/IT"
+        "category": "ê³¼í•™/ê³µí•™/ê¸°ìˆ /IT"
     }
 }
 ]

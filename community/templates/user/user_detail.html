@@ -43,7 +43,9 @@
                       </ul>
                     </div>
 
-                    <a href="{% url 'modMajor' pk=user.pk %}" class="btn btn-primary" role="button" data-bs-toggle="button">수정하기</a>
+                    <a href="{% url 'community:modMajor' pk=user.pk %}" class="btn btn-primary" role="button" data-bs-toggle="button">수정하기</a>
+
+                    
 
                     <h3>맞춤 키워드</h3>
                     <div style="border: 1px solid; width: 20rem;">
@@ -52,7 +54,9 @@
                       </div>
                     </div>
 
-                    <a href="{% url 'modKeyword' pk=user.pk %}" class="btn btn-primary" role="button" data-bs-toggle="button">수정하기</a>
+                   <a href="{% url 'community:modKeyword' pk=user.pk %}" class="btn btn-primary" role="button" data-bs-toggle="button">수정하기</a>
+
+                    
                     
                     <div class="card" style="width: 20rem;">
                       <div class="card-body">
