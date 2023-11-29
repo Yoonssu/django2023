@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 
 # Create your models here.
 class User(models.Model):
@@ -22,6 +23,7 @@ class Keyword(models.Model):
 class Major(models.Model):
     id = models.BigAutoField(primary_key=True)
     majorname = models.CharField(max_length=255)
+    choices = ArrayField(models.CharField(max_length=255), blank=True, null=True)
     def __str__(self):
         return f'{self.majorname}'
 

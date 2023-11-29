@@ -1,0 +1,118 @@
+<!-- url 예시 http://127.0.0.1:8000/community/mypage/user.pk -->
+
+{% extends 'community/base.html' %}
+
+{% block main_area %}
+
+
+<section>
+
+  <div class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div>
+      <div class="row"> 
+          <div class="col-4">
+              <div style="border-right: 1px solid #5A32FB; height: 100vh; padding-top: 10px;">
+                  <h3>회원 정보</h3>
+                  <div class="card" style="width: 20rem;">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">아이디&nbsp&nbsp&nbsp<span style="color: gray;">{{ user.username }}</span></li>
+                        <li class="list-group-item">이메일&nbsp&nbsp&nbsp<span style="color: gray;">{{ user.email }}</span></li>
+                        <li class="list-group-item">관심 전공&nbsp&nbsp&nbsp
+                          <span style="color: gray;">
+                            {% for major in majors %}
+                            {{ major.majorname }}
+                            {% endfor %}
+                      </span>
+                      </li>
+                      </ul>
+                    </div>
+
+                    <a href="{% url 'modMajor' pk=user.pk %}" class="btn btn-primary" role="button" data-bs-toggle="button">수정하기</a>
+
+                    <h3>맞춤 키워드</h3>
+                    <div style="border: 1px solid; width: 20rem;">
+                      <div style="border-radius: 40px; border: 1px solid black;  width: fit-content; padding: 10px">
+                          정보통신/IT
+                      </div>
+                    </div>
+
+                    <a href="{% url 'modKeyword' pk=user.pk %}" class="btn btn-primary" role="button" data-bs-toggle="button">수정하기</a>
+                    
+                    <div class="card" style="width: 20rem;">
+                      <div class="card-body">
+                        <a href="#myPage/post/">내가 쓴 글</a>
+                      </div>
+                    </div>
+
+                    <div class="card" style="width: 20rem;">
+                      <div class="card-body">
+                        <a href="#myPage/commnet/">내가 쓴 댓글</a>
+                      </div>
+                    </div>
+              </div>
+          </div>
+          <div class="col-8">
+              <h3>스크랩한 활동</h3>
+              <ul>
+                {% for scrap in scraps %}
+                <div class="card" style="width: 18rem;">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ scrap.post.title }}</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+                </select>
+                {% endfor %}
+              </ul>
+             
+          </div>
+      </div>
+  </div>
+</section>
+
+  <!-- <h1>마이페이지</h1>
+  
+  <p>아이디: {{ user.username }}</p>
+  <p>이메일: {{ user.email }}</p>
+
+  <h2>관심 전공 목록</h2>
+  <ul>
+    {% for major in majors %}
+      <li>{{ major.majorname }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>맞춤 키워드 목록</h2>
+  <ul>
+    {% for keyword in keywords %}
+      <li>{{ keyword.keywordname }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>스크랩한 활동 목록</h2>
+  <ul>
+    {% for scrap in scraps %}
+      <li>{{ scrap.post.title }}</li>
+    {% endfor %}
+  </ul> -->
+
+
+{% endblock %}
