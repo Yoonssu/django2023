@@ -4,7 +4,7 @@
 {% extends 'community/base.html' %} {% block main_area %}
 
 <h1>환영해, {{ user.username }}!</h1>
-
+<!-- 
 <h2>추천게시물</h2>
 <p>{{selected_keywords}}</p>
 <ul>
@@ -14,7 +14,7 @@
   {% empty %}
   <p>추천 포스트가 없습니다</p>
   {% endfor %}
-</ul>
+</ul> -->
 
 <!-- selected_keywords를 for문으로 돌리면 어떻게 나오나? -->
 {% for keyword in selected_keywords %}
