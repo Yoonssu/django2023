@@ -3,24 +3,95 @@
 {% extends 'community/base.html' %}
 
 {% block main_area %}
-
-  <h1>게시글 목록 게시판</h1>
-  {% if post_list.exists %}
-
-    {% for post in post_list %}
-        <div>
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.content }}</p>
-        <p>작성 시간: {{ post.time }}</p>
-        </div>
-        <hr>
-    {% endfor %}
-
-  {% else %}
-
-    <h3>아직 게시글이 없습니다.</h3>
     
-  {% endif %}
+    
+    <div class="activity_title"><h1>활동목록</h1></div>
+    <hr>
+    
+        <div class="choose_one">
+            <li class="first">
+                <a href="post_list">전체 /</a>
+            </li>
+            <li class="second">
+                <a href="post_list">교내 /</a>
+            </li>
+            <li class="third">
+                <a href="post_list"> 대외</a>
+            </li>
+        </div>
+
+
+        <div class="welcome-hero-serch-box">
+            <div class="welcome-hero-form">
+                <div class="single-welcome-hero-form">
+                    <h3></h3>
+                    <form action="index.html">
+                        <input type="text" placeholder="검색어를 입력하세요" />
+                    </form>                 
+                </div> 
+                <div class="welcome-hero-serch">
+                    <button class="welcome-hero-btn" onclick="window.location.href='#'">
+                    검색  <i data-feather="search"></i> 
+                    </button>
+                </div>            
+            </div>
+            
+        </div><br><br>
+    
+      
+
+        {% for post in post_list %}
+            <div class="whole_list">
+                <!-- <h2 class="p_title">{{ post.title }}</h2> -->
+                <h2 class="p_title"><a href="{{ post.content }}" target="_blank">{{ post.title }}</a></h2>
+                <p class="p_time">작성 시간: {{ post.time }}</p>
+            </div>
+            <hr>
+        {% endfor %}
+
+        <!-- post_list.html -->
+
+
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if post_list.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ post_list.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    페이지 {{ post_list.number }} / {{ post_list.paginator.num_pages }}.
+                </span>
+
+                {% if post_list.has_next %}
+                    <a href="?page={{ post_list.next_page_number }}">next</a>
+                    <a href="?page={{ post_list.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+
+
+        
+        <div>
+            <li>
+                <a href="post_list_1">1</a>
+            </li>
+            <li>
+                <a href="post_list_2">2</a>
+            </li>
+            <li>
+                <a href="post_list_3">3</a>
+            </li>
+            <li>
+                <a href="post_list_4">4</a>
+            </li>
+            <li>
+                <a href="post_list_5">5</a>
+            </li>
+            
+        </div>
+    </div>
 
 {% endblock %}
 

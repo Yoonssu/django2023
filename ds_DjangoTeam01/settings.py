@@ -57,6 +57,7 @@ ROOT_URLCONF = 'ds_DjangoTeam01.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], 
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -126,15 +127,13 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
-#이 부분 추가함
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),
-# ]
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL= '/'
+LOGOUT_REDIRECT_URL= '/'
+AUTH_USER_MODEL = 'community.User'
