@@ -1,35 +1,32 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
 
-# Create your models here.
-class User(models.Model):
-    id = models.BigAutoField(primary_key=True)
+class User(AbstractUser):
     major = models.ManyToManyField('Major', related_name='users')
     keyword = models.ManyToManyField('Keyword', related_name='users')
-    username = models.CharField(max_length=225)
-    password = models.CharField(max_length=255)
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     def __str__(self):
-        return f'{self.username}'
+        return f'[{self.pk}]{self.username}'
 
 class Keyword(models.Model):
     id = models.BigAutoField(primary_key=True)
     keywordname = models.CharField(max_length=255)
     ismake = models.BooleanField()
-    category = models.CharField(max_length=255, null=True)
+    category = models.CharField(max_length=255, null=True, blank=True)
     def __str__(self):
-        return f'{self.keywordname}'
+        return f'[{self.pk}]{self.keywordname}'
 
 class Major(models.Model):
     id = models.BigAutoField(primary_key=True)
     majorname = models.CharField(max_length=255)
     choices = ArrayField(models.CharField(max_length=255), blank=True, null=True)
     def __str__(self):
-        return f'{self.majorname}'
+        return f'[{self.pk}]{self.majorname}'
 
 class Post(models.Model):
     id = models.BigAutoField(primary_key=True)
-    major = models.ForeignKey(Major, on_delete=models.PROTECT, null=True, blank=True)
+    major = models.ForeignKey(Major, on_delete=models.SET_NULL, null=True, blank=True)
     title = models.CharField(max_length=255)
     content = models.TextField()
     img = models.TextField(null=True)
@@ -48,7 +45,7 @@ class Scrap(models.Model):
 class Team(models.Model):
     id = models.BigAutoField(primary_key=True)
     post = models.ForeignKey('Post', on_delete=models.CASCADE)
-    user = models.ForeignKey('User', on_delete=models.CASCADE)
+    user = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
     title = models.CharField(max_length=255)
     content = models.TextField()
     time = models.DateTimeField(auto_now_add = True)
@@ -57,7 +54,7 @@ class Team(models.Model):
 
 class Comment(models.Model):
     id = models.BigAutoField(primary_key=True)
-    user = models.ForeignKey('User', on_delete=models.CASCADE)
+    user = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
     team = models.ForeignKey('Team', on_delete=models.CASCADE)
     content = models.TextField()
     time = models.DateTimeField(auto_now_add = True)
