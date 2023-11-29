@@ -56,7 +56,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="team_list" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -74,7 +74,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;team__detail&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/github/ds_DjangoTeam01&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -82,6 +82,11 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;vertica&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -140,6 +145,10 @@
       <workItem from="1701202341244" duration="1812000" />
       <workItem from="1701204432450" duration="1877000" />
       <workItem from="1701232640489" duration="1549000" />
+      <workItem from="1701235520049" duration="1157000" />
+      <workItem from="1701237451513" duration="786000" />
+      <workItem from="1701242415431" duration="859000" />
+      <workItem from="1701252217421" duration="632000" />
     </task>
     <servers />
   </component>
