@@ -9,7 +9,7 @@ app_name = 'community'
 
 urlpatterns = [
     path('', views.PostList.as_view()),
-    path('<int:pk>/', views.PostDetail.as_view()),
+    path('<int:pk>/', views.PostDetail.as_view(), name='post_detail'),
     path('mypage/<int:pk>/', views.UserDetail.as_view(), name='user_detail'),
     path('mypage/<int:pk>/modKeyword/', views.modKeyWord, name='modKeyword'),
     path('mypage/modKeyword/keywords/', views.get_keywords, name='get_keywords'),
