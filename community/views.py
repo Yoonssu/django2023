@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Post, User, Team, Major, Keyword 
+from .models import Post, User, Team, Keyword, Major
 from django.db.models import Count
 from .forms import UserForm
 from django.contrib.auth import authenticate,login
@@ -56,21 +56,6 @@ def modKeyWord(request, pk):
         'user/modKeyword.html',
     )
 
-
-def save_keywords(request, pk):
-    if request.method == 'POST':
-        # POST 요청에서 선택된 키워드 정보를 받아서 처리하는 로직
-        keywords = request.POST.getlist('keywords[]')  # 혹은 request.POST.getlist('keywords') 에 따라 데이터 형식에 따라 가져올 수 있음
-
-        # 여기서 keywords를 DB에 저장하거나 다른 처리를 수행할 수 있음
-
-        # 처리 완료 후 JSON 응답
-        return JsonResponse({'success': True})
-    else:
-        # POST 요청이 아닌 경우 에러 응답
-        return JsonResponse({'success': False, 'error': 'Invalid request method'})
-    
-
 def get_keywords(request):
     category = request.GET.get('category')
 
@@ -89,6 +74,20 @@ def get_keywords(request):
 
     keyword_data = {'keywords': list(category_keywords.values())}
     return JsonResponse(keyword_data)
+
+
+def save_keywords(request, pk):
+    if request.method == 'POST':
+        # POST 요청에서 선택된 키워드 정보를 받아서 처리하는 로직
+        keywords = request.POST.getlist('keywords[]')  # 혹은 request.POST.getlist('keywords') 에 따라 데이터 형식에 따라 가져올 수 있음
+
+        # 여기서 keywords를 DB에 저장하거나 다른 처리를 수행할 수 있음
+
+        # 처리 완료 후 JSON 응답
+        return JsonResponse({'success': True})
+    else:
+        # POST 요청이 아닌 경우 에러 응답
+        return JsonResponse({'success': False, 'error': 'Invalid request method'})
     
 
 def modMajor(request, pk):
@@ -101,6 +100,25 @@ def modMajor(request, pk):
             'majors' : majors,
         }
     )
+
+def save_majors(request, pk):
+    user = get_object_or_404(User, pk=pk)
+
+    if request.method == 'POST':
+        # POST 요청에서 선택된 키워드 정보를 받아서 처리하는 로직
+        user.major.clear()
+
+        selected_majors = request.POST.getlist('majors[]')
+        for major_id in selected_majors:
+        # 사용자의 selected_major 필드에 추가
+            user.major.add(major_id)
+
+        # 처리 완료 후 JSON 응답
+        return redirect('community:user_detail', pk=pk)
+    else:
+        # POST 요청이 아닌 경우 에러 응답
+        return JsonResponse({'success': False, 'error': 'Invalid request method'})
+    
 
 
 class TeamList(ListView):
@@ -133,55 +151,7 @@ def signup(request):
         form = UserForm()
     return render(request, 'community/signup.html', {'form': form})
 
-def modKeyWord(request, pk):
-    return render(
-        request,
-        'user/modKeyword.html',
-    )
 
-def get_keywords(request):
-    category = request.GET.get('category')
-
-    if category == '1':
-        category_keywords = Keyword.objects.filter(category='활동 분야')
-    elif category == '2':
-        category_keywords = Keyword.objects.filter(category='언론/미디어')
-    elif category == '3':
-        category_keywords = Keyword.objects.filter(category='디자인/사진/예술/영상')
-    elif category == '4':
-        category_keywords = Keyword.objects.filter(category='경제/금융')
-    elif category == '5':
-        category_keywords = Keyword.objects.filter(category='경영/컨설팅')
-    elif category == '6':
-        category_keywords = Keyword.objects.filter(category='과학/공학/기술/IT')
-
-    keyword_data = {'keywords': list(category_keywords.values())}
-    return JsonResponse(keyword_data)
-
-# def get_keywords(request):
-
-#     if category == '1':
-#         category_keywords = Keyword.objects.filter(category='활동 분야')
-#     elif category == '2':
-#         category_keywords = Keyword.objects.filter(category='언론/미디어')
-#     elif category == '3':
-#         category_keywords = Keyword.objects.filter(category='디자인/사진/예술/영상')
-#     elif category == '4':
-#         category_keywords = Keyword.objects.filter(category='경제/금융')
-#     elif category == '5':
-#         category_keywords = Keyword.objects.filter(category='경영/컨설팅')
-#     elif category == '6':
-#         category_keywords = Keyword.objects.filter(category='과학/공학/기술/IT')
-
-#     data = {'keywords': list(category_keywords.values())}
-#     return JsonResponse(data)
-    
-
-def modMajor(request, pk):
-    return render(
-        request,
-        'user/modMajor.html',
-    )
     
 class Recommend(LoginRequiredMixin, ListView):
     model = User

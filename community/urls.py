@@ -15,6 +15,7 @@ urlpatterns = [
     path('keywords/', views.get_keywords),
     path('saveKeywords/', views.save_keywords, name='save_keywords'),
     path('mypage/<int:pk>/modMajor/', views.modMajor, name='modMajor'),
+    path('saveMajors/<int:pk>/', views.save_majors, name='save_majors'),
 
     path('team/', views.TeamList.as_view()),
     path('team/<int:pk>/', views.TeamDetail.as_view(), name='team_detail'),

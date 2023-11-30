@@ -15,7 +15,8 @@
     {% include 'community/navbar.html' %}
 
     <div class="signup-form">
-        <form action="{% url 'community:save_keywords' %}" method="post">
+        <form action="{% url 'community:save_majors' pk=user.pk %}" method="post">
+            {% csrf_token %}
             <h2>관심전공 수정</h2>
             <p>Please fill in this form to create an account!</p>
             <hr>
@@ -23,9 +24,10 @@
             <div class="form-group">
                 <label>글로벌융합대학</label> <br>
                     {% for m in majors %}
-                        {% if m.line == "글로벌융합대학" %}
+                    {% if m.line == "글로벌융합대학" %}
+                    <script> console.log("{{ m.id }}")</script>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="major_{{ m.id }}" value="{{ m.id }}">
+                            <input class="form-check-input" type="checkbox" id="major_{{ m.id }}" value="{{ m.id }}" name="majors[]">
                             <label class="form-check-label" for="major_{{ m.id }}">{{ m.majorname }}</label>
                         </div>
                         {% endif %}
@@ -37,7 +39,7 @@
                     {% for m in majors %}
                         {% if m.line == "과학기술대학" %}
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="major_{{ m.id }}" value="{{ m.id }}">
+                            <input class="form-check-input" type="checkbox" id="major_{{ m.id }}" value="{{ m.id }}" name="majors[]">
                             <label class="form-check-label" for="major_{{ m.id }}">{{ m.majorname }}</label>
                         </div>
                         {% endif %}
@@ -49,7 +51,7 @@
                     {% for m in majors %}
                         {% if m.line == "Art & Design 대학" %}
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="major_{{ m.id }}" value="{{ m.id }}">
+                            <input class="form-check-input" type="checkbox" id="major_{{ m.id }}" value="{{ m.id }}" name="majors[]">
                             <label class="form-check-label" for="major_{{ m.id }}">{{ m.majorname }}</label>
                         </div>
                         {% endif %}

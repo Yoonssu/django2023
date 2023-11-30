@@ -35,7 +35,7 @@
                         <li class="list-group-item">이메일&nbsp&nbsp&nbsp<span style="color: gray;">{{ user.email }}</span></li>
                         <li class="list-group-item">관심 전공&nbsp&nbsp&nbsp
                           <span style="color: gray;">
-                            {% for major in majors %}
+                            {% for major in current_user_majors %}
                             {{ major.majorname }}
                             {% endfor %}
                       </span>
