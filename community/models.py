@@ -60,3 +60,9 @@ class Comment(models.Model):
     def __str__(self):
         return f'Comment [{self.pk}] on "{self.team.post.title}" by {self.user.username}'
 
+    def get_absolute_url(self):
+        if self.team:
+            return f'{self.team.get_absolute_url()}#comment-{self.pk}'
+        # 팀이 없는 경우에 대한 처리를 추가할 수 있음
+        # 예를 들어, 어떤 디폴트 URL로 리디렉션하거나 특정 에러 메시지를 반환할 수 있음
+        return '/default_url/'

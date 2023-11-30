@@ -2,11 +2,12 @@
 
 <style>
 
-     #createPostBtn {
+    #createPostBtn {
         background-color: #5A32FB;
         border: none;
         color: #fff;
         padding: 10px 20px;
+        margin-bottom: 30px;
         cursor: pointer;
         border-radius: 8px; /* 모서리를 둥글게 만듦 */
         transition: background-color 0.3s; /* 부드러운 트랜지션 효과 추가 */
@@ -30,41 +31,66 @@
     .post-separator {
         margin: 20px 0; /* 수평선 위아래 여백 추가 */
     }
-</style>
 
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+</style>
+<link rel="stylesheet" href="../../static/community/css/postDetailStyle.css"/>
 
 {% extends 'community/base.html' %}
 
 {% block main_area %}
 
-    <h1>게시글 목록 게시판</h1>
+    <div class="wrapper">
+        <div class="content_wrapper">
+            <div class="title">
+                <h2>팀원 모집</h2>
+                <br/>
+            </div>
+            <div class="content_nav">
+                <a href="#">상세정보</a>
+                <a href="#">팀원모집</a>
+                <button style="color: white; font-size: 14px">스크랩</button>
+            </div>
+            <div class="content_box">
 
-    <button id="createPostBtn">팀원 모집 글쓰기</button>
+                <button id="createPostBtn">팀원 모집 글쓰기</button>
 
 
-    {% if team_list.exists %}
-        <!-- 추가된 부분: 표 형식으로 게시글 표시 -->
-        <table>
-            <tbody>
-            {% for team in team_list %}
-                <tr>
-                    <td>
-                        <h2>{{ team.title }}</h2>
-{#                        <p>{{ team.content }}</p>#}
-                        <p>작성 시간: {{ team.time }}</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <hr class="post-separator">
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    {% else %}
-        <h3>아직 팀 게시글이 없습니다.</h3>
-    {% endif %}
+                {% if team_list.exists %}
+                    <!-- 추가된 부분: 표 형식으로 게시글 표시 -->
+                    <table>
+                        <tbody>
+                        {% for team in team_list %}
+                            <tr>
+                                <td>
+                                    <a href="{% url 'community:team_detail' team.id %}">
+                                        <h2>{{ team.title }}</h2>
+                                        {#                        <p>{{ team.content }}</p>#}
+                                        <p>{{ team.time }}</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <hr class="post-separator">
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <h3>아직 팀 게시글이 없습니다.</h3>
+                {% endif %}
 
+
+                <br/></div>
+        </div>
+    </div>
+    <br/>
+    </div>
+    </div>
+    </div>
 
 {% endblock %}
