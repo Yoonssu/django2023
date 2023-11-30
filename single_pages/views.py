@@ -6,6 +6,7 @@ from community.forms import UserForm
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Count
+from django.db.models import Q
 
 # Create your views here.
 def landing(request):
@@ -22,3 +23,18 @@ def about_we(request):
     )
 
 
+# views.py
+from django.shortcuts import render
+from community.models import Post  # YourModel은 실제 모델명으로 대체해야 합니다.
+
+def search(request):
+    query = request.GET.get('q')  # 폼에서 전달된 검색어 가져오기
+    results = []
+
+    if query:
+        results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query))
+    
+    # 전체 게시물을 가져오기
+    all_posts = Post.objects.all()
+
+    return render(request, 'community/post_list.html', {'results': results, 'all_posts': all_posts, 'query': query})
