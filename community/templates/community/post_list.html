@@ -2,25 +2,152 @@
 
 {% extends 'community/base.html' %}
 
-{% block main_area %}
+{% block scripts %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 페이지가 로드될 때 실행되는 코드
+            // 이 부분에 클라이언트 측 JavaScript 코드를 작성
 
-  <h1>게시글 목록 게시판</h1>
-  {% if post_list.exists %}
+            //  클릭 이벤트를 사용하여 data-filter 값을 확인하고 필터링
+            var filterItems = document.querySelectorAll('.choose_one li');
 
-    {% for post in post_list %}
-        <div>
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.content }}</p>
-        <p>작성 시간: {{ post.time }}</p>
-        </div>
-        <hr>
-    {% endfor %}
+            filterItems.forEach(function (item) {
+                item.addEventListener('click', function () {
+                    var filterValue = item.getAttribute('data-filter');
 
-  {% else %}
+                    // 이 부분에서 filterValue 값을 사용하여 적절한 처리를 수행
+                    console.log('Selected filter:', filterValue);
 
-    <h3>아직 게시글이 없습니다.</h3>
-    
-  {% endif %}
+                    // 필터 적용을 위한 함수 호출
+                    applyFilter(filterValue);
+                });
+            });
 
+            function applyFilter(filter) {
+                // 이 부분에서 실제 필터링을 구현
+                // filter 값에 따라 적절한 처리를 수행
+                var tableRows = document.querySelectorAll('.list_table tbody tr');
+
+                tableRows.forEach(function (row) {
+                var dataFilter = row.getAttribute('data-filter');
+
+                // 모든 행을 숨김
+                row.style.display = 'none';
+
+                // 선택된 필터와 일치하는 경우 해당 행을 보여줌
+                if (filter === 'all' || dataFilter === filter) {
+                    row.style.display = '';
+                }
+            });
+            }
+        });
+    </script>
 {% endblock %}
 
+
+{% block main_area %}
+    
+    
+    <div class="activity_title"><h1>활동목록</h1></div>
+    <hr>
+    
+        <div class="choose_one">
+            <li class="first" data-filter="all">
+                <a href="#">전체 /</a>
+            </li>
+            <li class="second" data-filter="isduksung">
+                <a href="#">교내 /</a>
+            </li>
+            <li class="third" data-filter="notIsduksung">
+                <a href="#">대외</a>
+            </li>            
+        </div>
+
+
+        <div class="welcome-hero-serch-box">
+            <div class="welcome-hero-form">
+                <div class="single-welcome-hero-form">
+                    <h3></h3>
+                    <form action="index.html">
+                        <input type="text" placeholder="검색어를 입력하세요" />
+                    </form>                 
+                </div> 
+                <div class="welcome-hero-serch">
+                    <button class="welcome-hero-btn" onclick="window.location.href='#'">
+                    검색  <i data-feather="search"></i> 
+                    </button>
+                </div>            
+            </div>
+            
+        </div><br><br>
+    
+      
+
+        <table class="list_table">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성날짜</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in post_list %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td><a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank">{{ post.title }}</a></td>
+                        <td>{{ post.time }}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><hr></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+
+        <!-- post_list.html -->
+
+
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if post_list.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ post_list.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    페이지 {{ post_list.number }} / {{ post_list.paginator.num_pages }}.
+                </span>
+
+                {% if post_list.has_next %}
+                    <a href="?page={{ post_list.next_page_number }}">next</a>
+                    <a href="?page={{ post_list.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+
+
+        
+        <div>
+            <li>
+                <a href="post_list_1">1</a>
+            </li>
+            <li>
+                <a href="post_list_2">2</a>
+            </li>
+            <li>
+                <a href="post_list_3">3</a>
+            </li>
+            <li>
+                <a href="post_list_4">4</a>
+            </li>
+            <li>
+                <a href="post_list_5">5</a>
+            </li>
+            
+        </div>
+    </div>
+
+{% endblock %}
