@@ -1,18 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
 }
 
+.wrapper {
+  background-color: bisque;
+}
+
 .wrapper,
 .major-wrapper,
-.major-content {
+.major-content,
+.recommend_wrapper,
+.recommend_font {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
+.recommend_wrapper {
+  background-color: aquamarine;
+  width: 1300px;
+  height: 700px;
+}
+
+.recommend_font {
+  background-color: #bcadf8;
+  width: auto;
+  height: 170px;
+}
+.recommend_cardbox {
+  background-color: rgb(105, 105, 147);
+  width: 90%;
+  height: 55%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recommend-card {
+  background-color: gold;
+  width: 24%;
+  height: 95%;
+}
+
+.recommend_card_img {
+  background-color: antiquewhite;
+  width: 100%;
+  height: 50%;
+}
+
+.recommend_card_img img {
+  width: 100%;
+  height: 100%;
+}
+
+.recommend_card_title {
+  background-color: rgba(0, 100, 0, 0.479);
+  width: 100%;
+  height: 50%;
+}
+
 .major-wrapper {
   width: 1000px;
   height: auto;
-  /* background-color: aquamarine; */
+  background-color: aquamarine;
+  padding: 80px;
 }
 
 .major-title {
@@ -84,6 +140,11 @@ body {
   /* background-color: rgb(234, 250, 114); */
   width: 700px;
   height: 50px;
+}
+
+.major-post-title a {
+  color: black;
+  text-decoration: none;
 }
 
 .hidden {

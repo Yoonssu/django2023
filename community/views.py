@@ -68,20 +68,20 @@ class Recommend(LoginRequiredMixin, ListView):
         # 사용자가 선택한 키워드에 맞는 게시글 3개 가져오기
         selected_keywords = current_user.keyword.all()
 
-        recommended_posts = Post.objects.filter(
-            reduce(
-                operator.or_,
-                [Q(title__icontains=keyword.keywordname) | Q(content__icontains=keyword.keywordname) for keyword in selected_keywords]
-            )
-        ).order_by('-time')
-
         # 각각 3개씩 나오게는 성공
         test_posts_dic = {}
         for keyword in selected_keywords:
             test_posts = Post.objects.filter(Q(title__icontains=keyword.keywordname) | Q(content__icontains=keyword.keywordname)).order_by('-time')[:3]
             test_posts_dic[keyword] = test_posts
+        
+        test_posts_list = []
+        for posts in test_posts_dic.values():
+            test_posts_list.extend(posts)
+
+        list_len = len(test_posts_list)
 
         # 사용자가 선택한 전공에 맞는 게시물들 가져오기
+        # pk 역순으로 전공 포스터가 나오길 기대했으나... 왜 그런지 적용이 ㅗ디지 않음...
         selected_majors = current_user.major.all().order_by(-pk)
         
         context.update({
@@ -89,6 +89,7 @@ class Recommend(LoginRequiredMixin, ListView):
             'selected_keywords': selected_keywords,
             'test_posts_dic': test_posts_dic,
             'recommended_posts': recommended_posts,
+            'list_len': list_len,
         })
 
 
