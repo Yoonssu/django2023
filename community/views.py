@@ -5,7 +5,7 @@ from django.views.generic import ListView, DetailView, TemplateView, CreateView,
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Post, User, Team, Major, Keyword, Comment
 from django.db.models import Count
-from .forms import UserForm, CommentForm
+from .forms import UserForm, CommentForm, TeamPostForm
 from django.contrib.auth import authenticate,login
 from django.http import JsonResponse
 from django.db.models import Q 
@@ -80,6 +80,18 @@ class TeamDetail(DetailView):
 
         return context
 
+class TeamPostForm(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = ['title', 'content']
+
+    def form_valid(self, form):
+        current_user = self.request.user
+        if current_user.is_authenticated:
+            form.instance.author = current_user
+            return super(TeamPostForm, self).form_valid(form)
+        else:
+            return redirect('/community')
+
 def new_comment(request, pk):
     if request.user.is_authenticated:
         team = get_object_or_404(Team, pk=pk)
@@ -101,6 +113,9 @@ def new_comment(request, pk):
     else:
         # 사용자가 인증되지 않은 경우 로그인 페이지로 리다이렉트
         return redirect("login")
+
+
+
 
 
 def signup(request):

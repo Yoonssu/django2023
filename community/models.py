@@ -50,6 +50,8 @@ class Team(models.Model):
     def __str__(self):
         return f'[{self.pk}]{self.title} :: {self.user}'
 
+    
+
 class Comment(models.Model):
     id = models.BigAutoField(primary_key=True)
     user = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)

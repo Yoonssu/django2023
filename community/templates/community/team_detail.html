@@ -1,8 +1,7 @@
 {% extends 'community/base.html' %}
 {% load crispy_forms_tags %}
 <link rel="stylesheet" href="../../static/community/css/postDetailStyle.css"/>
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
 {% block main_area %}
 
@@ -30,7 +29,6 @@
         </div>
     </div>
 
-{% endblock %}
 
 <!-- Comments section -->
 <section class="mb-5">
@@ -38,7 +36,7 @@
         <div class="card-body">
             <!-- Comment form -->
             {% if user.is_authenticated %}
-                <form class="mb-4" id="comment-form" method="POST" action="{% url 'new_comment' team.id %}">
+                <form class="mb-4" id="comment-form" method="POST" action="{{team.get_absolute_url}}new_comment/">
                     {% csrf_token %}
                     <div class="form-group">
                         {{ comment_form | crispy }}
@@ -72,3 +70,4 @@
         </div>
     </div>
 </section>
+{% endblock %}
