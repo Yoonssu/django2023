@@ -1,6 +1,6 @@
 <!-- url 예시 http://127.0.0.1:8000/community/recommend/user.pk -->
 <link rel="stylesheet" href="../../static/community/css/recommendStryle.css" />
-{% extends 'community/base.html' %} {% block main_area %}{% load static %} {%
+{% extends 'community/base.html' %} {% block main_area %}{% load static %} 
 <div class="wrapper">
   <div class="recommend-wrapper">
     <div class="recommend-font">
@@ -33,68 +33,35 @@
       <p>추천 포스트가 없습니다</p>
       {% endfor %}
     </div>
-
-    <div class="major-wrapper">
-      <div class="major-title">
-        <p id="major-title">전공 게시판 모음</p>
-      </div>
-
-      <div class="major-nav">
-        <button class="all" onclick="showAll()">전체</button>
-        {% for major in major_list %}
-        <button class="major-button" onclick="showMajorPosts('{{ major }}')">
-          {{ major }}
-        </button>
-        {% endfor %}
-      </div>
-      <div class="major-content-nav">
-        <div class="major-post-pk">번호</div>
-        <div class="major-post-title" style="justify-content: center">제목</div>
-        <div class="major-post-date">등록 날짜</div>
-      </div>
-
-      <!-- 추가: all_major_content 부분 -->
-      <div class="major-content hidden" id="all_major_content">
-        {% for post in all_major_posts_list %}
-        <div class="major-content-box">
-          <div class="major-post-pk">{{ forloop.counter }}</div>
-          <div class="major-post-title">
-            <a
-              href="{% url 'community:post_detail' pk=post.pk %}"
-              target="_blank"
-              >{{ post.title }}</a
-            >
-          </div>
-          <div class="major-post-date">{{ post.time|date:"Y.m.d" }}</div>
-        </div>
-        {% endfor %}
-      </div>
-
-      {% for major, posts in major_posts.items %} {% if major %}
-      <div class="major-content hidden" id="content_{{ major }}">
-        {% for post in posts %}
-        <div class="major-content-box">
-          <div class="major-post-pk">{{ forloop.counter }}</div>
-          <div class="major-post-title">
-            <a
-              href="{% url 'community:post_detail' pk=post.pk %}"
-              target="_blank"
-              >{{ post.title }}</a
-            >
-          </div>
-          <div class="major-post-date">{{ post.time|date:"Y.m.d" }}</div>
-        </div>
-        {% endfor %}
-      </div>
-      {% endif %} {% endfor %}
+  </div>
+  <div class="major-wrapper">
+    <div class="major-title">
+      <p id="major-title">전공 게시판 모음</p>
     </div>
 
+    <div class="major-nav">
+      <button class="all" onclick="showAll()">전체</button>
+      {% for major in major_list %}
+      <button class="major-button" onclick="showMajorPosts('{{ major }}')">
+        {{ major }}
+      </button>
+      {% endfor %}
+    </div>
+    <div class="major-content-nav">
+      <div class="major-post-pk">번호</div>
+      <div class="major-post-title" style="justify-content: center">제목</div>
+      <div class="major-post-date">등록 날짜</div>
+    </div>
+
+    <!-- 추가: all_major_content 부분 -->
     <div class="major-content hidden" id="all_major_content">
       {% for post in all_major_posts_list %}
       <div class="major-content-box">
         <div class="major-post-pk">{{ forloop.counter }}</div>
         <div class="major-post-title">
-          <a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank"
+          <a
+            href="{% url 'community:post_detail' pk=post.pk %}"
+            target="_blank"
             >{{ post.title }}</a
           >
         </div>
@@ -103,100 +70,123 @@
       {% endfor %}
     </div>
 
-    <!-- 추가: 전체 포스트에 대한 페이징 표시 -->
-    
-      <span class="step-links">
-        {% if all_major_posts_list.has_previous %}
-        <a href="?page_all=1">&laquo; first</a>
-        <a href="?page_all={{ all_major_posts_list.previous_page_number }}"
-          >previous</a
-        >
-        {% endif %}
-
-        <span class="current">
-          페이지 {{ all_major_posts_list.number }} / {{
-          all_major_posts_list.paginator.num_pages }}.
-        </span>
-
-        {% if all_major_posts_list.has_next %}
-        <a href="?page_all={{ all_major_posts_list.next_page_number }}">next</a>
-        <a href="?page_all={{ all_major_posts_list.paginator.num_pages }}"
-          >last &raquo;</a
-        >
-        {% endif %}
-      </span>
+    {% for major, posts in major_posts.items %} {% if major %}
+    <div class="major-content hidden" id="content_{{ major }}">
+      {% for post in posts %}
+      <div class="major-content-box">
+        <div class="major-post-pk">{{ forloop.counter }}</div>
+        <div class="major-post-title">
+          <a
+            href="{% url 'community:post_detail' pk=post.pk %}"
+            target="_blank"
+            >{{ post.title }}</a
+          >
+        </div>
+        <div class="major-post-date">{{ post.time|date:"Y.m.d" }}</div>
+      </div>
+      {% endfor %}
     </div>
+    {% endif %} {% endfor %}
+  </div>
 
-    <!-- 추가: 각 전공별 포스트에 대한 페이징 표시 -->
-    {% for major, posts in major_posts.items %}
-    <div class="pagination">
-      <span class="step-links">
-        {% if posts.has_previous %}
-        <a href="?page_{{ major }}=1">&laquo; first</a>
-        <a href="?page_{{ major }}={{ posts.previous_page_number }}"
-          >previous</a
+  <div class="major-content hidden" id="all_major_content">
+    {% for post in all_major_posts_list %}
+    <div class="major-content-box">
+      <div class="major-post-pk">{{ forloop.counter }}</div>
+      <div class="major-post-title">
+        <a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank"
+          >{{ post.title }}</a
         >
-        {% endif %}
-
-        <span class="current">
-          페이지 {{ posts.number }} / {{ posts.paginator.num_pages }}.
-        </span>
-
-        {% if posts.has_next %}
-        <a href="?page_{{ major }}={{ posts.next_page_number }}">next</a>
-        <a href="?page_{{ major }}={{ posts.paginator.num_pages }}"
-          >last &raquo;</a
-        >
-        {% endif %}
-      </span>
+      </div>
+      <div class="major-post-date">{{ post.time|date:"Y.m.d" }}</div>
     </div>
     {% endfor %}
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // 페이지가 로드될 때 실행할 코드
-        var majorButtons = document.querySelectorAll(".major-button");
-
-        // 각 버튼에 마우스 이벤트 리스너 추가
-        majorButtons.forEach(function (button) {
-          button.addEventListener("mouseover", function () {
-            this.classList.add("hovered"); // 버튼에 hovered 클래스 추가
-          });
-
-          button.addEventListener("mouseout", function () {
-            this.classList.remove("hovered"); // 버튼에서 hovered 클래스 제거
-          });
-        });
-        // 페이지가 로드될 때 "전체" 버튼을 클릭한 효과를 주는 코드
-        var allButton = document.querySelector(".all");
-        allButton.click();
-      });
-
-      function showMajorPosts(major) {
-        // 모든 major-content 숨기기
-        var allContents = document.querySelectorAll(".major-content");
-        for (var i = 0; i < allContents.length; i++) {
-          allContents[i].classList.add("hidden");
-        }
-
-        // 선택한 major에 해당하는 major-content 보이기
-        var selectedContent = document.getElementById("content_" + major);
-        selectedContent.classList.remove("hidden");
-      }
-
-      function showAll() {
-        // 모든 major-content 숨기기
-        var allContents = document.querySelectorAll(".major-content");
-        for (var i = 0; i < allContents.length; i++) {
-          allContents[i].classList.add("hidden");
-        }
-
-        // all_major_posts_list에 있는 포스트들 보이기
-        var allMajorContent = document.getElementById("all_major_content");
-        allMajorContent.classList.remove("hidden");
-      }
-    </script>
-
-    {%endblock%}
   </div>
+  <!-- 추가: 전체 포스트에 대한 페이징 표시 -->
+    <span class="step-links">
+      {% if all_major_posts_list.has_previous %}
+      <a href="?page_all=1">&laquo; first</a>
+      <a href="?page_all={{ all_major_posts_list.previous_page_number }}"
+        >previous</a
+      >
+      {% endif %}
+      <span class="current">
+        페이지 {{ all_major_posts_list.number }} / {{
+        all_major_posts_list.paginator.num_pages }}.
+      </span>
+      {% if all_major_posts_list.has_next %}
+      <a href="?page_all={{ all_major_posts_list.next_page_number }}">next</a>
+      <a href="?page_all={{ all_major_posts_list.paginator.num_pages }}"
+        >last &raquo;</a
+      >
+      {% endif %}
+    </span>
+
+    <!-- 추가: 각 전공별 포스트에 대한 페이징 표시 -->
+      {% for major, posts in major_posts.items %}
+      <div class="pagination">
+        <span class="step-links">
+          {% if posts.has_previous %}
+          <a href="?page_{{ major }}=1">&laquo; first</a>
+          <a href="?page_{{ major }}={{ posts.previous_page_number }}"
+            >previous</a
+          >
+          {% endif %}
+          <span class="current">
+            페이지 {{ posts.number }} / {{ posts.paginator.num_pages }}.
+          </span>
+          {% if posts.has_next %}
+          <a href="?page_{{ major }}={{ posts.next_page_number }}">next</a>
+          <a href="?page_{{ major }}={{ posts.paginator.num_pages }}"
+            >last &raquo;</a
+          >
+          {% endif %}
+        </span>
+    </div>
+    {% endfor %}
+  </div>
+  
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 페이지가 로드될 때 실행할 코드
+      var majorButtons = document.querySelectorAll(".major-button");
+      // 각 버튼에 마우스 이벤트 리스너 추가
+      majorButtons.forEach(function (button) {
+        button.addEventListener("mouseover", function () {
+          this.classList.add("hovered"); // 버튼에 hovered 클래스 추가
+        });
+        button.addEventListener("mouseout", function () {
+          this.classList.remove("hovered"); // 버튼에서 hovered 클래스 제거
+        });
+      });
+      // 페이지가 로드될 때 "전체" 버튼을 클릭한 효과를 주는 코드
+      var allButton = document.querySelector(".all");
+      allButton.click();
+    });
+    function showMajorPosts(major) {
+      // 모든 major-content 숨기기
+      var allContents = document.querySelectorAll(".major-content");
+      for (var i = 0; i < allContents.length; i++) {
+        allContents[i].classList.add("hidden");
+      }
+      // 선택한 major에 해당하는 major-content 보이기
+      var selectedContent = document.getElementById("content_" + major);
+      selectedContent.classList.remove("hidden");
+    }
+    function showAll() {
+      // 모든 major-content 숨기기
+      var allContents = document.querySelectorAll(".major-content");
+      for (var i = 0; i < allContents.length; i++) {
+        allContents[i].classList.add("hidden");
+      }
+      // all_major_posts_list에 있는 포스트들 보이기
+      var allMajorContent = document.getElementById("all_major_content");
+      allMajorContent.classList.remove("hidden");
+    }
+  </script>
+  {%endblock%}
+
 </div>
