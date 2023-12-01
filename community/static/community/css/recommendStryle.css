@@ -81,7 +81,7 @@ body {
 #major-title {
   font-size: 35px;
   font-weight: 900;
-  text-shadow: #3333337c 3px 3px 3px;
+  text-shadow: #33333356 3px 3px 3px;
   color: #5a5a5a;
 }
 
@@ -188,7 +188,8 @@ body {
   height: 50px;
 }
 
-.major-post-title a {
+.major-post-title a,
+.pagination a {
   color: black;
   text-decoration: none;
 }
@@ -199,10 +200,15 @@ body {
   background-color: rgba(0, 0, 0, 0.051);
 }
 
-.major-post-title a:hover {
+.major-post-title a:hover,
+.pagination a:hover {
   color: #333;
 }
 
 .hidden {
   display: none;
+}
+
+.pagination {
+  margin-top: 40px;
 }
