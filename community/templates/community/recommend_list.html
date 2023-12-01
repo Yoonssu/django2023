@@ -57,15 +57,11 @@
     <div class="major-content hidden" id="all_major_content">
       {% for post in all_major_posts_list %}
       <div class="major-content-box">
-        <div class="major-post-pk">{{ forloop.counter }}</div>
-        <div class="major-post-title">
-          <a
-            href="{% url 'community:post_detail' pk=post.pk %}"
-            target="_blank"
-            >{{ post.title }}</a
-          >
-        </div>
-        <div class="major-post-date">{{ post.time|date:"Y.m.d" }}</div>
+          <div class="major-post-pk">{{ forloop.counter }}</div>
+          <div class="major-post-title">
+              <a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank">{{ post.title }}</a>
+          </div>
+          <div class="major-post-date">{{ post.time|date:"Y.m.d" }}</div>
       </div>
       {% endfor %}
     </div>
@@ -74,7 +70,9 @@
     <div class="major-content hidden" id="content_{{ major }}">
       {% for post in posts %}
       <div class="major-content-box">
-        <div class="major-post-pk">{{ forloop.counter }}</div>
+        <!-- <div class="major-post-pk">{{ forloop.counter }}</div> -->
+        <div class="major-post-pk">{{ post.pk }}</div>
+
         <div class="major-post-title">
           <a
             href="{% url 'community:post_detail' pk=post.pk %}"
@@ -103,46 +101,35 @@
     {% endfor %}
   </div>
   <!-- 추가: 전체 포스트에 대한 페이징 표시 -->
+  <div class="pagination-all">
     <span class="step-links">
       {% if all_major_posts_list.has_previous %}
       <a href="?page_all=1">&laquo; first</a>
-      <a href="?page_all={{ all_major_posts_list.previous_page_number }}"
-        >previous</a
-      >
+      <a href="?page_all={{ all_major_posts_list.previous_page_number }}">previous</a>
       {% endif %}
-      <span class="current">
-        페이지 {{ all_major_posts_list.number }} / {{
-        all_major_posts_list.paginator.num_pages }}.
-      </span>
+      <span class="current">전체 {{ all_major_posts_list.number }} / {{ all_major_posts_list.paginator.num_pages }}.</span>
       {% if all_major_posts_list.has_next %}
       <a href="?page_all={{ all_major_posts_list.next_page_number }}">next</a>
-      <a href="?page_all={{ all_major_posts_list.paginator.num_pages }}"
-        >last &raquo;</a
-      >
+      <a href="?page_all={{ all_major_posts_list.paginator.num_pages }}">last &raquo;</a>
       {% endif %}
     </span>
+  </div>
 
-    <!-- 추가: 각 전공별 포스트에 대한 페이징 표시 -->
-      {% for major, posts in major_posts.items %}
-      <div class="pagination">
-        <span class="step-links">
-          {% if posts.has_previous %}
-          <a href="?page_{{ major }}=1">&laquo; first</a>
-          <a href="?page_{{ major }}={{ posts.previous_page_number }}"
-            >previous</a
-          >
-          {% endif %}
-          <span class="current">
-            페이지 {{ posts.number }} / {{ posts.paginator.num_pages }}.
+  <!-- 추가: 각 전공별 페이징 표시 -->
+  {% for major, posts in major_posts.items %}
+      <div class="pagination-major hidden" id="pagination_{{ major }}">
+          <span class="step-links">
+              {% if posts.has_previous %}
+              <a href="?page_{{ major }}=1">&laquo; first</a>
+              <a href="?page_{{ major }}={{ posts.previous_page_number }}">previous</a>
+              {% endif %}
+              <span class="current">{{major}} {{ posts.number }} / {{ posts.paginator.num_pages }}.</span>
+              {% if posts.has_next %}
+              <a href="?page_{{ major }}={{ posts.next_page_number }}">next</a>
+              <a href="?page_{{ major }}={{ posts.paginator.num_pages }}">last &raquo;</a>
+              {% endif %}
           </span>
-          {% if posts.has_next %}
-          <a href="?page_{{ major }}={{ posts.next_page_number }}">next</a>
-          <a href="?page_{{ major }}={{ posts.paginator.num_pages }}"
-            >last &raquo;</a
-          >
-          {% endif %}
-        </span>
-    </div>
+      </div>
     {% endfor %}
   </div>
   
@@ -154,10 +141,11 @@
         // 페이지가 로드될 때 실행할 코드
         var majorButtons = document.querySelectorAll(".major-button");
 
-        // 기존에 선택된 메이저가 있는 경우, 해당 메이저에 대한 컨텐츠를 표시
+        // 기존에 선택된 메이저가 있는 경우, 해당 메이저에 대한 컨텐츠와 페이징을 표시
         var selectedMajor = sessionStorage.getItem("selectedMajor");
         if (selectedMajor) {
             showMajorPosts(selectedMajor);
+            showPaging(selectedMajor);
         } else {
             // 페이지가 로드될 때 "전체" 버튼을 클릭한 효과를 주는 코드
             var allButton = document.querySelector(".all");
@@ -177,6 +165,8 @@
                 // 선택한 메이저 정보를 세션 스토리지에 저장
                 var major = this.textContent.trim();
                 sessionStorage.setItem("selectedMajor", major);
+                showMajorPosts(major);
+                showPaging(major);
             });
         });
     });
@@ -191,11 +181,24 @@
         // 선택한 major에 해당하는 major-content 보이기
         var selectedContent = document.getElementById("content_" + major);
         selectedContent.classList.remove("hidden");
+    }
 
-        // 페이지가 로드될 때 "전체" 버튼을 클릭한 경우, 전체 컨텐츠도 보이기
+    function showPaging(major) {
+        // 페이징 버튼 숨기기
+        var allPaging = document.querySelectorAll(".pagination-all, .pagination-major");
+        for (var i = 0; i < allPaging.length; i++) {
+            allPaging[i].classList.add("hidden");
+        }
+
+        // 페이지가 로드될 때 "전체" 버튼을 클릭한 경우, 전체 페이징 보이기
         if (major === "전체") {
-            var allMajorContent = document.getElementById("all_major_content");
-            allMajorContent.classList.remove("hidden");
+            var allPaging = document.querySelector(".pagination-all");
+            allPaging.classList.remove("hidden");
+        } else {
+            // 선택한 major에 대한 페이징 보이기
+            var pagingId = "pagination_" + major;
+            var majorPaging = document.getElementById(pagingId);
+            majorPaging.classList.remove("hidden");
         }
     }
 
@@ -210,9 +213,20 @@
         var allMajorContent = document.getElementById("all_major_content");
         allMajorContent.classList.remove("hidden");
 
+        // 페이징 버튼 숨기기
+        var allPaging = document.querySelectorAll(".pagination-all, .pagination-major");
+        for (var i = 0; i < allPaging.length; i++) {
+            allPaging[i].classList.add("hidden");
+        }
+
+        // 전체 페이징 보이기
+        var allPaging = document.querySelector(".pagination-all");
+        allPaging.classList.remove("hidden");
+
         // 선택된 메이저 정보를 세션 스토리지에서 제거
         sessionStorage.removeItem("selectedMajor");
     }
+
   </script>
   {%endblock%}
 
