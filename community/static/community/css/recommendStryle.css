@@ -14,25 +14,25 @@ body {
 .wrapper,
 .major-wrapper,
 .major-content,
-.recommend_wrapper,
-.recommend_font {
+.recommend-wrapper,
+.recommend-font {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.recommend_wrapper {
+.recommend-wrapper {
   background-color: aquamarine;
   width: 1300px;
   height: 700px;
 }
 
-.recommend_font {
+.recommend-font {
   background-color: #bcadf8;
   width: auto;
   height: 170px;
 }
-.recommend_cardbox {
+.recommend-cardbox {
   background-color: rgb(105, 105, 147);
   width: 90%;
   height: 55%;
@@ -43,22 +43,22 @@ body {
 
 .recommend-card {
   background-color: gold;
-  width: 24%;
+  width: 700px;
   height: 95%;
 }
 
-.recommend_card_img {
+.recommend-card-img {
   background-color: antiquewhite;
   width: 100%;
   height: 50%;
 }
 
-.recommend_card_img img {
+.recommend-card-img img {
   width: 100%;
   height: 100%;
 }
 
-.recommend_card_title {
+.recommend-card-title {
   background-color: rgba(0, 100, 0, 0.479);
   width: 100%;
   height: 50%;
@@ -67,7 +67,7 @@ body {
 .major-wrapper {
   width: 1000px;
   height: auto;
-  background-color: aquamarine;
+  background-color: rgb(229, 255, 127);
   padding: 80px;
 }
 
