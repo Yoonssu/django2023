@@ -191,6 +191,12 @@
         // 선택한 major에 해당하는 major-content 보이기
         var selectedContent = document.getElementById("content_" + major);
         selectedContent.classList.remove("hidden");
+
+        // 페이지가 로드될 때 "전체" 버튼을 클릭한 경우, 전체 컨텐츠도 보이기
+        if (major === "전체") {
+            var allMajorContent = document.getElementById("all_major_content");
+            allMajorContent.classList.remove("hidden");
+        }
     }
 
     function showAll() {
@@ -203,6 +209,9 @@
         // all_major_posts_list에 있는 포스트들 보이기
         var allMajorContent = document.getElementById("all_major_content");
         allMajorContent.classList.remove("hidden");
+
+        // 선택된 메이저 정보를 세션 스토리지에서 제거
+        sessionStorage.removeItem("selectedMajor");
     }
   </script>
   {%endblock%}
