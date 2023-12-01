@@ -4,34 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30decc91-a8a0-4a03-aae0-3058ad694085" name="Changes" comment="post_list.html 커밋">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29__3_57__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29__3_57__Changes_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29__7_21__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29__9_24__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오전_3_57_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오전_3_57_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오후_7_21_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오후_7_21_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오후_9_24_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-30__1_30__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-30__1_33__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-30__1_34__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-30_오후_1_30_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-30_오후_1_30_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-30_오후_1_33_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-30_오후_1_34_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/community/static/community/css/teamlist.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/community/templates/community/team_post_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/keyword_model.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ds_DjangoTeam01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ds_DjangoTeam01.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="07d4bab7-a029-4ed8-98c5-28cc7fd79757" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/community/static/community/css/community.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community/static/community/dukse/덕새.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_pages/templates/single_pages/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/community/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/community/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community/static/community/css/recommendStryle.css" beforeDir="false" afterPath="$PROJECT_DIR$/community/static/community/css/recommendStryle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community/templates/community/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/community/templates/community/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community/templates/community/post_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/community/templates/community/post_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/templates/community/team_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/community/templates/community/team_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/templates/community/team_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/community/templates/community/team_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community/templates/community/recommend_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/community/templates/community/recommend_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/community/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/community/views.py" afterDir="false" />
     </list>
@@ -88,23 +71,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "Merging dev",
-    "last_opened_file_path": "C:/github/ds_DjangoTeam01",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "vertica"
-    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -141,7 +111,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="30decc91-a8a0-4a03-aae0-3058ad694085" name="Changes" comment="" />
+      <changelist id="07d4bab7-a029-4ed8-98c5-28cc7fd79757" name="Changes" comment="" />
       <created>1701047791153</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -173,6 +143,8 @@
       <workItem from="1701318948693" duration="1075000" />
       <workItem from="1701320574559" duration="31000" />
       <workItem from="1701372422028" duration="8273000" />
+      <workItem from="1701415757895" duration="12265000" />
+      <workItem from="1701430049217" duration="121000" />
     </task>
     <task id="LOCAL-00001" summary="post_list.html 커밋">
       <option name="closed" value="true" />
