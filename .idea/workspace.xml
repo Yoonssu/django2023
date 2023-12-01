@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30decc91-a8a0-4a03-aae0-3058ad694085" name="Changes" comment="post_list.html 커밋">
+      <change afterPath="$PROJECT_DIR$/community/static/community/css/community.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community/static/community/dukse/덕새.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_pages/templates/single_pages/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/community/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/community/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community/static/community/css/recommendStryle.css" beforeDir="false" afterPath="$PROJECT_DIR$/community/static/community/css/recommendStryle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community/templates/community/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/community/templates/community/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community/templates/community/post_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/community/templates/community/post_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community/templates/community/recommend_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/community/templates/community/recommend_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/community/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/community/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +74,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "team__detail",
+    "git-widget-placeholder": "Merging team__detail",
     "last_opened_file_path": "C:/github/ds_DjangoTeam01",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -148,7 +155,7 @@
       <workItem from="1701318948693" duration="1075000" />
       <workItem from="1701320574559" duration="31000" />
       <workItem from="1701372422028" duration="8273000" />
-      <workItem from="1701415757895" duration="11161000" />
+      <workItem from="1701415757895" duration="12265000" />
     </task>
     <task id="LOCAL-00001" summary="post_list.html 커밋">
       <option name="closed" value="true" />
