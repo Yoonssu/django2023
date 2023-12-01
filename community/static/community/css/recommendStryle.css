@@ -2,32 +2,90 @@ body {
   font-family: Arial, sans-serif;
 }
 
-#major-lists {
+.wrapper,
+.major-wrapper,
+.major-content {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.major-wrapper {
+  width: 1000px;
+  height: auto;
+  /* background-color: aquamarine; */
+}
+
+.major-title {
+  /* background-color: bisque; */
+}
+
+.major-nav,
+.major-content {
+  width: 90%;
+}
+.major-nav {
+  display: flex;
+  /* background-color: hotpink; */
+  height: 70px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.major-nav button {
+  width: 150px;
+  height: 35px;
+  border: 0px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 25px;
+  font-size: 17px;
+}
+
+.major-nav button:hover {
+  background-color: #f0f0f0; /* 마우스를 올렸을 때의 배경색 설정 */
+  color: #333; /* 마우스를 올렸을 때의 글자색 설정 */
+  cursor: pointer; /* 마우스 포인터를 손가락 형태로 변경 */
+}
+
+.major-content {
+  /* background-color: gold; */
+  flex-direction: column;
   justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
-  cursor: pointer;
-  text-decoration: none; /* 밑줄 제거 */
-  background-color: aquamarine;
 }
 
-#major-lists li {
-  cursor: pointer;
-  padding: 10px;
-  color: #a0a0a0;
-  margin: 0 5px;
-  text-decoration: none; /* 밑줄 없애기 */
-  display: inline-block; /* 리스트를 가로로 나열하기 */
-  background-color: rgb(244, 230, 213);
+.major-content-nav,
+.major-content-box {
+  display: flex;
+  flex-direction: row;
+  /* background-color: aqua; */
 }
 
-#major-content {
-  margin-top: 20px;
-  text-align: center;
+.major-content-nav {
+  background-color: #5a32fb;
+  color: white;
 }
 
-/* h1 {
-  text-align: center;
-} */
+.major-post-pk,
+.major-post-title,
+.major-post-date {
+  border-top: 1px solid black;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.major-post-pk,
+.major-post-date {
+  width: 100px;
+  justify-content: center;
+}
+
+.major-post-title {
+  /* background-color: rgb(234, 250, 114); */
+  width: 700px;
+  height: 50px;
+}
+
+.hidden {
+  display: none;
+}

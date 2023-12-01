@@ -20,7 +20,7 @@ class Major(models.Model):
     id = models.BigAutoField(primary_key=True)
     majorname = models.CharField(max_length=255)
     def __str__(self):
-        return f'[{self.pk}]{self.majorname}'
+        return f'{self.majorname}'
 
 class Post(models.Model):
     id = models.BigAutoField(primary_key=True)
