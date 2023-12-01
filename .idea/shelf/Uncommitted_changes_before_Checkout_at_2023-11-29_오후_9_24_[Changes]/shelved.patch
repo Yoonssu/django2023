@@ -1,0 +1,330 @@
+Index: community/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.shortcuts import render, redirect, get_object_or_404\r\nfrom django.views.generic import ListView, DetailView, TemplateView, CreateView, DeleteView\r\nfrom django.contrib.auth.mixins import LoginRequiredMixin\r\nfrom .models import Post, User, Team, Major, Keyword \r\nfrom django.db.models import Count\r\nfrom .forms import UserForm\r\nfrom django.contrib.auth import authenticate,login\r\nfrom django.http import JsonResponse\r\nfrom django.db.models import Q \r\nfrom functools import reduce\r\nimport operator \r\n\r\n# Create your views here.\r\n\r\nclass PostList(ListView):\r\n    model = Post\r\n    ordering = '-pk'\r\n\r\n    def get_context_data(self, **kwargs):\r\n        context = super(PostList, self).get_context_data()\r\n        return context\r\n    \r\nclass PostDetail(DetailView):\r\n    model = Post\r\n\r\n    def get_context_data(self, **kwargs):\r\n        context = super(PostDetail, self).get_context_data()\r\n        return context\r\n    \r\n\r\nclass UserDetail(LoginRequiredMixin, DetailView):\r\n    model = User\r\n    template_name = 'community/user_detail.html'\r\n\r\n    def get_context_data(self, **kwargs):\r\n        context = super(UserDetail, self).get_context_data(**kwargs)\r\n        \r\n        # 현재 로그인된 사용자의 정보 가져오기\r\n        current_user = self.request.user\r\n\r\n        # 예시: 로그인된 사용자의 관심전공 목록\r\n        context['current_user_majors'] = current_user.major.all()\r\n\r\n        # 예시: 로그인된 사용자의 맞춤 키워드 목록\r\n        context['current_user_keywords'] = current_user.keyword.all()\r\n\r\n        # 예시: 로그인된 사용자가 스크랩한 활동 목록\r\n        context['current_user_scraps'] = current_user.scrap_set.all()\r\n\r\n        return context\r\n\r\nclass TeamList(ListView):\r\n    model = Team\r\n    ordering = '-pk'\r\n\r\n    def get_context_data(self, **kwargs):\r\n        context = super(TeamList, self).get_context_data()\r\n        return context\r\n    \r\nclass TeamDetail(DetailView):\r\n    model = Team\r\n    \r\n    def get_context_data(self, **kwargs):\r\n        context = super(TeamDetail, self).get_context_data()\r\n        return context\r\n\r\ndef signup(request):\r\n    if request.method == 'POST':\r\n        form = UserForm(request.POST)\r\n        if form.is_valid():\r\n            form.save()  # 이 부분에서 모델이 저장됩니다.\r\n            username = form.cleaned_data.get('username')\r\n            raw_password = form.cleaned_data.get('password1')\r\n            user = authenticate(username=username, password=raw_password)\r\n            login(request, user) #로그인 아직 구현 안했는데..\r\n            # 회원가입 후 'landing' 페이지로 리다이렉션\r\n            return redirect('/')\r\n    else:\r\n        form = UserForm()\r\n    return render(request, 'community/signup.html', {'form': form})\r\n\r\ndef modKeyWord(request, pk):\r\n    return render(\r\n        request,\r\n        'user/modKeyword.html',\r\n    )\r\n\r\ndef get_keywords(request):\r\n    category = request.GET.get('category')\r\n\r\n    if category == '1':\r\n        category_keywords = Keyword.objects.filter(category='활동 분야')\r\n    elif category == '2':\r\n        category_keywords = Keyword.objects.filter(category='언론/미디어')\r\n    elif category == '3':\r\n        category_keywords = Keyword.objects.filter(category='디자인/사진/예술/영상')\r\n    elif category == '4':\r\n        category_keywords = Keyword.objects.filter(category='경제/금융')\r\n    elif category == '5':\r\n        category_keywords = Keyword.objects.filter(category='경영/컨설팅')\r\n    elif category == '6':\r\n        category_keywords = Keyword.objects.filter(category='과학/공학/기술/IT')\r\n\r\n    keyword_data = {'keywords': list(category_keywords.values())}\r\n    return JsonResponse(keyword_data)\r\n\r\n# def get_keywords(request):\r\n\r\n#     if category == '1':\r\n#         category_keywords = Keyword.objects.filter(category='활동 분야')\r\n#     elif category == '2':\r\n#         category_keywords = Keyword.objects.filter(category='언론/미디어')\r\n#     elif category == '3':\r\n#         category_keywords = Keyword.objects.filter(category='디자인/사진/예술/영상')\r\n#     elif category == '4':\r\n#         category_keywords = Keyword.objects.filter(category='경제/금융')\r\n#     elif category == '5':\r\n#         category_keywords = Keyword.objects.filter(category='경영/컨설팅')\r\n#     elif category == '6':\r\n#         category_keywords = Keyword.objects.filter(category='과학/공학/기술/IT')\r\n\r\n#     data = {'keywords': list(category_keywords.values())}\r\n#     return JsonResponse(data)\r\n    \r\n\r\ndef modMajor(request, pk):\r\n    return render(\r\n        request,\r\n        'user/modMajor.html',\r\n    )\r\n    \r\nclass Recommend(LoginRequiredMixin, ListView):\r\n    model = User\r\n    template_name = 'community/recommend_list.html'\r\n\r\n    def get_context_data(self, **kwargs):\r\n        context = super(Recommend, self).get_context_data(**kwargs)\r\n\r\n        # 현재 로그인된 사용자의 정보 가져오기\r\n        current_user = self.request.user\r\n\r\n        # 사용자가 선택한 키워드에 맞는 게시글 3개 가져오기\r\n        selected_keywords = current_user.keyword.all()\r\n\r\n        # 여러 키워드에 대해 OR 연산을 수행하여 하나 이상의 키워드가 제목 또는 내용에 포함된 게시물을 찾습니다.\r\n        # recommended_posts = Post.objects.filter(\r\n        #     reduce(\r\n        #         operator.or_,\r\n        #         (Q(title__icontains=keyword.keywordname) | Q(content__icontains=keyword.keywordname) for keyword in selected_keywords)\r\n        #     )\r\n        # ).order_by('-time')\r\n\r\n        # 각각 3개씩 나오게는 성공\r\n        test_posts_dic = {}\r\n        for keyword in selected_keywords:\r\n            test_posts = Post.objects.filter(Q(title__icontains=keyword.keywordname) | Q(content__icontains=keyword.keywordname)).order_by('-time')[:3]\r\n            test_posts_dic[keyword] = test_posts\r\n\r\n        # 사용자가 선택한 전공에 맞는 게시물들 가져오기\r\n        selected_majors = current_user.major.all()\r\n        major_posts = {}\r\n        for major in selected_majors:\r\n            posts = Post.objects.filter(major=major)\r\n            major_posts[major] = posts\r\n\r\n        major_list = list(major_posts.keys())\r\n\r\n        context.update({\r\n            'user': current_user,\r\n            # 'recommended_posts': recommended_posts,\r\n            'major_posts': major_posts,\r\n            'major_list': major_list,\r\n            'selected_keywords': selected_keywords,\r\n            'test_posts_dic': test_posts_dic,\r\n        })\r\n\r\n        return context\r\n    \r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/community/views.py b/community/views.py
+--- a/community/views.py	(revision 7d67263d7c71655163707d67c2c7b8df71520102)
++++ b/community/views.py	(date 1701260635346)
+@@ -3,7 +3,7 @@
+ from django.contrib.auth.mixins import LoginRequiredMixin
+ from .models import Post, User, Team, Major, Keyword 
+ from django.db.models import Count
+-from .forms import UserForm
++from .forms import UserForm, CommentForm
+ from django.contrib.auth import authenticate,login
+ from django.http import JsonResponse
+ from django.db.models import Q 
+Index: community/forms.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django import forms\r\nfrom django.contrib.auth.forms import UserCreationForm\r\nfrom community.models import User  # community 앱의 User 모델을 import\r\n\r\nclass UserForm(UserCreationForm):\r\n    email = forms.EmailField(label=\"이메일\")\r\n\r\n    class Meta:\r\n        model = User\r\n        fields = (\"username\", \"password1\", \"password2\", \"email\")\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/community/forms.py b/community/forms.py
+--- a/community/forms.py	(revision 7d67263d7c71655163707d67c2c7b8df71520102)
++++ b/community/forms.py	(date 1701260635341)
+@@ -1,6 +1,6 @@
+ from django import forms
+ from django.contrib.auth.forms import UserCreationForm
+-from community.models import User  # community 앱의 User 모델을 import
++from community.models import User, Comment  # community 앱의 User 모델을 import + Comment 모델도
+ 
+ class UserForm(UserCreationForm):
+     email = forms.EmailField(label="이메일")
+@@ -8,3 +8,14 @@
+     class Meta:
+         model = User
+         fields = ("username", "password1", "password2", "email")
++
++
++
++class CommentForm(forms.ModelForm):
++    class Meta:
++        model = Comment
++        filelds = ('content' ,)
++
++
++
++
+Index: community/urls.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.urls import path\r\nfrom . import views\r\nfrom django.contrib.auth import views as auth_views\r\nfrom .views import signup\r\n\r\napp_name = 'community'\r\n\r\n\r\nurlpatterns = [\r\n    path('', views.PostList.as_view()),\r\n    path('<int:pk>/', views.PostDetail.as_view()),\r\n    path('mypage/<int:pk>/', views.UserDetail.as_view(), name='user_detail'),\r\n    path('mypage/<int:pk>/modKeyword/', views.modKeyWord, name='modKeyword'),\r\n    path('mypage/modKeyword/keywords/', views.get_keywords, name='get_keywords'),\r\n    path('mypage/<int:pk>/modMajor/', views.modMajor, name='modMajor'),\r\n    path('team/', views.TeamList.as_view()),\r\n    path('team/<int:pk>/', views.TeamDetail.as_view(), name='team_detail'),\r\n    path('signup/', views.signup, name='signup'),\r\n    path('login/', auth_views.LoginView.as_view(template_name='community/login.html'), name='login'),\r\n    path('logout/', auth_views.LogoutView.as_view(), name='logout'),\r\n    path('recommend/<int:pk>/', views.Recommend.as_view(), name='recommend'),\r\n]\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/community/urls.py b/community/urls.py
+--- a/community/urls.py	(revision 7d67263d7c71655163707d67c2c7b8df71520102)
++++ b/community/urls.py	(date 1701259986420)
+@@ -19,5 +19,4 @@
+     path('login/', auth_views.LoginView.as_view(template_name='community/login.html'), name='login'),
+     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+     path('recommend/<int:pk>/', views.Recommend.as_view(), name='recommend'),
+-]
+-
++]
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+new file mode 100644
+--- /dev/null	(date 1701260246017)
++++ b/.idea/workspace.xml	(date 1701260246017)
+@@ -0,0 +1,104 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="30decc91-a8a0-4a03-aae0-3058ad694085" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/.idea/ds_DjangoTeam01.iml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29__7_21__Changes_.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오후_7_21_[Changes]/shelved.patch" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오후_7_21_[Changes]1/shelved.patch" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/community/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/community/urls.py" afterDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Python Script" />
++      </list>
++    </option>
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="dev" />
++      </map>
++    </option>
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 5
++}</component>
++  <component name="ProjectId" id="2YqWsoZPzYVKvVBRsRfkgvTiARc" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "git-widget-placeholder": "team__list",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "vue.rearranger.settings.migration": "true"
++  }
++}]]></component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="30decc91-a8a0-4a03-aae0-3058ad694085" name="Changes" comment="" />
++      <created>1701253798951</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1701253798951</updated>
++      <workItem from="1701253799976" duration="4720000" />
++      <workItem from="1701259299865" duration="187000" />
++      <workItem from="1701259496725" duration="118000" />
++      <workItem from="1701259681291" duration="212000" />
++      <workItem from="1701259906050" duration="338000" />
++    </task>
++    <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="team_detail" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++  <component name="com.intellij.coverage.CoverageDataManagerImpl">
++    <SUITE FILE_PATH="coverage/ds_DjangoTeam01$forms.coverage" NAME="forms Coverage Results" MODIFIED="1701258387429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/community" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29__7_21__Changes_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29__7_21__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29__7_21__Changes_.xml
+new file mode 100644
+--- /dev/null	(date 1701259931243)
++++ b/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29__7_21__Changes_.xml	(date 1701259931243)
+@@ -0,0 +1,4 @@
++<changelist name="Uncommitted_changes_before_Checkout_at_2023-11-29_오후_7_21_[Changes]" date="1701253265269" recycled="false" toDelete="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오후_7_21_[Changes]/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 2023-11-29 오후 7:21 [Changes]" />
++</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오후_7_21_[Changes]/shelved.patch
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오후_7_21_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오후_7_21_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	(date 1701253277700)
++++ b/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오후_7_21_[Changes]/shelved.patch	(date 1701253277700)
+@@ -0,0 +1,40 @@
++Index: .idea/workspace.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"30decc91-a8a0-4a03-aae0-3058ad694085\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/dbnavigator.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/ds_DjangoTeam01.iml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29__3_57__Changes_.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29__3_57__Changes_1.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오전_3_57_[Changes]/shelved.patch\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오전_3_57_[Changes]1/shelved.patch\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/community/templates/community/team_detail.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/community/templates/community/team_detail.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/community/views.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/community/views.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n        <option value=\"CSS File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <favorite-branches>\r\n      <branch-storage>\r\n        <map>\r\n          <entry type=\"LOCAL\">\r\n            <value>\r\n              <list>\r\n                <branch-info repo=\"$PROJECT_DIR$\" source=\"develop\" />\r\n                <branch-info repo=\"$PROJECT_DIR$\" source=\"team_list\" />\r\n              </list>\r\n            </value>\r\n          </entry>\r\n          <entry type=\"REMOTE\">\r\n            <value>\r\n              <list>\r\n                <branch-info repo=\"$PROJECT_DIR$\" source=\"origin/develop\" />\r\n              </list>\r\n            </value>\r\n          </entry>\r\n        </map>\r\n      </branch-storage>\r\n    </favorite-branches>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 3\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2YjnKJ5G6ZgUt7omGK3reJMvW1q\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;team__detail&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/github/ds_DjangoTeam01&quot;,\r\n    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  },\r\n  &quot;keyToStringList&quot;: {\r\n    &quot;DatabaseDriversLRU&quot;: [\r\n      &quot;vertica&quot;\r\n    ]\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\github\\ds_DjangoTeam01\\community\\static\\recommend\\css\" />\r\n      <recent name=\"C:\\github\\ds_DjangoTeam01\\community\\static\\recommend\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"ds_DjangoTeam01\" type=\"Python.DjangoServer\" factoryName=\"Django server\">\r\n      <module name=\"ds_DjangoTeam01\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"launchJavascriptDebuger\" value=\"false\" />\r\n      <option name=\"port\" value=\"8000\" />\r\n      <option name=\"host\" value=\"\" />\r\n      <option name=\"additionalOptions\" value=\"\" />\r\n      <option name=\"browserUrl\" value=\"\" />\r\n      <option name=\"runTestServer\" value=\"false\" />\r\n      <option name=\"runNoReload\" value=\"false\" />\r\n      <option name=\"useCustomRunCommand\" value=\"false\" />\r\n      <option name=\"customRunCommand\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"30decc91-a8a0-4a03-aae0-3058ad694085\" name=\"Changes\" comment=\"\" />\r\n      <created>1701047791153</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1701047791153</updated>\r\n      <workItem from=\"1701047792547\" duration=\"4778000\" />\r\n      <workItem from=\"1701052815302\" duration=\"608000\" />\r\n      <workItem from=\"1701064152782\" duration=\"25000\" />\r\n      <workItem from=\"1701064192392\" duration=\"250000\" />\r\n      <workItem from=\"1701069941191\" duration=\"897000\" />\r\n      <workItem from=\"1701071073763\" duration=\"455000\" />\r\n      <workItem from=\"1701071538993\" duration=\"151000\" />\r\n      <workItem from=\"1701071698438\" duration=\"1101000\" />\r\n      <workItem from=\"1701074659668\" duration=\"663000\" />\r\n      <workItem from=\"1701083302452\" duration=\"14475000\" />\r\n      <workItem from=\"1701152948213\" duration=\"660000\" />\r\n      <workItem from=\"1701197636933\" duration=\"245000\" />\r\n      <workItem from=\"1701197893758\" duration=\"141000\" />\r\n      <workItem from=\"1701198045788\" duration=\"4221000\" />\r\n      <workItem from=\"1701202341244\" duration=\"1812000\" />\r\n      <workItem from=\"1701204432450\" duration=\"1877000\" />\r\n      <workItem from=\"1701232640489\" duration=\"1549000\" />\r\n      <workItem from=\"1701235520049\" duration=\"1157000\" />\r\n      <workItem from=\"1701237451513\" duration=\"786000\" />\r\n      <workItem from=\"1701242415431\" duration=\"859000\" />\r\n      <workItem from=\"1701252217421\" duration=\"632000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"CUSTOM_BOOLEAN_PROPERTIES\">\r\n                <map>\r\n                  <entry key=\"Show.Git.Branches\" value=\"true\" />\r\n                </map>\r\n              </option>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/team_detail\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
++===================================================================
++diff --git a/.idea/workspace.xml b/.idea/workspace.xml
++--- a/.idea/workspace.xml	
+++++ b/.idea/workspace.xml	
++@@ -4,21 +4,7 @@
++     <option name="autoReloadType" value="SELECTIVE" />
++   </component>
++   <component name="ChangeListManager">
++-    <list default="true" id="30decc91-a8a0-4a03-aae0-3058ad694085" name="Changes" comment="">
++-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
++-      <change afterPath="$PROJECT_DIR$/.idea/ds_DjangoTeam01.iml" afterDir="false" />
++-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
++-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
++-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29__3_57__Changes_.xml" afterDir="false" />
++-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29__3_57__Changes_1.xml" afterDir="false" />
++-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오전_3_57_[Changes]/shelved.patch" afterDir="false" />
++-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오전_3_57_[Changes]1/shelved.patch" afterDir="false" />
++-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
++-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/community/templates/community/team_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/community/templates/community/team_detail.html" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/community/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/community/views.py" afterDir="false" />
++-    </list>
+++    <list default="true" id="30decc91-a8a0-4a03-aae0-3058ad694085" name="Changes" comment="" />
++     <option name="SHOW_DIALOG" value="false" />
++     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++@@ -148,7 +134,7 @@
++       <workItem from="1701235520049" duration="1157000" />
++       <workItem from="1701237451513" duration="786000" />
++       <workItem from="1701242415431" duration="859000" />
++-      <workItem from="1701252217421" duration="632000" />
+++      <workItem from="1701252217421" duration="1004000" />
++     </task>
++     <servers />
++   </component>
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1701258767404)
++++ b/.idea/vcs.xml	(date 1701258767404)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1701258767392)
++++ b/.idea/misc.xml	(date 1701258767392)
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Black">
++    <option name="sdkName" value="Python 3.10 (ds_DjangoTeam01)" />
++  </component>
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (ds_DjangoTeam01)" project-jdk-type="Python SDK" />
++</project>
+\ No newline at end of file
+Index: .idea/ds_DjangoTeam01.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/ds_DjangoTeam01.iml b/.idea/ds_DjangoTeam01.iml
+new file mode 100644
+--- /dev/null	(date 1701258767378)
++++ b/.idea/ds_DjangoTeam01.iml	(date 1701258767378)
+@@ -0,0 +1,15 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module version="4">
++  <component name="PyDocumentationSettings">
++    <option name="format" value="PLAIN" />
++    <option name="myDocStringFormat" value="Plain" />
++  </component>
++  <component name="TemplatesService">
++    <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
++    <option name="TEMPLATE_FOLDERS">
++      <list>
++        <option value="$MODULE_DIR$/community/templates" />
++      </list>
++    </option>
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/inspectionProfiles/profiles_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml
+new file mode 100644
+--- /dev/null	(date 1701253789134)
++++ b/.idea/inspectionProfiles/profiles_settings.xml	(date 1701253789134)
+@@ -0,0 +1,6 @@
++<component name="InspectionProjectProfileManager">
++  <settings>
++    <option name="USE_PROJECT_PROFILE" value="false" />
++    <version value="1.0" />
++  </settings>
++</component>
+\ No newline at end of file
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오후_7_21_[Changes]1/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-29_오후_7_21_[Changes]1/shelved.patch
+new file mode 100644

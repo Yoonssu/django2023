@@ -50,6 +50,12 @@ class Team(models.Model):
     def __str__(self):
         return f'[{self.pk}]{self.title} :: {self.user}'
 
+    def get_absolute_url(self):
+        if self:
+            return f'/team/{self.pk}/'
+        return '/default_url/'
+
+
 class Comment(models.Model):
     id = models.BigAutoField(primary_key=True)
     user = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
@@ -57,6 +63,18 @@ class Comment(models.Model):
     content = models.TextField()
     time = models.DateTimeField(auto_now_add = True)
     issecret = models.BooleanField()
-    def __str__(self):
-        return f'Comment [{self.pk}] on "{self.team.post.title}" by {self.user.username}'
 
+    def __str__(self):
+        if self.user and hasattr(self.user, 'username'):
+            return f'Comment [{self.pk}] on "{self.team.post.title}" by {self.user.username}'
+        elif self.user:
+            return f'Comment [{self.pk}] on "{self.team.post.title}" by Anonymous User'
+        else:
+            return f'Comment [{self.pk}] on "{self.team.post.title}" by Unknown User'
+
+    def get_absolute_url(self):
+        if self.team:
+            return f'{self.team.get_absolute_url()}#comment-{self.pk}'
+        # 팀이 없는 경우에 대한 처리를 추가할 수 있음
+        # 예를 들어, 어떤 디폴트 URL로 리디렉션하거나 특정 에러 메시지를 반환할 수 있음
+        return '/default_url/'

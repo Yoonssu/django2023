@@ -5,7 +5,11 @@
     <option name="myDocStringFormat" value="Plain" />
   </component>
   <component name="TemplatesService">
+<<<<<<< HEAD
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
+=======
+    <option name="TEMPLATE_CONFIGURATION" value="Django" />
+>>>>>>> team_detail
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/community/templates" />

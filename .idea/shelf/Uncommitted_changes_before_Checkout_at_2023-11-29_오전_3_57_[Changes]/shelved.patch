@@ -1,0 +1,318 @@
+Index: community/templates/community/recommend.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!-- url 예시 http://127.0.0.1:8000/community/recommend/user.pk -->\r\n{% load static %}\r\n{% extends 'community/base.html' %}\r\n{% block main_area %}\r\n\r\n    <!-- recommend_page.html -->\r\n    <!DOCTYPE html>\r\n    <html lang=\"ko\">\r\n    <head>\r\n        <title>Recommend Page</title>\r\n        <!-- Bootstrap icons-->\r\n        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css\" rel=\"stylesheet\"/>\r\n        <!-- Core theme CSS (includes Bootstrap)-->\r\n        <link href=\"{% static 'recommend/css/styles.css' %}\" rel=\"stylesheet\"/>\r\n        <link href=\"{% static 'recommend/css/recommendcss.css' %}\" rel=\"stylesheet\"/>\r\n    </head>\r\n    <body>\r\n\r\n    <nav>\r\n        {% include 'community/navbar.html' %}\r\n    </nav>\r\n\r\n    <header style=\"margin-top: 70px;\">\r\n        <h1 class=\"font-bold mb-4\">맞춤 추천</h1>\r\n        <p class=\"w-[1128px] h-16 text-xl text-center mb-8\">\r\n            자신이 등록한 키워드와 가장 잘 맞는 활동들을 우선으로 추천합니다\r\n        </p>\r\n    </header>\r\n\r\n    <!-- 추천 활동 부분 -->\r\n    <section class=\"py-5\">\r\n        <div class=\"container px-4 px-lg-4 mt-3\">\r\n            <div class=\"row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center\"\r\n                 id=\"activity-container\">\r\n                {% for activity in activities %}\r\n                    <!-- Dynamic content will be added here -->\r\n                    <div class=\"col mb-5\">\r\n                        <div class=\"card h-100\">\r\n                            <img class=\"card-img-top\" src=\"{{ activity.image_url }}\" alt=\"...\">\r\n                            <div class=\"card-body p-4\">\r\n                                <div class=\"text-center\">\r\n                                    <h5 class=\"fw-bolder\">{{ activity.title }}</h5>\r\n                                    <div class=\"keywords-container\">\r\n                                        {% for keyword in activity.keywords.split(\",\") %}\r\n                                            <div class=\"badge bg-dark text-white\">{{ keyword }}</div>\r\n                                        {% endfor %}\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"card-footer p-4 pt-0 border-top-0 bg-transparent\">\r\n                                <div class=\"text-center\"></div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                {% endfor %}\r\n            </div>\r\n        </div>\r\n    </section>\r\n\r\n    <h1> 전공 게시판 모음</h1>\r\n    <div id=\"major-content\">\r\n        <ul id=\"major-list\">\r\n            {% for m in majors %}\r\n                <li {% if major.id == m.id %}class=\"active-major\"{% endif %}>{{ m.name }}</li>\r\n            {% endfor %}\r\n        </ul>\r\n\r\n        <div id=\"notice-container\">\r\n            {% for notice in notices %}\r\n                <!-- 공지사항 표시 부분 -->\r\n                <p>{{ notice.title }} - {{ notice.date }}</p>\r\n            {% endfor %}\r\n        </div>\r\n\r\n        <div id=\"pagination-container\">\r\n            {% if total_pages > 1 %}\r\n                {% for page_num in 1..total_pages %}\r\n                    <button>{{ page_num }}</button>\r\n                {% endfor %}\r\n            {% endif %}\r\n        </div>\r\n    </div>\r\n\r\n\r\n    <!-- 자바스크립트 -->\r\n    <script src=\"https://code.jquery.com/jquery-3.6.4.min.js\"></script>\r\n    <script>\r\n\r\n        // 추천 활동 자바스크립트\r\n        // 가상의 추천 활동 데이터\r\n        var activities = [];\r\n\r\n        // 페이지 로딩 시 호출\r\n        updateActivities();\r\n\r\n        function updateActivities() {\r\n            var activityContainer = $('#activity-container');\r\n            activityContainer.empty();\r\n\r\n            // 추천 활동 데이터를 가져오는 함수\r\n            // function getActivitiesData() {\r\n            //   // 실제 데이터를 가져오는 로직을 추가\r\n            // }\r\n\r\n            // html 구조를 보기 위한 가상의 추천 활동 데이터 (실제로는 아래 코드 지우고 데이터베이스에서 가져와서 사용)\r\n            activities = [\r\n                {\r\n                    title: 'Fancy Product',\r\n                    imageUrl: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg',\r\n                    keywords: ['Keyword1', 'Keyword2'],\r\n                    url: 'https://www.duksung.ac.kr/main.do?isMaster=N&isLogined=N&viewPrefix=%2FWEB-INF%2Fjsp%2Fcms&urlRootPath=&siteResourcePath=%2Fsite%2Fduksung'\r\n                },\r\n                {\r\n                    title: 'Special Item',\r\n                    imageUrl: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg',\r\n                    keywords: ['Keyword3', 'keyword4'],\r\n                    url: '#'\r\n                },\r\n                {\r\n                    title: 'Popular Item',\r\n                    imageUrl: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg',\r\n                    keywords: ['Keyword5', 'Keyword6'],\r\n                    url: '#'\r\n                },\r\n                {\r\n                    title: 'Popular Item',\r\n                    imageUrl: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg',\r\n                    keywords: ['Keyword7', 'Keyword8'],\r\n                    url: '#'\r\n                },\r\n            ];\r\n\r\n            var maxActivitiesToShow = 3; //추천활동 최대 3개까지 보여짐\r\n            activities.slice(0, maxActivitiesToShow).forEach(function (activity) {\r\n                var card = $('<div>').addClass('col mb-5')\r\n                    .append($('<div>').addClass('card h-100')\r\n                        .append($('<img>').addClass('card-img-top').attr('src', activity.imageUrl).attr('alt', '...'))\r\n                        .append($('<div>').addClass('card-body p-4')\r\n                            .append($('<div>').addClass('text-center')\r\n                                .append($('<h5>').addClass('fw-bolder').text(activity.title))\r\n                                .append($('<div>').addClass('keywords-container').append(getKeywordBadges(activity.keywords)))\r\n                            )\r\n                        )\r\n                        .append($('<div>').addClass('card-footer p-4 pt-0 border-top-0 bg-transparent')\r\n                            .append($('<div>').addClass('text-center')\r\n                            )\r\n                        )\r\n                    );\r\n\r\n                // 클릭 이벤트 추가 : 클릭하면 대외활동 페이지로 이동함\r\n                card.click(function () {\r\n                    window.location.href = activity.url;\r\n                });\r\n\r\n                activityContainer.append(card);\r\n            });\r\n        }\r\n\r\n        function getKeywordBadges(keywords) { //키워드배지\r\n            var badges = keywords.map(function (keyword) {\r\n                return $('<div>').addClass('badge bg-dark text-white').text(keyword);\r\n            });\r\n\r\n            return badges;\r\n        }\r\n\r\n\r\n        // 전공 게시판 자바스크립트\r\n        // 초기 페이지 로딩 시 호출\r\n        updateMajorList();\r\n\r\n        function updateMajorList() {\r\n            var majorList = $('#major-list');\r\n            majorList.empty();\r\n\r\n            // 가상의 전공 데이터 실제로는 데이터베이스에서 가져와야 함\r\n            var majors = ['management', 'computer', 'math'];\r\n\r\n            var total_majors = ['total', ...majors]; //전체 전공 리스트 = [total(모두 모아보기) + majors(사용자가 선택한 전공 리스트)]\r\n\r\n            total_majors.forEach(function (major) {\r\n                var listItem = $('<li>').text(major);\r\n                majorList.append(listItem);\r\n                listItem.click(function () {\r\n                    showNotice(major);\r\n                    // 선택된 전공 리스트 항목에 'active-major' 클래스 추가 (선택한 전공 굵은 글씨로 표시)\r\n                    $('#major-list li').removeClass('active-major');\r\n                    listItem.addClass('active-major');\r\n                });\r\n\r\n                // 페이지 로딩 시 'total'을 선택한 것처럼 스타일 적용\r\n                if (major === 'total') {\r\n                    listItem.addClass('active-major');\r\n                }\r\n            });\r\n\r\n            // 페이지 로딩 시 'total'을 선택한 것처럼 표시\r\n            showNotice('total');\r\n        }\r\n\r\n        function showNotice(major) {\r\n            // 모든 공지사항 숨기기\r\n            $('.notice').removeClass('active-notice');\r\n\r\n            // 선택된 전공에 대한 공지사항 보이기\r\n            $('#' + major + '-notice').addClass('active-notice');\r\n\r\n            // 현재 선택된 전공이 'total'인 경우 스타일 적용\r\n            if (major === 'total') {\r\n                // 선택된 전공 리스트 항목에 'active-major' 클래스 추가\r\n                $('#major-list li').removeClass('active-major');\r\n                $('#major-list li:contains(\"total\")').addClass('active-major');\r\n            }\r\n\r\n            // 공지사항을 동적으로 가져와서 업데이트\r\n            updateNoticeTable(major, 1); // 첫 번째 페이지로 초기화\r\n        }\r\n\r\n        function updateNoticeTable(major, currentPage) {\r\n            // 해당 전공에 대한 공지사항 테이블이 이미 생성되어 있는지 확인\r\n            if ($('#' + major + '-notice').length === 0) {\r\n                // 해당 전공에 대한 테이블이 없으면 생성\r\n                createNoticeTable(major);\r\n            }\r\n\r\n            // 해당 전공에 대한 공지사항 테이블을 활성화\r\n            $('#' + major + '-notice').addClass('active-notice');\r\n\r\n            // 테이블을 동적으로 업데이트\r\n            updateTableData(major, currentPage);\r\n        }\r\n\r\n        function createNoticeTable(major) {\r\n            // 새로운 테이블 생성 및 초기화\r\n            var noticeTable = $('<div>').addClass('notice').attr('id', major + '-notice');\r\n            noticeTable.append('<table><thead><tr><th>번호</th><th>제목</th><th>날짜</th></tr></thead><tbody></tbody></table>');\r\n            noticeTable.appendTo('#notice-container');\r\n            // 페이지네이션을 초기화\r\n            $('#pagination-container').empty();\r\n        }\r\n\r\n        function updateTableData(major, currentPage) {\r\n            var noticeTable = $('#' + major + '-notice table tbody');\r\n            noticeTable.empty();\r\n\r\n            // 실제 크롤링한  전공 공지 데이터를 가져와야 함\r\n            // var notices = getNoticesForMajor(major);\r\n\r\n            // 가상의 공지사항 데이터 (실제로는 위 주석 해제 후 사용)\r\n            var notices = [\r\n                {title: '첫 번째 공지', date: '2023-11-25', url: 'https://example.com/1'},\r\n                {title: '두 번째 공지', date: '2023-11-26', url: 'https://example.com/2'},\r\n                {title: '세 번째 공지', date: '2023-11-25', url: 'https://example.com/1'},\r\n                {title: '네 번째 공지', date: '2023-11-26', url: 'https://example.com/2'},\r\n                {title: '다섯 번째 공지', date: '2023-11-25', url: 'https://example.com/1'},\r\n                {title: '여섯 번째 공지', date: '2023-11-26', url: 'https://example.com/2'},\r\n                {title: '일곱 번째 공지', date: '2023-11-25', url: 'https://example.com/1'},\r\n                {title: '여덟 번째 공지', date: '2023-11-26', url: 'https://example.com/2'},\r\n                {title: '아홉 번째 공지', date: '2023-11-25', url: 'https://example.com/1'},\r\n                {title: '열 번째 공지', date: '2023-11-26', url: 'https://example.com/2'},\r\n                {title: '열한 번째 공지', date: '2023-11-26', url: 'https://example.com/2'},\r\n            ];\r\n\r\n            var itemsPerPage = 10;\r\n            var startIndex = (currentPage - 1) * itemsPerPage;\r\n            var endIndex = startIndex + itemsPerPage;\r\n\r\n            // endIndex가 실제 데이터보다 큰 경우 조정\r\n            if (endIndex > notices.length) {\r\n                endIndex = notices.length;\r\n            }\r\n\r\n            // 현재 페이지에 해당하는 게시글만 표시\r\n            notices.slice(startIndex, endIndex).forEach(function (notice, index) {\r\n                var row = '<tr><td>' + (startIndex + index + 1) + '</td><td><span class=\"notice-link\" data-url=\"' + notice.url + '\">' + notice.title + '</span></td><td>' + notice.date + '</td></tr>';\r\n                noticeTable.append(row);\r\n            });\r\n\r\n            $('.notice-link').click(function () {\r\n                var url = $(this).data('url');\r\n                // 사용자가 공지사항의 제목을 클릭했을 때 공지사항의 상세페이지로 이동\r\n                window.location.href = url;\r\n            });\r\n\r\n            // 페이지네이션을 추가\r\n            addPagination(major, notices.length, itemsPerPage, currentPage);\r\n        }\r\n\r\n        function addPagination(major, totalItems, itemsPerPage, currentPage) {\r\n            var totalPages = Math.ceil(totalItems / itemsPerPage);\r\n\r\n            if (totalPages > 1) {\r\n                var paginationContainer = $('#pagination-container');\r\n                paginationContainer.empty();\r\n\r\n                for (var i = 1; i <= totalPages; i++) {\r\n                    (function (pageNumber) {\r\n                        var pageButton = $('<button>').text(pageNumber);\r\n                        pageButton.click(function () {\r\n                            // 페이지 버튼 클릭 시 직접 updateTableData 함수 호출\r\n                            updateTableData(major, pageNumber);\r\n                        });\r\n                        paginationContainer.append(pageButton);\r\n                    })(i);\r\n                }\r\n            }\r\n        }\r\n\r\n    </script>\r\n\r\n    </body>\r\n    </html>\r\n\r\n\r\n\r\n{% endblock %}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/community/templates/community/recommend.html b/community/templates/community/recommend.html
+--- a/community/templates/community/recommend.html	
++++ b/community/templates/community/recommend.html	
+@@ -7,306 +7,9 @@
+     <!DOCTYPE html>
+     <html lang="ko">
+     <head>
++    </head>
+         <title>Recommend Page</title>
+         <!-- Bootstrap icons-->
+-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
+-        <!-- Core theme CSS (includes Bootstrap)-->
+-        <link href="{% static 'recommend/css/styles.css' %}" rel="stylesheet"/>
+-        <link href="{% static 'recommend/css/recommendcss.css' %}" rel="stylesheet"/>
+-    </head>
+-    <body>
+-
+-    <nav>
+-        {% include 'community/navbar.html' %}
+-    </nav>
+-
+-    <header style="margin-top: 70px;">
+-        <h1 class="font-bold mb-4">맞춤 추천</h1>
+-        <p class="w-[1128px] h-16 text-xl text-center mb-8">
+-            자신이 등록한 키워드와 가장 잘 맞는 활동들을 우선으로 추천합니다
+-        </p>
+-    </header>
+-
+-    <!-- 추천 활동 부분 -->
+-    <section class="py-5">
+-        <div class="container px-4 px-lg-4 mt-3">
+-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+-                 id="activity-container">
+-                {% for activity in activities %}
+-                    <!-- Dynamic content will be added here -->
+-                    <div class="col mb-5">
+-                        <div class="card h-100">
+-                            <img class="card-img-top" src="{{ activity.image_url }}" alt="...">
+-                            <div class="card-body p-4">
+-                                <div class="text-center">
+-                                    <h5 class="fw-bolder">{{ activity.title }}</h5>
+-                                    <div class="keywords-container">
+-                                        {% for keyword in activity.keywords.split(",") %}
+-                                            <div class="badge bg-dark text-white">{{ keyword }}</div>
+-                                        {% endfor %}
+-                                    </div>
+-                                </div>
+-                            </div>
+-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+-                                <div class="text-center"></div>
+-                            </div>
+-                        </div>
+-                    </div>
+-                {% endfor %}
+-            </div>
+-        </div>
+-    </section>
+-
+-    <h1> 전공 게시판 모음</h1>
+-    <div id="major-content">
+-        <ul id="major-list">
+-            {% for m in majors %}
+-                <li {% if major.id == m.id %}class="active-major"{% endif %}>{{ m.name }}</li>
+-            {% endfor %}
+-        </ul>
+-
+-        <div id="notice-container">
+-            {% for notice in notices %}
+-                <!-- 공지사항 표시 부분 -->
+-                <p>{{ notice.title }} - {{ notice.date }}</p>
+-            {% endfor %}
+-        </div>
+-
+-        <div id="pagination-container">
+-            {% if total_pages > 1 %}
+-                {% for page_num in 1..total_pages %}
+-                    <button>{{ page_num }}</button>
+-                {% endfor %}
+-            {% endif %}
+-        </div>
+-    </div>
+-
+-
+-    <!-- 자바스크립트 -->
+-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+-    <script>
+-
+-        // 추천 활동 자바스크립트
+-        // 가상의 추천 활동 데이터
+-        var activities = [];
+-
+-        // 페이지 로딩 시 호출
+-        updateActivities();
+-
+-        function updateActivities() {
+-            var activityContainer = $('#activity-container');
+-            activityContainer.empty();
+-
+-            // 추천 활동 데이터를 가져오는 함수
+-            // function getActivitiesData() {
+-            //   // 실제 데이터를 가져오는 로직을 추가
+-            // }
+-
+-            // html 구조를 보기 위한 가상의 추천 활동 데이터 (실제로는 아래 코드 지우고 데이터베이스에서 가져와서 사용)
+-            activities = [
+-                {
+-                    title: 'Fancy Product',
+-                    imageUrl: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg',
+-                    keywords: ['Keyword1', 'Keyword2'],
+-                    url: 'https://www.duksung.ac.kr/main.do?isMaster=N&isLogined=N&viewPrefix=%2FWEB-INF%2Fjsp%2Fcms&urlRootPath=&siteResourcePath=%2Fsite%2Fduksung'
+-                },
+-                {
+-                    title: 'Special Item',
+-                    imageUrl: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg',
+-                    keywords: ['Keyword3', 'keyword4'],
+-                    url: '#'
+-                },
+-                {
+-                    title: 'Popular Item',
+-                    imageUrl: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg',
+-                    keywords: ['Keyword5', 'Keyword6'],
+-                    url: '#'
+-                },
+-                {
+-                    title: 'Popular Item',
+-                    imageUrl: 'https://dummyimage.com/450x300/dee2e6/6c757d.jpg',
+-                    keywords: ['Keyword7', 'Keyword8'],
+-                    url: '#'
+-                },
+-            ];
+-
+-            var maxActivitiesToShow = 3; //추천활동 최대 3개까지 보여짐
+-            activities.slice(0, maxActivitiesToShow).forEach(function (activity) {
+-                var card = $('<div>').addClass('col mb-5')
+-                    .append($('<div>').addClass('card h-100')
+-                        .append($('<img>').addClass('card-img-top').attr('src', activity.imageUrl).attr('alt', '...'))
+-                        .append($('<div>').addClass('card-body p-4')
+-                            .append($('<div>').addClass('text-center')
+-                                .append($('<h5>').addClass('fw-bolder').text(activity.title))
+-                                .append($('<div>').addClass('keywords-container').append(getKeywordBadges(activity.keywords)))
+-                            )
+-                        )
+-                        .append($('<div>').addClass('card-footer p-4 pt-0 border-top-0 bg-transparent')
+-                            .append($('<div>').addClass('text-center')
+-                            )
+-                        )
+-                    );
+-
+-                // 클릭 이벤트 추가 : 클릭하면 대외활동 페이지로 이동함
+-                card.click(function () {
+-                    window.location.href = activity.url;
+-                });
+-
+-                activityContainer.append(card);
+-            });
+-        }
+-
+-        function getKeywordBadges(keywords) { //키워드배지
+-            var badges = keywords.map(function (keyword) {
+-                return $('<div>').addClass('badge bg-dark text-white').text(keyword);
+-            });
+-
+-            return badges;
+-        }
+-
+-
+-        // 전공 게시판 자바스크립트
+-        // 초기 페이지 로딩 시 호출
+-        updateMajorList();
+-
+-        function updateMajorList() {
+-            var majorList = $('#major-list');
+-            majorList.empty();
+-
+-            // 가상의 전공 데이터 실제로는 데이터베이스에서 가져와야 함
+-            var majors = ['management', 'computer', 'math'];
+-
+-            var total_majors = ['total', ...majors]; //전체 전공 리스트 = [total(모두 모아보기) + majors(사용자가 선택한 전공 리스트)]
+-
+-            total_majors.forEach(function (major) {
+-                var listItem = $('<li>').text(major);
+-                majorList.append(listItem);
+-                listItem.click(function () {
+-                    showNotice(major);
+-                    // 선택된 전공 리스트 항목에 'active-major' 클래스 추가 (선택한 전공 굵은 글씨로 표시)
+-                    $('#major-list li').removeClass('active-major');
+-                    listItem.addClass('active-major');
+-                });
+-
+-                // 페이지 로딩 시 'total'을 선택한 것처럼 스타일 적용
+-                if (major === 'total') {
+-                    listItem.addClass('active-major');
+-                }
+-            });
+-
+-            // 페이지 로딩 시 'total'을 선택한 것처럼 표시
+-            showNotice('total');
+-        }
+-
+-        function showNotice(major) {
+-            // 모든 공지사항 숨기기
+-            $('.notice').removeClass('active-notice');
+-
+-            // 선택된 전공에 대한 공지사항 보이기
+-            $('#' + major + '-notice').addClass('active-notice');
+-
+-            // 현재 선택된 전공이 'total'인 경우 스타일 적용
+-            if (major === 'total') {
+-                // 선택된 전공 리스트 항목에 'active-major' 클래스 추가
+-                $('#major-list li').removeClass('active-major');
+-                $('#major-list li:contains("total")').addClass('active-major');
+-            }
+-
+-            // 공지사항을 동적으로 가져와서 업데이트
+-            updateNoticeTable(major, 1); // 첫 번째 페이지로 초기화
+-        }
+-
+-        function updateNoticeTable(major, currentPage) {
+-            // 해당 전공에 대한 공지사항 테이블이 이미 생성되어 있는지 확인
+-            if ($('#' + major + '-notice').length === 0) {
+-                // 해당 전공에 대한 테이블이 없으면 생성
+-                createNoticeTable(major);
+-            }
+-
+-            // 해당 전공에 대한 공지사항 테이블을 활성화
+-            $('#' + major + '-notice').addClass('active-notice');
+-
+-            // 테이블을 동적으로 업데이트
+-            updateTableData(major, currentPage);
+-        }
+-
+-        function createNoticeTable(major) {
+-            // 새로운 테이블 생성 및 초기화
+-            var noticeTable = $('<div>').addClass('notice').attr('id', major + '-notice');
+-            noticeTable.append('<table><thead><tr><th>번호</th><th>제목</th><th>날짜</th></tr></thead><tbody></tbody></table>');
+-            noticeTable.appendTo('#notice-container');
+-            // 페이지네이션을 초기화
+-            $('#pagination-container').empty();
+-        }
+-
+-        function updateTableData(major, currentPage) {
+-            var noticeTable = $('#' + major + '-notice table tbody');
+-            noticeTable.empty();
+-
+-            // 실제 크롤링한  전공 공지 데이터를 가져와야 함
+-            // var notices = getNoticesForMajor(major);
+-
+-            // 가상의 공지사항 데이터 (실제로는 위 주석 해제 후 사용)
+-            var notices = [
+-                {title: '첫 번째 공지', date: '2023-11-25', url: 'https://example.com/1'},
+-                {title: '두 번째 공지', date: '2023-11-26', url: 'https://example.com/2'},
+-                {title: '세 번째 공지', date: '2023-11-25', url: 'https://example.com/1'},
+-                {title: '네 번째 공지', date: '2023-11-26', url: 'https://example.com/2'},
+-                {title: '다섯 번째 공지', date: '2023-11-25', url: 'https://example.com/1'},
+-                {title: '여섯 번째 공지', date: '2023-11-26', url: 'https://example.com/2'},
+-                {title: '일곱 번째 공지', date: '2023-11-25', url: 'https://example.com/1'},
+-                {title: '여덟 번째 공지', date: '2023-11-26', url: 'https://example.com/2'},
+-                {title: '아홉 번째 공지', date: '2023-11-25', url: 'https://example.com/1'},
+-                {title: '열 번째 공지', date: '2023-11-26', url: 'https://example.com/2'},
+-                {title: '열한 번째 공지', date: '2023-11-26', url: 'https://example.com/2'},
+-            ];
+-
+-            var itemsPerPage = 10;
+-            var startIndex = (currentPage - 1) * itemsPerPage;
+-            var endIndex = startIndex + itemsPerPage;
+-
+-            // endIndex가 실제 데이터보다 큰 경우 조정
+-            if (endIndex > notices.length) {
+-                endIndex = notices.length;
+-            }
+-
+-            // 현재 페이지에 해당하는 게시글만 표시
+-            notices.slice(startIndex, endIndex).forEach(function (notice, index) {
+-                var row = '<tr><td>' + (startIndex + index + 1) + '</td><td><span class="notice-link" data-url="' + notice.url + '">' + notice.title + '</span></td><td>' + notice.date + '</td></tr>';
+-                noticeTable.append(row);
+-            });
+-
+-            $('.notice-link').click(function () {
+-                var url = $(this).data('url');
+-                // 사용자가 공지사항의 제목을 클릭했을 때 공지사항의 상세페이지로 이동
+-                window.location.href = url;
+-            });
+-
+-            // 페이지네이션을 추가
+-            addPagination(major, notices.length, itemsPerPage, currentPage);
+-        }
+-
+-        function addPagination(major, totalItems, itemsPerPage, currentPage) {
+-            var totalPages = Math.ceil(totalItems / itemsPerPage);
+-
+-            if (totalPages > 1) {
+-                var paginationContainer = $('#pagination-container');
+-                paginationContainer.empty();
+-
+-                for (var i = 1; i <= totalPages; i++) {
+-                    (function (pageNumber) {
+-                        var pageButton = $('<button>').text(pageNumber);
+-                        pageButton.click(function () {
+-                            // 페이지 버튼 클릭 시 직접 updateTableData 함수 호출
+-                            updateTableData(major, pageNumber);
+-                        });
+-                        paginationContainer.append(pageButton);
+-                    })(i);
+-                }
+-            }
+-        }
+-
+-    </script>
+ 
+     </body>
+     </html>

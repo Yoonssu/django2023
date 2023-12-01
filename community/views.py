@@ -1,14 +1,18 @@
+from audioop import reverse
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Post, User, Team, Major, Keyword 
+from .models import Post, User, Team, Major, Keyword, Comment
 from django.db.models import Count
-from .forms import UserForm
+from .forms import UserForm, CommentForm, TeamPostForm
 from django.contrib.auth import authenticate,login
 from django.http import JsonResponse
 from django.db.models import Q 
 from functools import reduce
-import operator 
+import operator
+from django.core.exceptions import PermissionDenied
+
 
 # Create your views here.
 
@@ -59,10 +63,58 @@ class TeamList(ListView):
     
 class TeamDetail(DetailView):
     model = Team
-    
+    template_name = 'community/team_detail.html'
+
     def get_context_data(self, **kwargs):
-        context = super(TeamDetail, self).get_context_data()
+        context = super(TeamDetail, self).get_context_data(**kwargs)
+        team = self.object
+
+        # 댓글 목록 가져오기
+        comments = Comment.objects.filter(team=team)
+
+        # 댓글 작성 폼 생성
+        comment_form = CommentForm()
+
+        context['comments'] = comments
+        context['comment_form'] = comment_form
+
         return context
+
+class TeamPostForm(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = ['title', 'content']
+
+    def form_valid(self, form):
+        current_user = self.request.user
+        if current_user.is_authenticated:
+            form.instance.author = current_user
+            return super(TeamPostForm, self).form_valid(form)
+        else:
+            return redirect('/community')
+
+def new_comment(request, pk):
+    if request.user.is_authenticated:
+        team = get_object_or_404(Team, pk=pk)
+
+        if request.method == 'POST':
+            comment_form = CommentForm(request.POST)
+            if comment_form.is_valid():
+                comment = comment_form.save(commit=False)
+                comment.team = team
+                comment.author = request.user
+                comment.save()
+
+                return redirect(comment.get_absolute_url())
+
+            else:
+                return redirect(team.get_absolute_url())
+    else:
+        # 사용자가 인증되지 않은 경우 로그인 페이지로 리다이렉트
+        return redirect("login")
+
+
+
+
 
 def signup(request):
     if request.method == 'POST':
