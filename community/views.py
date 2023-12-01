@@ -14,9 +14,14 @@ from django.contrib.auth import authenticate,login
 from django.http import JsonResponse
 from functools import reduce
 import operator 
-from random import random
+from random import random, choice 
 from collections import Counter
+<<<<<<< HEAD
+import os
+
+=======
 from django.core.exceptions import PermissionDenied
+>>>>>>> dde77fd94ab1cb32d01293f47d231b6991044765
 
 # Create your views here.
 class PostList(ListView):
@@ -87,8 +92,28 @@ class Recommend(LoginRequiredMixin, ListView):
         # 중복 횟수에 따라 정렬하되, 중복 횟수가 같으면 랜덤으로 섞기
         sorted_posts = sorted(all_posts_list, key=lambda post: (post_counts[post], random()), reverse=True)
 
+        # 중복된 포스트 중 하나만 유지
+        unique_posts = []
+        seen_posts = set()
+
+        for post in sorted_posts:
+            if post not in seen_posts:
+                unique_posts.append(post)
+                seen_posts.add(post)
+
         # 상위 3개 포스트 선택
-        selected_posts = sorted_posts[:3]
+        selected_posts = unique_posts[:8]
+
+        #-----------------------덕새 사진 사져오기-----------------------------
+        # 'community/dukse/' 폴더 내의 모든 이미지 파일 가져오기
+        dukse_images_path = os.path.join('community', 'static', 'community', 'dukse')
+        dukse_images = [f for f in os.listdir(dukse_images_path) if f.endswith(('.jpg', '.jpeg', '.png'))]
+
+        # selected_images에 랜덤하게 1개 선택하여 8번 반복
+        selected_images = [choice(dukse_images) for _ in range(8)]
+
+
+
 
         #-----------------------전공 posts-----------------------------
 
@@ -114,6 +139,7 @@ class Recommend(LoginRequiredMixin, ListView):
             'major_posts': major_posts,
             'major_list': major_list,
             'all_major_posts_list': all_major_posts_list,
+            'selected_images': selected_images,
         })
 
 
