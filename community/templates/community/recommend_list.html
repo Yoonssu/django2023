@@ -10,6 +10,14 @@
       </p>
     </div>
 
+    <div class="user-keyword-box">
+      {% for keyword in selected_keywords %}
+      <div class="user-keyword">
+        {{ keyword }}
+      </div>
+      {% endfor %}
+    </div>
+
     <div class="recommend-cardbox">
       {% for post in selected_posts %}
       <a

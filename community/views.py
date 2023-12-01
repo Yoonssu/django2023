@@ -124,6 +124,8 @@ class Recommend(LoginRequiredMixin, ListView):
 
         major_list = list(major_posts.keys())
 
+        #-----------------------전공 posts 페이징-----------------------------
+
         # 전체 포스트에 대한 페이징 추가
         paginator_all = Paginator(all_major_posts_list, 10)
         page_all = self.request.GET.get('page_all')
