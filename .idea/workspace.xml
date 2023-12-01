@@ -4,10 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="d36bcf4e-5345-414b-9f77-c32e5736b5c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community/templates/community/post_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/community/templates/community/post_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/community/templates/community/team_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/community/templates/community/team_list.html" afterDir="false" />
+=======
+    <list default="true" id="07d4bab7-a029-4ed8-98c5-28cc7fd79757" name="Changes" comment="">
+
+      <change afterPath="$PROJECT_DIR$/community/static/community/css/community.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/community/static/community/dukse/덕새.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_pages/templates/single_pages/navbar.html" afterDir="false" />
+=======
+>>>>>>> team_detail
+
+>>>>>>> dde77fd94ab1cb32d01293f47d231b6991044765
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +51,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+<<<<<<< HEAD
     "git-widget-placeholder": "team__detail",
     "node.js.selected.package.tslint": "(autodetect)"
+=======
+    "WebServerToolWindowFactoryState": "false",
+<<<<<<< HEAD
+    "git-widget-placeholder": "Merging dev",
+=======
+    "git-widget-placeholder": "team__detail",
+>>>>>>> team_detail
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+>>>>>>> dde77fd94ab1cb32d01293f47d231b6991044765
   }
 }]]></component>
   <component name="RecentsManager">

@@ -147,7 +147,6 @@ class TeamDetail(DetailView):
 
         return context
 
-
 class TeamPostForm(LoginRequiredMixin, CreateView):
     model = Team
     form_class = TeamPostForm  # 사용할 폼 클래스 설정
