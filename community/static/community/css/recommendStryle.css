@@ -62,7 +62,7 @@ body {
 }
 
 .recommend-cardbox a:hover {
-  background-color: rgba(0, 0, 0, 0.137);
+  background-color: rgba(0, 0, 0, 0.051);
 }
 
 .recommend-card-img {
@@ -127,13 +127,15 @@ body {
   height: 70px;
   justify-content: space-around;
   align-items: center;
+  margin: 20px 0 20px 0;
 }
 
 .major-nav button {
   width: 150px;
   height: 35px;
   border: 0px;
-  background-color: rgb(255, 255, 255);
+  background-color: #f0f0f0;
+
   border-radius: 25px;
   font-size: 17px;
 }
@@ -189,6 +191,12 @@ body {
 .major-post-title a {
   color: black;
   text-decoration: none;
+}
+
+.major-content-box:hover .major-post-title,
+.major-content-box:hover .major-post-pk,
+.major-content-box:hover .major-post-date {
+  background-color: rgba(0, 0, 0, 0.051);
 }
 
 .major-post-title a:hover {
