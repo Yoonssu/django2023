@@ -16,12 +16,9 @@ from functools import reduce
 import operator 
 from random import random, choice 
 from collections import Counter
-<<<<<<< HEAD
 import os
-
-=======
 from django.core.exceptions import PermissionDenied
->>>>>>> dde77fd94ab1cb32d01293f47d231b6991044765
+
 
 # Create your views here.
 class PostList(ListView):
