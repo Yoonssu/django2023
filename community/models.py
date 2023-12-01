@@ -1,3 +1,5 @@
+from audioop import reverse
+
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
@@ -33,6 +35,10 @@ class Post(models.Model):
     def __str__(self):
         return f'[{self.pk}]{self.title}'
 
+    def get_absolute_url(self):
+        pass
+
+
 class Scrap(models.Model):
     id = models.BigAutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -52,9 +58,7 @@ class Team(models.Model):
         return f'[{self.pk}]{self.title} :: {self.user}'
 
     def get_absolute_url(self):
-        if self:
-            return f'/team/{self.pk}/'
-        return '/default_url/'
+        return f'/team/{self.pk}/'
 
 
 class Comment(models.Model):
@@ -74,8 +78,5 @@ class Comment(models.Model):
             return f'Comment [{self.pk}] on "{self.team.post.title}" by Unknown User'
 
     def get_absolute_url(self):
-        if self.team:
-            return f'{self.team.get_absolute_url()}#comment-{self.pk}'
-        # 팀이 없는 경우에 대한 처리를 추가할 수 있음
-        # 예를 들어, 어떤 디폴트 URL로 리디렉션하거나 특정 에러 메시지를 반환할 수 있음
-        return '/default_url/'
+        # 댓글이 추가된 팀의 URL을 반환
+        return f'/community{self.team.get_absolute_url()}#comment-{self.pk}'

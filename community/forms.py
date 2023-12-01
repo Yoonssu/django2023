@@ -32,16 +32,25 @@ class TeamPostForm(forms.ModelForm):
         current_user = self.user
         if current_user.is_authenticated:
             post_title_instance = self.cleaned_data['post']
-            post_instance = Post.objects.get(title=post_title_instance)
-            instance.post = post_instance
-            instance.user = current_user
-            if commit:
-                instance.save()
-            return instance
+
+            # 괄호 안의 내용을 제거하는 방식
+            import re
+            cleaned_post_title = re.sub(r'\[\d+\]', '', str(post_title_instance)).strip()
+
+            try:
+                post_instance = Post.objects.get(title=cleaned_post_title)
+                instance.post = post_instance
+
+                instance.user = current_user
+                if commit:
+                    instance.save()
+                return instance
+            except Post.DoesNotExist:
+                # Post 객체를 찾을 수 없는 경우
+                return None
         else:
             # 인증되지 않은 사용자에 대한 처리 (예: 리디렉션)
             return redirect('/community')
-
 
 class CommentForm(forms.ModelForm):
     class Meta:
