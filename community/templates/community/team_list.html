@@ -1,70 +1,82 @@
 <!-- http://127.0.0.1:8000/community/team -->
 
-<style>
 
-     #createPostBtn {
-        background-color: #5A32FB;
-        border: none;
-        color: #fff;
-        padding: 10px 20px;
-        cursor: pointer;
-        border-radius: 8px; /* 모서리를 둥글게 만듦 */
-        transition: background-color 0.3s; /* 부드러운 트랜지션 효과 추가 */
-    }
-
-    #createPostBtn:hover {
-        background-color: #4525D3;
-    }
-
-    /* 버튼을 누를 때 효과 */
-    #createPostBtn:active {
-        background-color: #341C99; /* 클릭 시 배경 색상 변경 */
-    }
-
-    .table-container {
-        max-width: 1300px;
-        margin: 0 auto; /* 컨테이너를 가운데 정렬 */
-    }
-
-    /* 수평선 스타일 */
-    .post-separator {
-        margin: 20px 0; /* 수평선 위아래 여백 추가 */
-    }
-</style>
-
+<link rel="stylesheet" href="../../static/community/css/postDetailStyle.css"/>
+<link rel="stylesheet" href="../../static/community/css/teamlist.css"/>
 
 {% extends 'community/base.html' %}
 
 {% block main_area %}
 
-    <h1>게시글 목록 게시판</h1>
+    <div class="wrapper">
+        <div class="content_wrapper">
+            <div class="title">
+                <h2>팀원 모집</h2>
+                <br/>
+            </div>
+            <div class="content_nav">
+                <a href="#">상세정보</a>
+                <a href="#">팀원모집</a>
+                <button style="color: white; font-size: 14px">스크랩</button>
+            </div>
+            <div class="content_box">
 
-    <button id="createPostBtn">팀원 모집 글쓰기</button>
+                <button id="createPostBtn" onclick="redirectToTeamPostForm()">팀원 모집 글쓰기</button>
+
+                {% if team_list.exists %}
+                    <!-- 추가된 부분: 표 형식으로 게시글 표시 -->
+                    <table>
+                        <tbody>
+                        {% for team in team_list %}
+                            <tr>
+                                <td>
+                                    <a href="{% url 'community:team_detail' team.id %}">
+                                        <h2>{{ team.title }}</h2>
+                                        {#                        <p>{{ team.content }}</p>#}
+                                        <p>{{ team.time }}</p></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <hr class="post-separator">
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <h3>아직 팀 게시글이 없습니다.</h3>
+                {% endif %}
 
 
-    {% if team_list.exists %}
-        <!-- 추가된 부분: 표 형식으로 게시글 표시 -->
-        <table>
-            <tbody>
-            {% for team in team_list %}
-                <tr>
-                    <td>
-                        <h2>{{ team.title }}</h2>
-{#                        <p>{{ team.content }}</p>#}
-                        <p>작성 시간: {{ team.time }}</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <hr class="post-separator">
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    {% else %}
-        <h3>아직 팀 게시글이 없습니다.</h3>
-    {% endif %}
+                <br/></div>
+        </div>
+    </div>
+    <br/>
+    </div>
+    </div>
+    </div>
+
+
+
+    <script>
+        document.getElementById('createPostBtn').addEventListener('click', function () {
+            var isLoggedIn = {% if user.is_authenticated %} true {% else %} false {% endif %};
+
+            if (isLoggedIn) {
+                // 로그인된 경우
+                var teamPostFormUrl = "{% url 'community:TeamPostForm' %}";
+                window.location.href = teamPostFormUrl;
+            } else {
+                // 로그인되지 않은 경우
+                var loginUrl = "{% url 'community:login' %}";
+                window.location.href = loginUrl;
+            }
+        });
+    </script>
+
 
 
 {% endblock %}
+
+

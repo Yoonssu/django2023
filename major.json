@@ -1,0 +1,306 @@
+[
+{
+    "model": "community.major",
+    "pk": 1,
+    "fields": {
+        "majorname": "국어국문전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 2,
+    "fields": {
+        "majorname": "일어일문전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 3,
+    "fields": {
+        "majorname": "중어중문전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 4,
+    "fields": {
+        "majorname": "영어영문전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 5,
+    "fields": {
+        "majorname": "불어불문전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 6,
+    "fields": {
+        "majorname": "독어독문전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 7,
+    "fields": {
+        "majorname": "스페인어전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 8,
+    "fields": {
+        "majorname": "사학전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 9,
+    "fields": {
+        "majorname": "철학전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 10,
+    "fields": {
+        "majorname": "미술사학전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 11,
+    "fields": {
+        "majorname": "문화인류전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 12,
+    "fields": {
+        "majorname": "경영학전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 13,
+    "fields": {
+        "majorname": "회계학전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 14,
+    "fields": {
+        "majorname": "국제통상학전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 15,
+    "fields": {
+        "majorname": "법학전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 16,
+    "fields": {
+        "majorname": "사회학전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 17,
+    "fields": {
+        "majorname": "문헌정보학전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 18,
+    "fields": {
+        "majorname": "심리학전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 19,
+    "fields": {
+        "majorname": "아동가족학전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 20,
+    "fields": {
+        "majorname": "사회복지전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 21,
+    "fields": {
+        "majorname": "정치외교전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 22,
+    "fields": {
+        "majorname": "의상디자인전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 23,
+    "fields": {
+        "majorname": "유아교육전공",
+        "line": "글로벌융합대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 24,
+    "fields": {
+        "majorname": "컴퓨터전공",
+        "line": "과학기술대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 25,
+    "fields": {
+        "majorname": "IT미디어전공",
+        "line": "과학기술대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 26,
+    "fields": {
+        "majorname": "바이오공학전공",
+        "line": "과학기술대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 27,
+    "fields": {
+        "majorname": "사이버보안전공",
+        "line": "과학기술대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 28,
+    "fields": {
+        "majorname": "소프트웨어전공",
+        "line": "과학기술대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 29,
+    "fields": {
+        "majorname": "생활체육전공",
+        "line": "과학기술대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 30,
+    "fields": {
+        "majorname": "식품영양전공",
+        "line": "과학기술대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 31,
+    "fields": {
+        "majorname": "정보통계전공",
+        "line": "과학기술대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 32,
+    "fields": {
+        "majorname": "화학전공",
+        "line": "과학기술대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 33,
+    "fields": {
+        "majorname": "수학전공",
+        "line": "과학기술대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 34,
+    "fields": {
+        "majorname": "동양화전공",
+        "line": "Art & Design 대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 35,
+    "fields": {
+        "majorname": "서양화전공",
+        "line": "Art & Design 대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 36,
+    "fields": {
+        "majorname": "실내디자인전공",
+        "line": "Art & Design 대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 37,
+    "fields": {
+        "majorname": "시각디자인전공",
+        "line": "Art & Design 대학"
+    }
+},
+{
+    "model": "community.major",
+    "pk": 38,
+    "fields": {
+        "majorname": "택스타일디자인전공",
+        "line": "Art & Design 대학"
+    }
+}
+]

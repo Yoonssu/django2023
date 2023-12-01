@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
+from .views import signup
+from .views import new_comment
 
 app_name = 'community'
 
@@ -17,11 +19,13 @@ urlpatterns = [
     path('mypage/<int:pk>/modMajor/', views.modMajor, name='modMajor'),
     path('saveMajors/<int:pk>/', views.save_majors, name='save_majors'),
 
-    path('team/', views.TeamList.as_view()),
-    path('team/<int:pk>/', views.TeamDetail.as_view(), name='team_detail'),
+    path('team/<int:pk>/', views.TeamList.as_view(), name='team'), #post_detail -> team_list // http://127.0.0.1:8000/community/team/11753/
+    # path('recommend/<int:pk>/', views.recommend, name='recommend'),
+    path('recommend/<int:pk>/', views.Recommend.as_view(), name='recommend'),
     path('signup/', views.signup, name='signup'),
     path('login/', auth_views.LoginView.as_view(template_name='community/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('recommend/<int:pk>/', views.Recommend.as_view(), name='recommend'),
-]
+    path('team_post/', views.TeamPostForm.as_view(template_name='community/team_post_form.html'), name="TeamPostForm"),
+    path('team/<int:pk>/new_comment/', views.new_comment, name='new_comment'),
 
+]
