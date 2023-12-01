@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07d4bab7-a029-4ed8-98c5-28cc7fd79757" name="Changes" comment="">
-
-      <change afterPath="$PROJECT_DIR$/community/static/community/css/community.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/community/static/community/dukse/덕새.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/single_pages/templates/single_pages/navbar.html" afterDir="false" />
-=======
->>>>>>> team_detail
-
+    <list default="true" id="d36bcf4e-5345-414b-9f77-c32e5736b5c5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-12-01__8_51__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-12-01__8_51__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/community/templates/community/team_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/community/templates/community/team_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,14 +62,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-<<<<<<< HEAD
-    "git-widget-placeholder": "Merging dev",
-=======
-    "git-widget-placeholder": "team__detail",
->>>>>>> team_detail
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+    "git-widget-placeholder": "dev",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="RecentsManager">
