@@ -147,44 +147,62 @@
   </div>
   
 
-
+  <input type="hidden" id="current_major" value="{% if major_list %}{{ major_list.0 }}{% endif %}">
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // 페이지가 로드될 때 실행할 코드
-      var majorButtons = document.querySelectorAll(".major-button");
-      // 각 버튼에 마우스 이벤트 리스너 추가
-      majorButtons.forEach(function (button) {
-        button.addEventListener("mouseover", function () {
-          this.classList.add("hovered"); // 버튼에 hovered 클래스 추가
+        // 페이지가 로드될 때 실행할 코드
+        var majorButtons = document.querySelectorAll(".major-button");
+
+        // 기존에 선택된 메이저가 있는 경우, 해당 메이저에 대한 컨텐츠를 표시
+        var selectedMajor = sessionStorage.getItem("selectedMajor");
+        if (selectedMajor) {
+            showMajorPosts(selectedMajor);
+        } else {
+            // 페이지가 로드될 때 "전체" 버튼을 클릭한 효과를 주는 코드
+            var allButton = document.querySelector(".all");
+            allButton.click();
+        }
+
+        // 각 버튼에 마우스 이벤트 리스너 추가
+        majorButtons.forEach(function (button) {
+            button.addEventListener("mouseover", function () {
+                this.classList.add("hovered"); // 버튼에 hovered 클래스 추가
+            });
+            button.addEventListener("mouseout", function () {
+                this.classList.remove("hovered"); // 버튼에서 hovered 클래스 제거
+            });
+
+            button.addEventListener("click", function () {
+                // 선택한 메이저 정보를 세션 스토리지에 저장
+                var major = this.textContent.trim();
+                sessionStorage.setItem("selectedMajor", major);
+            });
         });
-        button.addEventListener("mouseout", function () {
-          this.classList.remove("hovered"); // 버튼에서 hovered 클래스 제거
-        });
-      });
-      // 페이지가 로드될 때 "전체" 버튼을 클릭한 효과를 주는 코드
-      var allButton = document.querySelector(".all");
-      allButton.click();
     });
+
     function showMajorPosts(major) {
-      // 모든 major-content 숨기기
-      var allContents = document.querySelectorAll(".major-content");
-      for (var i = 0; i < allContents.length; i++) {
-        allContents[i].classList.add("hidden");
-      }
-      // 선택한 major에 해당하는 major-content 보이기
-      var selectedContent = document.getElementById("content_" + major);
-      selectedContent.classList.remove("hidden");
+        // 모든 major-content 숨기기
+        var allContents = document.querySelectorAll(".major-content");
+        for (var i = 0; i < allContents.length; i++) {
+            allContents[i].classList.add("hidden");
+        }
+
+        // 선택한 major에 해당하는 major-content 보이기
+        var selectedContent = document.getElementById("content_" + major);
+        selectedContent.classList.remove("hidden");
     }
+
     function showAll() {
-      // 모든 major-content 숨기기
-      var allContents = document.querySelectorAll(".major-content");
-      for (var i = 0; i < allContents.length; i++) {
-        allContents[i].classList.add("hidden");
-      }
-      // all_major_posts_list에 있는 포스트들 보이기
-      var allMajorContent = document.getElementById("all_major_content");
-      allMajorContent.classList.remove("hidden");
+        // 모든 major-content 숨기기
+        var allContents = document.querySelectorAll(".major-content");
+        for (var i = 0; i < allContents.length; i++) {
+            allContents[i].classList.add("hidden");
+        }
+
+        // all_major_posts_list에 있는 포스트들 보이기
+        var allMajorContent = document.getElementById("all_major_content");
+        allMajorContent.classList.remove("hidden");
     }
   </script>
   {%endblock%}
