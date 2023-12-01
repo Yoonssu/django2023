@@ -30,10 +30,10 @@
                         {% for team in team_list %}
                             <tr>
                                 <td>
-                                    <a href="{% url 'community:team_detail' team.id %}"></a>
+                                    <a href="{% url 'community:team_detail' team.id %}">
                                         <h2>{{ team.title }}</h2>
                                         {#                        <p>{{ team.content }}</p>#}
-                                        <p>{{ team.time }}</p>
+                                        <p>{{ team.time }}</p></a>
                                 </td>
                             </tr>
                             <tr>
