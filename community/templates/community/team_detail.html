@@ -1,5 +1,6 @@
 {% extends 'community/base.html' %}
 {% load crispy_forms_tags %}
+
 <link rel="stylesheet" href="../../static/community/css/postDetailStyle.css"/>
 
 
@@ -30,44 +31,45 @@
     </div>
 
 
-<!-- Comments section -->
-<section class="mb-5">
-    <div class="card bg-light">
-        <div class="card-body">
-            <!-- Comment form -->
-            {% if user.is_authenticated %}
-                <form class="mb-4" id="comment-form" method="POST" action="{{team.get_absolute_url}}new_comment/">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        {{ comment_form | crispy }}
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            {% else %}
-                <a role="button" class="btn btn-sm" href="#" data-toggle="modal" data-target="#loginModal">로그인하고 댓글을
-                    남겨주세요</a>
-            {% endif %}
+    <!-- Comments section -->
+    <section class="mb-5">
+        <div class="card bg-light">
+            <div class="card-body">
+                <!-- Comment form -->
+                {% if user.is_authenticated %}
+                   <form class="mb-4" id="comment-form" method="POST" action="{% url 'community:new_comment' pk=team.pk %}">
 
-            <!-- Single comment -->
-            {% if team.comment_set.exists %}
-                {% for comment in team.comment_set.iterator %}
+                        {% csrf_token %}
+                        <div class="form-group">
+                            {{ comment_form | crispy }}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                {% else %}
+                    <a role="button" class="btn btn-sm" href="#" data-toggle="modal" data-target="#loginModal">로그인하고 댓글을
+                        남겨주세요</a>
+                {% endif %}
 
-                    <div class="d-flex" id="comment-{{ comment.pk }}">
-                        <div class="flex-shrink-0"><img class="rounded-circle"
-                                                        src="https://dummyimage.com/50x50/ced4da/6c757d.jpg"
-                                                        alt="..."/>
+                <!-- Single comment -->
+                {% if team.comment_set.exists %}
+                    {% for comment in team.comment_set.iterator %}
+
+                        <div class="d-flex" id="comment-{{ comment.pk }}">
+                            <div class="flex-shrink-0"><img class="rounded-circle"
+                                                            src="https://dummyimage.com/50x50/ced4da/6c757d.jpg"
+                                                            alt="..."/>
+                            </div>
+                            <div class="ms-3">
+                                <div class="fw-bold">{{ comment.user.username }} & {{ comment.time }}</div>
+                                {{ comment.content | linebreaks }}
+                                {% if comment.time != comment.modified_at %}
+                                    <p class="text-muted"><small> Updated : {{ comment.modified_at }}</small></p>
+                                {% endif %}
+                            </div>
                         </div>
-                        <div class="ms-3">
-                            <div class="fw-bold">{{ comment.user.username }} & {{ comment.time }}</div>
-                            {{ comment.content | linebreaks }}
-                            {% if comment.time != comment.modified_at %}
-                                <p class="text-muted"> <small> Updated : {{ comment.modified_at }}</small></p>
-                            {% endif %}
-                        </div>
-                    </div>
-                {% endfor %}
-            {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endblock %}

@@ -104,12 +104,10 @@ def new_comment(request, pk):
                 comment.author = request.user
                 comment.save()
 
-                # 댓글이 생성된 후의 리다이렉트 처리
-                return redirect(reverse('team_detail', args=[pk]))
+                return redirect(comment.get_absolute_url())
 
-        # 댓글이 생성되지 않은 경우나 폼이 유효하지 않은 경우
-        return redirect(reverse('team_detail', args=[pk]))
-
+            else:
+                return redirect(team.get_absolute_url())
     else:
         # 사용자가 인증되지 않은 경우 로그인 페이지로 리다이렉트
         return redirect("login")

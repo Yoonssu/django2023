@@ -50,7 +50,11 @@ class Team(models.Model):
     def __str__(self):
         return f'[{self.pk}]{self.title} :: {self.user}'
 
-    
+    def get_absolute_url(self):
+        if self:
+            return f'/team/{self.pk}/'
+        return '/default_url/'
+
 
 class Comment(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -59,8 +63,14 @@ class Comment(models.Model):
     content = models.TextField()
     time = models.DateTimeField(auto_now_add = True)
     issecret = models.BooleanField()
+
     def __str__(self):
-        return f'Comment [{self.pk}] on "{self.team.post.title}" by {self.user.username}'
+        if self.user and hasattr(self.user, 'username'):
+            return f'Comment [{self.pk}] on "{self.team.post.title}" by {self.user.username}'
+        elif self.user:
+            return f'Comment [{self.pk}] on "{self.team.post.title}" by Anonymous User'
+        else:
+            return f'Comment [{self.pk}] on "{self.team.post.title}" by Unknown User'
 
     def get_absolute_url(self):
         if self.team:

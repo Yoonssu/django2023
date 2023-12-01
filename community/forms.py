@@ -18,7 +18,10 @@ class TeamPostForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('content' ,)
+        fields = ('content', 'issecret')
+        widgets = {
+            'issecret': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
+        }
 
 
 
