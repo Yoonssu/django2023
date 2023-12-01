@@ -13,6 +13,7 @@ import operator
 from random import random, choice 
 from collections import Counter
 import os
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 # Create your views here.
@@ -122,6 +123,32 @@ class Recommend(LoginRequiredMixin, ListView):
         all_major_posts_list = sorted(all_major_posts_list, key=lambda post: post.pk, reverse=True)
 
         major_list = list(major_posts.keys())
+
+        # 전체 포스트에 대한 페이징 추가
+        paginator_all = Paginator(all_major_posts_list, 10)
+        page_all = self.request.GET.get('page_all')
+
+        try:
+            all_major_posts_list = paginator_all.page(page_all)
+        except PageNotAnInteger:
+            all_major_posts_list = paginator_all.page(1)
+        except EmptyPage:
+            all_major_posts_list = paginator_all.page(paginator_all.num_pages)
+
+        # 각 전공별 포스트에 대한 페이징 추가
+        paginator_majors = {}
+        page_majors = {}
+
+        for major, posts in major_posts.items():
+            paginator_majors[major] = Paginator(posts, 10)
+            page_majors[major] = self.request.GET.get(f'page_{major}')
+
+            try:
+                major_posts[major] = paginator_majors[major].page(page_majors[major])
+            except PageNotAnInteger:
+                major_posts[major] = paginator_majors[major].page(1)
+            except EmptyPage:
+                major_posts[major] = paginator_majors[major].page(paginator_majors[major].num_pages)
         
         context.update({
             'user': current_user,
@@ -132,6 +159,9 @@ class Recommend(LoginRequiredMixin, ListView):
             'major_list': major_list,
             'all_major_posts_list': all_major_posts_list,
             'selected_images': selected_images,
+            'paginator_all': paginator_all,
+            'major_posts': major_posts,
+            'paginator_majors': paginator_majors,
         })
 
 

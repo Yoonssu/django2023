@@ -1,7 +1,6 @@
 <!-- url 예시 http://127.0.0.1:8000/community/recommend/user.pk -->
 <link rel="stylesheet" href="../../static/community/css/recommendStryle.css" />
-{% extends 'community/base.html' %} {% block main_area %}{% load static %}
-
+{% extends 'community/base.html' %} {% block main_area %}{% load static %} {%
 <div class="wrapper">
   <div class="recommend-wrapper">
     <div class="recommend-font">
@@ -89,6 +88,69 @@
       </div>
       {% endif %} {% endfor %}
     </div>
+
+    <div class="major-content hidden" id="all_major_content">
+      {% for post in all_major_posts_list %}
+      <div class="major-content-box">
+        <div class="major-post-pk">{{ forloop.counter }}</div>
+        <div class="major-post-title">
+          <a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank"
+            >{{ post.title }}</a
+          >
+        </div>
+        <div class="major-post-date">{{ post.time|date:"Y.m.d" }}</div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- 추가: 전체 포스트에 대한 페이징 표시 -->
+    
+      <span class="step-links">
+        {% if all_major_posts_list.has_previous %}
+        <a href="?page_all=1">&laquo; first</a>
+        <a href="?page_all={{ all_major_posts_list.previous_page_number }}"
+          >previous</a
+        >
+        {% endif %}
+
+        <span class="current">
+          페이지 {{ all_major_posts_list.number }} / {{
+          all_major_posts_list.paginator.num_pages }}.
+        </span>
+
+        {% if all_major_posts_list.has_next %}
+        <a href="?page_all={{ all_major_posts_list.next_page_number }}">next</a>
+        <a href="?page_all={{ all_major_posts_list.paginator.num_pages }}"
+          >last &raquo;</a
+        >
+        {% endif %}
+      </span>
+    </div>
+
+    <!-- 추가: 각 전공별 포스트에 대한 페이징 표시 -->
+    {% for major, posts in major_posts.items %}
+    <div class="pagination">
+      <span class="step-links">
+        {% if posts.has_previous %}
+        <a href="?page_{{ major }}=1">&laquo; first</a>
+        <a href="?page_{{ major }}={{ posts.previous_page_number }}"
+          >previous</a
+        >
+        {% endif %}
+
+        <span class="current">
+          페이지 {{ posts.number }} / {{ posts.paginator.num_pages }}.
+        </span>
+
+        {% if posts.has_next %}
+        <a href="?page_{{ major }}={{ posts.next_page_number }}">next</a>
+        <a href="?page_{{ major }}={{ posts.paginator.num_pages }}"
+          >last &raquo;</a
+        >
+        {% endif %}
+      </span>
+    </div>
+    {% endfor %}
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
