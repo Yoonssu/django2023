@@ -56,6 +56,15 @@ body {
   box-shadow: #3333337c 3px 3px 3px;
 }
 
+.recommend-cardbox a {
+  color: black;
+  text-decoration: none;
+}
+
+.recommend-cardbox a:hover {
+  background-color: rgba(0, 0, 0, 0.137);
+}
+
 .recommend-card-img {
   /* background-color: antiquewhite; */
   width: 100%;
@@ -92,15 +101,6 @@ body {
   font-size: 17px;
   border-top: 1px grey solid;
   border-radius: 0px 0px 15px 15px;
-}
-
-.recommend-card-title a {
-  color: black;
-  text-decoration: none;
-}
-
-.recommend-card-title a:hover {
-  color: #333;
 }
 
 .major-wrapper {

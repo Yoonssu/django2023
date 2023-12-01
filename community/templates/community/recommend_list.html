@@ -13,7 +13,11 @@
 
     <div class="recommend-cardbox">
       {% for post in selected_posts %}
-      <div class="recommend-card">
+      <a
+        href="{% url 'community:post_detail' pk=post.pk %}"
+        target="_blank"
+        class="recommend-card"
+      >
         <div class="recommend-card-img">
           {% with random_image=selected_images|random %}
           <img
@@ -23,11 +27,9 @@
           {% endwith %}
         </div>
         <div class="recommend-card-title">
-          <a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank"
-            >{{ post.title }}</a
-          >
+          <div class="recommend-card-title-text">{{ post.title }}</div>
         </div>
-      </div>
+      </a>
       {% empty %}
       <p>추천 포스트가 없습니다</p>
       {% endfor %}
