@@ -144,10 +144,11 @@ class Recommend(LoginRequiredMixin, ListView):
 
 class TeamList(ListView):
     model = Team
-    ordering = '-pk'
+    template_name = 'community/team_list.html'  # 적절한 템플릿 경로로 변경
 
     def get_context_data(self, **kwargs):
-        context = super(TeamList, self).get_context_data()
+        context = super().get_context_data(**kwargs)
+        # 추가적인 컨텍스트 데이터가 필요하다면 여기에 작성
         return context
     
 class TeamDetail(DetailView):
