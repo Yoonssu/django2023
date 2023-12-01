@@ -6,7 +6,7 @@
     <title>키워드 수정</title>
 
     <link href="{% static 'community/bootstrap/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'community/css/modKeyword.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'community/css/modPage.css' %}" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/726bbd6862.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
     
@@ -15,9 +15,10 @@
     {% include 'community/navbar.html' %}
 
     <div class="signup-form">
-        <form action="{% url 'community:save_keywords' %}" method="post">
+        <form action="{% url 'community:save_keywords' pk=user.pk %}" method="post" name="keywordForm" id="keywordForm">
+            {% csrf_token %}
             <h2>키워드 수정</h2>
-            <p>Please fill in this form to create an account!</p>
+            <p>Please fill in this form to modify your keywords!</p>
             <hr>
             <div class="form-group">
                 <label>관심 분야</label> <br>
@@ -32,6 +33,7 @@
                   </select>
             </div>
             <div class="form-group">
+                <input type="hidden" id="defaultKeywordList" name="default_keywords">
                 <div id="keywordList">
 
                 </div>
@@ -42,13 +44,14 @@
                 <input type="text" class="form-control" id="makeKeyword">
             </div>
             <div class="form-group">
-                <div id="makeKeywordList">
+                <input type="hidden" id="makeKeywordList" name="make_keywords">
+                <div id="makeKeywordField">
                     <!-- 토글 버튼 -->
                 </div>
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-lg">변경</button>
+                <button type="submit" class="btn btn-primary btn-lg" onclick="test(event)">변경</button>
             </div>
         </form>
     </div>
@@ -58,7 +61,7 @@
     <script>
         // 직접 입력한 키워드 화면에 띄우기 //
         const inputKeyword = document.getElementById('makeKeyword');
-        const makeKeywordList = document.getElementById('makeKeywordList');
+        const makeKeywordList = document.getElementById('makeKeywordField');
         let buttonCount = 0;
 
         // 엔터 눌렀을 때
@@ -85,6 +88,7 @@
                 newButton.textContent = event.target.value;
                 newButton.classList.add('toggle-button');
                 newButton.classList.toggle('selected');
+                newButton.classList.add('makeKeywords');
                 makeKeywordList.appendChild(newButton); // 생성한 버튼을 리스트에 추가
                 event.target.value = ''; // 입력한 내용 리셋
                 buttonCount++; // 버튼 개수 증가
@@ -120,6 +124,7 @@
                     const keywordElement = document.createElement('button');
                     keywordElement.textContent = keyword.keywordname;
                     keywordElement.classList.add('toggle-button');
+                    keywordElement.classList.add('defaultKeywords');
                     keywordList.appendChild(keywordElement);
 
                     keywordElement.addEventListener('click', function() {
@@ -136,6 +141,35 @@
                 }
             });
         }
+            
+            // 폼 제출시 selected 클래스 값 보내기
+            function test(event) {
+            event.preventDefault(); // 기본 제출 방지
+
+            let makeData = [];
+            let defaultData = [];
+            const selectedKeywordElements = document.querySelectorAll('.toggle-button.selected');
+            selectedKeywordElements.forEach(element => {
+
+                if (element.classList.contains('makeKeywords')) {
+                    makeData.push(element.textContent);
+                    console.log(makeData);
+                } else if (element.classList.contains('defaultKeywords')) {
+                    defaultData.push(element.textContent);
+                    console.log(defaultData);
+                } else {
+                    console.log('This is a different class');
+                }
+                });
+
+
+            // 폼 필드에 추가 데이터 설정
+            document.getElementById('makeKeywordList').value = makeData.join(',');
+            document.getElementById('defaultKeywordList').value = defaultData.join(',');
+
+            // 폼 제출
+            document.getElementById('keywordForm').submit();
+            };
     </script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

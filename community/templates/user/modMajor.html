@@ -6,7 +6,7 @@
     <title>관심전공 수정</title>
 
     <link href="{% static 'community/bootstrap/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'community/css/modKeyword.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'community/css/modPage.css' %}" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/726bbd6862.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
 
@@ -18,16 +18,16 @@
         <form action="{% url 'community:save_majors' pk=user.pk %}" method="post">
             {% csrf_token %}
             <h2>관심전공 수정</h2>
-            <p>Please fill in this form to create an account!</p>
+            <p>Please fill in this form to modify your majors!</p>
             <hr>
 
             <div class="form-group">
                 <label>글로벌융합대학</label> <br>
                     {% for m in majors %}
                     {% if m.line == "글로벌융합대학" %}
-                    <script> console.log("{{ m.id }}")</script>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="major_{{ m.id }}" value="{{ m.id }}" name="majors[]">
+                            <input class="form-check-input" type="checkbox" id="major_{{ m.id }}" value="{{ m.id }}" name="majors[]" 
+                            {% if m in user_major %}checked{% endif %}>
                             <label class="form-check-label" for="major_{{ m.id }}">{{ m.majorname }}</label>
                         </div>
                         {% endif %}
@@ -39,7 +39,8 @@
                     {% for m in majors %}
                         {% if m.line == "과학기술대학" %}
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="major_{{ m.id }}" value="{{ m.id }}" name="majors[]">
+                            <input class="form-check-input" type="checkbox" id="major_{{ m.id }}" value="{{ m.id }}" name="majors[]" 
+                            {% if m in user_major %}checked{% endif %}>
                             <label class="form-check-label" for="major_{{ m.id }}">{{ m.majorname }}</label>
                         </div>
                         {% endif %}
@@ -51,7 +52,8 @@
                     {% for m in majors %}
                         {% if m.line == "Art & Design 대학" %}
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="major_{{ m.id }}" value="{{ m.id }}" name="majors[]">
+                            <input class="form-check-input" type="checkbox" id="major_{{ m.id }}" value="{{ m.id }}" name="majors[]" 
+                            {% if m in user_major %}checked{% endif %}>
                             <label class="form-check-label" for="major_{{ m.id }}">{{ m.majorname }}</label>
                         </div>
                         {% endif %}
@@ -65,6 +67,8 @@
     </div>
 
     <script>
+
+        // 전공 5개 이상 선택 시 alert
         const checkboxes = document.querySelectorAll('.form-check-input');
         const maxAllowed = 4;
     

@@ -13,7 +13,7 @@ urlpatterns = [
     path('mypage/<int:pk>/', views.UserDetail.as_view(), name='user_detail'),
     path('mypage/<int:pk>/modKeyword/', views.modKeyWord, name='modKeyword'),
     path('keywords/', views.get_keywords),
-    path('saveKeywords/', views.save_keywords, name='save_keywords'),
+    path('saveKeywords/<int:pk>/', views.save_keywords, name='save_keywords'),
     path('mypage/<int:pk>/modMajor/', views.modMajor, name='modMajor'),
     path('saveMajors/<int:pk>/', views.save_majors, name='save_majors'),
 

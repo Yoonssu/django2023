@@ -51,6 +51,8 @@ class UserDetail(LoginRequiredMixin, DetailView):
     
     
 def modKeyWord(request, pk):
+    user = User.objects.get(id=pk)
+
     return render(
         request,
         'user/modKeyword.html',
@@ -77,14 +79,34 @@ def get_keywords(request):
 
 
 def save_keywords(request, pk):
+    user = get_object_or_404(User, pk=pk)
+    
     if request.method == 'POST':
-        # POST 요청에서 선택된 키워드 정보를 받아서 처리하는 로직
-        keywords = request.POST.getlist('keywords[]')  # 혹은 request.POST.getlist('keywords') 에 따라 데이터 형식에 따라 가져올 수 있음
+        user.keyword.clear()
 
-        # 여기서 keywords를 DB에 저장하거나 다른 처리를 수행할 수 있음
+        make_keywords = request.POST.get('make_keywords').split(',')
+        default_keywords = request.POST.get('default_keywords').split(',')
 
-        # 처리 완료 후 JSON 응답
-        return JsonResponse({'success': True})
+        for dk in default_keywords:
+            default_keywords_obj = get_object_or_404(Keyword, keywordname=dk)
+            user.keyword.add(default_keywords_obj.id)
+
+        for mk in make_keywords:
+
+
+            try:
+                # 해당 keywordname을 가진 Keyword 객체를 가져오거나 생성합니다.
+                make_keyword_obj, created = Keyword.objects.get_or_create(keywordname=mk, defaults={'ismake': True, 'category': None})
+                # User에 해당 키워드를 추가합니다.
+                user.keyword.add(make_keyword_obj.id)
+            except Keyword.DoesNotExist:
+                # 원하는 키워드가 존재하지 않는 경우, 새로운 Keyword 객체를 생성합니다.
+                new_keyword = Keyword.objects.create(keywordname=mk, ismake=True, category=None)
+                # User에 새로 생성한 키워드를 추가합니다.
+                user.keyword.add(new_keyword.id)
+
+
+        return redirect('community:user_detail', pk=pk)
     else:
         # POST 요청이 아닌 경우 에러 응답
         return JsonResponse({'success': False, 'error': 'Invalid request method'})
@@ -92,12 +114,15 @@ def save_keywords(request, pk):
 
 def modMajor(request, pk):
     majors = Major.objects.all()
+    user = User.objects.get(id=pk)
+    user_major = user.major.all()
 
     return render(
         request,
         'user/modMajor.html',
         {
             'majors' : majors,
+            'user_major' : user_major,
         }
     )
 
