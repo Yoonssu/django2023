@@ -21,7 +21,7 @@
             </div>
             <div class="content_box">
 
-                <button id="createPostBtn" onclick="window.location.href='{% url 'community:TeamPostForm' %}'">팀원 모집 글쓰기</button>
+                <button id="createPostBtn" onclick="redirectToTeamPostForm()">팀원 모집 글쓰기</button>
 
                 {% if team_list.exists %}
                     <!-- 추가된 부분: 표 형식으로 게시글 표시 -->
@@ -30,7 +30,7 @@
                         {% for team in team_list %}
                             <tr>
                                 <td>
-                                    <a href="{% url 'community:team_detail' team.id %}">
+                                    <a href="{% url 'community:team_detail' team.id %}"></a>
                                         <h2>{{ team.title }}</h2>
                                         {#                        <p>{{ team.content }}</p>#}
                                         <p>{{ team.time }}</p>
@@ -57,4 +57,26 @@
     </div>
     </div>
 
+
+
+    <script>
+        document.getElementById('createPostBtn').addEventListener('click', function () {
+            var isLoggedIn = {% if user.is_authenticated %} true {% else %} false {% endif %};
+
+            if (isLoggedIn) {
+                // 로그인된 경우
+                var teamPostFormUrl = "{% url 'community:TeamPostForm' %}";
+                window.location.href = teamPostFormUrl;
+            } else {
+                // 로그인되지 않은 경우
+                var loginUrl = "{% url 'community:login' %}";
+                window.location.href = loginUrl;
+            }
+        });
+    </script>
+
+
+
 {% endblock %}
+
+
