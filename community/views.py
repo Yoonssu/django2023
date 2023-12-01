@@ -131,6 +131,7 @@ class TeamDetail(DetailView):
     model = Team
     template_name = 'community/team_detail.html'
 
+
     def get_context_data(self, **kwargs):
         context = super(TeamDetail, self).get_context_data(**kwargs)
         team = self.object
@@ -158,21 +159,39 @@ class TeamPostForm(LoginRequiredMixin, CreateView):
         kwargs['user'] = self.request.user  # 사용자 정보를 폼에 전달
         return kwargs
 
-    def form_valid(self, form):
-        current_user = self.request.user
-        if current_user.is_authenticated:
-            form.instance.user = current_user
-            post_title_instance = form.cleaned_data['post']
+    from django.shortcuts import get_object_or_404
 
-            print(f"Selected post title: {post_title_instance}")
+    class TeamPostForm(LoginRequiredMixin, CreateView):
+        # (이전 코드 생략)
 
-            # 사용자가 선택한 게시물이 존재하는지 확인
-            post_instance = get_object_or_404(Post, title=post_title_instance)
+        def form_valid(self, form, post_instance=None):
+            current_user = self.request.user
+            if current_user.is_authenticated:
+                form.instance.user = current_user
+                post_title_instance = form.cleaned_data['post']
 
-            form.instance.post = post_instance
-            return super(TeamPostForm, self).form_valid(form)
-        else:
-            return redirect('/community')
+                # 괄호 안의 pk 번호 제거하고 title 검색해서 Post 객체 가져오기
+                import re
+                cleaned_post_title = re.sub(r'\[\d+\]', '', str(post_title_instance)).strip()
+
+
+                # Post 모델에서 해당 title에 매칭되는 객체 가져오기
+                # 여러 개의 객체가 반환되더라도 첫 번째 객체만 사용
+                post_instance = Post.objects.filter(title=cleaned_post_title).first()
+
+                if post_instance:
+                    # Team 객체 생성 및 post 필드에 post_instance 할당
+                    team_instance = form.save(commit=False)
+                    team_instance.post = post_instance
+                    team_instance.save()
+
+                    return super(TeamPostForm, self).form_valid(form)
+                else:
+                    # 인증된 사용자이지만, post_instance가 없는 경우
+                    return None
+            else:
+                # 인증되지 않은 사용자에 대한 처리 (예: 리디렉션)
+                return redirect('/community')
 
 
 def new_comment(request, pk):
@@ -181,6 +200,7 @@ def new_comment(request, pk):
 
         if request.method == 'POST':
             comment_form = CommentForm(request.POST)
+
             if comment_form.is_valid():
                 comment = comment_form.save(commit=False)
                 comment.team = team

@@ -46,7 +46,7 @@
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 {% else %}
-                    <a role="button" class="btn btn-sm" href="#" data-toggle="modal" data-target="#loginModal">로그인하고 댓글을
+                    <a role="button" class="btn btn-sm" href="{% url 'community:login' %}" data-toggle="modal" data-target="#loginModal">로그인하고 댓글을
                         남겨주세요</a>
                 {% endif %}
 
