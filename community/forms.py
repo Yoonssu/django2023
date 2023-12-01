@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from community.models import User, Comment, Post  # community 앱의 User 모델을 import + Comment , Post 모델도
+from django.shortcuts import redirect
+
+from community.models import User, Comment, Post, Team  # community 앱의 User 모델을 import + Comment , Post 모델도
 
 class UserForm(UserCreationForm):
     email = forms.EmailField(label="이메일")
@@ -11,9 +13,35 @@ class UserForm(UserCreationForm):
 
 
 class TeamPostForm(forms.ModelForm):
+    post = forms.ModelChoiceField(
+        queryset=Post.objects.all(),
+        empty_label=None,
+        to_field_name='title'
+    )
+
     class Meta:
-        model = Post
-        fields = ['title', 'content']
+        model = Team
+        fields = ['title', 'content', 'post']
+
+    def __init__(self, user, *args, **kwargs):
+        super(TeamPostForm, self).__init__(*args, **kwargs)
+        self.user = user
+
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+        current_user = self.user
+        if current_user.is_authenticated:
+            post_title_instance = self.cleaned_data['post']
+            post_instance = Post.objects.get(title=post_title_instance)
+            instance.post = post_instance
+            instance.user = current_user
+            if commit:
+                instance.save()
+            return instance
+        else:
+            # 인증되지 않은 사용자에 대한 처리 (예: 리디렉션)
+            return redirect('/community')
+
 
 class CommentForm(forms.ModelForm):
     class Meta:

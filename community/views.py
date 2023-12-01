@@ -1,8 +1,11 @@
 from audioop import reverse
 
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
+
+from . import forms
 from .models import Post, User, Team, Major, Keyword, Comment
 from django.db.models import Count
 from .forms import UserForm, CommentForm, TeamPostForm
@@ -81,16 +84,32 @@ class TeamDetail(DetailView):
         return context
 
 class TeamPostForm(LoginRequiredMixin, CreateView):
-    model = Post
-    fields = ['title', 'content']
+    model = Team
+    form_class = TeamPostForm  # 사용할 폼 클래스 설정
+    success_url = reverse_lazy('community:team_list')
+    template_name = 'team_post_form'
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user  # 사용자 정보를 폼에 전달
+        return kwargs
 
     def form_valid(self, form):
         current_user = self.request.user
         if current_user.is_authenticated:
-            form.instance.author = current_user
+            form.instance.user = current_user
+            post_title_instance = form.cleaned_data['post']
+
+            print(f"Selected post title: {post_title_instance}")
+
+            # 사용자가 선택한 게시물이 존재하는지 확인
+            post_instance = get_object_or_404(Post, title=post_title_instance)
+
+            form.instance.post = post_instance
             return super(TeamPostForm, self).form_valid(form)
         else:
             return redirect('/community')
+
 
 def new_comment(request, pk):
     if request.user.is_authenticated:
@@ -111,8 +130,6 @@ def new_comment(request, pk):
     else:
         # 사용자가 인증되지 않은 경우 로그인 페이지로 리다이렉트
         return redirect("login")
-
-
 
 
 
