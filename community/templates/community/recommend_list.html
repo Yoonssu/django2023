@@ -53,11 +53,26 @@
       <div class="major-post-date">등록 날짜</div>
     </div>
 
+    <!-- 추가: all_major_content 부분 -->
+    <div class="major-content hidden" id="all_major_content">
+      {% for post in all_major_posts_list %}
+      <div class="major-content-box">
+        <div class="major-post-pk">{{ forloop.counter }}</div>
+        <div class="major-post-title">
+          <a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank"
+            >{{ post.title }}</a
+          >
+        </div>
+        <div class="major-post-date">{{ post.time|date:"Y.m.d" }}</div>
+      </div>
+      {% endfor %}
+    </div>
+
     {% for major, posts in major_posts.items %} {% if major %}
     <div class="major-content hidden" id="content_{{ major }}">
       {% for post in posts %}
       <div class="major-content-box">
-        <div class="major-post-pk">{{post.pk}}</div>
+        <div class="major-post-pk">{{ forloop.counter }}</div>
         <div class="major-post-title">
           <a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank"
             >{{ post.title }}</a
@@ -103,11 +118,15 @@
     }
 
     function showAll() {
-      // 모든 major-content 보이기
+      // 모든 major-content 숨기기
       var allContents = document.querySelectorAll(".major-content");
       for (var i = 0; i < allContents.length; i++) {
-        allContents[i].classList.remove("hidden");
+        allContents[i].classList.add("hidden");
       }
+
+      // all_major_posts_list에 있는 포스트들 보이기
+      var allMajorContent = document.getElementById("all_major_content");
+      allMajorContent.classList.remove("hidden");
     }
   </script>
 

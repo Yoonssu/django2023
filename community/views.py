@@ -10,7 +10,7 @@ from .forms import UserForm
 from django.contrib.auth import authenticate,login
 from django.http import JsonResponse
 import operator 
-from random import sample
+from random import random
 from collections import Counter
 
 
@@ -64,48 +64,52 @@ class Recommend(LoginRequiredMixin, ListView):
         # 현재 로그인된 사용자의 정보 가져오기
         current_user = self.request.user
 
+        #-----------------------추천 posts-----------------------------
         # 사용자가 선택한 키워드에 맞는 게시글 3개 가져오기
         selected_keywords = current_user.keyword.all()
 
-        # 각각 3개씩 나오게는 성공
-        test_posts_dic = {}
+        posts_dic = {}
         for keyword in selected_keywords:
-            test_posts = Post.objects.filter(Q(title__icontains=keyword.keywordname) | Q(content__icontains=keyword.keywordname)).order_by('-time')[:5]
-            test_posts_dic[keyword] = test_posts
+            posts = Post.objects.filter(Q(title__icontains=keyword.keywordname) | Q(content__icontains=keyword.keywordname)).order_by('-time')[:10]
+            posts_dic[keyword] = posts
         
         all_posts_list = []
-        for posts in test_posts_dic.values():
+        for posts in posts_dic.values():
             all_posts_list.extend(posts)
-
-        list_len = len(all_posts_list)
 
         # 중복된 포스트 찾아 중복 횟수 기록
         post_counts = Counter(all_posts_list)
 
         # 중복 횟수에 따라 정렬하되, 중복 횟수가 같으면 랜덤으로 섞기
-        sorted_posts = sorted(all_posts_list, key=lambda post: (post_counts[post], hash(post)), reverse=True)
+        sorted_posts = sorted(all_posts_list, key=lambda post: (post_counts[post], random()), reverse=True)
 
         # 상위 3개 포스트 선택
-        selected_posts = sample(sorted_posts, 3)
+        selected_posts = sorted_posts[:3]
+
+        #-----------------------전공 posts-----------------------------
 
         # 사용자가 선택한 전공에 맞는 게시물들 가져오기
         selected_majors = current_user.major.all()
         major_posts = {}
         for major in selected_majors:
-            posts = Post.objects.filter(major=major)
+            posts = Post.objects.filter(major=major).order_by('-pk')
             major_posts[major] = posts
+
+        all_major_posts_list = []
+        for posts in major_posts .values():
+            all_major_posts_list.extend(posts)
+        all_major_posts_list = sorted(all_major_posts_list, key=lambda post: post.pk, reverse=True)
 
         major_list = list(major_posts.keys())
         
         context.update({
             'user': current_user,
             'selected_keywords': selected_keywords,
-            'test_posts_dic': test_posts_dic,
-            # 'recommended_posts': recommended_posts,
-            'list_len': list_len,
+            'posts_dic': posts_dic,
             'selected_posts': selected_posts,
             'major_posts': major_posts,
             'major_list': major_list,
+            'all_major_posts_list': all_major_posts_list,
         })
 
 
