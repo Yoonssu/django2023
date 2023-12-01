@@ -21,7 +21,7 @@
             </div>
             <div class="content_box">
 
-                <button id="createPostBtn" onclick="window.location.href='{% url 'community:TeamPostForm' %}'">팀원 모집 글쓰기</button>
+                <button id="createPostBtn" onclick="redirectToTeamPostForm()">팀원 모집 글쓰기</button>
 
 
 
@@ -59,4 +59,26 @@
     </div>
     </div>
 
+
+
+    <script>
+        document.getElementById('createPostBtn').addEventListener('click', function () {
+            var isLoggedIn = {% if user.is_authenticated %} true {% else %} false {% endif %};
+
+            if (isLoggedIn) {
+                // 로그인된 경우
+                var teamPostFormUrl = "{% url 'community:TeamPostForm' %}";
+                window.location.href = teamPostFormUrl;
+            } else {
+                // 로그인되지 않은 경우
+                var loginUrl = "{% url 'community:login' %}";
+                window.location.href = loginUrl;
+            }
+        });
+    </script>
+
+
+
 {% endblock %}
+
+
