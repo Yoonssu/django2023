@@ -23,8 +23,6 @@
 
                 <button id="createPostBtn" onclick="redirectToTeamPostForm()">팀원 모집 글쓰기</button>
 
-
-
                 {% if team_list.exists %}
                     <!-- 추가된 부분: 표 형식으로 게시글 표시 -->
                     <table>
@@ -35,8 +33,9 @@
                                     <a href="{% url 'community:team_detail' team.id %}">
                                         <h2>{{ team.title }}</h2>
                                         {#                        <p>{{ team.content }}</p>#}
-                                        <p>{{ team.time }}</p>
-                                    </a>
+
+                                        <p>{{ team.time }}</p></a>
+
                                 </td>
                             </tr>
                             <tr>
