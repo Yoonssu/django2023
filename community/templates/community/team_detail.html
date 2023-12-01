@@ -1,58 +1,75 @@
-<!-- url 예시 http://127.0.0.1:8000/community/team/3 -->
-
 {% extends 'community/base.html' %}
-{%  load crispy_forms_tags  %}
+{% load crispy_forms_tags %}
+
+<link rel="stylesheet" href="../../static/community/css/postDetailStyle.css"/>
+
 
 {% block main_area %}
 
-    <!-- Post title-->
-    <section class="mb-5">
-        <h2 class="fs-5 mb-4"> {{ team.title }} </h2>
-        <p>{{ team.time }}</p>
-    </section>
+    <div class="wrapper">
+        <div class="content_wrapper">
+            <div class="title">
+                <h2>{{ post.title | linebreaksbr }} </h2>
+                <br/>
+            </div>
+            <div class="content_box">
+                <!-- Post title-->
+                <section class="mb-5">
+                    <h2>{{ team.title | linebreaksbr }} </h2>
+                    <p>{{ team.time }}</p>
+                    <hr>
 
-    <hr>
-
-    <!-- Post content-->
-    <section class="mb-5">
-        <p class="fs-5 mb-4"> {{ team.content }} </p>
-    </section>
-{% endblock %}
- <!-- Comments section-->
-
+                    <!-- Post content-->
                     <section class="mb-5">
-                        <div class="card bg-light">
-                            <div class="card-body">
-                                <!-- Comment form-->
-                                {%  if user.is_authenticated  %}
-                                <form class="mb-4" id="comment-form" method="POST", action="{{ post.get_absolute_url }}new_comment/">
-                                    {% csrf_token %}
-                                    <div class="form-group">
-                                        {{  comment_form | crispy }}
-                                    </div>
-                                    <button type="submit" class="btn btn-primary"> Submit </button>
-                                    {% else %}
-                                        <a role="button" class="btn btn-sm" href="#" data-toggle="modal" data-target="#loginModal">로그인하고 댓글을 남겨주세요</a>
-                                    {% endif %}
-                                </form>
-
-                                <!-- Single comment-->
-                                {% if post.comment_set.exists %}
-                                    {% for comment in post.comment_set.iterator %}
-
-                                <div class="d-flex" id="comment={{ comment.pk }}">
-                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                    <div class="ms-3">
-                                        <div class="fw-bold">{{ comment.author}} & {{ comment.create_at }}</div>
-                                        {{ comment.content | linebreaks }}
-                                        {% if comment.created_at != comment.modified_at %}
-                                            <p class="text-muted"><small> Updated : {{  comment.modified_at }}</small></p>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                                {%  endfor %}
-                            {% endif %}
-                        </div>
-                        </div>
+                        <p class="fs-5 mb-4">{{ team.content }}</p>
                     </section>
 
+                    <br/>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Comments section -->
+    <section class="mb-5">
+        <div class="card bg-light">
+            <div class="card-body">
+                <!-- Comment form -->
+                {% if user.is_authenticated %}
+                   <form class="mb-4" id="comment-form" method="POST" action="{% url 'community:new_comment' pk=team.pk %}">
+
+                        {% csrf_token %}
+                        <div class="form-group">
+                            {{ comment_form | crispy }}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                {% else %}
+                    <a role="button" class="btn btn-sm" href="{% url 'community:login' %}" data-toggle="modal" data-target="#loginModal">로그인하고 댓글을
+                        남겨주세요</a>
+                {% endif %}
+
+                <!-- Single comment -->
+                {% if team.comment_set.exists %}
+                    {% for comment in team.comment_set.iterator %}
+
+                        <div class="d-flex" id="comment-{{ comment.pk }}">
+                            <div class="flex-shrink-0"><img class="rounded-circle"
+                                                            src="https://dummyimage.com/50x50/ced4da/6c757d.jpg"
+                                                            alt="..."/>
+                            </div>
+                            <div class="ms-3">
+                                <div class="fw-bold">{{ comment.user.username }} & {{ comment.time }}</div>
+                                {{ comment.content | linebreaks }}
+                                {% if comment.time != comment.modified_at %}
+                                    <p class="text-muted"><small> Updated : {{ comment.modified_at }}</small></p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
