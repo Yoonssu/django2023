@@ -1,40 +1,38 @@
 <!-- url 예시 http://127.0.0.1:8000/community/recommend/user.pk -->
-<link rel="stylesheet" href="../../static/community/css/recommendStryle.css" />
-
-{% extends 'community/base.html' %} {% block main_area %}
+<link
+  rel="stylesheet"
+  href="../../static/community/css/recommendStryle.css?after"
+/>
+{% extends 'community/base.html' %} {% block main_area %}{% load static %}
 
 <div class="wrapper">
-  <div class="recommend_wrapper">
-    <div class="recommend_font">
+  <div class="recommend-wrapper">
+    <div class="recommend-font">
       <h1>맞춤 추천</h1>
       <p>자신이 등록한 키워드와 가장 잘 맞는 활동들을 우선으로 추천합니다.</p>
-      <div class="recommend_cardbox">
-        <!-- 각 키워드마다 따로 한 다음에 for문에 넣으면 잘 나옴 -->
-        <h2>테스트 추천</h2>
-        {% for keyword, posts in test_posts_dic.items %} {% if keyword %}
-        <h3>{{ keyword }}</h3>
-        <ul>
-          {% for post in posts %}
-          <li>{{ post.title }}</li>
-          {% endfor %}
-        </ul>
-        {% endif %} {% endfor %}
+    </div>
+
+    <div class="recommend-cardbox">
+      {% for post in selected_posts %}
+      <div class="recommend-card">
+        <div class="recommend-card-img">
+          <img
+            src="{% static 'community/dukse/덕새.png' %}"
+            alt="덕새 이미지"
+          />
+        </div>
+        <div class="recommend-card-title">
+          <a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank"
+            >{{ post.title }}</a
+          >
+        </div>
       </div>
+
+      {% empty %}
+      <p>추천 포스트가 없습니다</p>
+      {% endfor %}
     </div>
   </div>
-
-  <!-- <h1>환영해, {{ user.username }}!</h1> -->
-
-  <h2>추천게시물</h2>
-  <p>{{selected_keywords}}</p>
-  <ul>
-    {% for post in recommended_posts %}
-    <li>{{ post.title }}</li>
-    <p>{{ post.content }}</p>
-    {% empty %}
-    <p>추천 포스트가 없습니다</p>
-    {% endfor %}
-  </ul>
 
   <div class="major-wrapper">
     <div class="major-title">
@@ -60,7 +58,11 @@
       {% for post in posts %}
       <div class="major-content-box">
         <div class="major-post-pk">{{post.pk}}</div>
-        <div class="major-post-title">{{ post.title }}</div>
+        <div class="major-post-title">
+          <a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank"
+            >{{ post.title }}</a
+          >
+        </div>
         <div class="major-post-date">{{ post.time|date:"Y.m.d" }}</div>
       </div>
       {% endfor %}

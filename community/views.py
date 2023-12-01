@@ -5,14 +5,13 @@ from .models import Post, User, Team, Major, Keyword
 from django.db.models import Count
 from django.shortcuts import get_object_or_404
 from django.db.models import Q 
-from functools import reduce
 import operator 
 from .forms import UserForm
 from django.contrib.auth import authenticate,login
 from django.http import JsonResponse
-from django.db.models import Q 
-from functools import reduce
 import operator 
+from random import sample
+from collections import Counter
 
 
 # Create your views here.
@@ -68,27 +67,45 @@ class Recommend(LoginRequiredMixin, ListView):
         # 사용자가 선택한 키워드에 맞는 게시글 3개 가져오기
         selected_keywords = current_user.keyword.all()
 
-        recommended_posts = Post.objects.filter(
-            reduce(
-                operator.or_,
-                [Q(title__icontains=keyword.keywordname) | Q(content__icontains=keyword.keywordname) for keyword in selected_keywords]
-            )
-        ).order_by('-time')
-
         # 각각 3개씩 나오게는 성공
         test_posts_dic = {}
         for keyword in selected_keywords:
-            test_posts = Post.objects.filter(Q(title__icontains=keyword.keywordname) | Q(content__icontains=keyword.keywordname)).order_by('-time')[:3]
+            test_posts = Post.objects.filter(Q(title__icontains=keyword.keywordname) | Q(content__icontains=keyword.keywordname)).order_by('-time')[:5]
             test_posts_dic[keyword] = test_posts
+        
+        all_posts_list = []
+        for posts in test_posts_dic.values():
+            all_posts_list.extend(posts)
+
+        list_len = len(all_posts_list)
+
+        # 중복된 포스트 찾아 중복 횟수 기록
+        post_counts = Counter(all_posts_list)
+
+        # 중복 횟수에 따라 정렬하되, 중복 횟수가 같으면 랜덤으로 섞기
+        sorted_posts = sorted(all_posts_list, key=lambda post: (post_counts[post], hash(post)), reverse=True)
+
+        # 상위 3개 포스트 선택
+        selected_posts = sample(sorted_posts, 3)
 
         # 사용자가 선택한 전공에 맞는 게시물들 가져오기
-        selected_majors = current_user.major.all().order_by(-pk)
+        selected_majors = current_user.major.all()
+        major_posts = {}
+        for major in selected_majors:
+            posts = Post.objects.filter(major=major)
+            major_posts[major] = posts
+
+        major_list = list(major_posts.keys())
         
         context.update({
             'user': current_user,
             'selected_keywords': selected_keywords,
             'test_posts_dic': test_posts_dic,
-            'recommended_posts': recommended_posts,
+            # 'recommended_posts': recommended_posts,
+            'list_len': list_len,
+            'selected_posts': selected_posts,
+            'major_posts': major_posts,
+            'major_list': major_list,
         })
 
 
@@ -220,49 +237,3 @@ def modMajor(request, pk):
         'user/modMajor.html',
     )
     
-class Recommend(LoginRequiredMixin, ListView):
-    model = User
-    template_name = 'community/recommend_list.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(Recommend, self).get_context_data(**kwargs)
-
-        # 현재 로그인된 사용자의 정보 가져오기
-        current_user = self.request.user
-
-        # 사용자가 선택한 키워드에 맞는 게시글 3개 가져오기
-        selected_keywords = current_user.keyword.all()
-
-        # 여러 키워드에 대해 OR 연산을 수행하여 하나 이상의 키워드가 제목 또는 내용에 포함된 게시물을 찾습니다.
-        # recommended_posts = Post.objects.filter(
-        #     reduce(
-        #         operator.or_,
-        #         (Q(title__icontains=keyword.keywordname) | Q(content__icontains=keyword.keywordname) for keyword in selected_keywords)
-        #     )
-        # ).order_by('-time')
-
-        # 각각 3개씩 나오게는 성공
-        test_posts_dic = {}
-        for keyword in selected_keywords:
-            test_posts = Post.objects.filter(Q(title__icontains=keyword.keywordname) | Q(content__icontains=keyword.keywordname)).order_by('-time')[:3]
-            test_posts_dic[keyword] = test_posts
-
-        # 사용자가 선택한 전공에 맞는 게시물들 가져오기
-        selected_majors = current_user.major.all()
-        major_posts = {}
-        for major in selected_majors:
-            posts = Post.objects.filter(major=major)
-            major_posts[major] = posts
-
-        major_list = list(major_posts.keys())
-
-        context.update({
-            'user': current_user,
-            # 'recommended_posts': recommended_posts,
-            'major_posts': major_posts,
-            'major_list': major_list,
-            'selected_keywords': selected_keywords,
-            'test_posts_dic': test_posts_dic,
-        })
-
-        return context
