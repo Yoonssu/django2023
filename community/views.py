@@ -304,4 +304,10 @@ def modMajor(request, pk):
         request,
         'user/modMajor.html',
     )
+
+
+def post_team(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    teams_related_to_post = post.get_related_teams()
+    return render(request, 'community/post_team.html', {'post': post, 'teams_related_to_post': teams_related_to_post})
     

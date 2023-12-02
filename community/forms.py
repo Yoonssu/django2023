@@ -41,6 +41,11 @@ class TeamPostForm(forms.ModelForm):
                 post_instance = Post.objects.get(title=cleaned_post_title)
                 instance.post = post_instance
 
+                # 합쳐진 title을 생성하여 저장
+                user_input_title = self.cleaned_data['title']
+                combined_title = f"[{cleaned_post_title}] {user_input_title}"
+                instance.title = combined_title
+
                 instance.user = current_user
                 if commit:
                     instance.save()
