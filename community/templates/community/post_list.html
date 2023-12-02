@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="../../static/community/css/post_list.css" />
 {% extends 'community/base.html' %} {% load static %}
 
-{% block scripts %}
+<!-- 스크립트 코드 -->
     <script>
           document.addEventListener('DOMContentLoaded', function () {
             // 페이지가 로드될 때 실행되는 코드
@@ -44,8 +44,7 @@
             }
         });
     </script>
-{% endblock %}
-
+<!-- 스크립트 코드 종료 -->
 
 {% block main_area %}
 
@@ -53,6 +52,7 @@
 <div class="activity_title"><h1>활동목록</h1></div>
 <hr>
 
+<!-- 교내/대외 필터링 -->
 <div class="choose_one">
     <ul> 
         <li class="first" data-filter="all">
@@ -66,8 +66,9 @@
         </li>
     </ul>
 </div>
+<!-- 교내/대외 필터링 종료 -->
 
-
+<!-- 검색 미구현 -->
 <div class="welcome-hero-serch-box">
     <div class="welcome-hero-form">
         <div class="single-welcome-hero-form">
@@ -83,7 +84,9 @@
         </div>
     </div>
 </div><br><br>
+<!-- 검색 종료 -->
 
+<!-- 게시글 목록 테이블 -->
 <table class="list_table">
     <thead>
         <tr>
@@ -105,7 +108,9 @@
         {% endfor %}
     </tbody>
 </table>
+<!-- 게시글 목록 테이블 종료 -->
 
+<!-- 페이지네이션_수정 요함 -->
 <div class="pagination">
     <span class="step-links">
         {% if post_list.has_previous %}
@@ -129,6 +134,6 @@
         {% endif %}
     </span>
 </div>
-
+<!-- 페이지네이션 종료 -->
 
 {% endblock %}
