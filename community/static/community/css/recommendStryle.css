@@ -16,7 +16,9 @@ body {
 .major-wrapper,
 .major-content,
 .recommend-wrapper,
-.recommend-font {
+.recommend-font,
+.user-keyword-box,
+.user-keyword {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,11 +33,30 @@ body {
 
 .recommend-font {
   /* background-color: #bcadf8; */
-  width: auto;
+  width: 550px;
   height: 170px;
   justify-content: center;
-  margin: 130px 0 80px 0;
+  margin: 130px 0 20px 0;
 }
+
+.user-keyword-box {
+  /* background-color: rgba(34, 139, 34, 0.303); */
+  width: 550px;
+  flex-direction: row;
+  margin-bottom: 50px;
+  flex-flow: wrap;
+}
+
+.user-keyword {
+  background-color: #f0f0f0;
+  width: 85px;
+  height: 35px;
+  font-size: 14px;
+  border-radius: 13px;
+  justify-content: center;
+  margin: 5px;
+}
+
 .recommend-cardbox {
   /* background-color: rgb(105, 105, 147); */
   width: 97%;
@@ -81,12 +102,12 @@ body {
 #major-title {
   font-size: 35px;
   font-weight: 900;
-  text-shadow: #3333337c 3px 3px 3px;
+  text-shadow: #33333356 3px 3px 3px;
   color: #5a5a5a;
 }
 
 #recommend-title2 {
-  margin-top: 10px;
+  margin-top: 15px;
   font-size: 17px;
   font-weight: 700;
   color: #5a5a5a;
@@ -188,7 +209,8 @@ body {
   height: 50px;
 }
 
-.major-post-title a {
+.major-post-title a,
+.pagination a {
   color: black;
   text-decoration: none;
 }
@@ -199,10 +221,15 @@ body {
   background-color: rgba(0, 0, 0, 0.051);
 }
 
-.major-post-title a:hover {
+.major-post-title a:hover,
+.pagination a:hover {
   color: #333;
 }
 
 .hidden {
   display: none;
+}
+
+.pagination {
+  margin-top: 40px;
 }
