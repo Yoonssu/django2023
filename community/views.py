@@ -37,8 +37,19 @@ class PostList(ListView):
     template_name = 'community/post_list.html'
     context_object_name = 'post_list'
     paginate_by = 10  # 페이지당 보여질 아이템 수를 10으로 설정
+    
+    def get_queryset(self):
+        # URL에서 전달된 필터값 가져오기
+        filter_value = self.request.GET.get('filter', 'all')
 
-
+        # 필터값에 따라 적절한 쿼리셋 반환
+        if filter_value == 'isduksung':
+            return Post.objects.filter(isduksung=True).order_by('-time')
+        elif filter_value == 'notIsduksung':
+            return Post.objects.filter(isduksung=False).order_by('-time')
+        else:
+            return Post.objects.all().order_by('-time')
+    
     def get_context_data(self, **kwargs):
         context = super(PostList, self).get_context_data(**kwargs)
 
@@ -51,6 +62,7 @@ class PostList(ListView):
         page_range = paginator.page_range
         context.update({
             'page_range': page_range,
+            'filter_value': self.request.GET.get('filter', 'all'),  # 필터값 추가
         })
 
         # 페이징 버튼 수 제한을 위한 추가 작업
@@ -59,7 +71,7 @@ class PostList(ListView):
         except ValueError:
             current_page = 1
 
-        max_pages = 10  # 페이지당 최대 페이징 버튼 수
+        max_pages = 5  # 페이지당 최대 페이징 버튼 수
         middle_range = max_pages // 2
 
         if current_page <= middle_range:

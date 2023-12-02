@@ -6,7 +6,7 @@
 
 {% block scripts %}
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+          document.addEventListener('DOMContentLoaded', function () {
             // 페이지가 로드될 때 실행되는 코드
             // 이 부분에 클라이언트 측 JavaScript 코드를 작성
 
@@ -31,16 +31,16 @@
                 var tableRows = document.querySelectorAll('.list_table tbody tr');
 
                 tableRows.forEach(function (row) {
-                var dataFilter = row.getAttribute('data-filter');
+                    var dataFilter = row.getAttribute('data-filter');
 
-                // 모든 행을 숨김
-                row.style.display = 'none';
+                    // 모든 행을 숨김
+                    row.style.display = 'none';
 
-                // 선택된 필터와 일치하는 경우 해당 행을 보여줌
-                if (filter === 'all' || dataFilter === filter) {
-                    row.style.display = 'table-row';
-                }
-            });
+                    // 선택된 필터와 일치하는 경우 해당 행을 보여줌
+                    if (filter === 'all' || (filter === 'isduksung' && dataFilter === 'True') || (filter === 'notIsduksung' && dataFilter === 'False')) {
+                        row.style.display = 'table-row';
+                    }
+                });
             }
         });
     </script>
@@ -54,16 +54,19 @@
 <hr>
 
 <div class="choose_one">
-    <li class="first" data-filter="all">
-        <a href="#">전체 /</a>
-    </li>
-    <li class="second" data-filter="isduksung">
-        <a href="#">교내 /</a>
-    </li>
-    <li class="third" data-filter="notIsduksung">
-        <a href="#">대외</a>
-    </li>
+    <ul> 
+        <li class="first" data-filter="all">
+            <a href="/community/">전체</a>
+        </li>
+        <li class="second" data-filter="isduksung">
+            <a href="?filter=isduksung">교내</a> 
+        </li>
+        <li class="third" data-filter="notIsduksung">
+            <a href="?filter=notIsduksung">대외</a> 
+        </li>
+    </ul>
 </div>
+
 
 <div class="welcome-hero-serch-box">
     <div class="welcome-hero-form">
@@ -106,23 +109,23 @@
 <div class="pagination">
     <span class="step-links">
         {% if post_list.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ post_list.previous_page_number }}">previous</a>
+            <a href="?filter={{ filter_value }}&page=1">&laquo; first</a>
+            <a href="?filter={{ filter_value }}&page={{ post_list.previous_page_number }}">previous</a>
         {% endif %}
     
         {% for i in page_range %}
             {% if post_list.number == i %}
                 <span class="current">
-                    <a href="?page={{ i }}" style="color: white; font-weight: bold;">{{ i }}</a>
+                    <a href="?filter={{ filter_value }}&page={{ i }}" style="color: white; font-weight: bold;">{{ i }}</a>
                 </span>
             {% else %}
-                <a href="?page={{ i }}">{{ i }}</a>
+                <a href="?filter={{ filter_value }}&page={{ i }}">{{ i }}</a>
             {% endif %}
         {% endfor %}
     
         {% if post_list.has_next %}
-            <a href="?page={{ post_list.next_page_number }}">next</a>
-            <a href="?page={{ post_list.paginator.num_pages }}">last &raquo;</a>
+            <a href="?filter={{ filter_value }}&page={{ post_list.next_page_number }}">next</a>
+            <a href="?filter={{ filter_value }}&page={{ post_list.paginator.num_pages }}">last &raquo;</a>
         {% endif %}
     </span>
 </div>
