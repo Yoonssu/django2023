@@ -21,7 +21,7 @@ class TeamPostForm(forms.ModelForm):
 
     class Meta:
         model = Team
-        fields = ['title', 'content', 'post']
+        fields = ['post', 'title', 'content' ]
 
     def __init__(self, user, *args, **kwargs):
         super(TeamPostForm, self).__init__(*args, **kwargs)

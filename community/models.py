@@ -64,6 +64,9 @@ class Team(models.Model):
     def get_absolute_url(self):
         return f'/team/{self.pk}/'
 
+    class Meta:
+        ordering = ['-time']  # 최신 객체가 먼저 나오도록 설정
+
 
 class Comment(models.Model):
     id = models.BigAutoField(primary_key=True)
