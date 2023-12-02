@@ -1,154 +1,79 @@
 @charset "UTF-8";
-/*!
-* Start Bootstrap - Landing Page v6.0.6 (https://startbootstrap.com/theme/landing-page)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-landing-page/blob/master/LICENSE)
-*/
-/*!
- * Bootstrap  v5.2.3 (https://getbootstrap.com/)
- * Copyright 2011-2022 The Bootstrap Authors
- * Copyright 2011-2022 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
-
-/* styles.css 파일이나 원하는 곳에 추가하세요 */
-
-/* styles.css 파일이나 원하는 곳에 추가하세요 */
-
 
 .navbar-nav {
   margin-left: auto;
 }
 
 .nav {
---bs-nav-link-padding-x: 1rem;
---bs-nav-link-padding-y: 0.5rem;
---bs-nav-link-font-weight: ;
---bs-nav-link-color: var(--bs-link-color);
---bs-nav-link-hover-color: var(--bs-link-hover-color);
---bs-nav-link-disabled-color: #6c757d;
-display: flex;
-flex-wrap: wrap;
-padding-left: 0;
-margin-bottom: 0;
-list-style: none;
+  --bs-nav-link-padding-x: 1rem;
+  --bs-nav-link-padding-y: 0.5rem;
+  --bs-nav-link-font-weight: ;
+  --bs-nav-link-color: var(--bs-link-color);
+  --bs-nav-link-hover-color: var(--bs-link-hover-color);
+  --bs-nav-link-disabled-color: #6c757d;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
 }
-
+  
 .nav-link {
-display: block;
-padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
-font-size: var(--bs-nav-link-font-size);
-font-weight: var(--bs-nav-link-font-weight);
-color: var(--bs-nav-link-color);
-text-decoration: none;
-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: var(--bs-nav-link-font-weight);
+  color: var(--bs-nav-link-color);
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-.nav-link {
-  transition: none;
-}
-}
-
-
-
-/* 서비스 소개 페이지 */
-.about_we_back {
-  position: absolute;
-  width: 100vw; /* 뷰포트 너비에 맞게 100%로 설정 */
-  height: 100vh; /* 뷰포트 높이에 맞게 100%로 설정 */
-  left: 0;
-  top: 80px;
-  background: #5A32FB;
-  overflow: hidden; /* 컨테이너를 벗어나는 콘텐츠 감춤 */
+  .nav-link {
+    transition: none;
+  }
 }
 
-/* Rectangle 44 */
-.intro {
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  left: 50%;
-  top: 94px;
-  transform: translateX(-50%);
-  background: #FFFFFF;
+
+
+
+
+
+.collapse navbar-collapse {
+    margin-left: auto;
 }
-
-/* 덕잡이 */
-.intro .dukjobe {
-  position: absolute;
-  width: 60vw; /* 필요에 따라 너비 조절 */
-  height: 8vh; /* 필요에 따라 높이 조절 */
-  left: 5vw; /* 필요에 따라 좌표 조절 */
-  top: 4vh; /* 필요에 따라 좌표 조절 */
-
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 4vw; /* 필요에 따라 폰트 크기 조절 */
-  line-height: 5.5vh; /* 필요에 따라 라인 높이 조절 */
-
-  color: #000000;
+  
+  
+.form-container {
+    display: inline-block; /* 인라인 블록으로 설정하여 가로로 나타나게 함 */
+    border-radius: 5px; /* 사각형으로 만들기 위한 테두리 반지름 설정 */
+    overflow: hidden; /* 내용이 넘칠 경우를 대비하여 오버플로우 감추기 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+    width: 100%; /* 가로 크기 100%로 설정 */
 }
-
-/* 덕성인 맞춤 진로활동 통합검색 & 추천시스템 */
-.intro .duk_title {
-  position: absolute;
-  width: 45vw; /* 필요에 따라 너비 조절 */
-  height: 10vh; /* 필요에 따라 높이 조절 */
-  left: 5vw; /* 필요에 따라 좌표 조절 */
-  top: 14vh; /* 필요에 따라 좌표 조절 */
-
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 1.6vw; /* 필요에 따라 폰트 크기 조절 */
-  line-height: 2.4vh; /* 필요에 따라 라인 높이 조절 */
-
-  color: #000000;
+  
+.form-control-lg {
+    width: 100%; /* 입력 필드 크기 100%로 설정 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 전체 크기를 설정 */
 }
-
-/* Line 10 */
-.intro .blank {
-  position: absolute;
-  width: 61vw; /* 필요에 따라 너비 조절 */
-  height: 0.1vh; /* 필요에 따라 높이 조절 */
-  left: 5vw; /* 필요에 따라 좌표 조절 */
-  top: 17.5vh; /* 필요에 따라 좌표 조절 */
-
-  border: 0.1vw solid #D9D9D9; /* 필요에 따라 테두리 조절 */
+  
+.form-control-lg:focus {
+    box-shadow: none; /* 포커스 시 테두리 그림자 제거 */
 }
+  
+  
+  
+  
+.welcome-hero-btn {
+    padding: 20px 25px; /* 버튼 크기를 조절하세요. */
+    font-size: 18px;
+    background-color: #5A32FB; /* 보라색으로 수정 */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 
-/* 덕성인의 진로 길잡이가 되어드립니다! 덕성인을 맞춤 JOB으로 이끌어드립니다! */
-.intro .tro1 {
-  position: absolute;
-  width: 50vw; /* 필요에 따라 너비 조절 */
-  height: 10vh; /* 필요에 따라 높이 조절 */
-  left: 5vw; /* 필요에 따라 좌표 조절 */
-  top: 20vh; /* 필요에 따라 좌표 조절 */
 
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 1.6vw; /* 필요에 따라 폰트 크기 조절 */
-  line-height: 5vh; /* 필요에 따라 라인 높이 조절 */
-
-  color: #000000;
-}
-
-/* 덕잡이에서 덕성여대 내 모든 진로활동 한번에 검색해보세요 개인 맞춤형 진로활동 추천도 받아보세요 오직 덕잡이에서 가능합니다 */
-.intro .tro3 {
-  position: absolute;
-  width: 34vw; /* 필요에 따라 너비 조절 */
-  height: 15vh; /* 필요에 따라 높이 조절 */
-  left: 48vw; /* 필요에 따라 좌표 조절 */
-  top: 50.6vh; /* 필요에 따라 좌표 조절 */
-
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 300;
-  font-size: 1.6vw; /* 필요에 따라 폰트 크기 조절 */
-  line-height: 5vh; 
-}
 
 
 .collapse navbar-collapse {
@@ -280,29 +205,7 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-hr {
-  margin: 1rem 0;
-  color: inherit;
-  border: 0;
-  border-top: 1px solid;
-  opacity: 0.25;
-}
 
-h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-h1, .h1 {
-  font-size: calc(1.375rem + 1.5vw);
-}
-@media (min-width: 1200px) {
-  h1, .h1 {
-    font-size: 2.5rem;
-  }
-}
 
 h2, .h2 {
   display: inline;

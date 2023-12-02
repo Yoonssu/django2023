@@ -1,3 +1,6 @@
+/* navbar 스타일 */
+
+
 .collapse navbar-collapse {
     margin-left: auto;
   }
@@ -677,7 +680,11 @@
   }
 }
 
-/* post_list 스타일  */
+
+
+
+
+/* post_list 본문 스타일  */
 
 /* Styles for one_line */
 .one_line {
@@ -703,9 +710,7 @@
   margin-right: 10px; /* Adjust as needed */
 }
 
-/* styles.css */
 
-/* styles.css */
 
 .welcome-hero-serch-box {
     text-align: right;
