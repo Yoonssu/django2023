@@ -3,6 +3,7 @@ from . import views
 from django.contrib.auth import views as auth_views
 from .views import signup
 from .views import new_comment
+from .views import *
 
 app_name = 'community'
 
@@ -18,6 +19,9 @@ urlpatterns = [
     path('signup/', views.signup, name='signup'),
     path('login/', auth_views.LoginView.as_view(template_name='community/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+
+    path('scrap/<int:post_id>/', views.toggle_scrap, name='toggle_scrap'),
+
     path('team/', views.TeamList.as_view(), name='team_list'),  # 팀 전체 게시판 url
     path('team/<int:pk>/', views.TeamDetail.as_view(), name='team_detail'),  # 팀 모집글 detail 페이지
     path('team_post/', views.TeamPostForm.as_view(template_name='community/team_post_form.html'), name="TeamPostForm"), #팀 모집글 작성 Form
