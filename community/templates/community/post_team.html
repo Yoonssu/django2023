@@ -1,17 +1,13 @@
-<!-- http://127.0.0.1:8000/community/team -->
 
-
-<link rel="stylesheet" href="../../static/community/css/postDetailStyle.css"/>
-<link rel="stylesheet" href="../../static/community/css/teamlist.css"/>
-
+<link rel="stylesheet" href="../../static/community/css/post_team.css" />
 {% extends 'community/base.html' %}
 
-{% block main_area %}
+{% block main_area %}{% load static %}
 
     <div class="wrapper">
         <div class="content_wrapper">
             <div class="title">
-                <h2>팀원 모집</h2>
+                <h2>{{ post.title }}</h2>
                 <br/>
             </div>
             <div class="content_nav">
@@ -23,19 +19,18 @@
 
                 <button id="createPostBtn" onclick="redirectToTeamPostForm()">팀원 모집 글쓰기</button>
 
-                {% if team_list.exists %}
+                {% if teams_related_to_post %}
                     <!-- 추가된 부분: 표 형식으로 게시글 표시 -->
                     <table>
                         <tbody>
-                        {% for team in team_list %}
+                        {% for team in teams_related_to_post %}
                             <tr>
                                 <td>
                                     <a href="{% url 'community:team_detail' team.id %}">
                                         <h2>{{ team.title }}</h2>
-                                        {#                        <p>{{ team.content }}</p>#}
-
-                                        <p>{{ team.time }}</p></a>
-
+                                        {# <p>{{ team.content }}</p> #}
+                                        <p>{{ team.time }}</p>
+                                    </a>
                                 </td>
                             </tr>
                             <tr>
@@ -50,15 +45,14 @@
                     <h3>아직 팀 게시글이 없습니다.</h3>
                 {% endif %}
 
-
-                <br/></div>
+                <br/>
+            </div>
         </div>
     </div>
     <br/>
     </div>
     </div>
     </div>
-
 
 
     <script>
@@ -77,8 +71,4 @@
         });
     </script>
 
-
-
 {% endblock %}
-
-

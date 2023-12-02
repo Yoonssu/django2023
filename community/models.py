@@ -38,6 +38,10 @@ class Post(models.Model):
     def get_absolute_url(self):
         pass
 
+    def get_related_teams(self):
+        teams = Team.objects.filter(post=self)
+        print(f'Related Teams for Post [{self.pk}]: {teams}')
+        return teams
 
 class Scrap(models.Model):
     id = models.BigAutoField(primary_key=True)

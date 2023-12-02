@@ -412,3 +412,11 @@ def toggle_scrap(request, post_id):
         is_scraped = True
 
     return JsonResponse({'scrapped': is_scraped})
+
+
+
+def post_team(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    teams_related_to_post = post.get_related_teams()
+    return render(request, 'community/post_team.html', {'post': post, 'teams_related_to_post': teams_related_to_post})
+    
