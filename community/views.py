@@ -177,7 +177,7 @@ class Recommend(LoginRequiredMixin, ListView):
 
 class TeamList(ListView):
     model = Team
-    template_name = 'community/team_list.html'  # 적절한 템플릿 경로로 변경
+    template_name = 'community/team_list.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
