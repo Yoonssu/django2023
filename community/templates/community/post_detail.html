@@ -10,7 +10,7 @@
     </div>
     <div class="content_nav">
       <a href="#">상세정보</a>
-      <a href="{% url 'community:team' pk=post.id %}">팀원모집</a>
+      <a href="{% url 'community:post_team' pk=post.id %}">팀원모집</a>
       <button style="color: white; font-size: 14px">스크랩</button>
     </div>
     <div class="content_box">{{post.content|linebreaksbr}} <br /></div>
