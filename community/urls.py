@@ -3,6 +3,7 @@ from . import views
 from django.contrib.auth import views as auth_views
 from .views import signup
 from .views import new_comment
+from .views import *
 
 app_name = 'community'
 
@@ -22,5 +23,6 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('team_post/', views.TeamPostForm.as_view(template_name='community/team_post_form.html'), name="TeamPostForm"),
     path('team/<int:pk>/new_comment/', views.new_comment, name='new_comment'),
+    path('scrap/<int:post_id>/', views.toggle_scrap, name='toggle_scrap'),
 
 ]

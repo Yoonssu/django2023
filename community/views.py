@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from . import forms
-from .models import Post, User, Team, Major, Keyword , Comment
+from .models import Post, User, Team, Major, Keyword , Comment, Scrap
 from django.db.models import Count
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
@@ -33,7 +33,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 class PostList(ListView):
     model = Post
-    ordering = '-pk'
     template_name = 'community/post_list.html'
     context_object_name = 'post_list'
     paginate_by = 10  # 페이지당 보여질 아이템 수를 10으로 설정
@@ -398,3 +397,18 @@ def modMajor(request, pk):
         'user/modMajor.html',
     )
     
+
+
+def toggle_scrap(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    user = request.user
+    scrapped = Scrap.objects.filter(user=user, post=post).exists()
+
+    if scrapped:
+        Scrap.objects.filter(user=user, post=post).delete()
+        is_scraped = False
+    else:
+        Scrap.objects.create(user=user, post=post)
+        is_scraped = True
+
+    return JsonResponse({'scrapped': is_scraped})
