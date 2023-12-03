@@ -87,6 +87,28 @@ class PostList(ListView):
             'page_range': page_range,
         })
 
+        # 이전 페이지 및 다음 페이지 설정
+        try:
+            previous_page = page.previous_page_number()
+        except EmptyPage:
+            previous_page = None
+
+        try:
+            next_page = page.next_page_number()
+        except EmptyPage:
+            next_page = None
+
+        context.update({
+            'previous_page': previous_page,
+            'next_page': next_page,
+        })
+
+        # 맨 처음과 맨 끝 페이지 설정
+        context.update({
+            'first_page': 1,
+            'last_page': paginator.num_pages,
+        })
+
         return context
     
 class PostDetail(DetailView):
@@ -222,6 +244,8 @@ def save_majors(request, pk):
     else:
         # POST 요청이 아닌 경우 에러 응답
         return JsonResponse({'success': False, 'error': 'Invalid request method'})
+
+
 
 # 바뀐 user를 보고  바꾸는 test
 class Recommend(LoginRequiredMixin, ListView):
