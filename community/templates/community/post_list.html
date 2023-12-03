@@ -1,7 +1,6 @@
 <!-- http://127.0.0.1:8000/community -->
 
 <link rel="stylesheet" href="../../static/community/css/community.css" />
-<link rel="stylesheet" href="../../static/community/css/post_list.css" />
 {% extends 'community/base.html' %} {% load static %}
 
 
@@ -40,6 +39,7 @@
                 });
             }
         });
+        
     </script>
 <!-- 스크립트 코드 종료 -->
 
@@ -49,24 +49,51 @@
 <div class="activity_title">활동 목록</div>
 <hr>
 
-<!-- 교내/대외 필터링 -->
-<div class="choose_one">
-    <ul> 
-        <li class="first" data-filter="all">
-            <a href="/community/">전체</a>
-        </li>
-        <li class="second" data-filter="isduksung">
-            <a href="?filter=isduksung">교내</a> 
-        </li>
-        <li class="third" data-filter="notIsduksung">
-            <a href="?filter=notIsduksung">대외</a> 
-        </li>
-    </ul>
+<!-- 교내/대외 필터링 및 검색폼 -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="choose_one">
+            <ul> 
+                <li class="first" data-filter="all">
+                    <a href="/community/">전체</a>
+                </li>
+                <li class="second" data-filter="isduksung">
+                    <a href="?filter=isduksung">교내</a> 
+                </li>
+                <li class="third" data-filter="notIsduksung">
+                    <a href="?filter=notIsduksung">대외</a> 
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 검색 구현 _ 필터링과 나란히 -->
+    <div class="col-md-6">
+        <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN" action="{% url 'search' %}" method="get">
+            <div class="row align-items-center">
+                <!-- 검색어 입력란 -->
+                <div class="col">
+                    <div class="form-container">
+                        <input class="form-control form-control-lg" type="text" name="q" value="{{ query }}" placeholder="검색어를 입력하세요" />
+                    </div>
+                </div>
+                <!-- 검색 버튼 -->
+                <div class="col-auto">
+                    <div class="welcome-hero-serch">
+                        <button class="welcome-hero-btn" type="submit">
+                            <i data-feather="search"></i> Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
-<!-- 교내/대외 필터링 종료 -->
+
+
+
 
 <!-- 검색 미구현 -->
-<div class="welcome-hero-serch-box">
+<!-- <div class="welcome-hero-serch-box">
     <div class="welcome-hero-form">
         <div class="single-welcome-hero-form">
             <h3></h3>
@@ -80,7 +107,7 @@
             </button>
         </div>
     </div>
-</div><br><br>
+</div><br><br> -->
 <!-- 검색 종료 -->
 
 <!-- 게시글 목록 테이블 -->
@@ -108,8 +135,8 @@
 <!-- 게시글 목록 테이블 종료 -->
 
 <!-- 페이지네이션_수정 요함 -->
-<div class="pagination">
-    <span class="step-links">
+<div class="pagination" style="justify-content: center; display: flex;">
+    <span class="step-links" >
         {% if post_list.has_previous %}
             <a href="?filter={{ filter_value }}&page=1">&laquo; first</a>
             <a href="?filter={{ filter_value }}&page={{ post_list.previous_page_number }}">previous</a>

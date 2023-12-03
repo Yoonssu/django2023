@@ -25,6 +25,7 @@
   }
 }
 
+
 /* post_list 스타일  */
 
 /* Styles for one_line */
@@ -93,7 +94,13 @@ input {
     background-color: #5A32FB;
     color: #fff;
     padding: 6px 10px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	font-weight: bold;
+	border: none;
+	outline: none !important;
+    border-radius: 10px; 
 }
+
 
 /* post_list 목록 스타일  */
 .list_table {
@@ -114,4 +121,73 @@ input {
 
 .list_table tr:nth-child(even) {
     background-color: #f9f9f9;
+}
+
+/* 교내/대외 필터링 스타일 */
+
+.choose_one ul {
+    list-style: none;
+    padding: 0;
+}
+
+.choose_one li {
+    margin-top: 13px;
+    display: inline-block;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.choose_one li.selected {
+    background-color: purple; /* 원하는 색상으로 변경 */
+    color: white;
+}
+
+
+.choose_one a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    color: #333;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.choose_one a:hover {
+    background-color: #f0f0f0;
+}
+
+.form-subscribe {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+.pagination {
+    text-align: center;
+    margin: 20px;  /* 원하는 여백 설정 */
+}
+
+.step-links {
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    margin-right: 10px;  /* 각 페이지 번호 간의 간격 조절 */
+}
+
+.step-links a, .current {
+    padding: 8px 12px;  /* 버튼의 내부 여백 설정 */
+    border: 1px solid #ccc;  /* 버튼 테두리 스타일 설정 */
+    text-decoration: none;
+    color: #333;  /* 버튼 글자 색상 설정 */
+    background-color: #f8f8f8;  /* 버튼 배경 색상 설정 */
+    border-radius: 5px;  /* 버튼 모서리를 둥글게 설정 */
+}
+
+.list_table tbody tr td:nth-child(2) a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.list_table tbody tr td:nth-child(2) a:hover {
+    text-decoration: underline;
 }
