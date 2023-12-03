@@ -144,31 +144,31 @@
             
             // 폼 제출시 selected 클래스 값 보내기
             function test(event) {
-            event.preventDefault(); // 기본 제출 방지
+                event.preventDefault(); // 기본 제출 방지
 
-            let makeData = [];
-            let defaultData = [];
-            const selectedKeywordElements = document.querySelectorAll('.toggle-button.selected');
-            selectedKeywordElements.forEach(element => {
+                let makeData = [];
+                let defaultData = [];
+                const selectedKeywordElements = document.querySelectorAll('.toggle-button.selected');
+                selectedKeywordElements.forEach(element => {
 
-                if (element.classList.contains('makeKeywords')) {
-                    makeData.push(element.textContent);
-                    console.log(makeData);
-                } else if (element.classList.contains('defaultKeywords')) {
-                    defaultData.push(element.textContent);
-                    console.log(defaultData);
-                } else {
-                    console.log('This is a different class');
-                }
-                });
+                    if (element.classList.contains('makeKeywords')) {
+                        makeData.push(element.textContent);
+                        console.log(makeData);
+                    } else if (element.classList.contains('defaultKeywords')) {
+                        defaultData.push(element.textContent);
+                        console.log(defaultData);
+                    } else {
+                        console.log('This is a different class');
+                    }
+                    });
 
 
-            // 폼 필드에 추가 데이터 설정
-            document.getElementById('makeKeywordList').value = makeData.join(',');
-            document.getElementById('defaultKeywordList').value = defaultData.join(',');
+                // 폼 필드에 추가 데이터 설정
+                document.getElementById('makeKeywordList').value = makeData.join(',');
+                document.getElementById('defaultKeywordList').value = defaultData.join(',');
 
-            // 폼 제출
-            document.getElementById('keywordForm').submit();
+                // 폼 제출
+                document.getElementById('keywordForm').submit();
             };
     </script>
 

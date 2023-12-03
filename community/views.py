@@ -113,18 +113,17 @@ def save_keywords(request, pk):
             user.keyword.add(default_keywords_obj.id)
 
         for mk in make_keywords:
-
-
-            try:
-                # 해당 keywordname을 가진 Keyword 객체를 가져오거나 생성합니다.
-                make_keyword_obj, created = Keyword.objects.get_or_create(keywordname=mk, defaults={'ismake': True, 'category': None})
-                # User에 해당 키워드를 추가합니다.
-                user.keyword.add(make_keyword_obj.id)
-            except Keyword.DoesNotExist:
-                # 원하는 키워드가 존재하지 않는 경우, 새로운 Keyword 객체를 생성합니다.
-                new_keyword = Keyword.objects.create(keywordname=mk, ismake=True, category=None)
-                # User에 새로 생성한 키워드를 추가합니다.
-                user.keyword.add(new_keyword.id)
+            if mk.strip() != '':
+                try:
+                    # 해당 keywordname을 가진 Keyword 객체를 가져오거나 생성합니다.
+                    make_keyword_obj, created = Keyword.objects.get_or_create(keywordname=mk, defaults={'ismake': True, 'category': None})
+                    # User에 해당 키워드를 추가합니다.
+                    user.keyword.add(make_keyword_obj.id)
+                except Keyword.DoesNotExist:
+                        # 원하는 키워드가 존재하지 않는 경우, 새로운 Keyword 객체를 생성합니다.
+                        new_keyword = Keyword.objects.create(keywordname=mk, ismake=True, category=None)
+                        # User에 새로 생성한 키워드를 추가합니다.
+                        user.keyword.add(new_keyword.id)
 
 
         return redirect('community:user_detail', pk=pk)

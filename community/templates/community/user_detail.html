@@ -1,9 +1,20 @@
-<!-- url 예시 http://127.0.0.1:8000/community/mypage/user.pk -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>관심전공 수정</title>
 
-{% extends 'community/base.html' %}
+    <link href="{% static 'community/bootstrap/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'community/css/mypage.css' %}" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/726bbd6862.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
 
-{% block main_area %}
+</head>
+<body>
+    {% include 'community/navbar.html' %}
 
+    <div class="container-sm" style="margin-left: 10px; margin-right: 10px;">
 
 <section>
 
@@ -88,5 +99,12 @@
   </div>
 </section>
 
+</div>
 
-{% endblock %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
