@@ -275,6 +275,17 @@
                 window.location.href = loginUrl;
             }
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+        var createPostBtn = document.getElementById("createPostBtn");
+
+        if (createPostBtn) {
+            createPostBtn.addEventListener('click', function () {
+                // 현재 페이지 URL을 LocalStorage에 저장
+                localStorage.setItem('previousPageUrl', window.location.href);
+            });
+        }
+    });
     </script>
 
 {% endblock %}
