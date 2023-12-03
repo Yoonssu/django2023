@@ -17,10 +17,12 @@ class Keyword(models.Model):
     category = models.CharField(max_length=255, null=True, blank=True)
     def __str__(self):
         return f'{self.keywordname}'
+    
 
 class Major(models.Model):
     id = models.BigAutoField(primary_key=True)
     majorname = models.CharField(max_length=255)
+    line = models.CharField(max_length=255, null=True, default=None)
     def __str__(self):
         return f'{self.majorname}'
 
@@ -34,7 +36,7 @@ class Post(models.Model):
     isduksung = models.BooleanField()
     def __str__(self):
         return f'[{self.pk}]{self.title}'
-
+    
     def get_absolute_url(self):
         pass
 
@@ -64,6 +66,8 @@ class Team(models.Model):
     def get_absolute_url(self):
         return f'/team/{self.pk}/'
 
+    class Meta:
+        ordering = ['-time']  # 최신 객체가 먼저 나오도록 설정
 
 class Comment(models.Model):
     id = models.BigAutoField(primary_key=True)

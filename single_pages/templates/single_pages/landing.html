@@ -1,35 +1,41 @@
-<!-- http://127.0.0.1:8000 -->
-
-
+<link rel="stylesheet" href="../../static/single_pages/landing.css" />
 {% extends 'single_pages/base.html' %}
 
 {% block main_area %}
-<!-- Masthead-->
+    <!-- Masthead -->
     <header class="masthead">
         <div class="container position-relative">
             <div class="row justify-content-center">
                 <div class="col-xl-6">
                     <div class="text-center text-white">
-                        <!-- Page heading-->
+                        <!-- Page heading -->
                         <h2 class="mb-5">덕성인 맞춤 진로활동 통합검색 & 추천 시스템</h2>
-                        <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN" action="post_list.html">
-                            z
-                            <!-- Email address input-->
+                        
+                        <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN" action="{% url 'search' %}" method="get">
+                            <!-- Email address input -->
                             <div class="row">
                                 <div class="col">
                                     <div class="form-container">
-                                        <form action="index.html">
-                                            <input class="form-control form-control-lg" type="text" placeholder="검색어를 입력하세요" />
-                                        </form>
+                                        <input class="form-control form-control-lg" type="text" name="q" value="{{ query }}" placeholder="검색어를 입력하세요" />
                                     </div>
                                 </div>
                                 <div class="col-auto welcome-hero-serch">
-                                    <button class="welcome-hero-btn" onclick="window.location.href='#'">
-                                        Search  <i data-feather="search"></i> 
+                                    <button class="welcome-hero-btn" type="submit">
+                                        <i data-feather="search"></i> Search
                                     </button>
                                 </div>
                             </div>
                         </form>
+                        
+                        <!-- Search results -->
+                        {% if results %}
+                            <h3>'{{ query }}'에 대한 검색 결과</h3>
+                            <ul>
+                                {% for result in results %}
+                                    <li><a href="{% url 'community:post_detail' pk=result.pk %}">{{ result.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -37,9 +43,4 @@
     </header>
 {% endblock %}
 
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
 
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>

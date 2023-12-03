@@ -117,6 +117,111 @@ class UserDetail(LoginRequiredMixin, DetailView):
         context['current_user_scraps'] = current_user.scrap_set.all()
 
         return context
+    
+    def get_object(self, queryset=None):
+        obj = super().get_object(queryset=queryset)
+        
+        # 로그인한 사용자와 조회하려는 사용자가 다를 경우 404 에러 반환
+        if obj != self.request.user:
+            raise Http404("You don't have permission to access this page")
+        
+        return obj
+    
+    
+    
+def modKeyWord(request, pk):
+    user = User.objects.get(id=pk)
+
+    return render(
+        request,
+        'community/modKeyword.html',
+    )
+
+def get_keywords(request):
+    category = request.GET.get('category')
+
+    if category == '1':
+        category_keywords = Keyword.objects.filter(category='활동 분야')
+    elif category == '2':
+        category_keywords = Keyword.objects.filter(category='언론/미디어')
+    elif category == '3':
+        category_keywords = Keyword.objects.filter(category='디자인/사진/예술/영상')
+    elif category == '4':
+        category_keywords = Keyword.objects.filter(category='경제/금융')
+    elif category == '5':
+        category_keywords = Keyword.objects.filter(category='경영/컨설팅')
+    elif category == '6':
+        category_keywords = Keyword.objects.filter(category='과학/공학/기술/IT')
+
+    keyword_data = {'keywords': list(category_keywords.values())}
+    return JsonResponse(keyword_data)
+
+
+def save_keywords(request, pk):
+    user = get_object_or_404(User, pk=pk)
+    
+    if request.method == 'POST':
+        user.keyword.clear()
+
+        make_keywords = request.POST.get('make_keywords').split(',')
+        default_keywords = request.POST.get('default_keywords').split(',')
+
+        for dk in default_keywords:
+            default_keywords_obj = get_object_or_404(Keyword, keywordname=dk)
+            user.keyword.add(default_keywords_obj.id)
+
+        for mk in make_keywords:
+
+
+            try:
+                # 해당 keywordname을 가진 Keyword 객체를 가져오거나 생성합니다.
+                make_keyword_obj, created = Keyword.objects.get_or_create(keywordname=mk, defaults={'ismake': True, 'category': None})
+                # User에 해당 키워드를 추가합니다.
+                user.keyword.add(make_keyword_obj.id)
+            except Keyword.DoesNotExist:
+                # 원하는 키워드가 존재하지 않는 경우, 새로운 Keyword 객체를 생성합니다.
+                new_keyword = Keyword.objects.create(keywordname=mk, ismake=True, category=None)
+                # User에 새로 생성한 키워드를 추가합니다.
+                user.keyword.add(new_keyword.id)
+
+
+        return redirect('community:user_detail', pk=pk)
+    else:
+        # POST 요청이 아닌 경우 에러 응답
+        return JsonResponse({'success': False, 'error': 'Invalid request method'})
+    
+
+def modMajor(request, pk):
+    majors = Major.objects.all()
+    user = User.objects.get(id=pk)
+    user_major = user.major.all()
+
+    return render(
+        request,
+        'community/modMajor.html',
+        {
+            'majors' : majors,
+            'user_major' : user_major,
+        }
+    )
+
+def save_majors(request, pk):
+    user = get_object_or_404(User, pk=pk)
+
+    if request.method == 'POST':
+        # POST 요청에서 선택된 키워드 정보를 받아서 처리하는 로직
+        user.major.clear()
+
+        selected_majors = request.POST.getlist('majors[]')
+        for major_id in selected_majors:
+        # 사용자의 selected_major 필드에 추가
+            user.major.add(major_id)
+
+        # 처리 완료 후 JSON 응답
+        return redirect('community:user_detail', pk=pk)
+    else:
+        # POST 요청이 아닌 경우 에러 응답
+        return JsonResponse({'success': False, 'error': 'Invalid request method'})
 
 # 바뀐 user를 보고  바꾸는 test
 class Recommend(LoginRequiredMixin, ListView):
@@ -347,56 +452,6 @@ def signup(request):
     return render(request, 'community/signup.html', {'form': form})
 
 
-def modKeyWord(request, pk):
-    return render(
-        request,
-        'user/modKeyword.html',
-    )
-
-def get_keywords(request):
-    category = request.GET.get('category')
-
-    if category == '1':
-        category_keywords = Keyword.objects.filter(category='활동 분야')
-    elif category == '2':
-        category_keywords = Keyword.objects.filter(category='언론/미디어')
-    elif category == '3':
-        category_keywords = Keyword.objects.filter(category='디자인/사진/예술/영상')
-    elif category == '4':
-        category_keywords = Keyword.objects.filter(category='경제/금융')
-    elif category == '5':
-        category_keywords = Keyword.objects.filter(category='경영/컨설팅')
-    elif category == '6':
-        category_keywords = Keyword.objects.filter(category='과학/공학/기술/IT')
-
-    keyword_data = {'keywords': list(category_keywords.values())}
-    return JsonResponse(keyword_data)
-
-# def get_keywords(request):
-
-#     if category == '1':
-#         category_keywords = Keyword.objects.filter(category='활동 분야')
-#     elif category == '2':
-#         category_keywords = Keyword.objects.filter(category='언론/미디어')
-#     elif category == '3':
-#         category_keywords = Keyword.objects.filter(category='디자인/사진/예술/영상')
-#     elif category == '4':
-#         category_keywords = Keyword.objects.filter(category='경제/금융')
-#     elif category == '5':
-#         category_keywords = Keyword.objects.filter(category='경영/컨설팅')
-#     elif category == '6':
-#         category_keywords = Keyword.objects.filter(category='과학/공학/기술/IT')
-
-#     data = {'keywords': list(category_keywords.values())}
-#     return JsonResponse(data)
-    
-
-def modMajor(request, pk):
-    return render(
-        request,
-        'user/modMajor.html',
-    )
-    
 
 
 def toggle_scrap(request, post_id):
@@ -420,3 +475,16 @@ def post_team(request, pk):
     teams_related_to_post = post.get_related_teams()
     return render(request, 'community/post_team.html', {'post': post, 'teams_related_to_post': teams_related_to_post})
     
+def search(request):
+    query = request.GET.get('q')
+    results = []
+
+    if query:
+        results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query))
+
+    context = {
+        'results': results,
+        'query': query,
+    }
+
+    return render(request, 'community/search_results.html', context)

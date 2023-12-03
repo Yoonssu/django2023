@@ -31,13 +31,15 @@ body {
   /* height: 700px; */
 }
 
+/* 상단 마진 130 -> 50px 으로 변경 */
 .recommend-font {
   /* background-color: #bcadf8; */
   width: 550px;
   height: 170px;
   justify-content: center;
-  margin: 130px 0 20px 0;
+  margin: 50px 0 20px 0;
 }
+
 
 .user-keyword-box {
   /* background-color: rgba(34, 139, 34, 0.303); */
@@ -65,6 +67,7 @@ body {
   justify-content: space-around;
   align-items: center;
   flex-flow: wrap;
+  flex-direction: column;
 }
 
 .recommend-card {
@@ -233,3 +236,5 @@ body {
 .pagination {
   margin-top: 40px;
 }
+
+/* 추천페이지만 DUKJOB 로고 폰트 달라짐... */

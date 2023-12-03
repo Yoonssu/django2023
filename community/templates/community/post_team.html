@@ -1,64 +1,60 @@
-
-<link rel="stylesheet" href="../../static/community/css/post_team.css" />
 {% extends 'community/base.html' %}
-
-{% block main_area %}{% load static %}
-
+{% block main_area %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'community/css/postDetailStyle.css' %}">
+    
     <div class="wrapper">
         <div class="content_wrapper">
-            <div class="title">
-                <h2>{{ post.title }}</h2>
+            <div class="title" style="display: inline;">
+                <h3 style="font-weight: bold; margin-right: 10px;">팀모집: </h3>
+                <h4>{{ post.title }}</h4>
                 <br/>
             </div>
+            
             <div class="content_nav">
-                <a href="#">상세정보</a>
                 <a href="#">팀원모집</a>
-                <button style="color: white; font-size: 14px">스크랩</button>
             </div>
+            
             <div class="content_box">
-
-                <button id="createPostBtn" onclick="redirectToTeamPostForm()">팀원 모집 글쓰기</button>
-
                 {% if teams_related_to_post %}
-                    <!-- 추가된 부분: 표 형식으로 게시글 표시 -->
                     <table>
                         <tbody>
-                        {% for team in teams_related_to_post %}
-                            <tr>
-                                <td>
-                                    <a href="{% url 'community:team_detail' team.id %}">
-                                        <h2>{{ team.title }}</h2>
-                                        {# <p>{{ team.content }}</p> #}
-                                        <p>{{ team.time }}</p>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <hr class="post-separator">
-                                </td>
-                            </tr>
-                        {% endfor %}
+                            {% for team in teams_related_to_post %}
+                                <tr>
+                                    <td>
+                                        <a href="{% url 'community:team_detail' team.id %}">
+                                            <h2>{{ team.title }}</h2>
+                                            <p>{{ team.time }}</p>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <hr class="post-separator">
+                                    </td>
+                                </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 {% else %}
                     <h3>아직 팀 게시글이 없습니다.</h3>
                 {% endif %}
-
+                
                 <br/>
+                
+                <!-- 팀원 모집 글쓰기 버튼 인라인 스타일 -->
+                <button id="createPostBtn" style="color: aliceblue; background-color: #5a32fb; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); border-radius: 20px; border: none; outline: none !important; width: 150px; height: 40px;" onclick="redirectToTeamPostForm()">팀원 모집 글쓰기</button>
+                <!-- 팀원 모집 글쓰기 버튼 종료  -->
             </div>
         </div>
     </div>
+    
     <br/>
-    </div>
-    </div>
-    </div>
-
-
+    
     <script>
         document.getElementById('createPostBtn').addEventListener('click', function () {
             var isLoggedIn = {% if user.is_authenticated %} true {% else %} false {% endif %};
-
+            
             if (isLoggedIn) {
                 // 로그인된 경우
                 var teamPostFormUrl = "{% url 'community:TeamPostForm' %}";
@@ -70,5 +66,5 @@
             }
         });
     </script>
-
+    
 {% endblock %}
