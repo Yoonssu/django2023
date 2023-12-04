@@ -19,6 +19,11 @@ from collections import Counter
 import os
 from django.core.exceptions import PermissionDenied
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from dal import autocomplete
+from .models import Post
+
+
+
 
 
 
@@ -274,7 +279,7 @@ class TeamPostForm(LoginRequiredMixin, CreateView):
         kwargs['user'] = self.request.user  # 사용자 정보를 폼에 전달
         return kwargs
 
-    def form_valid(self, form, post_instance=None):
+    def form_valid(self, form):
         current_user = self.request.user
         if current_user.is_authenticated:
             form.instance.user = current_user
