@@ -21,7 +21,6 @@ from django.core.exceptions import PermissionDenied
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
-
 # Create your views here.
 # class PostList(ListView):
 #     model = Post

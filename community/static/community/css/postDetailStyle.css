@@ -28,6 +28,8 @@
   align-items: center;
   padding: 30px;
   box-sizing: border-box;
+  font-size: 25px;
+  font-weight: 900;
 }
 
 .content_nav {
