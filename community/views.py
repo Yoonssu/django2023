@@ -88,6 +88,28 @@ class PostList(ListView):
             'page_range': page_range,
         })
 
+        # 이전 페이지 및 다음 페이지 설정
+        try:
+            previous_page = page.previous_page_number()
+        except EmptyPage:
+            previous_page = None
+
+        try:
+            next_page = page.next_page_number()
+        except EmptyPage:
+            next_page = None
+
+        context.update({
+            'previous_page': previous_page,
+            'next_page': next_page,
+        })
+
+        # 맨 처음과 맨 끝 페이지 설정
+        context.update({
+            'first_page': 1,
+            'last_page': paginator.num_pages,
+        })
+
         return context
     
 class PostDetail(DetailView):
@@ -514,6 +536,9 @@ def signup(request):
         form = UserForm()
     return render(request, 'community/signup.html', {'form': form})
 
+
+
+
 def toggle_scrap(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     user = request.user
@@ -534,3 +559,16 @@ def post_team(request, pk):
     post = get_object_or_404(Post, pk=pk)
     teams_related_to_post = post.get_related_teams()
     return render(request, 'community/post_team.html', {'post': post, 'teams_related_to_post': teams_related_to_post})
+    
+
+def search(request):
+    query = request.GET.get('q')  # 폼에서 전달된 검색어 가져오기
+    results = []
+
+    if query:
+        results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query)).order_by('-pk')
+    
+    # 전체 게시물을 가져오기
+    all_posts = Post.objects.all()
+
+    return render(request, 'community/search_result.html', {'results': results, 'all_posts': all_posts, 'query': query})

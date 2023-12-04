@@ -1,0 +1,39 @@
+<!-- community/templates/community/search_results.html -->
+<!-- 검색 결과를 반환하는 html -->
+
+<link rel="stylesheet" href="../../static/community/css/community.css" />
+
+{% extends 'community/base.html' %}
+
+{% block main_area %}
+    <h1>'{{ query }}'에 대한 검색 결과</h1>
+
+    {% if results %}
+        <!-- 게시글 목록 테이블 -->
+        <table class="list_table">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성일자</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                    <tr>
+                        <td>{{ result.pk }}</td>
+                        <td><a href="{% url 'community:post_detail' pk=result.pk %}" target="_blank">{{ result.title }}</a></td>
+                        <td>{{ result.time|date:"Y-m-d" }}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><hr></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <!-- 게시글 목록 테이블 종료 -->
+    {% else %}
+        <p>결과가 없습니다.</p>
+    {% endif %}
+
+{% endblock %}
