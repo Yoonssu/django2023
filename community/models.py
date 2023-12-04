@@ -68,10 +68,6 @@ class Team(models.Model):
 
     class Meta:
         ordering = ['-time']  # 최신 객체가 먼저 나오도록 설정
-<<<<<<< HEAD
-
-=======
->>>>>>> 773ac712d4b9e9e13d0a61646309fd1ba1ac0f4e
 
 class Comment(models.Model):
     id = models.BigAutoField(primary_key=True)

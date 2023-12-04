@@ -15,7 +15,7 @@
     <!-- navbar.html 모듈 -->
     {% include 'community/navbar.html' %}
 
-    <div class="container cm">
+    <div class="container">
 
     <h3 class="title">내가 쓴 댓글</h3>
 
@@ -26,10 +26,10 @@
                 <div class="btn_flex">
                 <div class="team_post_title"> {{ comment.team.post.title }} </div>
                 <a href="{% url 'community:team_detail' pk=team.post.id  %}">
-                    <h5 class="card-title">{{ comment.team.title }}</h5>
+                    <h5 class="card-title" style="text-decoration: none; color: black;">{{ comment.team.title }}</h5>
                 </a>
                 <hr>
-                <p class="card-text">{{ comment.team.content|truncatechars:100 }}</p>
+                <p class="card-text">{{ comment.team.content|truncatechars:150 }}</p>
                 </div>
             <!-- 버튼 추가 -->
             <a href="#" class="btn btn-secondary delete" onclick="deleteTeam('{{ comment.team.post.id }}', this)">삭제</a>

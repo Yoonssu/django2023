@@ -1,6 +1,6 @@
 a {
     text-decoration: none; 
-    color: inherit;
+    color: black;
 }
 
 h3 {
@@ -14,7 +14,7 @@ h5 {
 }
 
 .card {
-    width: 100rem;
+    width: 80rem;
 }
 
 .card-body {
@@ -26,11 +26,6 @@ h5 {
     margin-bottom : 60px;
     display: inline-block; 
     margin-left: auto;
-}
-
-.cm {
-    margin-left: 10px; 
-    margin-right: 10px;
 }
 
 .team_post_title {
