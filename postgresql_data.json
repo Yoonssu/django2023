@@ -40,6 +40,94 @@
 },
 {
     "model": "sessions.session",
+    "pk": "0mqvrbnm1z3en8e8um3js2lssugws7lr",
+    "fields": {
+        "session_data": ".eJxVjMEOgjAQRP-lZ9MALe3i0Tvf0Gx3txY1NKFwMv67kHDQ0yTz3sxbBdzWHLYqS5hYXZVRl98uIj1lPgA_cL4XTWVelynqQ9EnrXosLK_b6f4dZKx5XwN67m2MwEjONgkIBjK97EnWi48OrbTkpGMEM3TERMk3CMnb2IJVny8KxDja:1r9p5w:7MbNrgRoQRMQumLpX5-qe74zi2kKh2pTIP7Gc5s2g_g",
+        "expire_date": "2023-12-18T01:13:24.768"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "0t8npmwrqdau5l4wwzdgilxj9pmo9wal",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9yYz:9VxehUhbKZjqmIVqsuNM69vBmFrJEpS5FzC6jz1Dp2I",
+        "expire_date": "2023-12-18T11:20:01.464"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "1kxkctdu1rfr7kw01vlj06pitr6f5ezn",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9n6x:aXjNVYo08QeSWt1fmlnKTMBiGun4QXDEuoCwSYn6o7A",
+        "expire_date": "2023-12-17T23:06:19.298"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "4bw2qfmmg96n9nmqze700rk3etrzecfu",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9xoV:xUCDk1dF7GRHHmy1_P0qVB7e4xMX7AgiZ9Jd25i3G3w",
+        "expire_date": "2023-12-18T10:31:59.072"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "5k0hlotf3lil4yxqbk2xh9qnbh30jtkv",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9yYy:Fs5PuGzyjP2kS9Xwmuq9w4bLJDFqBRRl9JfUtyArFnA",
+        "expire_date": "2023-12-18T11:20:00.629"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "6s4j5c7jxitmxsik8q2ytfzm592murxd",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9mNS:Y7rdabnEIDb454--BOYXhuy4sFc9XQSRZa6KSyAhqZ8",
+        "expire_date": "2023-12-17T22:19:18.153"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "7ubuc1ryk4tzzxp0446wmnpwpmfqtazd",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9xOG:WLblE43-A-zFwMOY6o6YG82h6igJ1orSsKdXveYZtFA",
+        "expire_date": "2023-12-18T10:04:52.428"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "81w0sadxjks3bz2im0sbkcf0r7mpws9x",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9yYy:Fs5PuGzyjP2kS9Xwmuq9w4bLJDFqBRRl9JfUtyArFnA",
+        "expire_date": "2023-12-18T11:20:00.011"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "9g2s78cajljj0ufufspxq9j0ktn3tymn",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9or9:xw11mmXZBnflSv6fQawHUXXOsD4OUD3FVUA3I3iVtHY",
+        "expire_date": "2023-12-18T00:58:07.764"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "agdibwbswn352m6bs0l0as5f0b1yt6wo",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rA0bX:Zsmm3JwASw2JX9OLi_aS0THo3DRNsim7h0R255UWxXE",
+        "expire_date": "2023-12-18T13:30:47.024"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "bfmbsywrlb7elq1xntcgkukz71mwcch4",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rA7Yc:hnooP17mP4TMxEvp-jdWtR1qRGnNm-vL9LWgAJNFl9g",
+        "expire_date": "2023-12-18T20:56:14.061"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "co6k7wnmrde8mj2pqn1eu8jg7zmhjrp7",
     "fields": {
         "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r8DBT:NW1MAFWPuO9mORz3JN19i7ZVo3FIvJyOsXNcSnTb7g8",
@@ -48,10 +136,34 @@
 },
 {
     "model": "sessions.session",
+    "pk": "d8o4nnz3rrww4eryh7iumnkps2ofszvk",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9ypR:_f8_5oJESxikvWNVuebDJxEHFYlaaLc_5O2u8zmtE9w",
+        "expire_date": "2023-12-18T11:37:01.949"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "fug0wye4bbvwahes6ky625z4lrx1txfz",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9o0a:Ylz4K2USaA5lssiswg_SuHiER7UQyTsnF8AFIfrT_M4",
+        "expire_date": "2023-12-18T00:03:48.554"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "fxbmxifnvve7imnuple5eru0lff67ag6",
     "fields": {
         "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r91ez:z8oghr1kPsBupdxV5l6fYf2_XvOVyr4enIqEpOxGIyc",
         "expire_date": "2023-12-15T20:26:17.804"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "g89eou1mdm0lvt2ep83jc0byh8s9qh79",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9xhl:RNP4_rJFj9XaohUnTpQ_yCdMjccl4YYIyUs3WwlHm3Y",
+        "expire_date": "2023-12-18T10:25:01.061"
     }
 },
 {
@@ -68,6 +180,86 @@
     "fields": {
         "session_data": ".eJxVjMEOgjAQRP-lZ9MALe3i0Tvf0Gx3txY1NKFwMv67kHDQ0yTz3sxbBdzWHLYqS5hYXZVRl98uIj1lPgA_cL4XTWVelynqQ9EnrXosLK_b6f4dZKx5XwN67m2MwEjONgkIBjK97EnWi48OrbTkpGMEM3TERMk3CMnb2IJVny8KxDja:1r90hB:5pkmETYD0v5TmmL-gHGzljxzVQbpjwLIeMeDFRLob7k",
         "expire_date": "2023-12-15T19:24:29.053"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "i8rii2q51ierx338ekd8nyqecvhj5mg9",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9xer:f0kCp2eHyfyfJzqq8i6ZEjjp5Dmfag7qmmH9Gtp2L-w",
+        "expire_date": "2023-12-18T10:22:01.307"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "izrcb20aucuyo2px0tdt6n4r3qkjunmi",
+    "fields": {
+        "session_data": ".eJxVjMEOgjAQRP-lZ9MALe3i0Tvf0Gx3txY1NKFwMv67kHDQ0yTz3sxbBdzWHLYqS5hYXZVRl98uIj1lPgA_cL4XTWVelynqQ9EnrXosLK_b6f4dZKx5XwN67m2MwEjONgkIBjK97EnWi48OrbTkpGMEM3TERMk3CMnb2IJVny8KxDja:1r9VN8:ougP7t9O_bii7n_ILBLw4H-Xa2WJ3YcCsGS7f-WodgE",
+        "expire_date": "2023-12-17T04:09:50.508"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "km6zydmupzc8hbessbwjy2hgbx36byb4",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9xz6:SdziXcOW0MZ7rMVP4TNLbqF2ZC5yZPsnOcEPOZ0Hblg",
+        "expire_date": "2023-12-18T10:42:56.157"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "savnxms8ubgdgttbfk7qp4ec5oovml7k",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rA1rT:WIJ2_hJt07EBudNWk9HA4Afsn2W5S2y5tUo9pAuCP6A",
+        "expire_date": "2023-12-18T14:51:19.392"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "uczwge4xgob0jn3ronkhakylfff0is9b",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9oKz:xirPekzMqzj3xQeMlBkRRacHSYVTEXR2yFg-pU8n0CI",
+        "expire_date": "2023-12-18T00:24:53.860"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "y7lkiw8zgcsk9ozaay582p19he92japl",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9yW3:kDBLQQ54f1G7ma_Ev_DMh5j7buNKYuGWsY-TbR1cLM4",
+        "expire_date": "2023-12-18T11:16:59.937"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "zicoesrltuctqadn453s9alxg36r0lre",
+    "fields": {
+        "session_data": ".eJxVjMEOgjAQRP-lZ9MALe3i0Tvf0Gx3txY1NKFwMv67kHDQ0yTz3sxbBdzWHLYqS5hYXZVRl98uIj1lPgA_cL4XTWVelynqQ9EnrXosLK_b6f4dZKx5XwN67m2MwEjONgkIBjK97EnWi48OrbTkpGMEM3TERMk3CMnb2IJVny8KxDja:1r9ka9:F-mwHextwmq5kZb1f6PDCi8ETcvmHxmBU2wxqmSQktY",
+        "expire_date": "2023-12-17T20:24:17.503"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "zigytmvklpcpkhxbqn5pz13jilf2scpf",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9nJI:hRdAmlNMzFeX38oNVOC5gYbxtdDUE3kcin8hn1OzAFA",
+        "expire_date": "2023-12-17T23:19:04.285"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "zurpmsd04gbj6tr3v38pm0qqexs5qudb",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9o2R:RLBV3cPGt3TfpzVv6noC9b97f1jh2l65S0IYFi3YQk8",
+        "expire_date": "2023-12-18T00:05:43.078"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "zwrv7qpw1r9nrod67jje2cyuccng5x4k",
+    "fields": {
+        "session_data": ".eJxVjMEOgjAQRP-lZ9MALe3i0Tvf0Gx3txY1NKFwMv67kHDQ0yTz3sxbBdzWHLYqS5hYXZVRl98uIj1lPgA_cL4XTWVelynqQ9EnrXosLK_b6f4dZKx5XwN67m2MwEjONgkIBjK97EnWi48OrbTkpGMEM3TERMk3CMnb2IJVny8KxDja:1r9hPb:-GgmsqN8qdOAoj9_sskzUw9A3zaGHlexTBOKThoTmZM",
+        "expire_date": "2023-12-17T17:01:11.595"
     }
 },
 {
@@ -596,269 +788,334 @@
     }
 },
 {
+    "model": "community.keyword",
+    "pk": 46,
+    "fields": {
+        "keywordname": "",
+        "ismake": true,
+        "category": null
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 47,
+    "fields": {
+        "keywordname": "메타버스",
+        "ismake": true,
+        "category": null
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 48,
+    "fields": {
+        "keywordname": "보안",
+        "ismake": true,
+        "category": null
+    }
+},
+{
     "model": "community.major",
     "pk": 1,
     "fields": {
-        "majorname": "국어국문전공"
+        "majorname": "국어국문전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 2,
     "fields": {
-        "majorname": "일어일문전공"
+        "majorname": "일어일문전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 3,
     "fields": {
-        "majorname": "중어중문전공"
+        "majorname": "중어중문전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 4,
     "fields": {
-        "majorname": "영어영문전공"
+        "majorname": "영어영문전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 5,
     "fields": {
-        "majorname": "불어불문전공"
+        "majorname": "불어불문전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 6,
     "fields": {
-        "majorname": "독어독문전공"
+        "majorname": "독어독문전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 7,
     "fields": {
-        "majorname": "스페인어전공"
+        "majorname": "스페인어전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 8,
     "fields": {
-        "majorname": "사학전공"
+        "majorname": "사학전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 9,
     "fields": {
-        "majorname": "철학전공"
+        "majorname": "철학전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 10,
     "fields": {
-        "majorname": "미술사학전공"
+        "majorname": "미술사학전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 11,
     "fields": {
-        "majorname": "문화인류전공"
+        "majorname": "문화인류전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 12,
     "fields": {
-        "majorname": "경영학전공"
+        "majorname": "경영학전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 13,
     "fields": {
-        "majorname": "회계학전공"
+        "majorname": "회계학전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 14,
     "fields": {
-        "majorname": "국제통상학전공"
+        "majorname": "국제통상학전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 15,
     "fields": {
-        "majorname": "법학전공"
+        "majorname": "법학전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 16,
     "fields": {
-        "majorname": "사회학전공"
+        "majorname": "사회학전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 17,
     "fields": {
-        "majorname": "문헌정보학전공"
+        "majorname": "문헌정보학전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 18,
     "fields": {
-        "majorname": "심리학전공"
+        "majorname": "심리학전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 19,
     "fields": {
-        "majorname": "아동가족학전공"
+        "majorname": "아동가족학전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 20,
     "fields": {
-        "majorname": "사회복지전공"
+        "majorname": "사회복지전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 21,
     "fields": {
-        "majorname": "정치외교전공"
+        "majorname": "정치외교전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 22,
     "fields": {
-        "majorname": "의상디자인전공"
+        "majorname": "의상디자인전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 23,
     "fields": {
-        "majorname": "유아교육전공"
+        "majorname": "유아교육전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 24,
     "fields": {
-        "majorname": "컴퓨터전공"
+        "majorname": "컴퓨터전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 25,
     "fields": {
-        "majorname": "IT미디어전공"
+        "majorname": "IT미디어전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 26,
     "fields": {
-        "majorname": "바이오공학전공"
+        "majorname": "바이오공학전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 27,
     "fields": {
-        "majorname": "사이버보안전공"
+        "majorname": "사이버보안전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 28,
     "fields": {
-        "majorname": "소프트웨어전공"
+        "majorname": "소프트웨어전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 29,
     "fields": {
-        "majorname": "생활체육전공"
+        "majorname": "생활체육전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 30,
     "fields": {
-        "majorname": "식품영양전공"
+        "majorname": "식품영양전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 31,
     "fields": {
-        "majorname": "정보통계전공"
+        "majorname": "정보통계전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 32,
     "fields": {
-        "majorname": "화학전공"
+        "majorname": "화학전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 33,
     "fields": {
-        "majorname": "수학전공"
+        "majorname": "수학전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 34,
     "fields": {
-        "majorname": "동양화전공"
+        "majorname": "동양화전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 35,
     "fields": {
-        "majorname": "서양화전공"
+        "majorname": "서양화전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 36,
     "fields": {
-        "majorname": "실내디자인전공"
+        "majorname": "실내디자인전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 37,
     "fields": {
-        "majorname": "시각디자인전공"
+        "majorname": "시각디자인전공",
+        "line": null
     }
 },
 {
     "model": "community.major",
     "pk": 38,
     "fields": {
-        "majorname": "택스타일디자인전공"
+        "majorname": "택스타일디자인전공",
+        "line": null
     }
 },
 {
@@ -15258,6 +15515,126 @@
         "content": "안녕하세요. 문화인류학전공입니다.\n 문화인류학전공에서는 덕성여자대학교 학생들을 위하여 2023학년도 전공 설명회를 개최 합니다.\n - 일 시 : 2023. 11. 30. (목) 오후 6시 - 장 소 : 차245호 - 혜 택 : 다과 및 경품추첨 - 참가요건 : 전공,학년 무관 문화인류학전공에 대해 관심이 있는 학생(1학년 환영!) - 주요내용 1. 교수진 소개 2. 문화인류학전공 소개 3. 전공 교과과목 및 로드맵 소개 4. 졸업 후 진로 분야 소개 - 참가신청 폼 : https://forms.gle/SwbExYDGtBijRCTA6 *다과 준비를 위해 참여인원 사전 파악이 필요하므로, 링크 참가신청 양식을 작성해주시기 바랍니다.\n - 관련 문의 : 문화인류학전공 과사(02-901-8582/anthro@duksung.ac.kr) 문화인류학전공 교수진들에게 직접 생소할 수 있는 '문화인류학전공'에 대해 상세하게 들을 수 있는 시간입니다.\n 자유롭게 질의응답 등이 이뤄질 예정이니, 많은 관심 부탁드립니다.\n \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=40&bIdx=668577&menuId=1062&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
         "img": null,
         "time": "2023-12-02T22:15:59.644",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12284,
+    "fields": {
+        "major": null,
+        "title": "[건강증진센터] 대학 구성원(학생, 교직원) 및 구성원 가족 대상, 특별 검진 패키지 안내",
+        "content": "대학 구성원 및 가족 대상, 특별 검진 패키지 안내 건강증진센터에서는 대학 구성원 및 가족을 대상으로 특별 건강 검진안(유방암 조기 선별 혈액검사 포함)을 제안 및 안내하는 행사를 다음과 같이 시행하고자 합니다.\n 1) 검진 기관 : 하나로 의료재단 종로센터 및 강남센터 ※ (주)베르티스 마스토체크 포함 2) 검진 대상 : 대학 구성원 및 가족(교직원, 학생 및 구성원의 가족 포함) 3) 검진 기간 : 2023. 12월 20일 부터 ~ 2024. 5. 31까지 ※ 추가 검사 세부 항목, 하나로의료재단 홈페이지 및 첨부 문서 확인 4) 검진 예약 : 02-590-1111(종로, 강남 통합 콜센터) 5) 검진 결과 : 이메일 또는 모바일 제공 6) 검진 패키지 검사항목 상세 내역 : 붙임 문서 참조 붙 임 : 1) 덕성여자대학교 특별 건강 검진안(마스토체크) 안내문 1부 2) 2024년 대학 특별 검진(마스토체크) 검사 항목 및 추가 선택 검사 수가표 1부. 끝. 건강증진센터 \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=40&bIdx=672037&menuId=1062&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-04T18:43:49.651",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12285,
+    "fields": {
+        "major": 3,
+        "title": "[중어중문학전공] 2023 도봉문화원-덕성여대 연합학술대회 '세대를 흐르는 지역문화' 홍보",
+        "content": "안녕하세요, 중어중문학전공입니다.\n 지역협업센터에서는 도봉문화원과 함께 우리 대학 차미리사기념관 136호에서 연합 학술대회를 개최하오니, 학생 여러분들의 많은 관심과 참여바랍니다.\n 가. 행사명 : 세대를 흐르는 지역문화 나. 일 시 : 2023.12.20.(수) 10:30 ~ 17:00 다.\n 장 소: 차미리사기념관 136호 라. 대 상 : 우리 대학 구성원 및 일반인 마. 신 청 1) 우리대학구성원 : 비교과통합관리시스템 신청 : 비교과통합관리시스템 신청(클릭) 2) 일반인 : 구글폼 신청(클릭) 바. 기타사항 : 우리대학 학생들의 경우 비교과 마일리지 지급 가능한 행사임. \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1236&bIdx=671896&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-04T18:45:37.164",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12286,
+    "fields": {
+        "major": 7,
+        "title": "2023 스페인 영화제 안내",
+        "content": "안녕하세요, 스페인어전공입니다.\n 2023 스페인 영화제 개막식을 다음과 같이 안내하오니 관심있는 학생들의 많은 참여 바랍니다.\n 1. 일시: 2023. 12. 07.(목) 19:30 2. 장소: 서울아트시네마 (서울특별시 중구 정동길 3, 2층) \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1244&bIdx=672036&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-04T18:47:34.785",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12287,
+    "fields": {
+        "major": 17,
+        "title": "(재공고)「2023년 서울형 뉴딜일자리 사업」공공도서관 전문사서 양성 참여자 모집",
+        "content": "가. 사 업 명: 공공도서관 전문사서 양성 나. 채용인원: 1명 다.\n 접수기간: 2023. 12. 1.(금) ~ 12. 8.(금), 8일간 라. 접수방법: 서울시 일자리포털 사이트(http://job.seoul.go.kr) →일자리서비스→청년 일자리→뉴딜일자리 마. 근로조건: 주 5일(화~토), 1일 8시간 근무 바. 근무기간: 근로계약체결시점('23.12.22.예상) ~ 2024.3. 사. 지급금액: 시급 11,157원 ※ 유급휴일수당, 주휴일수당, 연차수당 등 별도 지급 ※ 식비는 별도 지급하지 않음 ※ 근로계약 기간상 퇴직금이 지급되지 않음에 유의 아. 주요업무: 도서대출/열람/반납, 상호대차서비스업무, 수서업무, 프로그램 지원 등 자. 신청자격: 만18세~39세의 청년 중 (준)사서자격증 소지자 단, 공고문에 기재된 결격 사유에 해당없는 사람이어야 함 ※기타 자세한 사항은 서울시 일자리포털 사이트 혹은 중랑구청-중랑소개-채용공고 페이지를 참고 하시기 바랍니다.\n \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1200&bIdx=671696&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-04T18:52:30.021",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12288,
+    "fields": {
+        "major": 18,
+        "title": "(특강) 심리학전공 산합협력체 교육과정 관련 특강",
+        "content": "안녕하세요. 심리학전공입니다.\n 다음과 같이 심리학전공 진로 특강을 진행하오니 많은 참여 바랍니다.\n - 특강 주제: 산업인력 컨설팅 분야에서 임상 및 상담심리학의 진로 개발 - 강사: 안준범 (PBCG 부대표, 이음심리상담센터 소장) - 일시: 12월 11일 (월) 17:30 - 19:30 (2시간) - 장소: 인문사회관 102호 \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1204&bIdx=672056&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-04T18:53:00.304",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12289,
+    "fields": {
+        "major": 24,
+        "title": "2023 도봉문화원-덕성여대 연합학술대회 '세대를 흐르는 지역문화'",
+        "content": "지역협업센터에서는 도봉문화원과 함께 우리 대학 차미리사기념관 136호에서 연합 학술대회를 개최하오니 관심있는 학생들은 참여하기 바랍니다.\n 가. 행사명: 세대를 흐르는 지역문화 나. 일 시: 2023.12.20.(수) 10:30 ~ 17:00 다.\n 장 소: 차미리사기념관 136호 라. 대 상: 우리 대학 구성원 및 일반인 마. 신 청 1) 우리대학구성원: 비교과통합관리시스템 신청 : 비교과통합관리시스템 신청(클릭) 2) 일반인: 구글폼 신청(클릭) \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1224&bIdx=671876&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-04T18:56:00.721",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12290,
+    "fields": {
+        "major": 27,
+        "title": "[법정의무교육] 2023학년도 2학기 연구실안전교육(~12.21.)",
+        "content": "안녕하세요, 사이버보안전공 사무실입니다.\n 2023학년도 2학기 연구실안전교육 실시에 따라 관련 내용을 공지드리오니 확인 후 기한 내에 이수하여 수료증을 제출해주시기 바랍니다.\n 본 교육은 과학기술대학 소속 모든 구성원에 대해 필수 이수 사항입니다.\n 또한 안전교육 이수율은 교육부 및 과학기술정보통신부에서 실시하는 대학정보공시, 실태조사 등의 정보 공개 항목이므로 협조를 부탁드립니다.\n 감사합니다.\n ■ 교육 플랫폼 안내 - 플랫폼: https://edu.labs.go.kr/front/ 접속하여 회원가입(검색 : 연구실안전교육시스템) - 연구실책임자(교원) 또는 연구활동종사자(조교, 대학생, 대학원생, 연구원, 연구보조원)로 회원가입 ■ 교육 이수 수료증 제출 제출 폼: https://forms.gle/2w4yMismcr2mGAsH8 제출 기한: ~11.29. (수) 연장 제출 기한: ~12.21. (목) *수료증이 하나 이상인 경우 1개의 파일로 병합하여 업로드해주시기 바랍니다.\n ■ 교육 방법 권장 과목을 포함하여 교육 대상자 그룹별 필수 이수 시간을 충족하여 이수 교육 대상자 그룹 이수 시간 신규 상시연구활동종사자(교원, 조교, 대학원생, 연구원, 연구보조원) 4시간 그 외 3시간 ■ 권장 과목 - 신규 상시연구활동종사자 과정 강좌명 소요시간 온라인 교육(연구실 안전교육) 2023 사전유해인자교육 2시간 2023 안전의식 2시간 합산 4시간 - 신규 대학생 과정 강좌명 소요시간 온라인 교육(연구실 안전교육) 2023 연구실 사고 I 3시간 - 정규 교육 대상자 과정 강좌명 소요시간 온라인 교육(연구실 안전교육) 2023 연구실 사고 Ⅱ 1시간 기타 2023 연구실 안전사례(micro) 또는 2023 3D프린팅 선택 1시간 2023 소방 1시간 합산 3시간 ■ 복수전공에 따른 안전교육 안내 o 연구실 안전교육 6시간 이수 그룹 - 본전공이 비이공계고, 부전공이 고위험군 학과인 경우 - 본전공 혹은 부전공이 고위험군 학과인 경우 o 연구실 안전교육 3시간 이수 그룹 - 본전공이 비이공계고, 부전공이 저위험군 학과인 경우 - 본전공 및 부전공이 저위험군 학과인 경우 ■ 복수전공 학생의 안전교육 통계 방법 (어떤 학과에서 제출하는지에 대해) o 본전공이 비이공계인 경우: 부전공 학과에서 통계 o 본전공이 이공계(고/저위험군, LMO군 통합)인 경우: 본전공 학과에서 통계 기타 문의사항은 전공사무실로 문의바랍니다.\n 감사합니다.\n --- 사이버보안전공 사무실 차미리사관 2층 229호 (학기중 운영시간: 09:00 ~ 17:00, 점심시간: 12:00 ~ 13:00) 02-901-8677 cyber@duksung.ac.kr \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1268&bIdx=667980&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-04T18:57:37.626",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12291,
+    "fields": {
+        "major": 30,
+        "title": "2023 도봉문화원-덕성여대 연합학술대회 '세대를 흐르는 지역문화'",
+        "content": "안녕하세요, 식품영양학전공 학과실입니다.\n 2023 도봉문화원-덕성여대 연합학술대회 '세대를 흐르는 지역문화' 안내합니다.\n 관심있는 분은 참여하시기 바랍니다.\n - 아 래 - 가. 행사명: 세대를 흐르는 지역문화 나. 일 시: 2023.12.20.(수) 10:30 ~ 17:00 다.\n 장 소: 차미리사기념관 136호 라. 대 상: 우리 대학 구성원 및 일반인 마. 신 청 1) 우리대학구성원: 비교과통합관리시스템 신청 : 비교과통합관리시스템 신청(클릭) https://delight.duksung.ac.kr/ko/program/all/view/1208 2) 일반인: 구글폼 신청(클릭) \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1292&bIdx=671956&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-04T18:59:09.698",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12292,
+    "fields": {
+        "major": 31,
+        "title": "실습실 이용제한 안내",
+        "content": "[실습실 이용 제한안내] 통계소프트웨어-SPSS 시험으로 인해 아래 시간에 차441, 차444의 수업 외 학생의 출입을 제한합니다.\n 날짜 : 2023.12.13.(수) 시간 : 2시 30분 ~ 4시 30분 장소 : 차441, 차444 \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1284&bIdx=672336&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-04T18:59:45.708",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12293,
+    "fields": {
+        "major": 31,
+        "title": "★필독★정보통계학전공 2023 공모전 일정 리스트",
+        "content": "안녕하세요. 정보통계학전공 2023년에 진행되었던 우리 전공 관련 공모전 일정 리스트를 정리하여 학생들에게 공유하고자 합니다.\n 이에 2024년 공모전 참여 생각이 있는 학생들은 본인이 평소 관심있는 공모전 일정과 주제를 참고하시어 준비하시면 좋을 듯 합니다.\n 한글 파일로 첨부할 예정이니, 우리전공 학생들의 많은 참여부탁드립니다.\n \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1284&bIdx=671756&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-04T18:59:45.708",
         "isduksung": true
     }
 }
