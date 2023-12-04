@@ -76,3 +76,16 @@ class CommentForm(forms.ModelForm):
         if commit:
             instance.save()
         return instance
+
+
+
+    def __init__(self, user, *args, **kwargs):
+        super(CommentForm, self).__init__(*args, **kwargs)
+        self.user = user
+
+    def save(self, commit=True):
+        instance = super(CommentForm, self).save(commit=False)
+        instance.user = self.user  # 사용자 정보 설정
+        if commit:
+            instance.save()
+        return instance

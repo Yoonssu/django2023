@@ -4,6 +4,8 @@ from django.contrib.auth import views as auth_views
 from .views import signup
 from .views import new_comment
 from .views import *
+from dal import autocomplete
+
 
 app_name = 'community'
 
@@ -43,6 +45,7 @@ urlpatterns = [
     path('<int:pk>/post_team/', views.post_team, name='post_team'), # post에서 해당 팀 모집글 리스트 보기
     
      path('search/', views.search, name='search'),
+
 
 ]
 

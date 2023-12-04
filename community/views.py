@@ -21,6 +21,8 @@ from django.core.exceptions import PermissionDenied
 from django.http import Http404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseForbidden
+from dal import autocomplete
+from .models import Post
 
 
 # Create your views here.
@@ -497,7 +499,6 @@ class TeamList(ListView):
         })
 
         return context
-    
 class TeamDetail(DetailView):
     model = Team
     template_name = 'community/team_detail.html'
@@ -590,7 +591,6 @@ def new_comment(request, pk):
     else:
         # 사용자가 인증되지 않은 경우 로그인 페이지로 리다이렉트
         return redirect("login")
-
 
 
 def signup(request):
