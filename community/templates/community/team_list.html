@@ -4,79 +4,114 @@
 
 {% extends 'community/base.html' %}
 
-
 {% block main_area %}
-    <div class="activity_title"><h1>팀 모집 게시판</h1></div>
-    <hr>
+<div class="activity_title"><h1>팀 모집 게시판</h1></div>
+<hr>
 
-    <br><br>
+<br><br>
 
-    <button id="createPostBtn">팀원 모집 글쓰기</button>
+<button id="createPostBtn">팀원 모집 글쓰기</button>
 
-    {% if team_list.exists %}
-        <table class="list_table">
-            <thead>
+{% if team_list %}
+<table class="list_table">
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성날짜</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for team in team_list %}
+        {% with forloop.counter as number %}
             <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성날짜</th>
+                <td>{{ number }}</td>
+                <td><a href="{% url 'community:team_detail' team.id %}">{{ team.title }}</a></td>
+                <td>{{ team.time|date:"Y-m-d" }}</td>
             </tr>
-            </thead>
-            <tbody>
-            {% for team in team_list %}
-                <tr>
-                    <td>{{ forloop.counter }}</td>
-                    <td><a href="{% url 'community:team_detail' team.id %}">{{ team.title }}</a></td>
-                    <td>{{ team.time|date:"Y-m-d"  }}</td>
-                </tr>
-                <tr>
-                    <td colspan="3">
-                        <hr>
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    {% else %}
-        <h1>아직 팀 게시글이 없습니다.</h1>
-    {% endif %}
+            <tr>
+                <td colspan="3">
+                    <hr>
+                </td>
+            </tr>
+        {% endwith %}
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<h1>아직 팀 게시글이 없습니다.</h1>
+{% endif %}
 
+<div class="pagination" style="justify-content: center; display: flex;">
+    <span class="step-links">
+        <a href="?filter={{ filter_value }}&page={{ first_page }}">처음</a>
+
+        {% if previous_page %}
+            <a href="?filter={{ filter_value }}&page={{ previous_page }}">&laquo; 이전</a>
+        {% endif %}
+
+        {% for i in page_range %}
+            {% if page.number == i %}
+                <span class="current">
+                    <a href="javascript:void(0);" style="color: white; font-weight: bold;">{{ i }}</a>
+                </span>
+            {% else %}
+                <a href="javascript:void(0);" onclick="changePage({{ i }})">{{ i }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if next_page %}
+            <a href="?filter={{ filter_value }}&page={{ next_page }}">다음 &raquo;</a>
+        {% endif %}
+
+        <a href="?filter={{ filter_value }}&page={{ last_page }}">끝</a>
+    </span>
+</div>
 
 <!-- 스크립트 코드 -->
-    <script>
-          document.addEventListener('DOMContentLoaded', function () {
+<script>
+    function changePage(pageNumber) {
+        var url = window.location.href.split('?')[0]; // 현재 URL에서 쿼리 파라미터 제거
+        var filter = getParameterByName('filter');
+        window.location.href = url + '?filter=' + filter + '&page=' + pageNumber;
+    }
 
-            var filterItems = document.querySelectorAll('.choose_one li');
+    function getParameterByName(name) {
+        var url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
 
-            filterItems.forEach(function (item) {
-                item.addEventListener('click', function () {
-                    var filterValue = item.getAttribute('data-filter');
+    document.getElementById('createPostBtn').addEventListener('click', function () {
+        var isLoggedIn = {% if user.is_authenticated %} true {% else %} false {% endif %};
 
-                    console.log('Selected filter:', filterValue);
+        if (isLoggedIn) {
+            // 로그인된 경우
+            var teamPostFormUrl = "{% url 'community:TeamPostForm' %}";
+            window.location.href = teamPostFormUrl;
+        } else {
+            // 로그인되지 않은 경우
+            var loginUrl = "{% url 'community:login' %}";
+            window.location.href = loginUrl;
+        }
+    });
 
-                    applyFilter(filterValue);
-                });
+    document.addEventListener('DOMContentLoaded', function () {
+        var createPostBtn = document.getElementById("createPostBtn");
+
+        if (createPostBtn) {
+            createPostBtn.addEventListener('click', function () {
+                // 현재 페이지 URL을 LocalStorage에 저장
+                localStorage.setItem('previousPageUrl', window.location.href);
             });
-
-            function applyFilter(filter) {
-                // 이 부분에서 실제 필터링을 구현
-                // filter 값에 따라 적절한 처리를 수행
-                var tableRows = document.querySelectorAll('.list_table tbody tr');
-
-                tableRows.forEach(function (row) {
-                    var dataFilter = row.getAttribute('data-filter');
-
-                    // 모든 행을 숨김
-                    row.style.display = 'none';
-
-                    // 선택된 필터와 일치하는 경우 해당 행을 보여줌
-                    if (filter === 'all' || (filter === 'isduksung' && dataFilter === 'True') || (filter === 'notIsduksung' && dataFilter === 'False')) {
-                        row.style.display = 'table-row';
-                    }
-                });
-            }
-        });
-    </script>
+        }
+    });
+</script>
 <!-- 스크립트 코드 종료 -->
 
 {% endblock %}

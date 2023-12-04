@@ -28,6 +28,10 @@ class TeamPostForm(forms.ModelForm):
         super(TeamPostForm, self).__init__(*args, **kwargs)
         self.user = user
 
+        self.fields['title'].label = '제목'
+        self.fields['post'].label = '활동명'
+        self.fields['content'].label = '내용'
+
     def save(self, commit=True):
         instance = super().save(commit=False)
         current_user = self.user
@@ -61,11 +65,18 @@ class TeamPostForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('content', 'issecret')
-        widgets = {
-            'issecret': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
-        }
+        fields = ('content',)
 
+    def __init__(self, user, *args, **kwargs):
+        super(CommentForm, self).__init__(*args, **kwargs)
+        self.user = user
+
+    def save(self, commit=True):
+        instance = super(CommentForm, self).save(commit=False)
+        instance.user = self.user  # 사용자 정보 설정
+        if commit:
+            instance.save()
+        return instance
 
 
 

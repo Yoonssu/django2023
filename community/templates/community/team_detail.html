@@ -31,7 +31,7 @@
     </div>
 
 
-    <!-- Comments section -->
+  <!-- Comments section -->
     <section class="mb-5">
         <div class="card bg-light">
             <div class="card-body">
@@ -60,11 +60,9 @@
                                                             alt="..."/>
                             </div>
                             <div class="ms-3">
-                                <div class="fw-bold">{{ comment.user.username }} & {{ comment.time }}</div>
+                                <div class="comment-info">
+                                    <div class="fw-bold">{{ comment.user.username }} <span style="font-size: 0.8em; color: #666;">{{ comment.time|date:"y-m-d H:i" }}</span></div>
                                 {{ comment.content | linebreaks }}
-                                {% if comment.time != comment.modified_at %}
-                                    <p class="text-muted"><small> Updated : {{ comment.modified_at }}</small></p>
-                                {% endif %}
                             </div>
                         </div>
                     {% endfor %}
@@ -73,3 +71,4 @@
         </div>
     </section>
 {% endblock %}
+

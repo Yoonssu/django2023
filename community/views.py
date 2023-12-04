@@ -370,12 +370,68 @@ class Recommend(LoginRequiredMixin, ListView):
 class TeamList(ListView):
     model = Team
     template_name = 'community/team_list.html'
+    context_object_name = 'team_list'  # 템플릿에서 사용할 컨텍스트 객체의 이름 설정
+    paginate_by = 10  # 페이지당 보여질 항목 수
+
+    def get_queryset(self):
+        return Team.objects.all()
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # 추가적인 컨텍스트 데이터가 필요하다면 여기에 작성
+        context = super(TeamList, self).get_context_data(**kwargs)
+
+        # 페이징 처리를 위한 추가적인 컨텍스트 데이터 설정
+        paginator = context['paginator']
+        page = context['page_obj']
+
+        # 추가 페이징을 위한 컨텍스트 데이터 설정
+        context.update({
+            'filter_value': self.request.GET.get('filter', 'all'),  # 필터값 추가
+        })
+
+        # 새로운 변수 'team_list_number'를 만들어 각 팀 게시글의 전체 목록에서의 순서를 나타냅니다.
+        team_list_number = range(context['team_list'].count(), 0, -1)
+
+        # 새로운 변수를 컨텍스트에 추가
+        context.update({
+            'team_list_number': team_list_number,
+        })
+
+        # 페이징 버튼 수 제한을 위한 추가 작업
+        try:
+            current_page = int(self.request.GET.get('page', 1))
+        except ValueError:
+            current_page = 1
+
+        max_pages = 5  # 페이지당 최대 페이징 버튼 수
+        page_range = []
+
+        if paginator.num_pages <= max_pages:
+            page_range = range(1, paginator.num_pages + 1)
+        else:
+            start_page = max(1, current_page - max_pages // 2)
+            end_page = min(paginator.num_pages, start_page + max_pages - 1)
+            page_range = range(start_page, end_page + 1)
+
+        context.update({
+            'page_range': page_range,
+        })
+
+        # 이전 페이지 및 다음 페이지 설정
+        previous_page = page.previous_page_number() if page.has_previous() else None
+        next_page = page.next_page_number() if page.has_next() else None
+
+        context.update({
+            'previous_page': previous_page,
+            'next_page': next_page,
+        })
+
+        # 맨 처음과 맨 끝 페이지 설정
+        context.update({
+            'first_page': 1,
+            'last_page': paginator.num_pages,
+        })
+
         return context
-    
 class TeamDetail(DetailView):
     model = Team
     template_name = 'community/team_detail.html'
@@ -389,7 +445,7 @@ class TeamDetail(DetailView):
         comments = Comment.objects.filter(team=team)
 
         # 댓글 작성 폼 생성
-        comment_form = CommentForm()
+        comment_form = CommentForm(user=self.request.user)
 
         context['comments'] = comments
         context['comment_form'] = comment_form
@@ -420,7 +476,7 @@ class TeamPostForm(LoginRequiredMixin, CreateView):
 
             # Post 모델에서 해당 title에 매칭되는 객체 가져오기
             # 여러 개의 객체가 반환되더라도 첫 번째 객체만 사용
-            post_instance = Post.objects.filter(title=cleaned_post_title).first()
+            post_instance = Post.objects.get(title=cleaned_post_title)
 
             if post_instance:
                 # Team 객체 생성 및 post 필드에 post_instance 할당
@@ -442,22 +498,31 @@ def new_comment(request, pk):
         team = get_object_or_404(Team, pk=pk)
 
         if request.method == 'POST':
-            comment_form = CommentForm(request.POST)
+            # CommentForm을 사용할 때 사용자 정보를 함께 전달
+            comment_form = CommentForm(data=request.POST, user=request.user)
 
             if comment_form.is_valid():
+                # CommentForm의 save 메서드를 사용하여 댓글을 저장
                 comment = comment_form.save(commit=False)
                 comment.team = team
-                comment.author = request.user
+                comment.user = request.user
                 comment.save()
 
                 return redirect(comment.get_absolute_url())
-
             else:
                 return redirect(team.get_absolute_url())
+        else:
+            # GET 요청 시에도 CommentForm을 생성할 때 사용자 정보를 함께 전달
+            comment_form = CommentForm(user=request.user)
+
+        context = {
+            'team': team,
+            'comment_form': comment_form,
+        }
+        return render(request, 'team_detail.html', context)
     else:
         # 사용자가 인증되지 않은 경우 로그인 페이지로 리다이렉트
         return redirect("login")
-
 
 
 def signup(request):
