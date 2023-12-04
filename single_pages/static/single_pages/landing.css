@@ -19,6 +19,7 @@
 .row.justify-content-center {
     margin-left: -20%; /* 좌측 마진 제거 */
     margin-right: -20%; /* 우측 마진 제거 */
+    margin-top: 50px;
 
 }
 
@@ -38,7 +39,7 @@
 /* 검색 폼 스타일 */
 .form-container {
     width: 100%;
-    margin-top: 20px; /* 상단 마진 추가 */
+    margin-top: 10px; /* 상단 마진 추가 */
 }
 
 .form-control-lg {
@@ -49,7 +50,7 @@
 
 .col-auto.welcome-hero-serch {
     height: 60px;
-    margin-top: 20px;
+    margin-top: 10px;
     
 
 }

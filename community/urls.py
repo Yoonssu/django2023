@@ -12,7 +12,7 @@ urlpatterns = [
     path('', views.PostList.as_view()),
     path('<int:pk>/', views.PostDetail.as_view(), name='post_detail'),
 
-    # mypage관련 url
+        # mypage관련 url
     path('mypage/<int:pk>/', views.UserDetail.as_view(), name='user_detail'),
     path('cancelScrap/', views.UserDetail.cancel_scrap),
 

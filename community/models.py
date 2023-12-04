@@ -75,7 +75,7 @@ class Comment(models.Model):
     team = models.ForeignKey('Team', on_delete=models.CASCADE)
     content = models.TextField()
     time = models.DateTimeField(auto_now_add = True)
-    issecret = models.BooleanField()
+    # issecret = models.BooleanField()
 
     def __str__(self):
         if self.user and hasattr(self.user, 'username'):

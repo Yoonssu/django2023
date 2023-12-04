@@ -1,11 +1,11 @@
 <!-- url 예시 http://127.0.0.1:8000/community/3/ -->
-<link rel="stylesheet" href="../../static/community/css/postDetailStyle.css" />
+<link rel="stylesheet" href="../../static/community/css/postDetailStyle.css?after" />
 
 {% extends 'community/base.html' %} {% block main_area %}
 <div class="wrapper">
   <div class="content_wrapper">
     <div class="title">
-      <h2>{{post.title}}</h2>
+      <p>{{post.title}}</p>
       <br />
     </div>
     <!-- post_detail 테이블 -->
