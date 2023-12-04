@@ -21,20 +21,24 @@
     margin-bottom: 10px;
 }
 
-.mod {
-    margin-left: 120px;
+.mod-box{
+    color: #5A32FB;
+    background-color: #CCC;
+    text-decoration: none;
 }
 
-.mod-box{
+.mod-box:hover {
     color: white;
     text-decoration: none;
+    background-color: #5A32FB;
 }
 
-.mod-box:hover {
-    color: #5A32FB;
+.postLink {
     text-decoration: none;
+    color: black;
 }
 
-.mod-box:hover {
-    background-color: #ccc;
+.postLink:hover {
+    /* text-decoration: none; */
+    color: black;
 }
