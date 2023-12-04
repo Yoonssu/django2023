@@ -4,6 +4,8 @@ from community.views import *
 from django.contrib.auth import views as auth_views
 from .views import search
 
+#app_name = 'single'
+
 urlpatterns = [
     path('about_we/', views.about_we),
     path('', views.landing),

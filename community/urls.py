@@ -11,15 +11,21 @@ app_name = 'community'
 urlpatterns = [
     path('', views.PostList.as_view()),
     path('<int:pk>/', views.PostDetail.as_view(), name='post_detail'),
-    
-     # mypage관련 url
+
+    # mypage관련 url
     path('mypage/<int:pk>/', views.UserDetail.as_view(), name='user_detail'),
+    path('cancelScrap/', views.UserDetail.cancel_scrap),
     path('mypage/<int:pk>/modKeyword/', views.modKeyWord, name='modKeyword'),
     path('keywords/', views.get_keywords),
     path('saveKeywords/<int:pk>/', views.save_keywords, name='save_keywords'),
     path('mypage/<int:pk>/modMajor/', views.modMajor, name='modMajor'),
     path('saveMajors/<int:pk>/', views.save_majors, name='save_majors'),
-    
+    path('myteamPage/<int:pk>/', views.myTeam, name='myTeam_detail'),
+    path('myCommentPage/<int:pk>/', views.myComment, name='my_comment'),
+    path('deleteTeam/', views.UserDetail.delete_team),
+    path('deleteComment/', views.UserDetail.delete_comment),
+
+
     path('recommend/<int:pk>/', views.Recommend.as_view(), name='recommend'),
     path('signup/', views.signup, name='signup'),
     path('login/', auth_views.LoginView.as_view(template_name='community/login.html'), name='login'),
@@ -36,3 +42,4 @@ urlpatterns = [
      path('search/', views.search, name='search'),
 
 ]
+

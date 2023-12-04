@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>내가 쓴 댓글</title>
+    <title>내가 쓴 글</title>
 
     <link href="{% static 'community/bootstrap/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'community/css/my_team.css' %}" rel="stylesheet" type="text/css">
@@ -15,29 +15,29 @@
     <!-- navbar.html 모듈 -->
     {% include 'community/navbar.html' %}
 
-    <div class="container">
+    <div class="container cm">
 
-    <h3 class="title">내가 쓴 댓글</h3>
+    <h3 class="title">내가 쓴 글</h3>
 
-    {% if comments %}
-        {% for comment in comments %}
+    {% if teams %}
+        {% for team in teams %}
         <div class="card" style="margin-top: 20px; ">
             <div class="card-body">
                 <div class="btn_flex">
-                <div class="team_post_title"> {{ comment.team.post.title }} </div>
+                <div class="team_post_title"> {{ team.post.title }} </div>
                 <a href="{% url 'community:team_detail' pk=team.post.id  %}">
-                    <h5 class="card-title" style="text-decoration: none; color: black;">{{ comment.team.title }}</h5>
+                    <h5 class="card-title">{{ team.title }}</h5>
                 </a>
                 <hr>
-                <p class="card-text">{{ comment.team.content|truncatechars:150 }}</p>
+                <p class="card-text">{{ team.content|truncatechars:100 }}</p>
                 </div>
             <!-- 버튼 추가 -->
-            <a href="#" class="btn btn-secondary delete" onclick="deleteTeam('{{ comment.team.post.id }}', this)">삭제</a>
+            <a href="#" class="btn btn-secondary delete" onclick="deleteTeam('{{ team.post.id }}', this)">삭제</a>
             </div>
         </div>
         {% endfor %}
     {% else %}
-        <p class="no-team">작성한 댓글이 없습니다.</p>
+        <p>작성한 글이 없습니다.</p>
     {% endif %}
 
     </div>
@@ -45,7 +45,7 @@
     <script>
 
         function deleteTeam(postId, button) {
-              const url = `/community/deleteComment/`;
+              const url = `/community/deleteTeam/`;
               console.log(url);
       
               // Ajax 요청 보내기

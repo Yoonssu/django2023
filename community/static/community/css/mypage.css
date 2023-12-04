@@ -8,6 +8,7 @@
     border-radius: 30px;
     font-size: 12px;
     display: inline-block;
+    /* transition: background-color 0.3s ease; */
 }
 
 .keywordsField {
@@ -22,4 +23,18 @@
 
 .mod {
     margin-left: 120px;
+}
+
+.mod-box{
+    color: white;
+    text-decoration: none;
+}
+
+.mod-box:hover {
+    color: #5A32FB;
+    text-decoration: none;
+}
+
+.mod-box:hover {
+    background-color: #ccc;
 }

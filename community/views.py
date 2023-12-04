@@ -18,6 +18,7 @@ from random import random, choice
 from collections import Counter
 import os
 from django.core.exceptions import PermissionDenied
+from django.http import Http404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
@@ -116,7 +117,7 @@ class PostDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super(PostDetail, self).get_context_data()
         return context
-    
+
 
 class UserDetail(LoginRequiredMixin, DetailView):
     model = User
@@ -137,6 +138,12 @@ class UserDetail(LoginRequiredMixin, DetailView):
         # 예시: 로그인된 사용자가 스크랩한 활동 목록
         context['current_user_scraps'] = current_user.scrap_set.all()
 
+        selected_images = Recommend.get_dukse_images()
+
+        context.update({
+            'selected_images': selected_images,
+        })
+
         return context
     
     def get_object(self, queryset=None):
@@ -147,6 +154,29 @@ class UserDetail(LoginRequiredMixin, DetailView):
             raise Http404("You don't have permission to access this page")
         
         return obj
+    
+    def cancel_scrap(request):
+        post_id = request.GET.get('postId')
+        post = get_object_or_404(Post, pk=post_id)
+        user = request.user
+
+        Scrap.objects.filter(user=user, post=post).delete()
+        return JsonResponse({'message': 'Success'})
+    
+    def delete_team(request):
+        post_id = request.GET.get('postId')
+        post = get_object_or_404(Post, pk=post_id)
+        user = request.user
+        Team.objects.filter(user=user, post=post).delete()
+        return JsonResponse({'message': 'Success'})
+    
+    def delete_comment(request):
+        post_id = request.GET.get('postId')
+        post = get_object_or_404(Post, pk=post_id)
+        user = request.user
+        Comment.objects.filter(user=user, post=post).delete()
+        return JsonResponse({'message': 'Success'})
+                
     
     
     
@@ -188,22 +218,21 @@ def save_keywords(request, pk):
         default_keywords = request.POST.get('default_keywords').split(',')
 
         for dk in default_keywords:
-            default_keywords_obj = get_object_or_404(Keyword, keywordname=dk)
-            user.keyword.add(default_keywords_obj.id)
+            if dk.strip() != '':
+                try:
+                    default_keywords_obj = Keyword.objects.get(keywordname=dk)
+                    user.keyword.add(default_keywords_obj.id)
+                except Keyword.DoesNotExist:
+                    raise Http404("원하는 키워드를 찾을 수 없습니다.")
 
         for mk in make_keywords:
-
-
-            try:
-                # 해당 keywordname을 가진 Keyword 객체를 가져오거나 생성합니다.
-                make_keyword_obj, created = Keyword.objects.get_or_create(keywordname=mk, defaults={'ismake': True, 'category': None})
-                # User에 해당 키워드를 추가합니다.
-                user.keyword.add(make_keyword_obj.id)
-            except Keyword.DoesNotExist:
-                # 원하는 키워드가 존재하지 않는 경우, 새로운 Keyword 객체를 생성합니다.
-                new_keyword = Keyword.objects.create(keywordname=mk, ismake=True, category=None)
-                # User에 새로 생성한 키워드를 추가합니다.
-                user.keyword.add(new_keyword.id)
+            if mk.strip() != '':
+                try:
+                    make_keyword_obj, created = Keyword.objects.get_or_create(keywordname=mk, defaults={'ismake': True, 'category': None})
+                    user.keyword.add(make_keyword_obj.id)
+                except Keyword.DoesNotExist:
+                    new_keyword = Keyword.objects.create(keywordname=mk, ismake=True, category=None)
+                    user.keyword.add(new_keyword.id)
 
 
         return redirect('community:user_detail', pk=pk)
@@ -243,7 +272,41 @@ def save_majors(request, pk):
     else:
         # POST 요청이 아닌 경우 에러 응답
         return JsonResponse({'success': False, 'error': 'Invalid request method'})
+    
+def myTeam(request, pk):
+    user = get_object_or_404(User, pk=pk)
+    try:
+        teams = Team.objects.filter(user=user)
+    except Team.DoesNotExist:
+        teams = None
 
+    return render(
+        request,
+        'community/my_team.html',
+        {
+            'user' : user,
+            'teams' : teams,
+        }
+    )
+
+def myComment(request, pk):
+    user = get_object_or_404(User, pk=pk)
+    try:
+        comments = Comment.objects.filter(user=user)
+    except Team.DoesNotExist:
+        comments = None
+
+    return render(
+        request,
+        'community/my_team_comment.html',
+        {
+            'user' : user,
+            'comments' : comments,
+        }
+    )
+
+
+    
 
 
 # 바뀐 user를 보고  바꾸는 test
@@ -251,6 +314,14 @@ class Recommend(LoginRequiredMixin, ListView):
     model = User
     template_name = 'community/recommend_list.html'
     ordering = '-pk'
+
+    @classmethod
+    def get_dukse_images(cls):
+        dukse_images_path = os.path.join('community', 'static', 'community', 'dukse')
+        dukse_images = [f for f in os.listdir(dukse_images_path) if f.endswith(('.jpg', '.jpeg', '.png'))]
+        selected_images = [choice(dukse_images) for _ in range(8)]
+
+        return selected_images
 
     def get_context_data(self, **kwargs):
         context = super(Recommend, self).get_context_data(**kwargs)
@@ -290,12 +361,7 @@ class Recommend(LoginRequiredMixin, ListView):
         selected_posts = unique_posts[:8]
 
         #-----------------------덕새 사진 사져오기-----------------------------
-        # 'community/dukse/' 폴더 내의 모든 이미지 파일 가져오기
-        dukse_images_path = os.path.join('community', 'static', 'community', 'dukse')
-        dukse_images = [f for f in os.listdir(dukse_images_path) if f.endswith(('.jpg', '.jpeg', '.png'))]
-
-        # selected_images에 랜덤하게 1개 선택하여 8번 반복
-        selected_images = [choice(dukse_images) for _ in range(8)]
+        selected_images = Recommend.get_dukse_images()
 
 
 
@@ -363,7 +429,7 @@ class Recommend(LoginRequiredMixin, ListView):
 
 class TeamList(ListView):
     model = Team
-    template_name = 'community/team_list.html'  # 적절한 템플릿 경로로 변경
+    template_name = 'community/team_list.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -390,6 +456,7 @@ class TeamDetail(DetailView):
 
         return context
 
+
 class TeamPostForm(LoginRequiredMixin, CreateView):
     model = Team
     form_class = TeamPostForm  # 사용할 폼 클래스 설정
@@ -401,39 +468,33 @@ class TeamPostForm(LoginRequiredMixin, CreateView):
         kwargs['user'] = self.request.user  # 사용자 정보를 폼에 전달
         return kwargs
 
-    from django.shortcuts import get_object_or_404
+    def form_valid(self, form, post_instance=None):
+        current_user = self.request.user
+        if current_user.is_authenticated:
+            form.instance.user = current_user
+            post_title_instance = form.cleaned_data['post']
 
-    class TeamPostForm(LoginRequiredMixin, CreateView):
-        # (이전 코드 생략)
+            # 괄호 안의 pk 번호 제거하고 title 검색해서 Post 객체 가져오기
+            import re
+            cleaned_post_title = re.sub(r'\[\d+\]', '', str(post_title_instance)).strip()
 
-        def form_valid(self, form, post_instance=None):
-            current_user = self.request.user
-            if current_user.is_authenticated:
-                form.instance.user = current_user
-                post_title_instance = form.cleaned_data['post']
+            # Post 모델에서 해당 title에 매칭되는 객체 가져오기
+            # 여러 개의 객체가 반환되더라도 첫 번째 객체만 사용
+            post_instance = Post.objects.filter(title=cleaned_post_title).first()
 
-                # 괄호 안의 pk 번호 제거하고 title 검색해서 Post 객체 가져오기
-                import re
-                cleaned_post_title = re.sub(r'\[\d+\]', '', str(post_title_instance)).strip()
+            if post_instance:
+                # Team 객체 생성 및 post 필드에 post_instance 할당
+                team_instance = form.save(commit=False)
+                team_instance.post = post_instance
+                team_instance.save()
 
-
-                # Post 모델에서 해당 title에 매칭되는 객체 가져오기
-                # 여러 개의 객체가 반환되더라도 첫 번째 객체만 사용
-                post_instance = Post.objects.filter(title=cleaned_post_title).first()
-
-                if post_instance:
-                    # Team 객체 생성 및 post 필드에 post_instance 할당
-                    team_instance = form.save(commit=False)
-                    team_instance.post = post_instance
-                    team_instance.save()
-
-                    return super(TeamPostForm, self).form_valid(form)
-                else:
-                    # 인증된 사용자이지만, post_instance가 없는 경우
-                    return None
+                return super(TeamPostForm, self).form_valid(form)
             else:
-                # 인증되지 않은 사용자에 대한 처리 (예: 리디렉션)
-                return redirect('/community')
+                # 인증된 사용자이지만, post_instance가 없는 경우
+                return None
+        else:
+            # 인증되지 않은 사용자에 대한 처리 (예: 리디렉션)
+            return redirect('/community')
 
 
 def new_comment(request, pk):
@@ -509,4 +570,3 @@ def search(request):
     all_posts = Post.objects.all()
 
     return render(request, 'community/search_result.html', {'results': results, 'all_posts': all_posts, 'query': query})
-    
