@@ -499,16 +499,15 @@ def post_team(request, pk):
     teams_related_to_post = post.get_related_teams()
     return render(request, 'community/post_team.html', {'post': post, 'teams_related_to_post': teams_related_to_post})
     
+
 def search(request):
-    query = request.GET.get('q')
+    query = request.GET.get('q')  # 폼에서 전달된 검색어 가져오기
     results = []
 
     if query:
-        results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query))
+        results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query)).order_by('-pk')
+    
+    # 전체 게시물을 가져오기
+    all_posts = Post.objects.all()
 
-    context = {
-        'results': results,
-        'query': query,
-    }
-
-    return render(request, 'community/search_results.html', context)
+    return render(request, 'community/search_result.html', {'results': results, 'all_posts': all_posts, 'query': query})

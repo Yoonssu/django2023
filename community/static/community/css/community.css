@@ -123,6 +123,14 @@ input {
     background-color: #f9f9f9;
 }
 
+.post_pk{
+  width: 100px;
+}
+
+.post_title{
+  width: 1050px;
+}
+
 /* 교내/대외 필터링 스타일 */
 
 .choose_one ul {
@@ -136,10 +144,7 @@ input {
     margin-right: 10px;
     cursor: pointer;
 }
-.choose_one li.selected {
-    background-color: purple; /* 원하는 색상으로 변경 */
-    color: white;
-}
+
 
 
 .choose_one a {

@@ -1,20 +1,49 @@
+<!-- team_post_form.html -->
 {% extends 'community/base.html' %}
 {% load crispy_forms_tags %}
-{% block head_title %}
-    Team Post Form
-{% endblock %}
-
 
 {% block main_area %}
-<h1> 팀원 모집 글쓰기 </h1>
-<hr>
-    <form method="post" enctype="multipart/form-data">
-
-       {% csrf_token %}
+    <!-- 내용은 여기에 들어갑니다 -->
+    <h1>팀원 모집 글쓰기</h1>
+    <hr>
+    <form method="post" enctype="multipart/form-data" id="teamPostForm">
+        {% csrf_token %}
         <table>
             {{ form|crispy }}
         </table>
-        <button type="submit"> Submit </button>
-        </table>
+        <button type="submit">Submit</button>
     </form>
+
+ <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 이전 페이지 URL을 LocalStorage에서 가져오기
+            var previousPageUrl = localStorage.getItem('previousPageUrl');
+
+            // URL에서 게시글 ID를 추출하는 로직이 필요
+            var postId = extractPostIdFromUrl(previousPageUrl);
+
+            // 게시글 ID를 사용하여 해당 게시글을 자동으로 선택
+            if (postId) {
+                var postDropdown = document.getElementById("id_post");
+                if (postDropdown) {
+
+                    // 게시글이 있는 경우에만 선택
+                    if (postDropdown.querySelector("option[value='" + postId + "']")) {
+                        postDropdown.value = postId;
+                    }
+                }
+            }
+        });
+
+        // 이전 페이지 URL 저장
+        document.getElementById('teamPostForm').addEventListener('submit', function () {
+            localStorage.setItem('previousPageUrl', window.location.href);
+        });
+
+        // 게시글 ID 추출 함수
+        function extractPostIdFromUrl(url) {
+            var postIdMatch = url.match(/\/(\d+)\/post_team/);
+            return postIdMatch ? postIdMatch[1] : null;
+        }
+    </script>
 {% endblock %}

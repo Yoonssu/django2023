@@ -16,12 +16,13 @@ class TeamPostForm(forms.ModelForm):
     post = forms.ModelChoiceField(
         queryset=Post.objects.all(),
         empty_label=None,
-        to_field_name='title'
+        to_field_name='id',
+
     )
 
     class Meta:
         model = Team
-        fields = ['title', 'content', 'post']
+        fields = ['post', 'title', 'content' ]
 
     def __init__(self, user, *args, **kwargs):
         super(TeamPostForm, self).__init__(*args, **kwargs)
