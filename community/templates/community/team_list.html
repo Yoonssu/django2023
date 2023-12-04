@@ -27,7 +27,7 @@
                 <tr>
                     <td>{{ forloop.counter }}</td>
                     <td><a href="{% url 'community:team_detail' team.id %}">{{ team.title }}</a></td>
-                    <td>{{ team.time }}</td>
+                    <td>{{ team.time|date:"Y-m-d"  }}</td>
                 </tr>
                 <tr>
                     <td colspan="3">
@@ -41,88 +41,44 @@
         <h1>아직 팀 게시글이 없습니다.</h1>
     {% endif %}
 
-    {#    <!-- 페이징 부분은 필요에 따라 수정하세요 -->#}
-    {#    <div class="pagination">#}
-    {#        <span class="step-links">#}
-    {#            {% if post_list.has_previous %}#}
-    {#                <a href="?page=1">&laquo; first</a>#}
-    {#                <a href="?page={{ post_list.previous_page_number }}">previous</a>#}
-    {#            {% endif %}#}
-    {##}
-    {#            <span class="current">#}
-    {#                페이지 {{ post_list.number }} / {{ post_list.paginator.num_pages }}.#}
-    {#            </span>#}
-    {##}
-    {#            {% if post_list.has_next %}#}
-    {#                <a href="?page={{ post_list.next_page_number }}">next</a>#}
-    {#                <a href="?page={{ post_list.paginator.num_pages }}">last &raquo;</a>#}
-    {#            {% endif %}#}
-    {#        </span>#}
-    {#    </div>#}
-    {##}
-    {#    <!-- 추가된 페이지 링크 부분 -->#}
-    {#    <div>#}
-    {#        {% for page_num in post_list.paginator.page_range %}#}
-    {#            <li>#}
-    {#                <a href="?page={{ page_num }}">{{ page_num }}</a>#}
-    {#            </li>#}
-    {#        {% endfor %}#}
-    {#    </div>#}
 
+<!-- 스크립트 코드 -->
+    <script>
+          document.addEventListener('DOMContentLoaded', function () {
 
-    {% block scripts %}
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                // 페이지가 로드될 때 실행되는 코드
-                // 이 부분에 클라이언트 측 JavaScript 코드를 작성
+            var filterItems = document.querySelectorAll('.choose_one li');
 
-                // 클릭 이벤트를 사용하여 data-filter 값을 확인하고 필터링
-                var filterItems = document.querySelectorAll('.choose_one li');
+            filterItems.forEach(function (item) {
+                item.addEventListener('click', function () {
+                    var filterValue = item.getAttribute('data-filter');
 
-                filterItems.forEach(function (item) {
-                    item.addEventListener('click', function () {
-                        var filterValue = item.getAttribute('data-filter');
+                    console.log('Selected filter:', filterValue);
 
-                        // 필터 적용을 위한 함수 호출
-                        applyFilter(filterValue);
-                    });
-                });
-
-                function applyFilter(filter) {
-                    // 이 부분에서 실제 필터링을 구현
-                    // filter 값에 따라 적절한 처리를 수행
-                    var tableRows = document.querySelectorAll('.list_table tbody tr');
-
-                    tableRows.forEach(function (row) {
-                        var dataFilter = row.getAttribute('data-filter');
-
-                        // 모든 행을 숨김
-                        row.style.display = 'none';
-
-                        // 선택된 필터와 일치하는 경우 해당 행을 보여줌
-                        if (filter === 'all' || dataFilter === filter) {
-                            row.style.display = '';
-                        }
-                    });
-                }
-
-                // 글쓰기 버튼 클릭 이벤트 처리
-                document.getElementById('createPostBtn').addEventListener('click', function () {
-                    var isLoggedIn = {% if user.is_authenticated %} true {% else %} false {% endif %};
-
-                    if (isLoggedIn) {
-                        // 로그인된 경우
-                        var teamPostFormUrl = "{% url 'community:TeamPostForm' %}";
-                        window.location.href = teamPostFormUrl;
-                    } else {
-                        // 로그인되지 않은 경우
-                        var loginUrl = "{% url 'community:login' %}";
-                        window.location.href = loginUrl;
-                    }
+                    applyFilter(filterValue);
                 });
             });
-        </script>
-    {% endblock %}
+
+            function applyFilter(filter) {
+                // 이 부분에서 실제 필터링을 구현
+                // filter 값에 따라 적절한 처리를 수행
+                var tableRows = document.querySelectorAll('.list_table tbody tr');
+
+                tableRows.forEach(function (row) {
+                    var dataFilter = row.getAttribute('data-filter');
+
+                    // 모든 행을 숨김
+                    row.style.display = 'none';
+
+                    // 선택된 필터와 일치하는 경우 해당 행을 보여줌
+                    if (filter === 'all' || (filter === 'isduksung' && dataFilter === 'True') || (filter === 'notIsduksung' && dataFilter === 'False')) {
+                        row.style.display = 'table-row';
+                    }
+                });
+            }
+        });
+    </script>
+<!-- 스크립트 코드 종료 -->
+
 {% endblock %}
 
 

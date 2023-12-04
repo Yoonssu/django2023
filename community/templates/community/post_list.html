@@ -1,10 +1,10 @@
 <!-- http://127.0.0.1:8000/community -->
 
 <link rel="stylesheet" href="../../static/community/css/community.css" />
-<link rel="stylesheet" href="../../static/community/css/post_list.css" />
 {% extends 'community/base.html' %} {% load static %}
 
-<!-- 스크립트 코드 -->
+
+<!-- 필터링 스크립트 코드 -------------------------------------->
     <script>
           document.addEventListener('DOMContentLoaded', function () {
 
@@ -21,67 +21,71 @@
             });
 
             function applyFilter(filter) {
-                // 이 부분에서 실제 필터링을 구현
-                // filter 값에 따라 적절한 처리를 수행
                 var tableRows = document.querySelectorAll('.list_table tbody tr');
 
                 tableRows.forEach(function (row) {
                     var dataFilter = row.getAttribute('data-filter');
 
-                    // 모든 행을 숨김
                     row.style.display = 'none';
 
-                    // 선택된 필터와 일치하는 경우 해당 행을 보여줌
                     if (filter === 'all' || (filter === 'isduksung' && dataFilter === 'True') || (filter === 'notIsduksung' && dataFilter === 'False')) {
                         row.style.display = 'table-row';
                     }
                 });
             }
         });
+        
     </script>
-<!-- 스크립트 코드 종료 -->
+<!-- 필터링 스크립트 코드 종료 ---------------------------------------------->
 
 {% block main_area %}
 
 
-<div class="activity_title"><h1>활동목록</h1></div>
+<div class="activity_title">활동 목록</div>
 <hr>
 
-<!-- 교내/대외 필터링 -->
-<div class="choose_one">
-    <ul> 
-        <li class="first" data-filter="all">
-            <a href="/community/">전체</a>
-        </li>
-        <li class="second" data-filter="isduksung">
-            <a href="?filter=isduksung">교내</a> 
-        </li>
-        <li class="third" data-filter="notIsduksung">
-            <a href="?filter=notIsduksung">대외</a> 
-        </li>
-    </ul>
-</div>
-<!-- 교내/대외 필터링 종료 -->
-
-<!-- 검색 미구현 -->
-<div class="welcome-hero-serch-box">
-    <div class="welcome-hero-form">
-        <div class="single-welcome-hero-form">
-            <h3></h3>
-            <form action="index.html">
-                <input type="text" placeholder="검색어를 입력하세요" />
-            </form>
-        </div>
-        <div class="welcome-hero-serch">
-            <button class="welcome-hero-btn" onclick="window.location.href='#'">
-                검색  <i data-feather="search"></i>
-            </button>
+<!-- 교내/대외 필터링 + 검색폼 나란히 ---------->
+<div class="row">
+    <!-- 교내/대외 필터링 -------------->
+    <div class="col-md-6">
+        <div class="choose_one">
+            <ul> 
+                <li class="first" data-filter="all">
+                    <a href="/community/">전체</a>
+                </li>
+                <li class="second" data-filter="isduksung">
+                    <a href="?filter=isduksung">교내</a> 
+                </li>
+                <li class="third" data-filter="notIsduksung">
+                    <a href="?filter=notIsduksung">대외</a> 
+                </li>
+            </ul>
         </div>
     </div>
-</div><br><br>
-<!-- 검색 종료 -->
+    <!-- 검색  --------------------------->
+    <div class="col-md-6">
+        <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN" action="{% url 'search' %}" method="get">
+            <div class="row align-items-center">
+                <!-- 검색어 입력란 ---------->
+                <div class="col">
+                    <div class="form-container">
+                        <input class="form-control form-control-lg" type="text" name="q" value="{{ query }}" placeholder="검색어를 입력하세요" />
+                    </div>
+                </div>
+                <!-- 검색 버튼 ------------->
+                <div class="col-auto">
+                    <div class="welcome-hero-serch">
+                        <button class="welcome-hero-btn" type="submit">
+                            <i data-feather="search"></i> Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
-<!-- 게시글 목록 테이블 -->
+<!-- 게시글 목록 테이블 ----------------------->
 <table class="list_table">
     <thead>
         <tr>
@@ -103,18 +107,19 @@
         {% endfor %}
     </tbody>
 </table>
-<!-- 게시글 목록 테이블 종료 -->
+<!-- 게시글 목록 테이블 종료 ----------------->
 
 <!-- 페이지네이션_수정 요함 -->
-<div class="pagination">
+<div class="pagination" style="justify-content: center; display: flex;">
     <span class="step-links">
-        {% if post_list.has_previous %}
-            <a href="?filter={{ filter_value }}&page=1">&laquo; first</a>
-            <a href="?filter={{ filter_value }}&page={{ post_list.previous_page_number }}">previous</a>
+        <a href="?filter={{ filter_value }}&page={{ first_page }}">처음</a>
+        
+        {% if previous_page %}
+            <a href="?filter={{ filter_value }}&page={{ previous_page }}">&laquo; 이전</a>
         {% endif %}
-    
+        
         {% for i in page_range %}
-            {% if post_list.number == i %}
+            {% if page.number == i %}
                 <span class="current">
                     <a href="?filter={{ filter_value }}&page={{ i }}" style="color: white; font-weight: bold;">{{ i }}</a>
                 </span>
@@ -122,13 +127,15 @@
                 <a href="?filter={{ filter_value }}&page={{ i }}">{{ i }}</a>
             {% endif %}
         {% endfor %}
-    
-        {% if post_list.has_next %}
-            <a href="?filter={{ filter_value }}&page={{ post_list.next_page_number }}">next</a>
-            <a href="?filter={{ filter_value }}&page={{ post_list.paginator.num_pages }}">last &raquo;</a>
+
+        {% if next_page %}
+            <a href="?filter={{ filter_value }}&page={{ next_page }}">다음 &raquo;</a>
         {% endif %}
+
+        <a href="?filter={{ filter_value }}&page={{ last_page }}">끝</a>
     </span>
-</div>
-<!-- 페이지네이션 종료 -->
+</div끄
+<!-- 페이지네이션 종료 --------------------------->
+
 
 {% endblock %}

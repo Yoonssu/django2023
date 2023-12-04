@@ -5,31 +5,88 @@
 {% block main_area %}
 
 
-  <h1>마이페이지</h1>
-  
-  <p>아이디: {{ user.username }}</p>
-  <p>이메일: {{ user.email }}</p>
+<section>
 
-  <h2>관심 전공 목록</h2>
-  <ul>
-    {% for major in majors %}
-      <li>{{ major.majorname }}</li>
-    {% endfor %}
-  </ul>
+      <div class="row"> 
+        <div class="col-4">
+              <h4 style="padding-top: 25px;">회원 정보</h4>
+                    <div class="card my-info">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                          <div style="display: flex;">
+                            <span>아이디</span>
+                            <span style="color: gray; margin-left: auto;">{{ user.username }}</span>
+                          </div>
+                        </li>
 
-  <h2>맞춤 키워드 목록</h2>
-  <ul>
-    {% for keyword in keywords %}
-      <li>{{ keyword.keywordname }}</li>
-    {% endfor %}
-  </ul>
+                        <li class="list-group-item">
+                          <div style="display: flex;">
+                            <span>이메일</span>
+                            <span style="color: gray; margin-left: auto;">{{ user.email }}</span>
+                          </div>
+                        </li>
 
-  <h2>스크랩한 활동 목록</h2>
-  <ul>
-    {% for scrap in scraps %}
-      <li>{{ scrap.post.title }}</li>
-    {% endfor %}
-  </ul>
+                        <li class="list-group-item">
+                          <div style="display: flex;">
+                            <span>관심전공</span>
+                            <span style="color: gray; margin-left: auto;">
+                                {% for major in current_user_majors %}
+                                  <span style="display: block; text-align: right;">{{ major.majorname }}</span>
+                                {% endfor %}
+                            </span>
+                          </div>
+                        </li>
+
+                      </ul>
+                    </div>
+
+                      <a href="{% url 'community:modMajor' pk=user.pk %}" class="btn btn-primary btn active mod" role="button" aria-pressed="true">수정</a>
+
+
+                  <h4 style="padding-top: 25px;">맞춤 키워드</h4>
+                  <div class="card my-info">
+                    <div class="card-body keywordsField">
+                      {% for keyword in current_user_keywords %}
+                        <div class="keyword-box">{{ keyword.keywordname }}</div>
+                      {% endfor %}
+                    </div>
+                  </div>
+
+                    <a href="{% url 'community:modKeyword' pk=user.pk %}" class="btn btn-primary btn active mod" role="button" aria-pressed="true">수정</a>
+
+                    
+                    <div class="card" style="width: 20rem; margin-top: 25px;">
+                      <div class="card-body">
+                        <a href="#myPage/post/">내가 쓴 글</a>
+                      </div>
+                    </div>
+
+                    <div class="card" style="width: 20rem;">
+                      <div class="card-body">
+                        <a href="#myPage/commnet/">내가 쓴 댓글</a>
+                      </div>
+                    </div>
+              </div>
+
+          <div class="col-8" style="padding-left: 25px;">
+              <h4 style="padding-top: 25px;">스크랩한 활동</h4>
+              <ul>
+                {% for scrap in scraps %}
+                <div class="card" style="width: 18rem;">
+                  <img src="..." class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ scrap.post.title }}</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+                </select>
+                {% endfor %}
+              </ul>
+          </div>
+      </div>
+  </div>
+</section>
 
 
 {% endblock %}

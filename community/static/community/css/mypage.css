@@ -1,0 +1,25 @@
+.keyword-box {
+    background-color: #5A32FB;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    margin: 3px;
+    border-radius: 30px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.keywordsField {
+    padding: 10px;
+}
+
+.my-info {
+    width: 20rem; 
+    margin-top: 10px; 
+    margin-bottom: 10px;
+}
+
+.mod {
+    margin-left: 120px;
+}
