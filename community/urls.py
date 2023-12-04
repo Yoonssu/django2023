@@ -15,15 +15,18 @@ urlpatterns = [
     # mypage관련 url
     path('mypage/<int:pk>/', views.UserDetail.as_view(), name='user_detail'),
     path('cancelScrap/', views.UserDetail.cancel_scrap),
+
     path('mypage/<int:pk>/modKeyword/', views.modKeyWord, name='modKeyword'),
     path('keywords/', views.get_keywords),
     path('saveKeywords/<int:pk>/', views.save_keywords, name='save_keywords'),
+
     path('mypage/<int:pk>/modMajor/', views.modMajor, name='modMajor'),
     path('saveMajors/<int:pk>/', views.save_majors, name='save_majors'),
+
     path('myteamPage/<int:pk>/', views.myTeam, name='myTeam_detail'),
     path('myCommentPage/<int:pk>/', views.myComment, name='my_comment'),
-    path('deleteTeam/', views.UserDetail.delete_team),
-    path('deleteComment/', views.UserDetail.delete_comment),
+    path('deleteTeam/', views.UserDetail.delete_team, name='delete_team'),
+    path('deleteComment/', views.UserDetail.delete_comment, name='delete_comment'),
 
 
     path('recommend/<int:pk>/', views.Recommend.as_view(), name='recommend'),

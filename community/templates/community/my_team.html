@@ -19,6 +19,7 @@
 
     <h3 class="title">내가 쓴 글</h3>
 
+    <div id="team-content">
     {% if teams %}
         {% for team in teams %}
         <div class="card" style="margin-top: 20px; ">
@@ -32,13 +33,14 @@
                 <p class="card-text">{{ team.content|truncatechars:100 }}</p>
                 </div>
             <!-- 버튼 추가 -->
-            <a href="#" class="btn btn-secondary delete" onclick="deleteTeam('{{ team.post.id }}', this)">삭제</a>
+            <button class="btn btn-secondary delete" onclick="deleteTeam('{{ team.post.id }}', this)">삭제</button>
             </div>
         </div>
         {% endfor %}
     {% else %}
-        <p>작성한 글이 없습니다.</p>
+        <p class="no-team">작성한 글이 없습니다.</p>
     {% endif %}
+    </div>
 
     </div>
 
@@ -58,6 +60,11 @@
                     const cardToRemove = button.closest('.card'); //가장 가까운 클래스 찾기
                     if (cardToRemove) {
                       cardToRemove.remove();
+                    }
+
+                    else{
+                        const keywordList = document.getElementById('team-content');
+                        keywordList.innerHTML =  "<p>작성한 글이 없습니다.</p>";
                     }
                   },
                   error: function(error) {

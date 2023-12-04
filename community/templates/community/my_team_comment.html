@@ -31,8 +31,6 @@
                 <hr>
                 <p class="card-text">{{ comment.team.content|truncatechars:150 }}</p>
                 </div>
-            <!-- 버튼 추가 -->
-            <a href="#" class="btn btn-secondary delete" onclick="deleteTeam('{{ comment.team.post.id }}', this)">삭제</a>
             </div>
         </div>
         {% endfor %}

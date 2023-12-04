@@ -20,6 +20,7 @@ import os
 from django.core.exceptions import PermissionDenied
 from django.http import Http404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import HttpResponseForbidden
 
 
 
@@ -152,7 +153,7 @@ class UserDetail(LoginRequiredMixin, DetailView):
         
         # 로그인한 사용자와 조회하려는 사용자가 다를 경우 404 에러 반환
         if obj != self.request.user:
-            raise Http404("You don't have permission to access this page")
+           return HttpResponseForbidden("You don't have permission to access this page.")
         
         return obj
     
@@ -179,10 +180,11 @@ class UserDetail(LoginRequiredMixin, DetailView):
         return JsonResponse({'message': 'Success'})
                 
     
-    
-    
 def modKeyWord(request, pk):
-    user = User.objects.get(id=pk)
+    user = get_object_or_404(User, id=pk)
+    
+    if request.user != user:
+        return HttpResponseForbidden("You don't have permission to access this page.")
 
     return render(
         request,
@@ -246,6 +248,9 @@ def modMajor(request, pk):
     majors = Major.objects.all()
     user = User.objects.get(id=pk)
     user_major = user.major.all()
+
+    if request.user != user:
+        return HttpResponseForbidden("You don't have permission to access this page.")
 
     return render(
         request,
