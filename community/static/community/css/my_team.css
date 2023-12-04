@@ -1,0 +1,50 @@
+a {
+    text-decoration: none; 
+    color: inherit;
+}
+
+h3 {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+
+h5 {
+    margin-bottom: 0px;
+}
+
+.card {
+    width: 100rem;
+}
+
+.card-body {
+    display: flex; 
+    align-items: center;
+}
+
+.delete {
+    margin-bottom : 60px;
+    display: inline-block; 
+    margin-left: auto;
+}
+
+.cm {
+    margin-left: 10px; 
+    margin-right: 10px;
+}
+
+.team_post_title {
+    color: #9c9c9c; 
+    font-size: 12px; 
+    padding-bottom: 7px;
+}
+
+.btn_flex {
+    flex: 1;
+}
+
+.no-team {
+    color: #ccc;
+    text-align: center;
+    margin-top: 100px;
+}

@@ -21,7 +21,7 @@ class TeamPostForm(forms.ModelForm):
 
     class Meta:
         model = Team
-        fields = ['title', 'content', 'post']
+        fields = ['post', 'title', 'content' ]
 
     def __init__(self, user, *args, **kwargs):
         super(TeamPostForm, self).__init__(*args, **kwargs)
@@ -40,6 +40,11 @@ class TeamPostForm(forms.ModelForm):
             try:
                 post_instance = Post.objects.get(title=cleaned_post_title)
                 instance.post = post_instance
+
+                # 합쳐진 title을 생성하여 저장
+                user_input_title = self.cleaned_data['title']
+                combined_title = f"[{cleaned_post_title}] {user_input_title}"
+                instance.title = combined_title
 
                 instance.user = current_user
                 if commit:
