@@ -48,26 +48,34 @@
 },
 {
     "model": "sessions.session",
-    "pk": "fxbmxifnvve7imnuple5eru0lff67ag6",
+    "pk": "izrcb20aucuyo2px0tdt6n4r3qkjunmi",
     "fields": {
-        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r91ez:z8oghr1kPsBupdxV5l6fYf2_XvOVyr4enIqEpOxGIyc",
-        "expire_date": "2023-12-15T20:26:17.804"
+        "session_data": ".eJxVjMEOgjAQRP-lZ9MALe3i0Tvf0Gx3txY1NKFwMv67kHDQ0yTz3sxbBdzWHLYqS5hYXZVRl98uIj1lPgA_cL4XTWVelynqQ9EnrXosLK_b6f4dZKx5XwN67m2MwEjONgkIBjK97EnWi48OrbTkpGMEM3TERMk3CMnb2IJVny8KxDja:1r9VN8:ougP7t9O_bii7n_ILBLw4H-Xa2WJ3YcCsGS7f-WodgE",
+        "expire_date": "2023-12-17T04:09:50.508"
     }
 },
 {
     "model": "sessions.session",
-    "pk": "h3bgy3599oylr03p0rhf0nx2au1y8qj4",
+    "pk": "osm339t5a8wdnof25rzv7fab5vpwfhh6",
     "fields": {
-        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r959g:Xa4V6Nf6L7tsHUzn9STHdka_0cvs3Y4MUFYJ0mzQHh8",
-        "expire_date": "2023-12-16T00:10:12.535"
+        "session_data": ".eJxVjMEOgjAQRP-lZ9MALe3i0Tvf0Gx3txY1NKFwMv67kHDQ0yTz3sxbBdzWHLYqS5hYXZVRl98uIj1lPgA_cL4XTWVelynqQ9EnrXosLK_b6f4dZKx5XwN67m2MwEjONgkIBjK97EnWi48OrbTkpGMEM3TERMk3CMnb2IJVny8KxDja:1r9g7S:H9K8mz_5JR9VDDSjG8IOLK688wfJ75PhC9tSj5oFf0Q",
+        "expire_date": "2023-12-17T15:38:22.801"
     }
 },
 {
     "model": "sessions.session",
-    "pk": "hq5mwp0z9socolp5y6eb1tx10ppgx84r",
+    "pk": "zicoesrltuctqadn453s9alxg36r0lre",
     "fields": {
-        "session_data": ".eJxVjMEOgjAQRP-lZ9MALe3i0Tvf0Gx3txY1NKFwMv67kHDQ0yTz3sxbBdzWHLYqS5hYXZVRl98uIj1lPgA_cL4XTWVelynqQ9EnrXosLK_b6f4dZKx5XwN67m2MwEjONgkIBjK97EnWi48OrbTkpGMEM3TERMk3CMnb2IJVny8KxDja:1r90hB:5pkmETYD0v5TmmL-gHGzljxzVQbpjwLIeMeDFRLob7k",
-        "expire_date": "2023-12-15T19:24:29.053"
+        "session_data": ".eJxVjMEOgjAQRP-lZ9MALe3i0Tvf0Gx3txY1NKFwMv67kHDQ0yTz3sxbBdzWHLYqS5hYXZVRl98uIj1lPgA_cL4XTWVelynqQ9EnrXosLK_b6f4dZKx5XwN67m2MwEjONgkIBjK97EnWi48OrbTkpGMEM3TERMk3CMnb2IJVny8KxDja:1r9ka9:F-mwHextwmq5kZb1f6PDCi8ETcvmHxmBU2wxqmSQktY",
+        "expire_date": "2023-12-17T20:24:17.503"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "zwrv7qpw1r9nrod67jje2cyuccng5x4k",
+    "fields": {
+        "session_data": ".eJxVjMEOgjAQRP-lZ9MALe3i0Tvf0Gx3txY1NKFwMv67kHDQ0yTz3sxbBdzWHLYqS5hYXZVRl98uIj1lPgA_cL4XTWVelynqQ9EnrXosLK_b6f4dZKx5XwN67m2MwEjONgkIBjK97EnWi48OrbTkpGMEM3TERMk3CMnb2IJVny8KxDja:1r9hPb:-GgmsqN8qdOAoj9_sskzUw9A3zaGHlexTBOKThoTmZM",
+        "expire_date": "2023-12-17T17:01:11.595"
     }
 },
 {
@@ -75,7 +83,7 @@
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$600000$g0jgXpHfRPoxZEqV5OQQBU$kwFHkU8FCy/LStza/gPzeN4VQEQPWN12xNeuAdrOIIs=",
-        "last_login": "2023-12-02T00:10:12.532",
+        "last_login": "2023-12-03T00:58:36.930",
         "is_superuser": true,
         "username": "dsadmin",
         "first_name": "",
@@ -115,7 +123,7 @@
     "pk": 3,
     "fields": {
         "password": "pbkdf2_sha256$600000$wnDyDwXBwOfJHnUq11iiCJ$PAMkgGgTJdluJ/3TsZFdHf1qxSB86bHqioVv/9v6LXk=",
-        "last_login": "2023-11-29T03:55:02.265",
+        "last_login": "2023-12-03T20:24:17.501",
         "is_superuser": false,
         "username": "kitechoi",
         "first_name": "",
@@ -127,7 +135,13 @@
         "groups": [],
         "user_permissions": [],
         "major": [],
-        "keyword": []
+        "keyword": [
+            32,
+            35,
+            36,
+            44,
+            46
+        ]
     }
 },
 {
@@ -596,269 +610,316 @@
     }
 },
 {
+    "model": "community.keyword",
+    "pk": 46,
+    "fields": {
+        "keywordname": "",
+        "ismake": true,
+        "category": null
+    }
+},
+{
     "model": "community.major",
     "pk": 1,
     "fields": {
-        "majorname": "국어국문전공"
+        "majorname": "국어국문전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 2,
     "fields": {
-        "majorname": "일어일문전공"
+        "majorname": "일어일문전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 3,
     "fields": {
-        "majorname": "중어중문전공"
+        "majorname": "중어중문전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 4,
     "fields": {
-        "majorname": "영어영문전공"
+        "majorname": "영어영문전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 5,
     "fields": {
-        "majorname": "불어불문전공"
+        "majorname": "불어불문전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 6,
     "fields": {
-        "majorname": "독어독문전공"
+        "majorname": "독어독문전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 7,
     "fields": {
-        "majorname": "스페인어전공"
+        "majorname": "스페인어전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 8,
     "fields": {
-        "majorname": "사학전공"
+        "majorname": "사학전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 9,
     "fields": {
-        "majorname": "철학전공"
+        "majorname": "철학전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 10,
     "fields": {
-        "majorname": "미술사학전공"
+        "majorname": "미술사학전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 11,
     "fields": {
-        "majorname": "문화인류전공"
+        "majorname": "문화인류전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 12,
     "fields": {
-        "majorname": "경영학전공"
+        "majorname": "경영학전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 13,
     "fields": {
-        "majorname": "회계학전공"
+        "majorname": "회계학전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 14,
     "fields": {
-        "majorname": "국제통상학전공"
+        "majorname": "국제통상학전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 15,
     "fields": {
-        "majorname": "법학전공"
+        "majorname": "법학전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 16,
     "fields": {
-        "majorname": "사회학전공"
+        "majorname": "사회학전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 17,
     "fields": {
-        "majorname": "문헌정보학전공"
+        "majorname": "문헌정보학전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 18,
     "fields": {
-        "majorname": "심리학전공"
+        "majorname": "심리학전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 19,
     "fields": {
-        "majorname": "아동가족학전공"
+        "majorname": "아동가족학전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 20,
     "fields": {
-        "majorname": "사회복지전공"
+        "majorname": "사회복지전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 21,
     "fields": {
-        "majorname": "정치외교전공"
+        "majorname": "정치외교전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 22,
     "fields": {
-        "majorname": "의상디자인전공"
+        "majorname": "의상디자인전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 23,
     "fields": {
-        "majorname": "유아교육전공"
+        "majorname": "유아교육전공",
+        "line": "글로벌융합대학"
     }
 },
 {
     "model": "community.major",
     "pk": 24,
     "fields": {
-        "majorname": "컴퓨터전공"
+        "majorname": "컴퓨터전공",
+        "line": "과학기술대학"
     }
 },
 {
     "model": "community.major",
     "pk": 25,
     "fields": {
-        "majorname": "IT미디어전공"
+        "majorname": "IT미디어전공",
+        "line": "과학기술대학"
     }
 },
 {
     "model": "community.major",
     "pk": 26,
     "fields": {
-        "majorname": "바이오공학전공"
+        "majorname": "바이오공학전공",
+        "line": "과학기술대학"
     }
 },
 {
     "model": "community.major",
     "pk": 27,
     "fields": {
-        "majorname": "사이버보안전공"
+        "majorname": "사이버보안전공",
+        "line": "과학기술대학"
     }
 },
 {
     "model": "community.major",
     "pk": 28,
     "fields": {
-        "majorname": "소프트웨어전공"
+        "majorname": "소프트웨어전공",
+        "line": "과학기술대학"
     }
 },
 {
     "model": "community.major",
     "pk": 29,
     "fields": {
-        "majorname": "생활체육전공"
+        "majorname": "생활체육전공",
+        "line": "과학기술대학"
     }
 },
 {
     "model": "community.major",
     "pk": 30,
     "fields": {
-        "majorname": "식품영양전공"
+        "majorname": "식품영양전공",
+        "line": "과학기술대학"
     }
 },
 {
     "model": "community.major",
     "pk": 31,
     "fields": {
-        "majorname": "정보통계전공"
+        "majorname": "정보통계전공",
+        "line": "과학기술대학"
     }
 },
 {
     "model": "community.major",
     "pk": 32,
     "fields": {
-        "majorname": "화학전공"
+        "majorname": "화학전공",
+        "line": "과학기술대학"
     }
 },
 {
     "model": "community.major",
     "pk": 33,
     "fields": {
-        "majorname": "수학전공"
+        "majorname": "수학전공",
+        "line": "과학기술대학"
     }
 },
 {
     "model": "community.major",
     "pk": 34,
     "fields": {
-        "majorname": "동양화전공"
+        "majorname": "동양화전공",
+        "line": "Art & Design 대학"
     }
 },
 {
     "model": "community.major",
     "pk": 35,
     "fields": {
-        "majorname": "서양화전공"
+        "majorname": "서양화전공",
+        "line": "Art & Design 대학"
     }
 },
 {
     "model": "community.major",
     "pk": 36,
     "fields": {
-        "majorname": "실내디자인전공"
+        "majorname": "실내디자인전공",
+        "line": "Art & Design 대학"
     }
 },
 {
     "model": "community.major",
     "pk": 37,
     "fields": {
-        "majorname": "시각디자인전공"
+        "majorname": "시각디자인전공",
+        "line": "Art & Design 대학"
     }
 },
 {
     "model": "community.major",
     "pk": 38,
     "fields": {
-        "majorname": "택스타일디자인전공"
+        "majorname": "택스타일디자인전공",
+        "line": "Art & Design 대학"
     }
 },
 {
@@ -15259,6 +15320,63 @@
         "img": null,
         "time": "2023-12-02T22:15:59.644",
         "isduksung": true
+    }
+},
+{
+    "model": "community.scrap",
+    "pk": 2,
+    "fields": {
+        "user": 3,
+        "post": 12095
+    }
+},
+{
+    "model": "community.scrap",
+    "pk": 35,
+    "fields": {
+        "user": 1,
+        "post": 12214
+    }
+},
+{
+    "model": "community.scrap",
+    "pk": 42,
+    "fields": {
+        "user": 3,
+        "post": 11011
+    }
+},
+{
+    "model": "community.team",
+    "pk": 1,
+    "fields": {
+        "post": 12108,
+        "user": 3,
+        "title": "[2023학년도 캡스톤디자인 경연대회 안내] 캡스톤 경연대회 같이 나가실 분?",
+        "content": "2분 더 모집해요!",
+        "time": "2023-12-03T14:36:31.925"
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 1,
+    "fields": {
+        "user": null,
+        "team": 1,
+        "content": "저는 글쓴이이고 사이버보안학과예요",
+        "time": "2023-12-03T14:36:55.959",
+        "issecret": false
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 2,
+    "fields": {
+        "user": null,
+        "team": 1,
+        "content": "댓글 기다리는중",
+        "time": "2023-12-03T14:37:17.594",
+        "issecret": true
     }
 }
 ]

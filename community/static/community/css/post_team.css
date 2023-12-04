@@ -80,3 +80,40 @@
   margin-right: auto;
   display: block;
 }
+
+
+
+#createPostBtn {
+    background-color: #5A32FB;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    border-radius: 8px; /* 모서리를 둥글게 만듦 */
+    transition: background-color 0.3s; /* 부드러운 트랜지션 효과 추가 */
+}
+
+#createPostBtn:hover {
+    background-color: #4525D3;
+}
+
+/* 버튼을 누를 때 효과 */
+#createPostBtn:active {
+    background-color: #341C99; /* 클릭 시 배경 색상 변경 */
+}
+
+.table-container {
+    max-width: 1300px;
+    margin: 0 auto; /* 컨테이너를 가운데 정렬 */
+}
+
+/* 수평선 스타일 */
+.post-separator {
+    margin: 20px 0; /* 수평선 위아래 여백 추가 */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+ }

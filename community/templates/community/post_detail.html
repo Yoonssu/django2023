@@ -8,12 +8,51 @@
       <h2>{{post.title}}</h2>
       <br />
     </div>
+    <!-- post_detail 테이블 -->
     <div class="content_nav">
-      <a href="#">상세정보</a>
-      <a href="#">팀원모집</a>
-      <button style="color: white; font-size: 14px">스크랩</button>
-    </div>
-    <div class="content_box">{{post.content|linebreaksbr}} <br /></div>
+      <a href="{% url 'community:post_detail' pk=post.pk %}">상세정보</a>
+      <a href="{% url 'community:post_team' pk=post.id %}">팀원모집</a>
+      <!-- 스크랩 버튼 -->
+      <button style="color: white; font-size: 14px; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);",
+              id="scrapButton" onclick="scrapPost({{ post.id }})">
+        {% if user and is_scraped %}
+            취소하기
+        {% else %}
+            스크랩
+        {% endif %}
+      </button>
+      <!-- 스크랩 버튼 종료 -->
+      
+        <!-- 스크랩 버튼 스크립트 -->
+        <script>
+          function scrapPost(postId) {
+              // 사용자 로그인 여부 확인
+              {% if user.is_authenticated %}
+                  fetch(`/community/scrap/${postId}/`)
+                      .then(response => response.json())
+                      .then(data => {
+                          const scrapButton = document.getElementById('scrapButton');
+                          if (data.scrapped) {
+                              scrapButton.innerText = '취소하기';
+                              scrapButton.style.backgroundColor = '#808080';
+                              scrapButton.style.borderColor = '#808080';
+                              alert('포스트가 스크랩되었습니다!');
+                          } else {
+                              scrapButton.innerText = '스크랩';
+                              scrapButton.style.backgroundColor = '#5a32fb';
+                              scrapButton.style.borderColor = 'rgba(255, 255, 255, 0)';
+                              alert('스크랩이 취소되었습니다.');
+                          }
+                      })
+                      .catch(error => console.error('에러:', error));
+              {% else %}
+                  alert('로그인 후 이용하세요.');
+              {% endif %}
+          }
+      </script>
+      <!-- 스크랩 버튼 스크립트 종료 -->
   </div>
+  <div class="content_box">{{post.content|linebreaksbr}} <br /></div>
+</div>
 </div>
 {% endblock %}
