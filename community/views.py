@@ -504,9 +504,9 @@ def search(request):
     results = []
 
     if query:
-        results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query)).order_by('-pk')
-    
+        results = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query)).order_by('-time')
     # 전체 게시물을 가져오기
     all_posts = Post.objects.all()
 
     return render(request, 'community/search_result.html', {'results': results, 'all_posts': all_posts, 'query': query})
+    
