@@ -25,7 +25,7 @@
             <div class="card-body">
                 <div class="btn_flex">
                 <div class="team_post_title"> {{ team.post.title }} </div>
-                <a href="{% url 'community:team_detail' pk=team.post.id  %}">
+                <a href="{% url 'community:team_detail' pk=team.id  %}" style="text-decoration: none; color: black;">
                     <h5 class="card-title">{{ team.title }}</h5>
                 </a>
                 <hr>
