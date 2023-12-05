@@ -22,7 +22,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for result in results %}
+                {% for result in results|dictsortreversed:"time" %}
                     <tr>
                         <td>{{ result.pk }}</td>
                         <td><a href="{% url 'community:post_detail' pk=result.pk %}" target="_blank">{{ result.title|highlight:query }}</a></td>

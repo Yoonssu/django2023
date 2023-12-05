@@ -67,9 +67,9 @@
         <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN" action="{% url 'search' %}" method="get">
             <div class="row align-items-center">
                 <!-- 검색어 입력란 ---------->
-                <div class="col">
+                <div class="col" style="padding-right: 0px;">
                     <div class="form-container">
-                        <input class="form-control form-control-lg" type="text" name="q" value="{{ query }}" placeholder="검색어를 입력하세요" style="font-size: 15px;"/>
+                        <input class="form-control form-control-lg" type="text" name="q" value="{{ query }}" placeholder="검색어를 입력하세요" style="font-size: 15px; margin-right: -10px;"/>
                     </div>
                 </div>
                 <!-- 검색 버튼 ------------->
@@ -89,17 +89,17 @@
 <table class="list_table">
     <thead>
         <tr>
-            <th>번호</th>
-            <th>제목</th>
-            <th>작성일자</th>
+            <th class="text-center">번호</th>
+            <th class="text-center">제목</th>
+            <th class="text-center">작성일자</th>
         </tr>
     </thead>
     <tbody>
         {% for post in post_list %}
             <tr>
-                <td>{{ post.pk }}</td>
-                <td><a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank">{{ post.title }}</a></td>
-                <td>{{ post.time|date:"Y-m-d"  }}</td>
+                <td class="text-center" style="width: 150px;">{{ post.pk }}</td>
+                <td style="padding-left: 15px;"><a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank">{{ post.title }}</a></td>
+                <td class="text-center" style="width: 160px">{{ post.time|date:"Y-m-d"  }}</td>
             </tr>
             <tr>
                 <td colspan="3"><hr></td>
