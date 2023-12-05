@@ -512,7 +512,9 @@ class TeamDetail(DetailView):
         context['comment_form'] = comment_form
 
         return context
-
+    
+    def get_absolute_url(self):
+        return f'/community/team/{self.object.pk}/'
 
 class TeamPostForm(LoginRequiredMixin, CreateView):
     model = Team
