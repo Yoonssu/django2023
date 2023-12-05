@@ -69,6 +69,8 @@ class CommentForm(forms.ModelForm):
     def __init__(self, user, *args, **kwargs):
         super(CommentForm, self).__init__(*args, **kwargs)
         self.user = user
+        
+        self.fields['content'].label = '댓글 작성'
 
     def save(self, commit=True):
         instance = super(CommentForm, self).save(commit=False)
