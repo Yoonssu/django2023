@@ -3,6 +3,7 @@
 {% extends 'community/base.html' %} {% block main_area %} {% load static %}
 <link rel="stylesheet" href="{% static 'community/css/recommendStryle.css' %}">
   <div class="wrapper">
+    <!-- 추천 포스터 출력 -->
     <div class="recommend-wrapper">
       <div class="recommend-font">
         <p id="recommend-title1">맞춤 추천</p>
@@ -37,6 +38,7 @@
       </div>
     </div>
 
+    <!-- 전공 포스터 출력 -->
     <div class="major-wrapper">
       <div class="major-title">
         <p id="major-title">전공 게시판 모음</p>
@@ -57,20 +59,7 @@
         <div class="major-post-date">등록 날짜</div>
       </div>
 
-      <!-- 추가: all_major_content 부분 -->
-      <div class="major-content hidden" id="all_major_content">
-        {% for post in all_major_posts_list %}
-          <div class="major-content-box">
-            <div class="major-post-pk">{{ post.pk }}</div>
-            <div class="major-post-title">
-              <a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank">{{ post.title }}</a>
-            </div>
-            <div class="major-post-date">{{ post.time|date:"Y.m.d" }}</div>
-          </div>
-        {% endfor %}
-      </div>
-
-      <!-- 수정: 중복된 ID 수정 -->
+      <!-- 각 major -->
       {% for major, posts in major_posts.items %}
         {% if major %}
           <div class="major-content hidden" id="content_{{ major }}">
@@ -87,11 +76,11 @@
         {% endif %}
       {% endfor %}
 
-      <!-- 수정: 중복된 ID 수정 -->
+      <!-- all-major -->
       <div class="major-content hidden" id="all_major_content_paging">
         {% for post in all_major_posts_list %}
           <div class="major-content-box">
-            <div class="major-post-pk">{{ forloop.counter }}</div>
+            <div class="major-post-pk">{{ post.pk }}</div>
             <div class="major-post-title">
               <a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank">{{ post.title }}</a>
             </div>
@@ -100,33 +89,33 @@
         {% endfor %}
       </div>
 
-      <!-- 수정: 중복된 변수명 수정 -->
+      <!-- 페이징 (전체) -->
       <div class="pagination-all pagination">
         <span class="step-links">
           {% if all_major_posts_list.has_previous %}
-            <a href="?page_all=1">&laquo; first</a>
-            <a href="?page_all={{ all_major_posts_list.previous_page_number }}">previous</a>
+            <a href="?page_all=1">&laquo; <button>처음</button></a>
+            <a href="?page_all={{ all_major_posts_list.previous_page_number }}"><button>이전</button></a>
           {% endif %}
           <span class="current">전체 {{ all_major_posts_list.number }} / {{ all_major_posts_list.paginator.num_pages }}.</span>
           {% if all_major_posts_list.has_next %}
-            <a href="?page_all={{ all_major_posts_list.next_page_number }}">next</a>
-            <a href="?page_all={{ all_major_posts_list.paginator.num_pages }}">last &raquo;</a>
+            <a href="?page_all={{ all_major_posts_list.next_page_number }}"><button>다음</button></a>
+            <a href="?page_all={{ all_major_posts_list.paginator.num_pages }}"><button>끝</button> &raquo;</a>
           {% endif %}
         </span>
       </div>
 
-      <!-- 수정: 중복된 ID 수정 -->
+      <!-- 페이징 (각 전공) -->
       {% for major, posts in major_posts.items %}
         <div class="pagination-major pagination hidden" id="pagination_{{ major }}">
           <span class="step-links">
             {% if posts.has_previous %}
-              <a href="?page_{{ major }}=1">&laquo; first</a>
-              <a href="?page_{{ major }}={{ posts.previous_page_number }}">previous</a>
+              <a href="?page_{{ major }}=1">&laquo; <button>처음</button></a>
+              <a href="?page_{{ major }}={{ posts.previous_page_number }}"><button>이전</button></a>
             {% endif %}
             <span class="current">{{ major }} {{ posts.number }} / {{ posts.paginator.num_pages }}.</span>
             {% if posts.has_next %}
-              <a href="?page_{{ major }}={{ posts.next_page_number }}">next</a>
-              <a href="?page_{{ major }}={{ posts.paginator.num_pages }}">last &raquo;</a>
+              <a href="?page_{{ major }}={{ posts.next_page_number }}"><button>다음</button></a>
+              <a href="?page_{{ major }}={{ posts.paginator.num_pages }}"><button>끝</button> &raquo;</a>
             {% endif %}
           </span>
         </div>

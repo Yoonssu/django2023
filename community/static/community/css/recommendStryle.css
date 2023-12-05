@@ -31,9 +31,9 @@
 .recommend-font {
   /* background-color: #bcadf8; */
   width: 550px;
-  height: 170px;
+  height: 140px;
   justify-content: center;
-  margin: 20px 0 20px 0;
+  margin: 20px 0 10px 0;
 }
 
 .user-keyword-box {
@@ -101,14 +101,13 @@
   font-size: 35px;
   font-weight: 900;
   /* text-shadow: #33333356 3px 3px 3px; */
-  color: #5a5a5a;
+  /* color: #5a5a5a; */
 }
 
 #recommend-title2 {
-  margin-top: 15px;
   font-size: 17px;
   font-weight: 700;
-  color: #5a5a5a;
+  /* color: #5a5a5a; */
 }
 
 .recommend-card-title {
@@ -230,6 +229,16 @@
 
 .pagination {
   margin-top: 40px;
+}
+
+.pagination button {
+  padding: 6px 10px; /* 버튼의 내부 여백 설정 */
+  border: 1px solid #ccc; /* 버튼 테두리 스타일 설정 */
+  text-decoration: none;
+  color: #333; /* 버튼 글자 색상 설정 */
+  background-color: #f8f8f8; /* 버튼 배경 색상 설정 */
+  border-radius: 5px; /* 버튼 모서리를 둥글게 설정 */
+  font-size: 13px;
 }
 
 /* 추천페이지만 DUKJOB 로고 폰트 달라짐... */
