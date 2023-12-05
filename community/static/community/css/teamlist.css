@@ -1,5 +1,6 @@
 
 #createPostBtn {
+    float: right; 
     background-color: #5A32FB;
     border: none;
     color: #fff;

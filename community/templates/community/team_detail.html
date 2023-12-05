@@ -1,6 +1,5 @@
 {% extends 'community/base.html' %}
 {% load crispy_forms_tags %}
-
 <link rel="stylesheet" href="../../static/community/css/postDetailStyle.css"/>
 
 
@@ -43,31 +42,33 @@
                         <div class="form-group">
                             {{ comment_form | crispy }}
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <!-- 댓글쓰기 버튼 스타일 -->
+                        <button type="submit" style="background-color: #5A32FB; color: white; border-radius: 30px; border: none; width: 100px; height: 40px; float: right; margin-top: 10px;">댓글쓰기</button>
                     </form>
                 {% else %}
                     <a role="button" class="btn btn-sm" href="{% url 'community:login' %}" data-toggle="modal" data-target="#loginModal">로그인하고 댓글을
                         남겨주세요</a>
                 {% endif %}
 
-                <!-- Single comment -->
-                {% if team.comment_set.exists %}
-                    {% for comment in team.comment_set.iterator %}
-
-                        <div class="d-flex" id="comment-{{ comment.pk }}">
-                            <div class="flex-shrink-0"><img class="rounded-circle"
-                                                            src="https://dummyimage.com/50x50/ced4da/6c757d.jpg"
-                                                            alt="..."/>
+                <section class="comments-section">
+                    <div class="container">
+                        <!-- Single comment -->
+                        {% if team.comment_set.exists %}
+                            <div class="d-flex flex-column">
+                                {% for comment in team.comment_set.iterator %}
+                                    <div class="d-flex" id="comment-{{ comment.pk }}">
+                                        <div class="ms-3">
+                                            <div class="comment-info">
+                                                <div class="fw-bold">{{ comment.user.username }} <span style="font-size: 0.8em; color: #666;">{{ comment.time|date:"y-m-d H:i" }}</span></div>
+                                                {{ comment.content | linebreaks }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
                             </div>
-                            <div class="ms-3">
-                                <div class="comment-info">
-                                    <div class="fw-bold">{{ comment.user.username }} <span style="font-size: 0.8em; color: #666;">{{ comment.time|date:"y-m-d H:i" }}</span></div>
-                                {{ comment.content | linebreaks }}
-                            </div>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            </div>
+                        {% endif %}
+                    </div>
+                </section>
         </div>
     </section>
 {% endblock %}
