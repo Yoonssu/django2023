@@ -6,11 +6,12 @@
 {% block main_area %}
 
     <div class="wrapper">
-        <div class="content_wrapper">
+        <div class="content_wrapper" style="margin-top: 30px;">
             <div class="title">
-                <h2>{{ post.title | linebreaksbr }} </h2>
-                <br/>
+                <p style="color:#666; font-size: 15px;">{{ team.post.title | linebreaksbr }} </p>
+                <!-- <br/> -->
             </div>
+            
             <div class="content_box">
                 <!-- Post title-->
                 <section class="mb-5">
@@ -43,7 +44,7 @@
                             {{ comment_form | crispy }}
                         </div>
                         <!-- 댓글쓰기 버튼 스타일 -->
-                        <button type="submit" style="background-color: #5A32FB; color: white; border-radius: 30px; border: none; width: 100px; height: 40px; float: right; margin-top: 10px;">댓글쓰기</button>
+                        <button type="submit" class="btn btn-primary" style="background-color: #5A32FB; color: white; border-radius: 30px; border: none; width: 100px; height: 40px; float: right; margin-top: 10px;">댓글쓰기</button>
                     </form>
                 {% else %}
                     <a role="button" class="btn btn-sm" href="{% url 'community:login' %}" data-toggle="modal" data-target="#loginModal">로그인하고 댓글을
