@@ -2,11 +2,14 @@
 <!-- 검색 결과를 반환하는 html -->
 
 <link rel="stylesheet" href="../../static/community/css/community.css" />
-
 {% extends 'community/base.html' %}
 
+
+{% load custom_filters %}
+
+
 {% block main_area %}
-    <h1>'{{ query }}'에 대한 검색 결과</h1>
+    <h1>{% if query %}'{{ query|highlight:query }}'에 대한 검색 결과{% endif %}</h1>
 
     {% if results %}
         <!-- 게시글 목록 테이블 -->
@@ -22,7 +25,7 @@
                 {% for result in results|dictsortreversed:"time" %}
                     <tr>
                         <td>{{ result.pk }}</td>
-                        <td><a href="{% url 'community:post_detail' pk=result.pk %}" target="_blank">{{ result.title }}</a></td>
+                        <td><a href="{% url 'community:post_detail' pk=result.pk %}" target="_blank">{{ result.title|highlight:query }}</a></td>
                         <td>{{ result.time|date:"Y-m-d" }}</td>
                     </tr>
                     <tr>
@@ -35,5 +38,4 @@
     {% else %}
         <p>결과가 없습니다.</p>
     {% endif %}
-
 {% endblock %}

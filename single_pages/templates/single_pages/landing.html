@@ -8,15 +8,15 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6">
                     <div class="text-center text-white">
-                        <!-- Page heading -->
-                        <h2 class="mb-5">덕성인 맞춤 진로활동 통합검색 & 추천 시스템</h2>
+                        <!-- Page heading font 폰트-->
+                        <p class="mb-5" style="font-family: 'Abril Fatface', serif; letter-spacing: 10px;" >DUKJOB</p>
                         
                         <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN" action="{% url 'search' %}" method="get">
                             <!-- Email address input -->
                             <div class="row">
                                 <div class="col">
                                     <div class="form-container">
-                                        <input class="form-control form-control-lg" type="text" name="q" value="{{ query }}" placeholder="검색어를 입력하세요" />
+                                        <input class="form-control form-control-lg" type="text" name="q" value="{{ query }}" placeholder="검색어를 입력하세요" style="font-size: 17px;" />
                                     </div>
                                 </div>
                                 <div class="col-auto welcome-hero-serch">

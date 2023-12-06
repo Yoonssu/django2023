@@ -32,8 +32,7 @@
 
 /* 활동목록 상단 마진 */
 .activity_title {
-    margin-top: 50px;
-    font-family: 'Inter';
+    margin-top: 40px;
     text-align: center; /* Adjust as needed */
     font-weight: bold;
     font-size: 35px;

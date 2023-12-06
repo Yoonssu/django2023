@@ -518,46 +518,45 @@ class TeamDetail(DetailView):
         context['comment_form'] = comment_form
 
         return context
-
+    
+    def get_absolute_url(self):
+        return f'/community/team/{self.object.pk}/'
 
 class TeamPostForm(LoginRequiredMixin, CreateView):
     model = Team
-    form_class = TeamPostForm  # 사용할 폼 클래스 설정
-    success_url = reverse_lazy('community:team_list')
-    template_name = 'team_post_form'
+    form_class = TeamPostForm
+    template_name = 'community/team_post_form.html'
+    success_url = reverse_lazy('community:team_list') 
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        kwargs['user'] = self.request.user  # 사용자 정보를 폼에 전달
+        kwargs['user'] = self.request.user
+
+        # JavaScript에서 추가한 post_id를 가져오기
+        post_id = self.request.POST.get('post_id')
+        kwargs['post_id'] = post_id
+
         return kwargs
 
     def form_valid(self, form):
         current_user = self.request.user
+
         if current_user.is_authenticated:
             form.instance.user = current_user
-            post_title_instance = form.cleaned_data['post']
 
-            # 괄호 안의 pk 번호 제거하고 title 검색해서 Post 객체 가져오기
-            import re
-            cleaned_post_title = re.sub(r'\[\d+\]', '', str(post_title_instance)).strip()
+            # post 필드에서 post_instance를 직접 가져오기
+            post_instance = form.cleaned_data['post']
 
-            # Post 모델에서 해당 title에 매칭되는 객체 가져오기
-            # 여러 개의 객체가 반환되더라도 첫 번째 객체만 사용
-            post_instance = Post.objects.get(title=cleaned_post_title)
+            # Team 객체 생성 및 post 필드에 post_instance 할당
+            team_instance = form.save(commit=False)
+            team_instance.post = post_instance
+            team_instance.save()
 
-            if post_instance:
-                # Team 객체 생성 및 post 필드에 post_instance 할당
-                team_instance = form.save(commit=False)
-                team_instance.post = post_instance
-                team_instance.save()
-
-                return super(TeamPostForm, self).form_valid(form)
-            else:
-                # 인증된 사용자이지만, post_instance가 없는 경우
-                return None
+            return super().form_valid(form)
         else:
             # 인증되지 않은 사용자에 대한 처리 (예: 리디렉션)
             return redirect('/community')
+
 
 
 
