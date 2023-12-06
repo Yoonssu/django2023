@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +18,20 @@
 <body>
 <div class="signup-form">
     <form method="post" action="{% url 'community:signup' %}">
+
+        {% if form.errors %}
+    <div class="alert alert-danger">
+        <strong>회원가입 실패:</strong> 아래의 오류를 확인해주세요.
+        <ul>
+            {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+        {% endif %}
+        
         {% csrf_token %}
         <h2>Sign Up</h2>
         <p>Please fill in this form to create an account!</p>
@@ -45,3 +60,4 @@
 </div>
 </body>
 </html>
+>>>>>>> c1da58ddc687a198cc5a7430b2d09f8623bb4383

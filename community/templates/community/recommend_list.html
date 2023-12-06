@@ -1,0 +1,251 @@
+<!-- URL 예시 http://127.0.0.1:8000/community/recommend/user.pk -->
+
+{% extends 'community/base.html' %} {% block main_area %} {% load static %}
+<link rel="stylesheet" href="{% static 'community/css/recommendStryle.css' %}">
+  <div class="wrapper">
+    <div class="recommend-wrapper">
+      <div class="recommend-font">
+        <p id="recommend-title1">맞춤 추천</p>
+        <p id="recommend-title2">
+          자신이 등록한 키워드와 가장 잘 맞는 활동들을 우선으로 추천합니다.
+        </p>
+      </div>
+
+      <div class="user-keyword-box">
+        {% for keyword in selected_keywords %}
+          <div class="user-keyword">
+            {{ keyword }}
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="recommend-cardbox">
+        {% for post in selected_posts %}
+          <a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank" class="recommend-card">
+            <div class="recommend-card-img">
+              {% with random_image=selected_images|random %}
+                <img src="{% static 'community/dukse/' %}{{ random_image }}" alt="덕새 이미지" />
+              {% endwith %}
+            </div>
+            <div class="recommend-card-title">
+              <div class="recommend-card-title-text">{{ post.title }}</div>
+            </div>
+          </a>
+        {% empty %}
+          <p>추천 포스트가 없습니다</p>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="major-wrapper">
+      <div class="major-title">
+        <p id="major-title">전공 게시판 모음</p>
+      </div>
+
+      <div class="major-nav">
+        <button class="all" onclick="showAll()">전체</button>
+        {% for major in major_list %}
+          <button class="major-button" onclick="showMajorPosts('{{ major }}')">
+            {{ major }}
+          </button>
+        {% endfor %}
+      </div>
+
+      <div class="major-content-nav">
+        <div class="major-post-pk">번호</div>
+        <div class="major-post-title" style="justify-content: center">제목</div>
+        <div class="major-post-date">등록 날짜</div>
+      </div>
+
+      <!-- 추가: all_major_content 부분 -->
+      <div class="major-content hidden" id="all_major_content">
+        {% for post in all_major_posts_list %}
+          <div class="major-content-box">
+            <div class="major-post-pk">{{ post.pk }}</div>
+            <div class="major-post-title">
+              <a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank">{{ post.title }}</a>
+            </div>
+            <div class="major-post-date">{{ post.time|date:"Y.m.d" }}</div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- 수정: 중복된 ID 수정 -->
+      {% for major, posts in major_posts.items %}
+        {% if major %}
+          <div class="major-content hidden" id="content_{{ major }}">
+            {% for post in posts %}
+              <div class="major-content-box">
+                <div class="major-post-pk">{{ post.pk }}</div>
+                <div class="major-post-title">
+                  <a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank">{{ post.title }}</a>
+                </div>
+                <div class="major-post-date">{{ post.time|date:"Y.m.d" }}</div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      <!-- 수정: 중복된 ID 수정 -->
+      <div class="major-content hidden" id="all_major_content_paging">
+        {% for post in all_major_posts_list %}
+          <div class="major-content-box">
+            <div class="major-post-pk">{{ forloop.counter }}</div>
+            <div class="major-post-title">
+              <a href="{% url 'community:post_detail' pk=post.pk %}" target="_blank">{{ post.title }}</a>
+            </div>
+            <div class="major-post-date">{{ post.time|date:"Y.m.d" }}</div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- 수정: 중복된 변수명 수정 -->
+      <div class="pagination-all pagination">
+        <span class="step-links">
+          {% if all_major_posts_list.has_previous %}
+            <a href="?page_all=1">&laquo; first</a>
+            <a href="?page_all={{ all_major_posts_list.previous_page_number }}">previous</a>
+          {% endif %}
+          <span class="current">전체 {{ all_major_posts_list.number }} / {{ all_major_posts_list.paginator.num_pages }}.</span>
+          {% if all_major_posts_list.has_next %}
+            <a href="?page_all={{ all_major_posts_list.next_page_number }}">next</a>
+            <a href="?page_all={{ all_major_posts_list.paginator.num_pages }}">last &raquo;</a>
+          {% endif %}
+        </span>
+      </div>
+
+      <!-- 수정: 중복된 ID 수정 -->
+      {% for major, posts in major_posts.items %}
+        <div class="pagination-major pagination hidden" id="pagination_{{ major }}">
+          <span class="step-links">
+            {% if posts.has_previous %}
+              <a href="?page_{{ major }}=1">&laquo; first</a>
+              <a href="?page_{{ major }}={{ posts.previous_page_number }}">previous</a>
+            {% endif %}
+            <span class="current">{{ major }} {{ posts.number }} / {{ posts.paginator.num_pages }}.</span>
+            {% if posts.has_next %}
+              <a href="?page_{{ major }}={{ posts.next_page_number }}">next</a>
+              <a href="?page_{{ major }}={{ posts.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+          </span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <input type="hidden" id="current_major" value="{% if major_list %}{{ major_list.0 }}{% endif %}">
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 페이지가 로드될 때 실행할 코드
+      var majorButtons = document.querySelectorAll(".major-button");
+
+      // 기존에 선택된 메이저가 있는 경우, 해당 메이저에 대한 컨텐츠와 페이징을 표시
+      var selectedMajor = sessionStorage.getItem("selectedMajor");
+      if (selectedMajor) {
+        showMajorPosts(selectedMajor);
+        showPaging(selectedMajor);
+      } else {
+        // 페이지가 로드될 때 "전체" 버튼을 클릭한 효과를 주는 코드
+        var allButton = document.querySelector(".all");
+        allButton.click();
+      }
+
+      // 각 버튼에 마우스 이벤트 리스너 추가
+      majorButtons.forEach(function (button) {
+        button.addEventListener("mouseover", function () {
+          this.classList.add("hovered"); // 버튼에 hovered 클래스 추가
+        });
+        button.addEventListener("mouseout", function () {
+          this.classList.remove("hovered"); // 버튼에서 hovered 클래스 제거
+        });
+
+        button.addEventListener("click", function () {
+          // 선택한 메이저 정보를 세션 스토리지에 저장
+          var major = this.textContent.trim();
+          sessionStorage.setItem("selectedMajor", major);
+          showMajorPosts(major);
+          showPaging(major);
+        });
+      });
+    });
+
+    function showMajorPosts(major) {
+      // 모든 major-content 숨기기
+      var allContents = document.querySelectorAll(".major-content");
+      for (var i = 0; i < allContents.length; i++) {
+        allContents[i].classList.add("hidden");
+      }
+
+      // 선택한 major에 해당하는 major-content 보이기
+      var selectedContent = document.getElementById("content_" + major);
+      if (selectedContent) {  // 선택한 major에 해당하는 major-content가 존재하는 경우에만 처리
+        selectedContent.classList.remove("hidden");
+      }
+    }
+
+    function showPaging(major) {
+      console.log("showPaging 함수 호출:", major);
+
+      // 페이징 버튼 숨기기
+      var allPaging = document.querySelectorAll(".pagination-all, .pagination-major");
+      for (var i = 0; i < allPaging.length; i++) {
+        allPaging[i].classList.add("hidden");
+      }
+
+      // 페이지가 로드될 때 "전체" 버튼을 클릭한 경우, 전체 페이징 보이기
+      if (major === "전체") {
+        var allPaging = document.querySelector(".pagination-all");
+        if (allPaging) {  // "전체" 페이징이 존재하는 경우에만 처리
+          allPaging.classList.remove("hidden");
+          console.log("전체 페이징이 표시됩니다.");
+        }
+      } else {
+        // 선택한 major에 대한 페이징 보이기
+        var pagingId = "pagination_" + major;
+        var majorPaging = document.getElementById(pagingId);
+        if (majorPaging) {  // 선택한 major에 대한 페이징이 존재하는 경우에만 처리
+          majorPaging.classList.remove("hidden");
+          console.log(major + " 페이징이 표시됩니다.");
+        } else {
+          console.log(major + " 페이징이 존재하지 않습니다.");
+        }
+      }
+    }
+
+    function showAll() {
+      // 모든 major-content 숨기기
+      var allContents = document.querySelectorAll(".major-content");
+      for (var i = 0; i < allContents.length; i++) {
+        allContents[i].classList.add("hidden");
+      }
+
+      // all_major_posts_list에 있는 포스트들 보이기
+      var allMajorContent = document.getElementById("all_major_content_paging");
+      if (allMajorContent) {  // all_major_content가 존재하는 경우에만 처리
+        allMajorContent.classList.remove("hidden");
+      }
+
+      //
+
+
+      // 페이징 버튼 숨기기
+      var allPaging = document.querySelectorAll(".pagination-all, .pagination-major");
+      for (var i = 0; i < allPaging.length; i++) {
+        allPaging[i].classList.add("hidden");
+      }
+
+      // 전체 페이징 보이기
+      var allPaging = document.querySelector(".pagination-all");
+      if (allPaging) {  // 전체 페이징이 존재하는 경우에만 처리
+        allPaging.classList.remove("hidden");
+      }
+
+      // 선택된 메이저 정보를 세션 스토리지에서 제거
+      sessionStorage.removeItem("selectedMajor");
+    }
+  </script>
+
+</div>
+{% endblock %}

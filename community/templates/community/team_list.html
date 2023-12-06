@@ -1,26 +1,84 @@
 <!-- http://127.0.0.1:8000/community/team -->
 
+
+<link rel="stylesheet" href="../../static/community/css/postDetailStyle.css"/>
+<link rel="stylesheet" href="../../static/community/css/teamlist.css"/>
+
 {% extends 'community/base.html' %}
 
 {% block main_area %}
 
-  <h1>게시글 목록 게시판</h1>
-  {% if team_list.exists %}
+    <div class="wrapper">
+        <div class="content_wrapper">
+            <div class="title">
+                <h2>팀원 모집</h2>
+                <br/>
+            </div>
+            <div class="content_nav">
+                <a href="#">상세정보</a>
+                <a href="#">팀원모집</a>
+                <button style="color: white; font-size: 14px">스크랩</button>
+            </div>
+            <div class="content_box">
 
-    {% for team in team_list %}
-        <div>
-        <h2>{{ team.title }}</h2>
-        <p>{{ team.content }}</p>
-        <p>작성 시간: {{ team.time }}</p>
+                <button id="createPostBtn" onclick="redirectToTeamPostForm()">팀원 모집 글쓰기</button>
+
+                {% if team_list.exists %}
+                    <!-- 추가된 부분: 표 형식으로 게시글 표시 -->
+                    <table>
+                        <tbody>
+                        {% for team in team_list %}
+                            <tr>
+                                <td>
+                                    <a href="{% url 'community:team_detail' team.id %}">
+                                        <h2>{{ team.title }}</h2>
+                                        {#                        <p>{{ team.content }}</p>#}
+
+                                        <p>{{ team.time }}</p></a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <hr class="post-separator">
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <h3>아직 팀 게시글이 없습니다.</h3>
+                {% endif %}
+
+
+                <br/></div>
         </div>
-        <hr>
-    {% endfor %}
+    </div>
+    <br/>
+    </div>
+    </div>
+    </div>
 
-  {% else %}
 
-    <h3>아직 팀 게시글이 없습니다.</h3>
-    
-  {% endif %}
+
+    <script>
+        document.getElementById('createPostBtn').addEventListener('click', function () {
+            var isLoggedIn = {% if user.is_authenticated %} true {% else %} false {% endif %};
+
+            if (isLoggedIn) {
+                // 로그인된 경우
+                var teamPostFormUrl = "{% url 'community:TeamPostForm' %}";
+                window.location.href = teamPostFormUrl;
+            } else {
+                // 로그인되지 않은 경우
+                var loginUrl = "{% url 'community:login' %}";
+                window.location.href = loginUrl;
+            }
+        });
+    </script>
+
+
 
 {% endblock %}
+
 

@@ -8,6 +8,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Count
 from django.db.models import Q
 
+from django.http import Http404
+
+
 # Create your views here.
 def landing(request):
     return render(
@@ -37,4 +40,6 @@ def search(request):
     # 전체 게시물을 가져오기
     all_posts = Post.objects.all()
 
-    return render(request, 'community/post_list.html', {'results': results, 'all_posts': all_posts, 'query': query})
+
+    return render(request, 'community/search_result.html', {'results': results, 'all_posts': all_posts, 'query': query})
+

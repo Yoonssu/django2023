@@ -1,0 +1,407 @@
+[
+{
+    "model": "community.keyword",
+    "pk": 1,
+    "fields": {
+        "keywordname": "캠프",
+        "ismake": false,
+        "category": "활동 분야"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 2,
+    "fields": {
+        "keywordname": "인턴십",
+        "ismake": false,
+        "category": "활동 분야"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 3,
+    "fields": {
+        "keywordname": "공모전",
+        "ismake": false,
+        "category": "활동 분야"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 4,
+    "fields": {
+        "keywordname": "캠프",
+        "ismake": false,
+        "category": "활동 분야"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 5,
+    "fields": {
+        "keywordname": "강연",
+        "ismake": false,
+        "category": "활동 분야"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 6,
+    "fields": {
+        "keywordname": "봉사활동",
+        "ismake": false,
+        "category": "활동 분야"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 7,
+    "fields": {
+        "keywordname": "멘토링",
+        "ismake": false,
+        "category": "활동 분야"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 8,
+    "fields": {
+        "keywordname": "기자단",
+        "ismake": false,
+        "category": "언론/미디어"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 9,
+    "fields": {
+        "keywordname": "크리에이터",
+        "ismake": false,
+        "category": "언론/미디어"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 10,
+    "fields": {
+        "keywordname": "유튜브",
+        "ismake": false,
+        "category": "언론/미디어"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 11,
+    "fields": {
+        "keywordname": "포토샵",
+        "ismake": false,
+        "category": "디자인/사진/예술/영상"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 12,
+    "fields": {
+        "keywordname": "영상편집",
+        "ismake": false,
+        "category": "디자인/사진/예술/영상"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 13,
+    "fields": {
+        "keywordname": "프리미어",
+        "ismake": false,
+        "category": "디자인/사진/예술/영상"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 14,
+    "fields": {
+        "keywordname": "애프터이펙트",
+        "ismake": false,
+        "category": "디자인/사진/예술/영상"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 15,
+    "fields": {
+        "keywordname": "일러스트",
+        "ismake": false,
+        "category": "디자인/사진/예술/영상"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 16,
+    "fields": {
+        "keywordname": "UX/UI",
+        "ismake": false,
+        "category": "디자인/사진/예술/영상"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 17,
+    "fields": {
+        "keywordname": "금융연수",
+        "ismake": false,
+        "category": "경제/금융"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 18,
+    "fields": {
+        "keywordname": "제테크",
+        "ismake": false,
+        "category": "경제/금융"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 19,
+    "fields": {
+        "keywordname": "회계",
+        "ismake": false,
+        "category": "경제/금융"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 20,
+    "fields": {
+        "keywordname": "세무",
+        "ismake": false,
+        "category": "경제/금융"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 21,
+    "fields": {
+        "keywordname": "FAT",
+        "ismake": false,
+        "category": "경제/금융"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 22,
+    "fields": {
+        "keywordname": "금융",
+        "ismake": false,
+        "category": "경제/금융"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 23,
+    "fields": {
+        "keywordname": "기획",
+        "ismake": false,
+        "category": "경영/컨설팅"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 24,
+    "fields": {
+        "keywordname": "마케팅",
+        "ismake": false,
+        "category": "경영/컨설팅"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 25,
+    "fields": {
+        "keywordname": "마케터",
+        "ismake": false,
+        "category": "경영/컨설팅"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 26,
+    "fields": {
+        "keywordname": "서포터즈",
+        "ismake": false,
+        "category": "경영/컨설팅"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 27,
+    "fields": {
+        "keywordname": "브랜드",
+        "ismake": false,
+        "category": "경영/컨설팅"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 28,
+    "fields": {
+        "keywordname": "컨설팅",
+        "ismake": false,
+        "category": "경영/컨설팅"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 29,
+    "fields": {
+        "keywordname": "ESG",
+        "ismake": false,
+        "category": "경영/컨설팅"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 30,
+    "fields": {
+        "keywordname": "UI/UX",
+        "ismake": false,
+        "category": "과학/공학/기술/IT"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 31,
+    "fields": {
+        "keywordname": "서비스기획",
+        "ismake": false,
+        "category": "과학/공학/기술/IT"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 32,
+    "fields": {
+        "keywordname": "클라우드",
+        "ismake": false,
+        "category": "과학/공학/기술/IT"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 33,
+    "fields": {
+        "keywordname": "자바",
+        "ismake": false,
+        "category": "과학/공학/기술/IT"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 34,
+    "fields": {
+        "keywordname": "파이썬",
+        "ismake": false,
+        "category": "과학/공학/기술/IT"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 35,
+    "fields": {
+        "keywordname": "빅데이터",
+        "ismake": false,
+        "category": "과학/공학/기술/IT"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 36,
+    "fields": {
+        "keywordname": "해커톤",
+        "ismake": false,
+        "category": "과학/공학/기술/IT"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 37,
+    "fields": {
+        "keywordname": "백엔드",
+        "ismake": false,
+        "category": "과학/공학/기술/IT"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 38,
+    "fields": {
+        "keywordname": "프론트엔드",
+        "ismake": false,
+        "category": "과학/공학/기술/IT"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 39,
+    "fields": {
+        "keywordname": "웹개발",
+        "ismake": false,
+        "category": "과학/공학/기술/IT"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 40,
+    "fields": {
+        "keywordname": "스프링",
+        "ismake": false,
+        "category": "과학/공학/기술/IT"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 41,
+    "fields": {
+        "keywordname": "리액트",
+        "ismake": false,
+        "category": "과학/공학/기술/IT"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 42,
+    "fields": {
+        "keywordname": "유니티",
+        "ismake": false,
+        "category": "과학/공학/기술/IT"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 43,
+    "fields": {
+        "keywordname": "사물인터넷",
+        "ismake": false,
+        "category": "과학/공학/기술/IT"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 44,
+    "fields": {
+        "keywordname": "AI",
+        "ismake": false,
+        "category": "과학/공학/기술/IT"
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 45,
+    "fields": {
+        "keywordname": "PM",
+        "ismake": false,
+        "category": "과학/공학/기술/IT"
+    }
+}
+]
