@@ -520,7 +520,7 @@ class TeamPostForm(LoginRequiredMixin, CreateView):
     model = Team
     form_class = TeamPostForm
     template_name = 'community/team_post_form.html'
-    success_url = reverse_lazy('community:team_list') 
+    # 글 작성 후 team_list로 이동하는 대신, 아래 함수에서 동적 경로 설정으로 변경 #
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
@@ -545,6 +545,9 @@ class TeamPostForm(LoginRequiredMixin, CreateView):
             team_instance = form.save(commit=False)
             team_instance.post = post_instance
             team_instance.save()
+            
+            # 수정한 부분=> team_list 대신, 해당 post_id의 팀모집게시판으로 가기
+            self.success_url = reverse_lazy('community:post_team', kwargs={'pk': post_instance.pk})
 
             return super().form_valid(form)
         else:

@@ -36,7 +36,7 @@ class TeamPostForm(forms.ModelForm):
         self.fields['title'].label = '제목'
         self.fields['content'].label = '내용'
         self.fields['post'].label = '활동명'
-
+        
     def save(self, commit=True):
         instance = super().save(commit=False)
         current_user = self.user
@@ -60,7 +60,7 @@ class TeamPostForm(forms.ModelForm):
                 if commit:
                     instance.save()
                 return instance
-
+            
             except Post.DoesNotExist:
                 # Post 객체를 찾을 수 없는 경우
                 return None
