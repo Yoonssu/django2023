@@ -7,6 +7,7 @@ import re
 
 register = template.Library()
 
+
 @register.filter
 def highlight(text, search):
     # search가 없을 경우 원래 텍스트를 반환
