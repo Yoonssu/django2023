@@ -25,16 +25,59 @@
     margin-left: 120px;
 }
 
-.mod-box{
+.mod-box:hover{
     color: white;
     text-decoration: none;
+    background-color: #5A32FB;
 }
 
-.mod-box:hover {
+.mod-box {
     color: #5A32FB;
     text-decoration: none;
+    background-color: white;
 }
 
 .mod-box:hover {
     background-color: #ccc;
+}
+
+.postLink {
+    text-decoration: none;
+    color: black;
+}
+
+.postLink:hover {
+    /* text-decoration: none; */
+    color: black;
+}
+
+.scrapUrl {
+    text-decoration: none;
+    color: black;
+}
+
+.scrapUrl:hover {
+    color: black;
+}
+
+h4 {
+    padding-top: 25px;
+}
+
+.scrapUl {
+    display: flex; 
+    flex-wrap: wrap; 
+    padding-left: 0px;
+}
+
+.scrapcard {
+    width: 15rem; 
+    margin-right: 10px; 
+    margin-bottom: 10px;
+}
+
+.scrapcard-text {
+    font-size: 10px; 
+    width: 200px; 
+    height: 75px;
 }
