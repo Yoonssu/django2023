@@ -21,6 +21,10 @@
     margin-bottom: 10px;
 }
 
+.mod {
+    margin-left: 120px;
+}
+
 .mod-box{
     color: #5A32FB;
     background-color: #CCC;
@@ -41,4 +45,35 @@
 .postLink:hover {
     /* text-decoration: none; */
     color: black;
+}
+
+.scrapUrl {
+    text-decoration: none;
+    color: black;
+}
+
+.scrapUrl:hover {
+    color: black;
+}
+
+h4 {
+    padding-top: 25px;
+}
+
+.scrapUl {
+    display: flex; 
+    flex-wrap: wrap; 
+    padding-left: 0px;
+}
+
+.scrapcard {
+    width: 15rem; 
+    margin-right: 10px; 
+    margin-bottom: 10px;
+}
+
+.scrapcard-text {
+    font-size: 10px; 
+    width: 200px; 
+    height: 75px;
 }

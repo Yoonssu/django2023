@@ -25,11 +25,11 @@
             <div class="card-body">
                 <div class="btn_flex">
                 <div class="team_post_title"> {{ comment.team.post.title }} </div>
-                <a href="{% url 'community:team_detail' pk=team.post.id  %}">
-                    <h5 class="card-title" style="text-decoration: none; color: black;">{{ comment.team.title }}</h5>
+                <a href="{% url 'community:team_detail' pk=comment.team.id  %}" style="text-decoration: none; color: black;">
+                    <h5 class="card-title">{{ comment.team.title }}</h5>
                 </a>
                 <hr>
-                <p class="card-text">{{ comment.team.content|truncatechars:150 }}</p>
+                <p class="card-text">{{ comment.content|truncatechars:150 }}</p>
                 </div>
             </div>
         </div>

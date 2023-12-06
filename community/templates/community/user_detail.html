@@ -20,7 +20,7 @@
 
       <div class="row" style="margin-left: 30px;"> 
         <div class="col-4">
-              <h4 style="padding-top: 25px;">회원 정보</h4>  
+              <h4>회원 정보</h4>  
                     <div class="card my-info">
                       <ul class="list-group list-group-flush">
                         <li class="list-group-item">
@@ -54,7 +54,7 @@
                       <a href="{% url 'community:modMajor' pk=user.pk %}" class="btn btn-primary btn active mod" role="button" aria-pressed="true" style="background-color: #5a32fb; color:white;">수정</a>
 
 
-                  <h4 style="padding-top: 25px;">맞춤 키워드</h4>
+                  <h4>맞춤 키워드</h4>
                   <div class="card my-info">
                     <div class="card-body keywordsField">
                       {% for keyword in current_user_keywords %}
@@ -81,20 +81,20 @@
               </div>
 
           <div class="col-8" style="padding-left: 25px;">
-              <h4 style="padding-top: 25px;">스크랩한 활동</h4>
-              <ul style="display: flex; flex-wrap: wrap;">
+              <h4>스크랩한 활동</h4>
+              <ul class="scrapUl">
                 {% for scrap in current_user_scraps %}
-                <div class="card" style="width: 18rem; margin-right: 10px; margin-bottom: 10px;">
+                <div class="card scrapcard">
                   {% if scrap.post.img %}
                     <img src="{{ scrap.post.img }}" class="card-img-top" alt="...">
                   {% else %}
                     {% with random_image=selected_images|random %}
-                    <img src="{% static 'community/dukse/' %}{{ random_image }}" alt="덕새 이미지" class="card-img-top" alt="Default Image"/>
+                    <img src="{% static 'community/dukse/' %}{{ random_image }}" alt="덕새 이미지" class="card-img-top" alt="Default Image" height="170px;" />
                     {% endwith %}
                   {% endif %}
                   <div class="card-body">
-                    <h5 class="card-title"><a href="{% url 'community:post_detail' pk=scrap.post.id  %}" style="color: black;">{{ scrap.post.title }}</a><hr></h5>
-                    <p class="card-text">{{ scrap.post.content|truncatechars:100 }}</p>
+                    <h5 class="card-title"><a href="{% url 'community:post_detail' pk=scrap.post.id  %}" class="scrapUrl">{{ scrap.post.title|truncatechars:24 }}</a><hr></h5>
+                    <p class="card-text scrapcard-text">{{ scrap.post.content|truncatechars:100 }}</p>
                     <div style="text-align: right;">
                       <button type="button" class="btn btn-secondary cancel-button" onclick="cancelScrap('{{ scrap.post.id }}', this)">삭제</button>
                   </div>

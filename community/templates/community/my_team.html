@@ -26,7 +26,7 @@
             <div class="card-body">
                 <div class="btn_flex">
                 <div class="team_post_title"> {{ team.post.title }} </div>
-                <a href="{% url 'community:team_detail' pk=team.post.id  %}">
+                <a href="{% url 'community:team_detail' pk=team.id  %}" style="text-decoration: none; color: black;">
                     <h5 class="card-title">{{ team.title }}</h5>
                 </a>
                 <hr>
@@ -59,14 +59,15 @@
                     console.log('성공')
                     const cardToRemove = button.closest('.card'); //가장 가까운 클래스 찾기
                     if (cardToRemove) {
-                      cardToRemove.remove();
+                        cardToRemove.remove();
                     }
 
-                    else{
+                    const remainingCards = document.querySelectorAll('.card');
+                    if (remainingCards.length === 0) {
                         const keywordList = document.getElementById('team-content');
-                        keywordList.innerHTML =  "<p>작성한 글이 없습니다.</p>";
+                        keywordList.innerHTML =  "<p class='no-team'>작성한 글이 없습니다.</p>";
                     }
-                  },
+                },
                   error: function(error) {
                       console.log('에러 발생:', error);
                   }

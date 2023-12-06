@@ -27,7 +27,7 @@
         {% with forloop.counter as number %}
             <tr>
                 <td>{{ number }}</td>
-                <td><a href="{% url 'community:team_detail' team.id %}">{{ team.title }}</a></td>
+                <td><a href="{% url 'community:team_detail' team.id %}">[{{team.post.title}}]{{ team.title }}</a></td>
                 <td>{{ team.time|date:"Y-m-d" }}</td>
             </tr>
             <tr>
@@ -113,12 +113,5 @@
     });
 </script>
 <!-- 스크립트 코드 종료 -->
-<<<<<<< HEAD
-=======
-
-{% endblock %}
-
-
->>>>>>> 4d2c3c56ff262f0f79e0d18121a889a6f9d89b93
 
 {% endblock %}
