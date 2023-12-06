@@ -26,8 +26,8 @@
     {% for team in team_list %}
         {% with forloop.counter as number %}
             <tr>
-                <td>{{ number }}</td>
-                <td><a href="{% url 'community:team_detail' team.id %}">{{ team.title }}</a></td>
+                <td>{{ team.pk }}</td>
+                <td><a href="{% url 'community:team_detail' team.id %}">{{ team.post.title }}&nbsp | &nbsp{{ team.title }}</a></td>
                 <td>{{ team.time|date:"Y-m-d" }}</td>
             </tr>
             <tr>
