@@ -1,7 +1,7 @@
 <!-- url 예시 http://127.0.0.1:8000/community/3/ -->
-<link rel="stylesheet" href="../../static/community/css/postDetailStyle.css?after" />
 
-{% extends 'community/base.html' %} {% block main_area %}
+{% extends 'community/base.html' %} {% block main_area %} {% load static %}
+<link href="{% static 'community/css/postDetailStyle.css' %}" rel="stylesheet" type="text/css">
 <div class="wrapper">
   <div class="content_wrapper">
     <div class="title">
