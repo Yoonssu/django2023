@@ -26,14 +26,9 @@
 }
 
 
-/* post_list 스타일  */
-
-/* Styles for one_line */
-
-/* 활동목록 상단 마진 */
 .activity_title {
     margin-top: 40px;
-    text-align: center; /* Adjust as needed */
+    text-align: center; 
     font-weight: bold;
     font-size: 35px;
 }
@@ -42,25 +37,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: center; /* Center align the text within one_line */
+  text-align: center; 
 }
 
-/* Styles for activity_title */
-
-
-/* Styles for choose_one */
-.choose_one {
-  list-style: none;
-  display: flex;
-}
-
-.choose_one li {
-  margin-right: 10px; /* Adjust as needed */
-}
-
-/* styles.css */
-
-/* styles.css */
 
 .welcome-hero-serch-box {
     text-align: right;
@@ -88,24 +67,23 @@ input {
 }
 
 .welcome-hero-btn {
-    margin-top: 6px; /* 수정된 부분: 버튼의 상하 크기를 조절하세요 */
-    margin-bottom: 6px; /* 수정된 부분: 버튼의 상하 크기를 조절하세요 */
+    margin-top: 6px;
+    margin-bottom: 6px; 
     background-color: #5A32FB;
     color: #fff;
     padding: 6px 10px;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-	font-weight: bold;
-	border: none;
-	outline: none !important;
+	  font-weight: bold;
+	  border: none;
+	  outline: none !important;
     border-radius: 10px; 
 }
 
 
-/* post_list 목록 스타일  */
 .list_table {
     border-collapse: collapse;
     width: 100%;
-    margin-top: 20px; /* 여유 여백 조절 */
+    margin-top: 20px;
 }
 
 .list_table th, .list_table td {
@@ -130,7 +108,11 @@ input {
   width: 1050px;
 }
 
-/* 교내/대외 필터링 스타일 */
+/* 필터링 */
+.choose_one {
+  list-style: none;
+  display: flex;
+}
 
 .choose_one ul {
     list-style: none;
@@ -143,8 +125,6 @@ input {
     margin-right: 10px;
     cursor: pointer;
 }
-
-
 
 .choose_one a {
     text-decoration: none;
@@ -165,26 +145,26 @@ input {
 }
 
 
-
+/* 페이지네이션 */
 .pagination {
     text-align: center;
-    margin: 20px;  /* 원하는 여백 설정 */
+    margin: 20px;  
 }
 
 .step-links {
     justify-content: center;
     align-items: center;
     display: inline-block;
-    margin-right: 10px;  /* 각 페이지 번호 간의 간격 조절 */
+    margin-right: 10px; 
 }
 
 .step-links a, .current {
-    padding: 8px 12px;  /* 버튼의 내부 여백 설정 */
-    border: 1px solid #ccc;  /* 버튼 테두리 스타일 설정 */
+    padding: 8px 12px;  
+    border: 1px solid #ccc;  
     text-decoration: none;
-    color: #333;  /* 버튼 글자 색상 설정 */
-    background-color: #f8f8f8;  /* 버튼 배경 색상 설정 */
-    border-radius: 5px;  /* 버튼 모서리를 둥글게 설정 */
+    color: #333;  
+    background-color: #f8f8f8;  
+    border-radius: 5px;  
 }
 
 .list_table tbody tr td:nth-child(2) a {

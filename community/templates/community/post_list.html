@@ -1,11 +1,8 @@
 <!-- http://127.0.0.1:8000/community -->
-<!-- 활동목록 페이지-------------------->
+<!-- 활동목록 페이지---------------->
 
-<!-- 상대경로 사용 이유: 필터링 처리 시 정적경로에 비해 페이지 로드가 빠르고 부드러워짐 -->
-<link rel="stylesheet" href="../../static/community/css/community.css" />
-{% extends 'community/base.html' %} {% load static %}
-{% block main_area %}
-
+{% extends 'community/base.html' %} {% block main_area %} {% load static %}
+<link href="{% static 'community/css/community.css' %}" rel="stylesheet" type="text/css">
 
 <div class="activity_title">활동 목록</div> 
 <hr>
