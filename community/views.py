@@ -169,25 +169,21 @@ class UserDetail(LoginRequiredMixin, DetailView):
         user = request.user
         Team.objects.filter(user=user, post=post).delete()
         return JsonResponse({'message': 'Success'})
-    
-    def delete_comment(request):
-        post_id = request.GET.get('postId')
-        post = get_object_or_404(Post, pk=post_id)
-        user = request.user
-        Comment.objects.filter(user=user, post=post).delete()
-        return JsonResponse({'message': 'Success'})
                 
     
     
-    
+# 키워드 수정 페이지로 이동   
 def modKeyWord(request, pk):
     user = User.objects.get(id=pk)
+    if request.user != user:
+        raise Http404("You don't have permission to access this page")
 
     return render(
         request,
         'community/modKeyword.html',
     )
 
+# 카테고리에 맞는 키워드 가져오기
 def get_keywords(request):
     category = request.GET.get('category')
 
@@ -207,7 +203,7 @@ def get_keywords(request):
     keyword_data = {'keywords': list(category_keywords.values())}
     return JsonResponse(keyword_data)
 
-
+# 디폴트 키워드 & 사용자가 입력한 키워드 저장하기
 def save_keywords(request, pk):
     user = get_object_or_404(User, pk=pk)
     
@@ -236,15 +232,20 @@ def save_keywords(request, pk):
 
 
         return redirect('community:user_detail', pk=pk)
+    
     else:
-        # POST 요청이 아닌 경우 에러 응답
         return JsonResponse({'success': False, 'error': 'Invalid request method'})
     
 
+# 관심전공 수정 페이지로 이동
 def modMajor(request, pk):
     majors = Major.objects.all()
     user = User.objects.get(id=pk)
     user_major = user.major.all()
+
+    if request.user != user:
+        raise Http404("You don't have permission to access this page")
+
 
     return render(
         request,
@@ -255,26 +256,28 @@ def modMajor(request, pk):
         }
     )
 
+# 관심전공 저장하기
 def save_majors(request, pk):
     user = get_object_or_404(User, pk=pk)
 
     if request.method == 'POST':
-        # POST 요청에서 선택된 키워드 정보를 받아서 처리하는 로직
         user.major.clear()
 
         selected_majors = request.POST.getlist('majors[]')
         for major_id in selected_majors:
-        # 사용자의 selected_major 필드에 추가
             user.major.add(major_id)
 
-        # 처리 완료 후 JSON 응답
         return redirect('community:user_detail', pk=pk)
-    else:
-        # POST 요청이 아닌 경우 에러 응답
-        return JsonResponse({'success': False, 'error': 'Invalid request method'})
     
+    else:
+        return JsonResponse({'success': False, 'error': 'Invalid request method'})
+
+# 내가 쓴 글 페이지로 이동
 def myTeam(request, pk):
     user = get_object_or_404(User, pk=pk)
+    if request.user != user:
+        raise Http404("You don't have permission to access this page")
+
     try:
         teams = Team.objects.filter(user=user)
     except Team.DoesNotExist:
@@ -289,8 +292,12 @@ def myTeam(request, pk):
         }
     )
 
+# 내가 쓴 댓글 페이지로 이동
 def myComment(request, pk):
     user = get_object_or_404(User, pk=pk)
+    if request.user != user:
+        raise Http404("You don't have permission to access this page")
+
     try:
         comments = Comment.objects.filter(user=user)
     except Team.DoesNotExist:
