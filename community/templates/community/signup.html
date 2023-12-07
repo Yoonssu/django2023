@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
-    <title>Bootstrap Classic Sign Up Form with Blue Background</title>
+    <title>DUKJOB SignUp</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'community/css/signup.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,17 +18,18 @@
 <div class="signup-form">
     <form method="post" action="{% url 'community:signup' %}">
 
+        <!-- 회원가입 실패시 원인 출력 ------------------------------>
         {% if form.errors %}
-    <div class="alert alert-danger">
-        <strong>회원가입 실패:</strong> 아래의 오류를 확인해주세요.
-        <ul>
-            {% for field, errors in form.errors.items %}
-                {% for error in errors %}
-                    <li>{{ error }}</li>
+        <div class="alert alert-danger">
+            <strong>회원가입 실패:</strong> 아래의 오류를 확인해주세요.
+            <ul>
+                {% for field, errors in form.errors.items %}
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
-        </ul>
-    </div>
+            </ul>
+        </div>
         {% endif %}
         
         {% csrf_token %}
@@ -52,7 +53,7 @@
             <input type="password" class="form-control" name="password2" id="password2" value="{{ form.password2.value|default_if_none:'' }}">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+            <button type="submit" class="btn btn-primary btn-lg">회원가입</button>
         </div>
     </form>
     <div class="text-center">이미 아이디가 있으세요? <a href="{% url 'community:login' %}">Login here</a></div>

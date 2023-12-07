@@ -595,8 +595,7 @@ def new_comment(request, pk):
         # 사용자가 인증되지 않은 경우 로그인 페이지로 리다이렉트
         return redirect("login")
 
-
-
+#-------회원가입 --------------------------------------------------
 def signup(request):
     if request.method == 'POST':
         form = UserForm(request.POST)
@@ -611,13 +610,14 @@ def signup(request):
         form = UserForm()
     return render(request, 'community/signup.html', {'form': form})
 
+
+
 # ------페이지 로드 시 유저의 스크랩 유무 확인----------------------
 def check_scrap_status(request, post_id):
     user = request.user
     post = get_object_or_404(Post, pk=post_id)
     is_scraped = Scrap.objects.filter(user=user, post=post).exists()
     return JsonResponse({'is_scraped': is_scraped})
-# ----------------------------------------------------------------
 
 
 # ------스크랩 버튼 클릭 시 비동기 화면 처리----------------------
@@ -634,7 +634,7 @@ def toggle_scrap(request, post_id):
         is_scraped = True
 
     return JsonResponse({'scrapped': is_scraped})
-# ----------------------------------------------------------------
+
 
 def post_team(request, pk):
     post = get_object_or_404(Post, pk=pk)
