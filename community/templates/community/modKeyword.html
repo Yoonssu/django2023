@@ -63,6 +63,7 @@
         const inputKeyword = document.getElementById('makeKeyword');
         const makeKeywordList = document.getElementById('makeKeywordField');
         let buttonCount = 0;
+        const maxAllowed = 10;
 
         // 엔터 눌렀을 때
         inputKeyword.addEventListener('keydown', function(event) {
@@ -70,8 +71,8 @@
                 event.preventDefault(); // 폼 제출 방지
 
                 // 1.1. 작성된 키워드가 10개 이상일 때
-                if (buttonCount >= 10) {
-                    alert('직접 입력할 수 있는 키워드는 최대 10개입니다.');
+                if (buttonCount >= maxAllowed) {
+                    alert(`직접 입력할 수 있는 키워드는 최대 ${maxAllowed}개입니다.`);
                     event.target.value = '';
                     return;
                 }

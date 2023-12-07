@@ -40,6 +40,14 @@
 },
 {
     "model": "sessions.session",
+    "pk": "0cjz6xkbip4e394xmwokx120ix0jbdux",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAPw8:ExsjGYK51rg471d-KaOJ-9_zPGYMdXT1E7_e55gx8XA",
+        "expire_date": "2023-12-19T16:33:44.116"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "0mqvrbnm1z3en8e8um3js2lssugws7lr",
     "fields": {
         "session_data": ".eJxVjMEOgjAQRP-lZ9MALe3i0Tvf0Gx3txY1NKFwMv67kHDQ0yTz3sxbBdzWHLYqS5hYXZVRl98uIj1lPgA_cL4XTWVelynqQ9EnrXosLK_b6f4dZKx5XwN67m2MwEjONgkIBjK97EnWi48OrbTkpGMEM3TERMk3CMnb2IJVny8KxDja:1r9p5w:7MbNrgRoQRMQumLpX5-qe74zi2kKh2pTIP7Gc5s2g_g",
@@ -56,10 +64,26 @@
 },
 {
     "model": "sessions.session",
+    "pk": "13tyxfxo9ubc21oicn6219som8q3n5eg",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAO2M:AOcs0oxYrCIo97bb7nw1sh9mML93zd4uXoAxPn5H_tw",
+        "expire_date": "2023-12-19T14:32:02.801"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "1kxkctdu1rfr7kw01vlj06pitr6f5ezn",
     "fields": {
         "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9n6x:aXjNVYo08QeSWt1fmlnKTMBiGun4QXDEuoCwSYn6o7A",
         "expire_date": "2023-12-17T23:06:19.298"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "4ahmy8er77oxlctwfwud3dbeggitd7zi",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAkj4:7bGv-QtbsA7EB0YF6LwKtN-5H9JjRnAbd7yECwhiGg8",
+        "expire_date": "2023-12-20T14:45:38.651"
     }
 },
 {
@@ -72,6 +96,22 @@
 },
 {
     "model": "sessions.session",
+    "pk": "500ysol2nkvio3x0v7d3qtd4qgujfzq3",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAP4O:A9ZfxHcr27P1V4Xu7ZVwio9IpXlBDSyvUmTe91xOYGY",
+        "expire_date": "2023-12-19T15:38:12.724"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "5548zkgln037dbnd1ijqusel5vkw0eip",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAR2y:hN5Q7KNzJJl6hzS4ouuJw_rDDJvEXkn0tn1ONU-GJCw",
+        "expire_date": "2023-12-19T17:44:52.277"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "5k0hlotf3lil4yxqbk2xh9qnbh30jtkv",
     "fields": {
         "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9yYy:Fs5PuGzyjP2kS9Xwmuq9w4bLJDFqBRRl9JfUtyArFnA",
@@ -80,10 +120,58 @@
 },
 {
     "model": "sessions.session",
+    "pk": "5y5lf3eby536rawtdtrwjj6r85twxrdj",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAkiP:qaPeigjkpWEZILpc-gfrOiXksfo_0xtMtonylFjOaEU",
+        "expire_date": "2023-12-20T14:44:57.201"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "5zo473n7s6f7vq0ncwoj1lolgws2zebs",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAWLe:BxT6ut-1vj5BN9GOJ2A-fN49VJm5x_9lN7bD9YyeQ48",
+        "expire_date": "2023-12-19T23:24:30.906"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "66jvuvo8afli0jphurdr1w9lphlz7dlg",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAN49:yjyNgsS3D-ESNpJnSeKd-_Xf3dD7DDgDlge2ouCX-CU",
+        "expire_date": "2023-12-19T13:29:49.407"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "69kjbnjqzga99qdtmkv9hg1dc1goswuq",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rANH9:YjnTVVA2K_g-fIC9SgzIHqcbYapJdLEEVKuPTvH3nBA",
+        "expire_date": "2023-12-19T13:43:15.197"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "6exzm08c5jl9zgsrir4n25sljxyelp7i",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAC5s:XMEJaDUWXHb2Pg3NCBAI_gIG508BMyc_kUkUevTx56E",
+        "expire_date": "2023-12-19T01:46:52.669"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "6s4j5c7jxitmxsik8q2ytfzm592murxd",
     "fields": {
         "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9mNS:Y7rdabnEIDb454--BOYXhuy4sFc9XQSRZa6KSyAhqZ8",
         "expire_date": "2023-12-17T22:19:18.153"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "72ydkgm8jqq3bc7by7qjfzk22tvqhuqu",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAkUM:tsUq0EJXDP9f2vQQE1EePJSbzrLa93TZTWIVufV88cE",
+        "expire_date": "2023-12-20T14:30:26.861"
     }
 },
 {
@@ -112,6 +200,14 @@
 },
 {
     "model": "sessions.session",
+    "pk": "9pljd1z7ue93vsgtr18j7mzzndl1al7l",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAkjk:qGcPip1XuDhPhRVom6LhIstYxY1lELN1vfYrsa8EdHc",
+        "expire_date": "2023-12-20T14:46:20.042"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "agdibwbswn352m6bs0l0as5f0b1yt6wo",
     "fields": {
         "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rA0bX:Zsmm3JwASw2JX9OLi_aS0THo3DRNsim7h0R255UWxXE",
@@ -120,10 +216,10 @@
 },
 {
     "model": "sessions.session",
-    "pk": "bfmbsywrlb7elq1xntcgkukz71mwcch4",
+    "pk": "bhuchnxbd6mtd1r2z7l2zo0csncfuzay",
     "fields": {
-        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rA7Yc:hnooP17mP4TMxEvp-jdWtR1qRGnNm-vL9LWgAJNFl9g",
-        "expire_date": "2023-12-18T20:56:14.061"
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAPXe:4T-FySGsRDEDqbf6Q-33hGTDq8sivKZ9ZlYKau1BXao",
+        "expire_date": "2023-12-19T16:08:26.727"
     }
 },
 {
@@ -136,10 +232,42 @@
 },
 {
     "model": "sessions.session",
+    "pk": "d6aro9hcaqf14is08at9tnr3pc4u34aa",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rANal:JGX3GcmIYAPJ8CzV7Hq75HCG6PA-JmpvwDt2aGlBep0",
+        "expire_date": "2023-12-19T14:03:31.604"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "d8o4nnz3rrww4eryh7iumnkps2ofszvk",
     "fields": {
         "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9ypR:_f8_5oJESxikvWNVuebDJxEHFYlaaLc_5O2u8zmtE9w",
         "expire_date": "2023-12-18T11:37:01.949"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "emlqqnymzb9ygcdtthp1zvf3ih7d2ahz",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAPG5:X8N83gntGI-W4_a6ADrAzKqjWXN4s5JzywckkpZaaAA",
+        "expire_date": "2023-12-19T15:50:17.264"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "f2u35s2v0e821j9l0p0kdnkmpm05ugmn",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAP7G:w-oz2nRjcX4keW_GjGVPJCQPFNyUGjeK-mfl-rDwF-k",
+        "expire_date": "2023-12-19T15:41:10.440"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "flozyntci7gtvt0zgitzaptwingha60q",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2pDCIAwu3fcMZICpVA0kpV0Z765NutDtf-_9lwi0rSVsnZcwZ3ERTpx-t0jpwXUH-U711mRqdV3mKHdFHrTLsWV-Xg_376BQL9-aHSi02pDxkCZENuyUndg6jElZ7b2DHD0PxihGG42lBB4xA-vhzCDeH84eNz4:1rAovp:PNtPTQyIf5NEUl7kxhiDdg_Bn_T2uOtyeLV5yEDektg",
+        "expire_date": "2023-12-20T19:15:05.897"
     }
 },
 {
@@ -160,10 +288,34 @@
 },
 {
     "model": "sessions.session",
+    "pk": "g11p9bze9x3uyda5thxonaffq3v6et7r",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAWcs:YIixjtG3XkNAP-jNlfWVALK5mdAm5oisXGpnVottwaA",
+        "expire_date": "2023-12-19T23:42:18.306"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "g89eou1mdm0lvt2ep83jc0byh8s9qh79",
     "fields": {
         "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9xhl:RNP4_rJFj9XaohUnTpQ_yCdMjccl4YYIyUs3WwlHm3Y",
         "expire_date": "2023-12-18T10:25:01.061"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "gmweavh8groskkrt8cyyguqlwt44uq6s",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAOvH:tUZHNT_JdkpfDEHlD4jKqfqDowsqDMNhIjs6HxSFrQ4",
+        "expire_date": "2023-12-19T15:28:47.510"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "h0s3myixknr5onqnkexu2912cl2yuc00",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAOjl:zUZMb0oZMsKMI_vmzMjxdv4pJwj6pcBFdfThBAffYPY",
+        "expire_date": "2023-12-19T15:16:53.531"
     }
 },
 {
@@ -184,10 +336,34 @@
 },
 {
     "model": "sessions.session",
+    "pk": "i0ic797szcdocib0laip4eonu1o3smyb",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAkgQ:qClhiAq0qdnHM6F-o3VNdO-MzITEhDUEW5k69wkNFVU",
+        "expire_date": "2023-12-20T14:42:54.244"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "i5ag07omj92sknyjtwsfwb88f41z4z3r",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAO3g:KPPHJjc61JBdjcKOhhLriSzB9Dakx-Htst-59wPZ198",
+        "expire_date": "2023-12-19T14:33:24.950"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "i8rii2q51ierx338ekd8nyqecvhj5mg9",
     "fields": {
         "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9xer:f0kCp2eHyfyfJzqq8i6ZEjjp5Dmfag7qmmH9Gtp2L-w",
         "expire_date": "2023-12-18T10:22:01.307"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "iesrctp09z2r0lk9zdg84d2jygqabimv",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAO3h:ogycApJzHToBBmaf_4qfjsrl8oZW1wBmtuW0FT8uAtk",
+        "expire_date": "2023-12-19T14:33:25.342"
     }
 },
 {
@@ -200,10 +376,66 @@
 },
 {
     "model": "sessions.session",
+    "pk": "jvvr6orpmtpz5a5j1mecy2lci41mvm9o",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAO3g:KPPHJjc61JBdjcKOhhLriSzB9Dakx-Htst-59wPZ198",
+        "expire_date": "2023-12-19T14:33:24.893"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "jzzidq73ji3u3vvrue7fmxoou84zf9fa",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rARC1:1R3bfc2CtyqzTihigO2jo3FLfT7SpZsjsoM88CnJnEc",
+        "expire_date": "2023-12-19T17:54:13.392"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "km6zydmupzc8hbessbwjy2hgbx36byb4",
     "fields": {
         "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9xz6:SdziXcOW0MZ7rMVP4TNLbqF2ZC5yZPsnOcEPOZ0Hblg",
         "expire_date": "2023-12-18T10:42:56.157"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ld1tyyqmabwkyt3jks2cv3z2c97foapj",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAOxC:QUT3CEMJORqBh_nl2HKZ5fzqs2iNCd6VT8RJ2VXYSAc",
+        "expire_date": "2023-12-19T15:30:46.550"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "m6a6s4gcarzadjuaqo80znclmcesybob",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAN78:tDvkYzOSCI4eEObMVGZ-YighxjZ_mtuYOu1XGz6igrE",
+        "expire_date": "2023-12-19T13:32:54.445"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "mf2eqsdo87piglgs7vvnkt6mw3b3125u",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAjsY:IB5cjstUm1g_2_bgjZb5UXJa7VbvM_dI-Xb_6vKhjn0",
+        "expire_date": "2023-12-20T13:51:22.459"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "nmoq7rwxdvh9wry4f1r00zgvz2n02udi",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAtyq:CA07PgrUiHA9JWnIrF9HVFWIRVlbed1Wh9mIhI20yYU",
+        "expire_date": "2023-12-21T00:38:32.118"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "q8me5m5wata56svqmla8eqg8y4e5wqso",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAkeu:XGPX2OhPyKs1O0k1j44A3JFkAKX8R-5fB28pt3g5af0",
+        "expire_date": "2023-12-20T14:41:20.373"
     }
 },
 {
@@ -216,6 +448,22 @@
 },
 {
     "model": "sessions.session",
+    "pk": "sufppcga2w69jr92upx256o0kxc51vej",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAO88:Nj9ag7SjCyjEst5Vda9NWSaAox659TnohJVik1QKweM",
+        "expire_date": "2023-12-19T14:38:00.722"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "t5z1iuen5ebs8thakdaqva4zlsgyt8mb",
+    "fields": {
+        "session_data": ".eJxVjDsOAjEMBe-SGkURlr0JJT1niGwnIQsokfZTrbg7rLQFtG9m3mYir0uN65ynOCZzMd6cfjdhfea2g_Tgdu9We1umUeyu2IPO9tZTfl0P9--g8ly_tQZW5EQOCF1GX5yXoRTAAB6yMgkIeykJkZTIkSs4AANLOQsEMu8P96w4Pg:1rAqtq:WG3Yh0a0OTj0HTrJ_sJvT_U6dpIAyAWurisH1v-yEJE",
+        "expire_date": "2023-12-20T21:21:10.928"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "uczwge4xgob0jn3ronkhakylfff0is9b",
     "fields": {
         "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9oKz:xirPekzMqzj3xQeMlBkRRacHSYVTEXR2yFg-pU8n0CI",
@@ -224,10 +472,34 @@
 },
 {
     "model": "sessions.session",
+    "pk": "uu2j5bgntj9yl4q2zr2kuxlk6c009udu",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAQX6:yOq1dr68zDVVhIOKMMYkGFllQ_kdW8-9DOkeKXpoqRc",
+        "expire_date": "2023-12-19T17:11:56.890"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "xb6hfyr0q29w0w63gcoayqvv8r2fl5sk",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAOQP:x9DR-pUUpOwSemDqeqyevQ1GMU_pxFquzj35M3s_Z5Y",
+        "expire_date": "2023-12-19T14:56:53.022"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "y7lkiw8zgcsk9ozaay582p19he92japl",
     "fields": {
         "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1r9yW3:kDBLQQ54f1G7ma_Ev_DMh5j7buNKYuGWsY-TbR1cLM4",
         "expire_date": "2023-12-18T11:16:59.937"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ykr8lrgwr60z451arwqry6eamo6eyvt6",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSEtdBjq0r3fQAZmkKqBpI-V8d-1SRe6veec-1KBtrWEbZE5TKzOqlen3y1SekjdAd-p3ppOra7zFPWu6IMu-tpYnpfD_TsotJRvLZgTZgsGgDqOxneAo7EcxSJFyoBOcARjxRkygMx9HNyA3qfBAjv1_gDirzeD:1rAQe4:Ek8VgcV_5s9slB_Hre1bRY8b5i7F6YsnJYtbyAqwn4o",
+        "expire_date": "2023-12-19T17:19:08.108"
     }
 },
 {
@@ -267,7 +539,7 @@
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$600000$g0jgXpHfRPoxZEqV5OQQBU$kwFHkU8FCy/LStza/gPzeN4VQEQPWN12xNeuAdrOIIs=",
-        "last_login": "2023-12-02T00:10:12.532",
+        "last_login": "2023-12-07T00:38:32.113",
         "is_superuser": true,
         "username": "dsadmin",
         "first_name": "",
@@ -278,8 +550,16 @@
         "email": "chevel0212@gmail.com",
         "groups": [],
         "user_permissions": [],
-        "major": [],
-        "keyword": []
+        "major": [
+            25,
+            27,
+            28,
+            24
+        ],
+        "keyword": [
+            32,
+            35
+        ]
     }
 },
 {
@@ -307,7 +587,7 @@
     "pk": 3,
     "fields": {
         "password": "pbkdf2_sha256$600000$wnDyDwXBwOfJHnUq11iiCJ$PAMkgGgTJdluJ/3TsZFdHf1qxSB86bHqioVv/9v6LXk=",
-        "last_login": "2023-11-29T03:55:02.265",
+        "last_login": "2023-12-06T23:51:35.388",
         "is_superuser": false,
         "username": "kitechoi",
         "first_name": "",
@@ -380,6 +660,72 @@
         "user_permissions": [],
         "major": [],
         "keyword": []
+    }
+},
+{
+    "model": "community.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$HPvD5nKy275y5zPcYcPXP5$U0mbYpvrLxmVLib2KRr0J8SXycgyS7qpL+ydEEhpI4I=",
+        "last_login": "2023-12-06T23:52:43.273",
+        "is_superuser": false,
+        "username": "hello",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-12-06T19:14:27.323",
+        "email": "celfjd@naver.com",
+        "groups": [],
+        "user_permissions": [],
+        "major": [
+            25,
+            28,
+            31,
+            24
+        ],
+        "keyword": [
+            32,
+            35,
+            36,
+            39,
+            44,
+            47,
+            48
+        ]
+    }
+},
+{
+    "model": "community.user",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$8Kuvj561VFDsyRuc9x1Nq0$zfwtrC5e5ec2Tp9Nu158rpRK+FPN0P8+SrZDxLK3fMU=",
+        "last_login": "2023-12-06T23:46:11.026",
+        "is_superuser": false,
+        "username": "kitekite",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-12-06T21:21:09.378",
+        "email": "kite@naver.com",
+        "groups": [],
+        "user_permissions": [],
+        "major": [
+            25,
+            27,
+            28,
+            24
+        ],
+        "keyword": [
+            32,
+            35,
+            36,
+            44,
+            47,
+            48,
+            54
+        ]
     }
 },
 {
@@ -815,11 +1161,92 @@
     }
 },
 {
+    "model": "community.keyword",
+    "pk": 49,
+    "fields": {
+        "keywordname": "회계법인",
+        "ismake": true,
+        "category": null
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 50,
+    "fields": {
+        "keywordname": "java",
+        "ismake": true,
+        "category": null
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 51,
+    "fields": {
+        "keywordname": "안드로이드",
+        "ismake": true,
+        "category": null
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 52,
+    "fields": {
+        "keywordname": "환경",
+        "ismake": true,
+        "category": null
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 53,
+    "fields": {
+        "keywordname": "커피",
+        "ismake": true,
+        "category": null
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 54,
+    "fields": {
+        "keywordname": "통계",
+        "ismake": true,
+        "category": null
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 55,
+    "fields": {
+        "keywordname": "온톨리지",
+        "ismake": true,
+        "category": null
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 56,
+    "fields": {
+        "keywordname": "cpa",
+        "ismake": true,
+        "category": null
+    }
+},
+{
+    "model": "community.keyword",
+    "pk": 57,
+    "fields": {
+        "keywordname": "pm",
+        "ismake": true,
+        "category": null
+    }
+},
+{
     "model": "community.major",
     "pk": 1,
     "fields": {
         "majorname": "국어국문전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -827,7 +1254,7 @@
     "pk": 2,
     "fields": {
         "majorname": "일어일문전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -835,7 +1262,7 @@
     "pk": 3,
     "fields": {
         "majorname": "중어중문전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -843,7 +1270,7 @@
     "pk": 4,
     "fields": {
         "majorname": "영어영문전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -851,7 +1278,7 @@
     "pk": 5,
     "fields": {
         "majorname": "불어불문전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -859,7 +1286,7 @@
     "pk": 6,
     "fields": {
         "majorname": "독어독문전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -867,7 +1294,7 @@
     "pk": 7,
     "fields": {
         "majorname": "스페인어전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -875,7 +1302,7 @@
     "pk": 8,
     "fields": {
         "majorname": "사학전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -883,7 +1310,7 @@
     "pk": 9,
     "fields": {
         "majorname": "철학전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -891,7 +1318,7 @@
     "pk": 10,
     "fields": {
         "majorname": "미술사학전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -899,7 +1326,7 @@
     "pk": 11,
     "fields": {
         "majorname": "문화인류전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -907,7 +1334,7 @@
     "pk": 12,
     "fields": {
         "majorname": "경영학전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -915,7 +1342,7 @@
     "pk": 13,
     "fields": {
         "majorname": "회계학전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -923,7 +1350,7 @@
     "pk": 14,
     "fields": {
         "majorname": "국제통상학전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -931,7 +1358,7 @@
     "pk": 15,
     "fields": {
         "majorname": "법학전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -939,7 +1366,7 @@
     "pk": 16,
     "fields": {
         "majorname": "사회학전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -947,7 +1374,7 @@
     "pk": 17,
     "fields": {
         "majorname": "문헌정보학전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -955,7 +1382,7 @@
     "pk": 18,
     "fields": {
         "majorname": "심리학전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -963,7 +1390,7 @@
     "pk": 19,
     "fields": {
         "majorname": "아동가족학전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -971,7 +1398,7 @@
     "pk": 20,
     "fields": {
         "majorname": "사회복지전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -979,7 +1406,7 @@
     "pk": 21,
     "fields": {
         "majorname": "정치외교전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -987,7 +1414,7 @@
     "pk": 22,
     "fields": {
         "majorname": "의상디자인전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -995,7 +1422,7 @@
     "pk": 23,
     "fields": {
         "majorname": "유아교육전공",
-        "line": null
+        "line": "글로벌융합대학"
     }
 },
 {
@@ -1003,7 +1430,7 @@
     "pk": 24,
     "fields": {
         "majorname": "컴퓨터전공",
-        "line": null
+        "line": "과학기술대학"
     }
 },
 {
@@ -1011,7 +1438,7 @@
     "pk": 25,
     "fields": {
         "majorname": "IT미디어전공",
-        "line": null
+        "line": "과학기술대학"
     }
 },
 {
@@ -1019,7 +1446,7 @@
     "pk": 26,
     "fields": {
         "majorname": "바이오공학전공",
-        "line": null
+        "line": "과학기술대학"
     }
 },
 {
@@ -1027,7 +1454,7 @@
     "pk": 27,
     "fields": {
         "majorname": "사이버보안전공",
-        "line": null
+        "line": "과학기술대학"
     }
 },
 {
@@ -1035,7 +1462,7 @@
     "pk": 28,
     "fields": {
         "majorname": "소프트웨어전공",
-        "line": null
+        "line": "과학기술대학"
     }
 },
 {
@@ -1043,7 +1470,7 @@
     "pk": 29,
     "fields": {
         "majorname": "생활체육전공",
-        "line": null
+        "line": "과학기술대학"
     }
 },
 {
@@ -1051,7 +1478,7 @@
     "pk": 30,
     "fields": {
         "majorname": "식품영양전공",
-        "line": null
+        "line": "과학기술대학"
     }
 },
 {
@@ -1059,7 +1486,7 @@
     "pk": 31,
     "fields": {
         "majorname": "정보통계전공",
-        "line": null
+        "line": "과학기술대학"
     }
 },
 {
@@ -1067,7 +1494,7 @@
     "pk": 32,
     "fields": {
         "majorname": "화학전공",
-        "line": null
+        "line": "과학기술대학"
     }
 },
 {
@@ -1075,7 +1502,7 @@
     "pk": 33,
     "fields": {
         "majorname": "수학전공",
-        "line": null
+        "line": "과학기술대학"
     }
 },
 {
@@ -1083,7 +1510,7 @@
     "pk": 34,
     "fields": {
         "majorname": "동양화전공",
-        "line": null
+        "line": "Art & Design 대학"
     }
 },
 {
@@ -1091,7 +1518,7 @@
     "pk": 35,
     "fields": {
         "majorname": "서양화전공",
-        "line": null
+        "line": "Art & Design 대학"
     }
 },
 {
@@ -1099,7 +1526,7 @@
     "pk": 36,
     "fields": {
         "majorname": "실내디자인전공",
-        "line": null
+        "line": "Art & Design 대학"
     }
 },
 {
@@ -1107,7 +1534,7 @@
     "pk": 37,
     "fields": {
         "majorname": "시각디자인전공",
-        "line": null
+        "line": "Art & Design 대학"
     }
 },
 {
@@ -1115,19 +1542,7 @@
     "pk": 38,
     "fields": {
         "majorname": "택스타일디자인전공",
-        "line": null
-    }
-},
-{
-    "model": "community.post",
-    "pk": 10077,
-    "fields": {
-        "major": 2,
-        "title": "사이버보안 post 1 (test)",
-        "content": "사이버보안 post 1 test content 입니다.\n",
-        "img": "img url",
-        "time": "2023-11-23T22:22:53",
-        "isduksung": true
+        "line": "Art & Design 대학"
     }
 },
 {
@@ -1188,18 +1603,6 @@
         "img": null,
         "time": "2023-11-26T19:33:13.030",
         "isduksung": true
-    }
-},
-{
-    "model": "community.post",
-    "pk": 10083,
-    "fields": {
-        "major": null,
-        "title": "대외활동 post 1",
-        "content": "대외활동 post 1 content",
-        "img": "img url",
-        "time": "2023-11-23T22:26:52.266",
-        "isduksung": false
     }
 },
 {
@@ -15636,6 +16039,485 @@
         "img": null,
         "time": "2023-12-04T18:59:45.708",
         "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12294,
+    "fields": {
+        "major": null,
+        "title": "[글로벌커뮤니케이션센터] 2023학년도 겨울방학 DS 영어 집중 프로그램",
+        "content": "글로벌커뮤니케이션센터에서는 2023학년도 겨울방학 DS 영어 집중 프로그램을 실시합니다.\n 3일, 9시간 동안 진행하는 흥미로운 주제의 영어 특강을 통해 여러분의 영어 실력을 갈고 닦아 보세요! 1. 대상: 덕성여대 재학생 및 휴학생 2. 프로그램 별 주제 및 일시 담당교수님 수업 주제 수업 시간 Luis 1. American Sitcoms 12월 20일(수) ~ 12월 22일(금) 10:00 ~ 13:00시 Matthew 2. Integrated Speaking 12월 20일(수) ~ 12월 22일(금) 14:00 ~ 17:00시 Adam 3. Learning English with ChatGPT 12월 26일(화) ~ 12월 28일(목) 10:00 ~ 13:00시 Kelly 4. Mastering Gen Z Slang Words and Phrases 12월 26일(화) ~ 12월 28일(목) 14:00 ~ 17:00시 * 프로그램 중복 참여 가능! (다른 시간대로 최대 4개 신청 가능합니다.\n) * 각 프로그램별 최대 45명까지! 3. 신청 기간: 2023. 12 . 5. (화) ~ 2023. 12. 17. (일) 23:45시까지 * 마감 시간보다 여유 있는 신청을 부탁드립니다.\n 신청자가 몰릴 경우 딜라이트 홈페이지에 원활한 접속이 이루어지지 않을 수 있습니다.\n * Zoom 수업 주소는 신청자가 확정된 후 12월 19일 화요일에 메일로 발송 예정입니다.\n (덕성 포털에 입력되어 있는 이메일로 발송하니 확인하시기 바랍니다.\n) 4. 신청 방법 ① 비교과 프로그램 Delight 홈페이지 (https://delight.duksung.ac.kr/ko/program/all/view/1212) ② 단기 영어 집중 프로그램 검색 후 원하는 주제의 해당 페이지에서 신청하기 click * 교수님의 강의계획서를 첨부해두었으니 참고하시길 바랍니다.\n 5. 수업운영방식: 온라인 zoom 수업 (줌 회의 ID, 비밀번호는 신청학생에게 이메일 개별 전송 ) 6. 사전설문조사, 만족도 조사 마감 후, ICAN 마일리지 1점, 전공선택 활동점수 25점 지급 7. 프로그램 이수 조건 1) zoom 접속 시간을 산정하여 프로그램 이수 여부를 결정합니다.\n 2) 사전설문조사, 만족도 조사를 참여하셔야 마일리지가 부여됩니다.\n 기타 문의사항은 글로벌커뮤니케이션센터로 연락바라며, 많은 참여 바랍니다.\n (lab1@duksung.ac.kr / 02-901-8704/8463) \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=40&bIdx=672976&menuId=1062&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T19:08:03.295",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12295,
+    "fields": {
+        "major": 2,
+        "title": "2023학년도 2학기 장학사정관 장학금 신청 안내",
+        "content": "1. 신청 및 서류제출 기간: 2023. 12. 5.(화) ~ 12. 20(수) 17시 [기한엄수] 2. 선발인원 및 장학금액: 등록금 범위 내 예산현황, 신청인원 등을 고려하여 추후 확정 3. 공통기준: 8학기 이내, 직전학기 평점 1.75이상, 국가장학금 미수혜자 4. 신청대상 및 제출서류(제출서류에 주민번호가 있는 경우, 뒷자리 '*'표기 자료 제출) 구 분 신청대상 공통서류 추가서류 소득 9~10분 위 학생 또는 국가 장학금 미신청자 중 사실상 가정형편 곤란자 긴급한 가계곤란 사정 (보호자의 갑작스런 퇴직, 실직, 부도, 사망, 재난재해 등) 1. 장학금 신청서 2. 가족관계증명서 3. 근로소득원천징수영수증 또는 소득금액 증명서 4. 건강보험료 납부확인서 5. 건강보험 자격득실확인서 실직, 퇴직-퇴직증명서 또는 고용보험수급확인서, 고용보험 피보험자격신고사실통지서 등 부도-폐업사실증명서 사망-사망진단서 생계를 같이하는 직계가족 중증질환-진단서, 진료비확인서 재난재해-재난재해를 증명할 수 있는 확인서 또는 화재(사고) 등에 따른 피해확인서 본인이 가족을 부양하는 경우 본인 소득금액 증명원, 본인 건강보험료 납부확인서 기초생활수급 또는 차상위계층 장학금 신청서, 가족관계증명서, 국민기초생활수급자 또는 차상위계층 증명서 소득 0~8분중 국가 장학금 미수혜자 성적미달, 이수학점 미달, 수혜학기 초과 등 장학금 신청서 기타사항 가. 상기 기재된 서류 이외에 별도 서류 제출이 요구될 수 있음 나. 근로소득원천징수영수증/소득금액증명원(국세청 홈택스 또는 세무서 발급)/건강보험료납부확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보호자의 소득수준을 파악하기 위한 서류임. 보호자 명의의 2022년 기준 서류(퇴직인 경우 2023년)를 제출해야 하며 소득이 있는 보호자 모두 제출 필수임 다.\n 건강보험 자격득실확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보험자의 피부양자 여부를 확인하기 위한 서류임 라. 소득이 없는 경우에도 소득금액증명원 ‘소득금액 없음’ 내용 제출필수 마. 본인이 가족을 부양하는 경우와 기초생활수급 또는 차상위계층 의 경우, 보호자를 본인으로 하는 가족관계증명서 제출 ※ 국가장학금 미신청자는 신청불가 사유 상세 기재 및 관련 증빙자료 제출 요망 5. 선발방법: 시스템 신청→장학금 신청서 작성→ 학생지원과 서류제출 → 학생‧인재개발처 심사 및 선발 6. 신청방법: 시스템 신청 후 상기 제출서류 학생지원과(학생회관 2층) 오프라인 제출 - 덕성포털> 차세대포털시스템 로그인> 통합정보시스템> 장학> 장학금신청에서 신청 7. 참고사항 가. 장학금 신청서 작성 시 신청사유를 상세히 기재하시기 바랍니다.\n 나. 해당서류를 확인하여 완비 후 기간 내에 제출하여 주시기 바랍니다.\n (서류 미제출 시 선발 제외) 다.\n 지급받을 계좌 등록 방법: [덕성포털-차세대 포털시스템 로그인-통합정보시스템-학생서비스-학적-개인정보변경/지도교수확인] 페이지 계좌정보에 본인명의 계좌 입력 후 작업저장 라. 기타 문의: 학생지원과 교내장학담당 (내선 8053) 붙 임: 장학사정관 장학금 신청서 양식 1부. 끝. \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1166&bIdx=672637&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:26:53.597",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12296,
+    "fields": {
+        "major": 3,
+        "title": "[중어중문학전공] 2023학년도 2학기 장학사정관 장학금 신청 안내",
+        "content": "안녕하세요 중어중문학전공입니다.\n 2023학년도 2학기 장학사정관 장학금 신청 안내를 다음과 같이 안내드립니다.\n 1. 신청 및 서류제출 기간 : 2023. 12. 5.(화) ~ 12. 20(수) 17시 [기한엄수] 2. 선발인원 및 장학금액 : 등록금 범위 내 예산현황, 신청인원 등을 고려하여 추후 확정 3. 공통기준 : 8학기 이내, 직전학기 평점 1.75이상, 국가장학금 미수혜자 4. 신청대상 및 제출서류(제출서류에 주민번호가 있는 경우, 뒷자리 '*'표기 자료 제출) 구 분 신청대상 공통서류 추가서류 소득 9~10분위 학생 또는 국가장학금 미신청자 중 사실상 가정형편 곤란자 긴급한 가계곤란 사정 (보호자의 갑작스런 퇴직, 실직, 부도, 사망, 재난재해 등) 1. 장학금 신청서 2. 가족관계증명서 3. 근로소득원천징수영수증 또는 소득금액 증명서 4. 건강보험료 납부확인서 5. 건강보험 자격득실확인서 실직, 퇴직-퇴직증명서 또는 고용보험수급확인서, 고용보험 피보험자격신고사실통지서 등 부도-폐업사실증명서 사망-사망진단서 생계를 같이하는 직계가족 중증질환-진단서, 진료비확인서 재난재해-재난재해를 증명할 수 있는 확인서 또는 화재(사고) 등에 따른 피해확인서 본인이 가족을 부양하는 경우 본인 소득금액 증명원, 본인 건강보험료 납부확인서 기초생활수급 또는 차상위계층 장학금 신청서, 가족관계증명서, 국민기초생활수급자 또는 차상위계층 증명서 소득 0~8분위 중 국가장학금 미수혜자 성적미달, 이수학점 미달, 수혜학기 초과 등 장학금 신청서 기타사항 가. 상기 기재된 서류 이외에 별도 서류 제출이 요구될 수 있음 나. 근로소득원천징수영수증/소득금액증명원(국세청 홈택스 또는 세무서 발급)/건강보험료납부확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보호자의 소득수준을 파악하기 위한 서류임. 보호자 명의의 2022년 기준 서류(퇴직인 경우 2023년)를 제출해야 하며 소득이 있는 보호자 모두 제출 필수임 다.\n 건강보험 자격득실확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보험자의 피부양자 여부를 확인하기 위한 서류임 라. 소득이 없는 경우에도 소득금액증명원 ‘소득금액 없음’ 내용 제출필수 마. 본인이 가족을 부양하는 경우와 기초생활수급 또는 차상위계층 의 경우, 보호자를 본인으로 하는 가족관계증명서 제출 ※ 국가장학금 미신청자는 신청불가 사유 상세 기재 및 관련 증빙자료 제출 요망 5. 선발방법 : 시스템 신청→장학금 신청서 작성→ 학생지원과 서류제출 → 학생‧인재개발처 심사 및 선발 6. 신청방법 : 시스템 신청 후 상기 제출서류 학생지원과(학생회관 2층) 오프라인 제출 - 덕성포털> 차세대포털시스템 로그인> 통합정보시스템> 장학> 장학금신청에서 신청 7. 참고사항 가. 장학금 신청서 작성 시 신청사유를 상세히 기재하시기 바랍니다.\n 나. 해당서류를 확인하여 완비 후 기간 내에 제출하여 주시기 바랍니다.\n (서류 미제출 시 선발 제외) 다.\n 지급받을 계좌 등록 방법 : [덕성포털-차세대 포털시스템 로그인-통합정보시스템-학생서비스-학적-개인정보변경/지도교수확인] 페이지 계좌정보에 본인명의 계좌 입력 후 작업저장 라. 기타 문의 : 학생지원과 교내장학담당 (내선 8053) \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1236&bIdx=672878&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:27:23.720",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12297,
+    "fields": {
+        "major": 4,
+        "title": "[영어영문학전공] 디지털인문학 겨울학교 홍보",
+        "content": "안녕하세요, 영어영문학전공입니다.\n 디지털인문학에 관심이 있는 분들을 위한 좋은 방학 프로그램이 있어 안내드립니다.\n 2024년 1월15일에서 19일 5일동안 열리는 \"디지털인문학 겨울학교\"는 최근 새로운 학문분과로 떠오르고 있는 디지털인문학에 대한 최신경향을 습득할 수 있는 강좌들로 구성되어 있어 관심이 있는 분들에게 많은 도움이 되리라 여겨집니다.\n 자세한 프로그램에 대한 안내와 신청 방법은 포스터를 참고로 해 주시고, 신청은 포스터에 있는 QR코드를 통하여 가능합니다.\n \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1240&bIdx=673378&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:27:53.422",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12298,
+    "fields": {
+        "major": 5,
+        "title": "「 세대를 흐르는 지역문화 」2023 도봉문화원_덕성여대 연합학술대회",
+        "content": "Bonjour! 불어불문학전공 입니다.\n 지역협업센터에서 도봉문화원과 함께 우리 대학 차미리기념관 136호에서 연합 학술대회를 개최한다고 하여 안내 드립니다.\n ------------------------------------------------------------------------------------------------------------------- ◾행사명 : 세대를 흐르는 지역문화 ◾일 시 : 2023.12.20 (수) 10:30 ~ 17:00 ◾장 소 : 차미리사기념관 136호 ◾대 상 : 우리 대학 구성원 및 일반인 ◾신 청 : 비교과통합관리시스템 신청 ✔️ Click ◾기타사항 - 우리대학 학생들의 경우 비교과 마일리지 지급 가능한 행사 \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1170&bIdx=673016&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:28:22.180",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12299,
+    "fields": {
+        "major": 5,
+        "title": "2023학년도 2학기 장학사정관 장학금 신청 안내",
+        "content": "Bonjour! 불어불문학전공 입니다.\n 2023학년도 2학기 장학사정관 장학금 신청 에 대하여 안내 드립니다.\n 1. 신청 및 서류제출 기간 : 2023. 12. 5. (화) ~ 12. 20.(수) 17시 [기한엄수] 2. 선발인원 및 장학금액 : 등록금 범위 내 예산현황, 신청인원 등을 고려하여 추후 확정 3. 공통기준 : 8학기 이내, 직전학기 평점 1.75이상, 국가장학금 미수혜자 4. 신청대상 및 제출서류(제출서류에 주민번호가 있는 경우, 뒷자리 '*'표기자료 제출) 구 분 신청대상 공통서류 추가서류 소득 9~10분위 학생, 국가장학금 미신청자 중 사실상 가정형편 곤란자 긴급한 가계곤란 사정 (보호자의 갑작스런 퇴직, 실직, 부도, 사망, 재난재해 등) 1. 장학금 신청서 2. 가족관계증명서 3. 근로소득원천징수영수증 또는 소득금액 증명서 4. 건강보험료 납부확인서 5. 건강보험 자격득실확인서 실직, 퇴직-퇴직증명서 또는 고용보험수급확인서, 고용보험 피보험자격신고사실통지서 등 부도-폐업사실증명서 사망-사망진단서 생계를 같이하는 직계가족 중증질환-진단서, 진료비확인서 재난재해-재난재해를 증명할 수 있는 확인서 또는 화재(사고) 등에 따른 피해확인서 본인이 가족을 부양하는 경우 본인 소득금액 증명원, 본인 건강보험료 납부확인서 기초생활수급 또는 차상위계층 장학금 신청서, 가족관계증명서, 국민기초생활수급자 또는 차상위계층 증명서 소득 0~8분위 중 국가장학금 미수혜자 성적미달, 이수학점 미달, 수혜학기 초과 등 장학금 신청서 기타 사항 가. 상기 기재된 서류 이외에 별도 서류 제출이 요구될 수 있음 나. 근로소득원천징수영수증/소득금액증명원(국세청 홈택스 또는 세무서 발급)/건강보험료납부확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보호자의 소득수준을 파악하기 위한 서류임. 보호자 명의의 2022년 기준 서류 (퇴직인 경우 2023년) 를 제출해야 하며 소득이 있는 보호자 모두 제출 필수임 다.\n 건강보험 자격득실확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보험자의 피부양자 여부를 확인하기 위한 서류임 라. 소득이 없는 경우에도 소득금액증명원 ‘소득금액 없음’ 내용 제출 필수 마. 본인이 가족을 부양하는 경우와 기초생활수급 또는 차상위계층 의 경우, 보호자를 본인으로 하는 가족관계증명서 제출 ※ 국가장학금 미신청자는 신청불가 사유 상세 기재 및 관련 증빙자료 제출 요망 5. 선발방법 : 시스템 신청→장학금 신청서 작성→ 학생지원과 서류제출 → 학생‧인재개발처 심사 및 선발 6. 신청방법 : 시스템 신청 후 상기 제출서류 학생지원과(학생회관 2층) 오프라인 제출 - 덕성포털> 차세대포털시스템 로그인> 통합정보시스템> 장학> 장학금신청에서 신청 7. 참고사항 가. 장학금 신청서 작성 시 신청사유를 상세히 기재하시기 바랍니다.\n 나. 해당서류를 확인하여 완비 후 기간 내에 제출하여 주시기 바랍니다.\n (서류 미제출 시 선발 제외) 다.\n 지급받을 계좌 등록 방법 : [덕성포털-차세대 포털시스템 로그인-통합정보시스템-학생서비스-학적-개인정보변경/지도교수확인] 페이지 계좌정보에 본인명의 계좌 입력 후 작업저장 라. 기타 문의 : 학생지원과 교내장학담당 02) 901 - 8053 \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1170&bIdx=672917&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:28:22.180",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12300,
+    "fields": {
+        "major": 7,
+        "title": "[장학] 2023학년도 2학기 장학사정관 장학금 신청 안내",
+        "content": "안녕하세요, 스페인어전공입니다.\n 2023학년도 2학기 장학사정관 장학금 신청을 다음과 같이 안내하오니 참고하여 신청하시기 바랍니다.\n 1. 신청 및 서류제출 기간: 2023. 12. 5.(화) ~ 12. 20.(수) 17시 [기한 엄수] 2. 선발인원 및 장학금액: 등록금 범위 내 예산현황, 신청인원 등을 고려하여 추후 확정 3. 공통기준: 8학기 이내, 직전학기 평점 1.75이상, 국가장학금 미수혜자 4. 신청대상 및 제출서류(제출서류에 주민번호가 있는 경우, 뒷자리 '*'표기 자료 제출) 구 분 신청대상 공통서류 추가서류 소득 9~10분위 학생 또는 국가장학금 미신청자 중 사실상 가정형편 곤란자 긴급한 가계곤란 사정 (보호자의 갑작스런 퇴직, 실직, 부도, 사망, 재난재해 등) 1. 장학금 신청서 2. 가족관계증명서 3. 근로소득원천징수영수증 또는 소득금액 증명서 4. 건강보험료 납부확인서 5. 건강보험 자격득실확인서 실직, 퇴직-퇴직증명서 또는 고용보험수급확인서, 고용보험 피보험자격신고사실통지서 등 부도-폐업사실증명서 사망-사망진단서 생계를 같이하는 직계가족 중증질환-진단서, 진료비확인서 재난재해-재난재해를 증명할 수 있는 확인서 또는 화재(사고) 등에 따른 피해확인서 본인이 가족을 부양하는 경우 본인 소득금액 증명원, 본인 건강보험료 납부확인서 기초생활수급 또는 차상위계층 장학금 신청서, 가족관계증명서, 국민기초생활수급자 또는 차상위계층 증명서 소득 0~8분위 중 국가장학금 미수혜자 성적미달, 이수학점 미달, 수혜학기 초과 등 장학금 신청서 기타사항 가. 상기 기재된 서류 이외에 별도 서류 제출이 요구될 수 있음 나. 근로소득원천징수영수증/소득금액증명원(국세청 홈택스 또는 세무서 발급)/건강보험료납부확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보호자의 소득수준을 파악하기 위한 서류임. 보호자 명의의 2022년 기준 서류(퇴직인 경우 2023년)를 제출해야 하며 소득이 있는 보호자 모두 제출 필수임 다.\n 건강보험 자격득실확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보험자의 피부양자 여부를 확인하기 위한 서류임 라. 소득이 없는 경우에도 소득금액증명원 ‘소득금액 없음’ 내용 제출필수 마. 본인이 가족을 부양하는 경우와 기초생활수급 또는 차상위계층의 경우, 보호자를 본인으로 하는 가족관계증명서 제출 ※ 국가장학금 미신청자는 신청불가 사유 상세 기재및 관련 증빙자료 제출 요망 5. 선발방법: 시스템 신청 > 장학금 신청서 작성 > 학생지원과 서류제출 > 학생‧인재개발처 심사 및 선발 6. 신청방법: 시스템 신청 후 상기 제출서류 학생지원과(학생회관 2층) 오프라인 제출 - 덕성포털 > 차세대포털시스템 로그인 > 통합정보시스템 > 장학 > 장학금신청에서 신청 7. 참고사항 가. 장학금 신청서 작성 시 신청사유를 상세히 기재하시기 바랍니다.\n 나. 해당서류를 확인하여 완비 후 기간 내에 제출하여 주시기 바랍니다.\n (서류 미제출 시 선발 제외) 다.\n 지급받을 계좌 등록 방법: [덕성포털 - 차세대 포털시스템 로그인 - 통합정보시스템 - 학생서비스 - 학적 - 개인정보변경/지도교수확인] 페이지 계좌정보에 본인명의 계좌 입력 후 작업저장 라. 기타 문의: 학생지원과 교내장학담당 (02-901-8053) 붙임 장학사정관 장학금 신청서 양식 1부. 끝. \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1244&bIdx=672856&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:29:08.630",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12301,
+    "fields": {
+        "major": 9,
+        "title": "2023학년도 2학기 장학사정관 장학금 신청 안내",
+        "content": "안녕하세요, 철학전공입니다.\n 2023학년도 2학기 장학사정관 장학금 신청을 안내합니다.\n 1. 신청 및 서류제출 기간: 2023. 12. 5.(화) ~ 12. 20(수) 17시 [기한엄수] 2. 선발인원 및 장학금액: 등록금 범위 내 예산현황, 신청인원 등을 고려하여 추후 확정 3. 공통기준: 8학기 이내, 직전학기 평점 1.75이상, 국가장학금 미수혜자 4. 신청대상 및 제출서류(제출서류에 주민번호가 있는 경우, 뒷자리 '*'표기 자료 제출) 구 분 신청대상 공통서류 추가서류 소득 9~10분위 학생 또는 국가장학금 미신청자 중 사실상 가정형편 곤란자 긴급한 가계곤란 사정 (보호자의 갑작스런 퇴직, 실직, 부도, 사망, 재난재해 등) 1. 장학금 신청서 2. 가족관계증명서 3. 근로소득원천징수영수증 또는 소득금액 증명서 4. 건강보험료 납부확인서 5. 건강보험 자격득실확인서 실직, 퇴직-퇴직증명서 또는 고용보험수급확인서, 고용보험 피보험자격신고사실통지서 등 부도-폐업사실증명서 사망-사망진단서 생계를 같이하는 직계가족 중증질환-진단서, 진료비확인서 재난재해-재난재해를 증명할 수 있는 확인서 또는 화재(사고) 등에 따른 피해확인서 본인이 가족을 부양하는 경우 본인 소득금액 증명원, 본인 건강보험료 납부확인서 기초생활수급 또는 차상위계층 장학금 신청서, 가족관계증명서, 국민기초생활수급자 또는 차상위계층 증명서 소득 0 ~ 8분위 중 국가장학금 미수혜자 성적미달, 이수학점 미달, 수혜학기 초과 등 장학금 신청서 기타사항 가. 상기 기재된 서류 이외에 별도 서류 제출이 요구될 수 있음 나. 근로소득원천징수영수증/ 소득금액증명원(국세청 홈택스 또는 세무서 발급)/건강보험료납부확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보호자의 소득수준을 파악하기 위한 서류임. 보호자 명의의 2022년 기준 서류(퇴직인 경우 2023년)를 제출해야 하며 소득이 있는 보호자 모두 제출 필수임 다.\n 건강보험 자격득실확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보험자의 피부양자 여부를 확인하기 위한 서류임 라. 소득이 없는 경우에도 소득금액증명원 ‘소득금액 없음’ 내용 제출필수 마. 본인이 가족을 부양하는 경우와 기초생활수급 또는 차상위계층의 경우, 보호자를 본인으로 하는 가족관계증명서 제출 ※ 국가장학금 미신청자는 신청불가 사유 상세 기재 및 관련 증빙자료 제출 요망 5. 선발방법: 시스템 신청→장학금 신청서 작성→ 학생지원과 서류제출 → 학생‧인재개발처 심사 및 선발 6. 신청방법: 시스템 신청 후 상기 제출서류 학생지원과(학생회관 2층) 오프라인 제출 - 덕성포털> 차세대포털시스템 로그인> 통합정보시스템> 장학> 장학금신청에서 신청 7. 참고사항 가. 장학금 신청서 작성 시 신청사유를 상세히 기재하시기 바랍니다.\n 나. 해당서류를 확인하여 완비 후 기간 내에 제출하여 주시기 바랍니다.\n (서류 미제출 시 선발 제외) 다.\n 지급받을 계좌 등록 방법: [덕성포털-차세대 포털시스템 로그인-통합정보시스템-학생서비스-학적-개인정보변경/지도교수확인] 페이지 계좌정보에 본인명의 계좌 입력 후 작업저장 라. 기타 문의: 학생지원과 교내장학담당 (내선 8053) 붙 임: 장학사정관 장학금 신청서 양식 1부. 끝. * 교내 홈페이지 [장학]에서 같은 공지를 확인할 수 있습니다.\n https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=36&bIdx=672557&page=1&menuId=1059&bcIdx=0&searchCondition=SUBJECT&searchKeyword= \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1252&bIdx=673096&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:30:07.031",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12302,
+    "fields": {
+        "major": 17,
+        "title": "(재공지) 2023학년도 전기 (2024년 2월) 졸업요건 공지",
+        "content": "[교과적용년도 2023학년도 전기 (2024년 2월)] ※ 다음 졸업요건 중, 하나를 충족하면 된다.\n (1/1) [필수요건1] [선택요건1] 1. 논문 제출 (보고서) : 10쪽 이상 (표지, 목차, 참고문헌 제외하고 본문만으로 10쪽 이상) 1) 참고문헌, 주 작성에 유의, 인용한 자료는 참고문헌이나 주에서 반드시 출처를 밝혀야 함 2) 주제: 문헌정보학과 관련된 자유주제 3) 표절시 논문 패스 불가 (출처를 밝히지 않고 다른 사람의 논문을 그대로 제출하지 않도록) 4) APA 양식 준수 [선택요건2] 다음 기준 중, 하나를 충족하면 된다.\n 2. 영어 : TOEIC 700점 이상, TOFLE(CBT 203점/IBT 74점 이상), TEPS 600점, NEW TEPS 327점 이상 중 1개 3. 한자 : 한자능력검정 3급 이상 (12학번 이전 : 시행기관 상관없음/ 13학번 이후: [한국어문회, 한자교육진흥회, 대한검정회]만 인정) 4. 영어 회화 : TOEIC Speaking Level 6 (130-150점) 이상 또는 Opic IM 이상 5. 컴퓨터 : 컴퓨터활용능력 2급 이상 또는 이에 준하는 컴퓨터 관련 자격증 (활용능력 2급 이상, MOS MASTER, 정보처리 산업기사, 정보처리 기능사, 사무 자동화 산업기사) (위 1~5 항목 중 택 1) ※모든 자격증은 덕성여자대학교 재학 중에 취득한 것만 유효함. ※복수전공/제2전공자의 경우도 위의 졸업요건을 동일하게 적용한다.\n ※부전공자는 위의 졸업요건을 이수할 필요 없음. 기타 특이사항 ※ 취업과 관련하여 졸업을 해야 하는 학생들의 경우 학과 전체 교수들의 사정을 통하여 졸업요건 인정 여부 판단 안녕하세요, 문헌정보학전공입니다.\n 2023학년도 전기 문헌정보학전공 졸업요건을 위와 같이 공지합니다.\n 2023학년도 전기 졸업대상자는 덕성포털-졸업이수현황 조회를 통해 본인의 졸업요건 이수 현황을 반드시 확인하시기 바랍니다.\n 졸업요건 기간 비고 졸업논문 제출 기한 ~ 2023.12.28.(목) 15:00 선택요건 2 제출 기한 ~ 2023.12.21.(목) 15:00 원칙상 원본만 제출 이수 처리 작업 기간 2024.1월 중순 ~ 2024.1.18. (월) 일괄적으로 작업 예정 24.1.19 (화) 이후에 졸업요건 이수 구분이 변경되지 않은 학생은 과사무실로 문의 주시기 바랍니다.\n 과사무실 방문 전 먼저 과사무실로 전화하여 방문일정을 알려주시기 바랍니다.\n 방문 시를 제외한, 기타 문의 사항은 가급적 이메일로 연락 바랍니다.\n - 이메일: lis@duksung.ac.kr - 전화: 02)901-8291 - https://open.kakao.com/o/sCt5YaWf *통화 중 예외적인 경우에만 입장을 요청드립니다.\n 감사합니다.\n \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1200&bIdx=673436&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:33:13.216",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12303,
+    "fields": {
+        "major": 18,
+        "title": "2023학년도 2학기 장학사정관 장학금 신청 안내",
+        "content": "안녕하세요. 심리학전공입니다.\n 2023학년도 2학기 장학사정관 장학금 신청을 다음과 같이 안내하오니 참고 바랍니다.\n 1. 신청 및 서류제출 기간: 2023. 12. 5.(화) ~ 12. 20(수) 17시 [기한엄수] 2. 선발인원 및 장학금액: 등록금 범위 내 예산현황, 신청인원 등을 고려하여 추후 확정 3. 공통기준: 8학기 이내, 직전학기 평점 1.75이상, 국가장학금 미수혜자 4. 신청대상 및 제출서류(제출서류에 주민번호가 있는 경우, 뒷자리 '*'표기 자료 제출) 구 분 신청대상 공통서류 추가서류 소득 9~10분위 학생 또는 국가장학금 미신청자 중 사실상 가정형편 곤란자 긴급한 가계곤란 사정 (보호자의 갑작스런 퇴직, 실직, 부도, 사망, 재난재해 등) 1. 장학금 신청서 2. 가족관계증명서 3. 근로소득원천징수영수증 또는 소득금액 증명서 4. 건강보험료 납부확인서 5. 건강보험 자격득실확인서 실직, 퇴직-퇴직증명서 또는 고용보험수급확인서, 고용보험 피보험자격신고사실통지서 등 부도-폐업사실증명서 사망-사망진단서 생계를 같이하는 직계가족 중증질환-진단서, 진료비확인서 재난재해-재난재해를 증명할 수 있는 확인서 또는 화재(사고) 등에 따른 피해확인서 본인이 가족을 부양하는 경우 본인 소득금액 증명원, 본인 건강보험료 납부확인서 기초생활수급 또는 차상위계층 장학금 신청서, 가족관계증명서, 국민기초생활수급자 또는 차상위계층 증명서 소득 0~8분위 중 국가장학금 미수혜자 성적미달, 이수학점 미달, 수혜학기 초과 등 장학금 신청서 기타사항 가. 상기 기재된 서류 이외에 별도 서류 제출이 요구될 수 있음 나. 근로소득원천징수영수증/소득금액증명원(국세청 홈택스 또는 세무서 발급)/건강보험료납부확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보호자의 소득수준을 파악하기 위한 서류임. 보호자 명의의 2022년 기준 서류(퇴직인 경우 2023년)를 제출해야 하며 소득이 있는 보호자 모두 제출 필수임 다.\n 건강보험 자격득실확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보험자의 피부양자 여부를 확인하기 위한 서류임 라. 소득이 없는 경우에도 소득금액증명원 ‘소득금액 없음’ 내용 제출필수 마. 본인이 가족을 부양하는 경우와 기초생활수급 또는 차상위계층 의 경우, 보호자를 본인으로 하는 가족관계증명서 제출 ※ 국가장학금 미신청자는 신청불가 사유 상세 기재 및 관련 증빙자료 제출 요망 5. 선발방법: 시스템 신청→장학금 신청서 작성→ 학생지원과 서류제출 → 학생‧인재개발처 심사 및 선발 6. 신청방법: 시스템 신청 후 상기 제출서류 학생지원과(학생회관 2층) 오프라인 제출 - 덕성포털> 차세대포털시스템 로그인> 통합정보시스템> 장학> 장학금신청에서 신청 7. 참고사항 가. 장학금 신청서 작성 시 신청사유를 상세히 기재하시기 바랍니다.\n 나. 해당서류를 확인하여 완비 후 기간 내에 제출하여 주시기 바랍니다.\n (서류 미제출 시 선발 제외) 다.\n 지급받을 계좌 등록 방법: [덕성포털-차세대 포털시스템 로그인-통합정보시스템-학생서비스-학적-개인정보변경/지도교수확인] 페이지 계좌정보에 본인명의 계좌 입력 후 작업저장 라. 기타 문의: 학생지원과 교내장학담당 (내선 8053) 붙 임: 장학사정관 장학금 신청서 양식 1부. 끝. \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1204&bIdx=672760&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:33:36.940",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12304,
+    "fields": {
+        "major": 21,
+        "title": "[공지] 2023학년도 2학기 장학사정관 장학금 신청 안내",
+        "content": "1. 신청 및 서류제출 기간: 2023. 12. 5.(화) ~ 12. 20(수) 17시 [기한엄수] 2. 선발인원 및 장학금액: 등록금 범위 내 예산현황, 신청인원 등을 고려하여 추후 확정 3. 공통기준: 8학기 이내, 직전학기 평점 1.75이상, 국가장학금 미수혜자 4. 신청대상 및 제출서류(제출서류에 주민번호가 있는 경우, 뒷자리 '*'표기 자료 제출) 구 분 신청대상 공통서류 추가서류 소득 9~10분위 학생 또는 국가장학금 미신청자 중 사실상 가정형편 곤란자 긴급한 가계곤란 사정 (보호자의 갑작스런 퇴직, 실직, 부도, 사망, 재난재해 등) 1. 장학금 신청서 2. 가족관계증명서 3. 근로소득원천징수영수증 또는 소득금액 증명서 4. 건강보험료 납부확인서 5. 건강보험 자격득실확인서 실직, 퇴직-퇴직증명서 또는 고용보험수급확인서, 고용보험 피보험자격신고사실통지서 등 부도-폐업사실증명서 사망-사망진단서 생계를 같이하는 직계가족 중증질환-진단서, 진료비확인서 재난재해-재난재해를 증명할 수 있는 확인서 또는 화재(사고) 등에 따른 피해확인서 본인이 가족을 부양하는 경우 본인 소득금액 증명원, 본인 건강보험료 납부확인서 기초생활수급 또는 차상위계층 장학금 신청서, 가족관계증명서, 국민기초생활수급자 또는 차상위계층 증명서 소득 0~8분위 중 국가장학금 미수혜자 성적미달, 이수학점 미달, 수혜학기 초과 등 장학금 신청서 기타사항 가. 상기 기재된 서류 이외에 별도 서류 제출이 요구될 수 있음 나. 근로소득원천징수영수증/소득금액증명원(국세청 홈택스 또는 세무서 발급)/건강보험료납부확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보호자의 소득수준을 파악하기 위한 서류임. 보호자 명의의 2022년 기준 서류(퇴직인 경우 2023년)를 제출해야 하며 소득이 있는 보호자 모두 제출 필수임 다.\n 건강보험 자격득실확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보험자의 피부양자 여부를 확인하기 위한 서류임 라. 소득이 없는 경우에도 소득금액증명원 ‘소득금액 없음’ 내용 제출필수 마. 본인이 가족을 부양하는 경우와 기초생활수급 또는 차상위계층의 경우, 보호자를 본인으로 하는 가족관계증명서 제출 ※ 국가장학금 미신청자는 신청불가 사유 상세 기재 및 관련 증빙자료 제출 요망 5. 선발방법: 시스템 신청→장학금 신청서 작성→ 학생지원과 서류제출 →학생‧인재개발처 심사 및 선발 6. 신청방법: 시스템 신청 후 상기 제출서류 학생지원과(학생회관 2층) 오프라인 제출 - 덕성포털> 차세대포털시스템 로그인> 통합정보시스템> 장학> 장학금신청에서 신청 7. 참고사항 가. 장학금 신청서 작성 시 신청사유를 상세히 기재하시기 바랍니다.\n 나. 해당서류를 확인하여 완비 후 기간 내에 제출하여 주시기 바랍니다.\n(서류 미제출 시 선발 제외) 다.\n 지급받을 계좌 등록 방법: [덕성포털-차세대 포털시스템 로그인-통합정보시스템-학생서비스-학적-개인정보변경/지도교수확인] 페이지 계좌정보에 본인명의 계좌 입력 후 작업저장 라. 기타 문의: 학생지원과 교내장학담당 (내선 8053) \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1212&bIdx=672896&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:34:49.562",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12305,
+    "fields": {
+        "major": 23,
+        "title": "2023학년도 2학기 장학사정관 장학금 신청 안내",
+        "content": "2023학년도 2학기 장학사정관 장학금 신청 1. 신청 및 서류제출 기간: 2023. 12. 5.(화) ~ 12. 20(수) 17시 [기한엄수] 2. 선발인원 및 장학금액: 등록금 범위 내 예산현황, 신청인원 등을 고려하여 추후 확정 3. 공통기준: 8학기 이내, 직전학기 평점 1.75이상, 국가장학금 미수혜자 4. 신청대상 및 제출서류(제출서류에 주민번호가 있는 경우, 뒷자리 '*'표기 자료 제출) 구 분 신청대상 공통서류 추가서류 소득 9~10분위 학생 또는 국가장학금 미신청자 중 사실상 가정형편 곤란자 긴급한 가계곤란 사정 (보호자의 갑작스런 퇴직, 실직, 부도, 사망, 재난재해 등) 1. 장학금 신청서 2. 가족관계증명서 3. 근로소득원천징수영수증 또는 소득금액 증명서 4. 건강보험료 납부확인서 5. 건강보험 자격득실확인서 실직, 퇴직-퇴직증명서 또는 고용보험수급확인서, 고용보험 피보험자격신고사실통지서 등 부도-폐업사실증명서 사망-사망진단서 생계를 같이하는 직계가족 중증질환-진단서, 진료비확인서 재난재해-재난재해를 증명할 수 있는 확인서 또는 화재(사고) 등에 따른 피해확인서 본인이 가족을 부양하는 경우 본인 소득금액 증명원, 본인 건강보험료 납부확인서 기초생활수급 또는 차상위계층 장학금 신청서, 가족관계증명서, 국민기초생활수급자 또는 차상위계층 증명서 소득 0~8분위 중 국가장학금 미수혜자 성적미달, 이수학점 미달, 수혜학기 초과 등 장학금 신청서 기타사항 가. 상기 기재된 서류 이외에 별도 서류 제출이 요구될 수 있음 나. 근로소득원천징수영수증/소득금액증명원(국세청 홈택스 또는 세무서 발급)/건강보험료납부확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보호자의 소득수준을 파악하기 위한 서류임. 보호자 명의의 2022년 기준 서류(퇴직인 경우 2023년)를 제출해야 하며 소득이 있는 보호자 모두 제출 필수임 다.\n 건강보험 자격득실확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보험자의 피부양자 여부를 확인하기 위한 서류임 라. 소득이 없는 경우에도 소득금액증명원 ‘소득금액 없음’ 내용 제출필수 마. 본인이 가족을 부양하는 경우와 기초생활수급 또는 차상위계층 의 경우, 보호자를 본인으로 하는 가족관계증명서 제출 ※ 국가장학금 미신청자는 신청불가 사유 상세 기재 및 관련 증빙자료 제출 요망 5. 선발방법: 시스템 신청→장학금 신청서 작성→ 학생지원과 서류제출 → 학생‧인재개발처 심사 및 선발 6. 신청방법: 시스템 신청 후 상기 제출서류 학생지원과(학생회관 2층) 오프라인 제출 - 덕성포털> 차세대포털시스템 로그인> 통합정보시스템> 장학> 장학금신청에서 신청 7. 참고사항 가. 장학금 신청서 작성 시 신청사유를 상세히 기재하시기 바랍니다.\n 나. 해당서류를 확인하여 완비 후 기간 내에 제출하여 주시기 바랍니다.\n (서류 미제출 시 선발 제외) 다.\n 지급받을 계좌 등록 방법: [덕성포털-차세대 포털시스템 로그인-통합정보시스템-학생서비스-학적-개인정보변경/지도교수확인] 페이지 계좌정보에 본인명의 계좌 입력 후 작업저장 라. 기타 문의: 학생지원과 교내장학담당 (내선 8053) \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1216&bIdx=672576&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:35:37.514",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12306,
+    "fields": {
+        "major": 24,
+        "title": "[대한항공 C&D] : 2024년 상반기 신입사원 채용 (일반직) 채용",
+        "content": "\n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1224&bIdx=673356&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:36:01.427",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12307,
+    "fields": {
+        "major": 24,
+        "title": "2023학년도 2학기 장학사정관 장학금 신청 안내",
+        "content": "2023학년도 2학기 장학사정관 장학금 신청을 학생들에게 안내하여 주시기 바랍니다.\n 1. 신청 및 서류제출 기간: 2023. 12. 5.(화) ~ 12. 20(수) 17시 [기한엄수] 2. 선발인원 및 장학금액: 등록금 범위 내 예산현황, 신청인원 등을 고려하여 추후 확정 3. 공통기준: 8학기 이내, 직전학기 평점 1.75이상, 국가장학금 미수혜자 4. 신청대상 및 제출서류(제출서류에 주민번호가 있는 경우, 뒷자리 '*'표기 자료 제출) 5. 선발방법: 시스템 신청→장학금 신청서 작성→ 학생지원과 서류제출 → 학생‧인재개발처 심사 및 선발 6. 신청방법: 시스템 신청 후 상기 제출서류 학생지원과(학생회관 2층) 오프라인 제출 - 덕성포털> 차세대포털시스템 로그인> 통합정보시스템> 장학> 장학금신청에서 신청 7. 참고사항 가. 장학금 신청서 작성 시 신청사유를 상세히 기재하시기 바랍니다.\n 나. 해당서류를 확인하여 완비 후 기간 내에 제출하여 주시기 바랍니다.\n (서류 미제출 시 선발 제외) 다.\n 지급받을 계좌 등록 방법: [덕성포털-차세대 포털시스템 로그인-통합정보시스템-학생서비스-학적-개인정보변경/지도교수확인] 페이지 계좌정보에 본인명의 계좌 입력 후 작업저장 라. 기타 문의: 학생지원과 교내장학담당 (내선 8053) 붙 임: 장학사정관 장학금 신청서 양식 1부. 끝 \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1224&bIdx=672616&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:36:01.427",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12308,
+    "fields": {
+        "major": 25,
+        "title": "2023 도봉문화원-덕성여대 연합학술대회 '세대를 흐르는 지역문화' 홍보 요청",
+        "content": "지역협업센터에서는 도봉문화원과 함께 우리 대학 차미리사기념관 136호에서 연합 학술대회를 개최합니다.\n 가. 행사명: 세대를 흐르는 지역문화 나. 일 시: 2023.12.20.(수) 10:30 ~ 17:00 다.\n 장 소: 차미리사기념관 136호 라. 대 상: 우리 대학 구성원 및 일반인 마. 신 청 1) 우리대학구성원: 비교과통합관리시스템 신청 : 비교과통합관리시스템 신청(클릭) 2) 일반인: 구글폼 신청(클릭) 바. 기타사항 : 우리대학 학생들의 경우 비교과 마일리지 지급 가능한 행사임. 문의는 아래 포스터의 연락처로 문의바랍니다.\n 붙임 1. [혁신 23] 도봉문화원-덕성여대 연합 학술대회 포스터 1부. 끝. \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1228&bIdx=673296&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:36:25.535",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12309,
+    "fields": {
+        "major": 25,
+        "title": "2023학년도 2학기 장학사정관 장학금 신청 안내",
+        "content": "2023학년도 2학기 장학사정관 장학금 신청을 학생들에게 안내하여 주시기 바랍니다.\n 1. 신청 및 서류제출 기간: 2023. 12. 5.(화) ~ 12. 20(수) 17시 [기한엄수] 2. 선발인원 및 장학금액: 등록금 범위 내 예산현황, 신청인원 등을 고려하여 추후 확정 3. 공통기준: 8학기 이내, 직전학기 평점 1.75이상, 국가장학금 미수혜자 4. 신청대상 및 제출서류(제출서류에 주민번호가 있는 경우, 뒷자리 '*'표기 자료 제출) 구 분 신청대상 공통서류 추가서류 소득 9~10분위 학생 또는국가장학금 미신청자 중사실상 가정형편곤란자 긴급한 가계곤란 사정 (보호자의 갑작스런 퇴직, 실직, 부도, 사망, 재난재해 등) 1. 장학금 신청서 2. 가족관계증명서 3. 근로소득원천징수영수증 또는 소득금액 증명서 4. 건강보험료 납부확인서5. 건강보험 자격득실확인서 실직, 퇴직-퇴직증명서 또는 고용보험수급확인서, 고용보험 피보험자격신고사실통지서 등 부도-폐업사실증명서 사망-사망진단서 생계를 같이하는 직계가족 중증질환-진단서, 진료비확인서 재난재해-재난재해를 증명할 수 있는 확인서 또는 화재(사고) 등에 따른 피해확인서 본인이 가족을 부양하는 경우 본인 소득금액 증명원, 본인 건강보험료 납부확인서 기초생활수급 또는 차상위계층 장학금 신청서, 가족관계증명서, 국민기초생활수급자 또는 차상위계층 증명서 소득 0~8분위 중국가장학금 미수혜자 성적미달, 이수학점 미달, 수혜학기 초과 등 장학금 신청서 기타사항 가. 상기 기재된 서류 이외에 별도 서류 제출이 요구될 수 있음 나. 근로소득원천징수영수증/소득금액증명원(국세청 홈택스 또는 세무서 발급)/건강보험료납부확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보호자의 소득수준을 파악하기 위한 서류임. 보호자 명의의 2022년 기준 서류(퇴직인 경우 2023년)를 제출해야 하며 소득이 있는 보호자 모두 제출 필수임 다.\n 건강보험 자격득실확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보험자의 피부양자 여부를 확인하기 위한 서류임 라. 소득이 없는 경우에도 소득금액증명원 ‘소득금액 없음’ 내용 제출필수 마. 본인이 가족을 부양하는 경우와 기초생활수급 또는 차상위계층의 경우, 보호자를 본인으로 하는 가족관계증명서 제출 ※ 국가장학금 미신청자는 신청불가 사유 상세 기재 및 관련 증빙자료 제출 요망 6. 신청방법: 시스템 신청 후 상기 제출서류 학생지원과(학생회관 2층) 오프라인 제출 - 덕성포털> 차세대포털시스템 로그인> 통합정보시스템> 장학> 장학금신청에서 신청 7. 참고사항 가. 장학금 신청서 작성 시 신청사유를 상세히 기재하시기 바랍니다.\n 나. 해당서류를 확인하여 완비 후 기간 내에 제출하여 주시기 바랍니다.\n(서류 미제출 시 선발 제외) 다.\n 지급받을 계좌 등록 방법: [덕성포털-차세대 포털시스템 로그인-통합정보시스템-학생서비스-학적-개인정보변경/지도교수확인] 페이지 계좌정보에 본인명의 계좌 입력 후 작업저장 라. 기타 문의: 학생지원과 교내장학담당 (내선 8053) 붙 임: 장학사정관 장학금 신청서 양식 1부. 끝. \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1228&bIdx=673276&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:36:25.535",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12310,
+    "fields": {
+        "major": 25,
+        "title": "2023 도봉문화원-덕성여대 연합학술대회 '세대를 흐르는 지역문화'  안내",
+        "content": "1. 행사명: 세대를 흐르는 지역문화 2. 일시: 2023.12.20.(수) 10:30 ~ 17:00 3. 장소: 차미리사기념관 136호 4. 신청: 딜라이트 신청 >> 바로가기 클릭 \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1228&bIdx=673176&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:36:25.535",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12311,
+    "fields": {
+        "major": 25,
+        "title": "2023학년도 디지털프로젝트1, 2 최종보고서 제출 안내",
+        "content": "[2023년도 디지털프로젝트1, 2 최종보고서 제출 안내] 1. 제출처: 학과이메일(digitalmedia@duksung.ac.kr) (데이터가 무거우면 USB에 담아서 제출) ※ 데이터가 큰 경우 구글드라이브 등의 클라우드를 이용하여 링크 공유 2. 제출기한: 12월 11일(월) 낮 12시까지 3. 제출내용: 가. 매월발표자료: PPT 또는 PDF (주제가 중간에 변경되었다하더라도 파일 따로 만들지 마시고, 발표했던대로 제출하시면 됩니다.\n) 나. 시연영상 (졸업전시회 끝나고 사용했던 영상을 제출하면됩니다.\n) 다.\n 참고자료가 있었으면 넣으시면 됩니다.\n 라. 작품 프로젝트 파일 혹은 소스코드 파일에는 작업에 사용한 모든 소스를 넣으시면 됩니다.\n 마. 최종보고서는 샘플양식을 첨부합니다.\n 참조하세요. 바. 최종 발표 PPT는 졸업전시회때 한 것을 제출하시면 됩니다.\n 사. 논문이 있으신 분은 논문을 제출하시면됩니다.\n 아. 제출 자료들은 아래 예시 이미지를 참고하시기 바랍니다.\n \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1228&bIdx=667476&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:36:25.535",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12312,
+    "fields": {
+        "major": 26,
+        "title": "[안내] 2023학년도 2학기 장학사정관 장학금 신청 안내",
+        "content": "1. 신청 및 서류제출 기간: 2023. 12. 5.(화) ~ 12. 20(수) 17시 [기한엄수] 2. 선발인원 및 장학금액: 등록금 범위 내 예산현황, 신청인원 등을 고려하여 추후 확정 3. 공통기준: 8학기 이내, 직전학기 평점 1.75이상, 국가장학금 미수혜자 4. 신청대상 및 제출서류(제출서류에 주민번호가 있는 경우, 뒷자리 '*'표기 자료 제출) 구 분 신청대상 공통서류 추가서류 소득 9~10분위 학생 또는 국가장학금 미신청자 중 사실상 가정형편 곤란자 긴급한 가계곤란 사정 (보호자의 갑작스런 퇴직, 실직, 부도, 사망, 재난재해 등) 1. 장학금 신청서 2. 가족관계증명서 3. 근로소득원천징수영수증 또는 소득금액 증명서 4. 건강보험료 납부확인서 5. 건강보험 자격득실확인서 실직, 퇴직-퇴직증명서 또는 고용보험수급확인서, 고용보험 피보험자격신고사실통지서 등 부도-폐업사실증명서 사망-사망진단서 생계를 같이하는 직계가족 중증질환-진단서, 진료비확인서 재난재해-재난재해를 증명할 수 있는 확인서 또는 화재(사고) 등에 따른 피해확인서 본인이 가족을 부양하는 경우 본인 소득금액 증명원, 본인 건강보험료 납부확인서 기초생활수급 또는 차상위계층 장학금 신청서, 가족관계증명서, 국민기초생활수급자 또는 차상위계층 증명서 소득 0~8분위 중 국가장학금 미수혜자 성적미달, 이수학점 미달, 수혜학기 초과 등 장학금 신청서 기타사항 가. 상기 기재된 서류 이외에 별도 서류 제출이 요구될 수 있음 나. 근로소득원천징수영수증/소득금액증명원(국세청 홈택스 또는 세무서 발급)/건강보험료납부확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보호자의 소득수준을 파악하기 위한 서류임. 보호자 명의의 2022년 기준 서류(퇴직인 경우 2023년)를 제출해야 하며 소득이 있는 보호자 모두 제출 필수임 다.\n 건강보험 자격득실확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보험자의 피부양자 여부를 확인하기 위한 서류임 라. 소득이 없는 경우에도 소득금액증명원 ‘소득금액 없음’ 내용 제출필수 마. 본인이 가족을 부양하는 경우와 기초생활수급 또는 차상위계층 의 경우, 보호자를 본인으로 하는 가족관계증명서 제출 ※ 국가장학금 미신청자는 신청불가 사유 상세 기재 및 관련 증빙자료 제출 요망 5. 선발방법: 시스템 신청→장학금 신청서 작성→ 학생지원과 서류제출 → 학생‧인재개발처 심사 및 선발 6. 신청방법: 시스템 신청 후 상기 제출서류 학생지원과(학생회관 2층) 오프라인 제출 - 덕성포털> 차세대포털시스템 로그인> 통합정보시스템> 장학> 장학금신청에서 신청 7. 참고사항 가. 장학금 신청서 작성 시 신청사유를 상세히 기재하시기 바랍니다.\n 나. 해당서류를 확인하여 완비 후 기간 내에 제출하여 주시기 바랍니다.\n (서류 미제출 시 선발 제외) 다.\n 지급받을 계좌 등록 방법: [덕성포털-차세대 포털시스템 로그인-통합정보시스템-학생서비스-학적-개인정보변경/지도교수확인] 페이지 계좌정보에 본인명의 계좌 입력 후 작업저장 라. 기타 문의: 학생지원과 교내장학담당 (내선 8053) 붙 임: 장학사정관 장학금 신청서 양식 1부. 끝. \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1276&bIdx=672696&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:36:49.314",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12313,
+    "fields": {
+        "major": 30,
+        "title": "2023학년도 2학기 장학사정관 장학금 신청 안내",
+        "content": "안녕하세요, 식품영양학전공 조교 입니다.\n 2023학년도 2학기 장학사정관 장학금 신청 안내합니다.\n 신청하시기 바랍니다.\n - 아 래 - 1. 신청 및 서류제출 기간: 2023. 12. 5.(화) ~ 12. 20(수) 17시 [기한엄수] 2. 선발인원 및 장학금액: 등록금 범위 내 예산현황, 신청인원 등을 고려하여 추후 확정 3. 공통기준: 8학기 이내, 직전학기 평점 1.75이상, 국가장학금 미수혜자 4. 신청대상 및 제출서류(제출서류에 주민번호가 있는 경우, 뒷자리 '*'표기 자료 제출) 구 분 신청대상 공통서류 추가서류 소득 9~10분위 학생 또는 국가장학금 미신청자 중 사실상 가정형편 곤란자 긴급한 가계곤란 사정 (보호자의 갑작스런 퇴직, 실직, 부도, 사망, 재난재해 등) 1. 장학금 신청서 2. 가족관계증명서 3. 근로소득원천징수영수증 또는 소득금액 증명서 4. 건강보험료 납부확인서 5. 건강보험 자격득실확인서 실직, 퇴직-퇴직증명서 또는 고용보험수급확인서, 고용보험 피보험자격신고사실통지서 등 부도-폐업사실증명서 사망-사망진단서 생계를 같이하는 직계가족 중증질환-진단서, 진료비확인서 재난재해-재난재해를 증명할 수 있는 확인서 또는 화재(사고) 등에 따른 피해확인서 본인이 가족을 부양하는 경우 본인 소득금액 증명원, 본인 건강보험료 납부확인서 기초생활수급 또는 차상위계층 장학금 신청서, 가족관계증명서, 국민기초생활수급자 또는 차상위계층 증명서 소득 0~8분위 중 국가장학금 미수혜자 성적미달, 이수학점 미달, 수혜학기 초과 등 장학금 신청서 기타사항 가. 상기 기재된 서류 이외에 별도 서류 제출이 요구될 수 있음 나. 근로소득원천징수영수증/소득금액증명원(국세청 홈택스 또는 세무서 발급)/건강보험료납부확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보호자의 소득수준을 파악하기 위한 서류임. 보호자 명의의 2022년 기준 서류(퇴직인 경우 2023년)를 제출해야 하며 소득이 있는 보호자 모두 제출 필수임 다.\n 건강보험 자격득실확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보험자의 피부양자 여부를 확인하기 위한 서류임 라. 소득이 없는 경우에도 소득금액증명원 ‘소득금액 없음’ 내용 제출필수 마. 본인이 가족을 부양하는 경우와 기초생활수급 또는 차상위계층 의 경우, 보호자를 본인으로 하는 가족관계증명서 제출 ※ 국가장학금 미신청자는 신청불가 사유 상세 기재 및 관련 증빙자료 제출 요망 5. 선발방법: 시스템 신청→장학금 신청서 작성→ 학생지원과 서류제출 → 학생‧인재개발처 심사 및 선발 6. 신청방법: 시스템 신청 후 상기 제출서류 학생지원과(학생회관 2층) 오프라인 제출 - 덕성포털> 차세대포털시스템 로그인> 통합정보시스템> 장학> 장학금신청에서 신청 7. 참고사항 가. 장학금 신청서 작성 시 신청사유를 상세히 기재하시기 바랍니다.\n 나. 해당서류를 확인하여 완비 후 기간 내에 제출하여 주시기 바랍니다.\n (서류 미제출 시 선발 제외) 다.\n 지급받을 계좌 등록 방법: [덕성포털-차세대 포털시스템 로그인-통합정보시스템-학생서비스-학적-개인정보변경/지도교수확인] 페이지 계좌정보에 본인명의 계좌 입력 후 작업저장 라. 기타 문의: 학생지원과 교내장학담당 (내선 8053) 붙 임: 장학사정관 장학금 신청서 양식 1부. 끝. \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1292&bIdx=672636&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:38:24.436",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12314,
+    "fields": {
+        "major": 31,
+        "title": "[취업]2024년 겨울방학 KB국민은행 대학생 디지털 서포터즈 채용",
+        "content": "안녕하세요. 정보통계학전공 학과실 입니다.\n 2024년 겨울방학 KB국민은행 대학생 디지털 서포터즈 채용 관련 안내해 드립니다.\n 관심있는 학생들의 많은 참여부탁드립니다.\n 아래 관련링크 누르기 KB국민은행 채용정보 - 2024년 겨울방학 KB국민은행 대학생 디지털 서포터즈 채용 (incruit.com) \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1284&bIdx=672758&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:38:48.207",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12315,
+    "fields": {
+        "major": 32,
+        "title": "2023학년도 2학기 장학사정관 장학금 신청 안내 (~23.12.20)",
+        "content": "2023학년도 2학기 장학사정관 장학금 신청기간이오니 해당 학생들은 기한 내 신청하여 주시길 바랍니다.\n 1. 신청 및 서류제출 기간: 2023. 12. 5.(화) ~ 12. 20(수) 17시 [기한엄수] 2. 선발인원 및 장학금액: 등록금 범위 내 예산현황, 신청인원 등을 고려하여 추후 확정 3. 공통기준: 8학기 이내, 직전학기 평점 1.75이상, 국가장학금 미수혜자 4. 신청대상 및 제출서류(제출서류에 주민번호가 있는 경우, 뒷자리 '*'표기 자료 제출) 구 분 신청대상 공통서류 추가서류 소득 9~10분위 학생 또는 국가장학금 미신청자 중 사실상 가정형편 곤란자 긴급한 가계곤란 사정 (보호자의 갑작스런 퇴직, 실직, 부도, 사망, 재난재해 등) 1. 장학금 신청서 2. 가족관계증명서 3. 근로소득원천징수영수증 또는 소득금액 증명서 4. 건강보험료 납부확인서 5. 건강보험 자격득실확인서 실직, 퇴직-퇴직증명서 또는 고용보험수급확인서, 고용보험 피보험자격신고사실통지서 등 부도-폐업사실증명서 사망-사망진단서 생계를 같이하는 직계가족 중증질환-진단서, 진료비확인서 재난재해-재난재해를 증명할 수 있는 확인서 또는 화재(사고) 등에 따른 피해확인서 본인이 가족을 부양하는 경우 본인 소득금액 증명원, 본인 건강보험료 납부확인서 기초생활수급 또는 차상위계층 장학금 신청서, 가족관계증명서, 국민기초생활수급자 또는 차상위계층 증명서 소득 0~8분위 중 국가장학금 미수혜자 성적미달, 이수학점 미달, 수혜학기 초과 등 장학금 신청서 기타사항 가. 상기 기재된 서류 이외에 별도 서류 제출이 요구될 수 있음 나. 근로소득원천징수영수증/소득금액증명원(국세청 홈택스 또는 세무서 발급)/건강보험료납부확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보호자의 소득수준을 파악하기 위한 서류임. 보호자 명의의 2022년 기준 서류(퇴직인 경우 2023년)를 제출해야 하며 소득이 있는 보호자 모두 제출 필수임 다.\n 건강보험 자격득실확인서(국민건강보험공단 지사 또는 홈페이지 발급)는 보험자의 피부양자 여부를 확인하기 위한 서류임 라. 소득이 없는 경우에도 소득금액증명원 ‘소득금액 없음’ 내용 제출필수 마. 본인이 가족을 부양하는 경우와 기초생활수급 또는 차상위계층 의 경우, 보호자를 본인으로 하는 가족관계증명서 제출 ※ 국가장학금 미신청자는 신청불가 사유 상세 기재 및 관련 증빙자료 제출 요망 5. 선발방법: 시스템 신청→장학금 신청서 작성→ 학생지원과 서류제출 → 학생‧인재개발처 심사 및 선발 6. 신청방법: 시스템 신청 후 상기 제출서류 학생지원과(학생회관 2층) 오프라인 제출 - 덕성포털> 차세대포털시스템 로그인> 통합정보시스템> 장학> 장학금신청에서 신청 7. 참고사항 가. 장학금 신청서 작성 시 신청사유를 상세히 기재하시기 바랍니다.\n 나. 해당서류를 확인하여 완비 후 기간 내에 제출하여 주시기 바랍니다.\n (서류 미제출 시 선발 제외) 다.\n 지급받을 계좌 등록 방법: [덕성포털-차세대 포털시스템 로그인-통합정보시스템-학생서비스-학적-개인정보변경/지도교수확인] 페이지 계좌정보에 본인명의 계좌 입력 후 작업저장 라. 기타 문의: 학생지원과 교내장학담당 (내선 8053) \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1288&bIdx=672716&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-05T18:39:17.949",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12316,
+    "fields": {
+        "major": 2,
+        "title": "계속수학·학위유예 신청 기간 및 방법",
+        "content": "계속수학·학위유예 신청 기간 및 방법 가. 신청기간: 2024. 1. 25.(목) 10:00 ~ 1. 30.(화) 23:59 [덕성포털] 나. 신청방법: 덕성포털 -> 학생서비스 -> 졸업 -> 계속수학·학위유예신청 다.\n 참고사항 1) 최종 졸업사정 결과대로 졸업사정진행(별도신청 필요없음) - 졸업 합격일 경우 졸업, 수료 합격일 경우 수료, 졸업 불합격일 경우 계속수학으로 처리 2) 학적변동을 희망하는 경우에만 신청 - 졸업 합격일 경우 : '학위유예' 또는 '계속수학' 신청 가능 - 수료 합격일 경우 : '계속수학' 신청 가능 ※수료생은 더 이상 수강신청이 불가하기에 학과별 졸업요건 중 이수해야할 과목 미이수인 학생에게는 '계속수학'신청 안내 필요 - 졸업 불합격일 경우 : 신청이 불가능하며 계속수학으로 처리 라. 학사학위취득유예(학위유예)와 수료의 차이 1)‘학위유예’란 소정의 졸업요건을 모두 충족하여 졸업이 가능하지만 이를 유예하는 경우이며 '수료’란 졸업에 필요한 학점은 모두 충족하였으나 학과별 졸업요건을 미이수한 경우 2) 유예생 및 수료생 모두 수강의 의무가 없으나 졸업신청시 유예생의 경우 졸업 신청 과 함께 해당 학기에 졸업 가능하며 수료생의 경우 졸업신청 후 학과별 졸업요건을 이수하여 졸업이 가능함 *유예생 및 수료생은 모두 졸업하고자하는 학기에 포털에서 졸업신청을 해야 졸업 사정대상자가 됨(재학연한 12학기 이내에 졸업신청) \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1166&bIdx=674076&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-06T23:38:04.090",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12317,
+    "fields": {
+        "major": 2,
+        "title": "대한항공 C&D 2024년 상반기 신입사원 채용 (일반직) 채용 공고",
+        "content": "대한항공 C&D는 항공기내식/기내면세품 공급 사업을 운영하는 중견기업으로, 현재 대한항공 포함 국내외 27개 항공사에 기내식 및 기내서비를 공급하고 있으며, 세계 1위 항공 기내면세점을 운영하고 있습니다.\n 2024년 상반기 신입사원 채용 (일반직)을 실시하여 공고 등재 요청드립니다.\n ㅇ 공고명 : 2024년 상반기 신입사원 채용 (일반직) ㅇ 채용구분 : 신입 (정규직) ㅇ 채용인원 : 0명 ㅇ 급여 및 복리후생 : 연 5,000만원 + 복지포인트 연 240만원 별도 ㅇ 접수기간 : 2023.12.4 18:00 ~ 2023.12.27 00:00 ㅇ 접수방법 : 채용홈페이지 온라인 접수 ㅇ 문의 : 대한항공씨앤디서비스 인사담당자 (recruit@koreanaircnd.com) 구분 내용 공고명 2024년 상반기 신입사원 채용 (일반직) 공고 접수기간 2023.12.4 18:00 ~ 2023.12.27 00:00 공고 URL https://koreanaircnd.recruiter.co.kr/app/jobnotice/view?systemKindCode=MRS2&jobnoticeSn=164421 공고 파일첨부 24년 상반기 공채 final.png \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1166&bIdx=673996&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-06T23:38:04.090",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12318,
+    "fields": {
+        "major": 3,
+        "title": "[중어중문학전공] 2023학년도 전기(2024년 2월) 졸업예정자 계속수학 · 학위유예 신청 안내 필독",
+        "content": "안녕하세요, 중문과입니다.\n 2023학년도 전기(2024년 2월) 졸업예정자 계속수학 · 학위유예 신청에 대한 진행 안내드립니다.\n 관련하여 재학생에 대한 계속수학 및 학위유예 내용 및 기수료생들에 대한 졸업 신청대상자들은 필히 아래 안내 내용을 확인해주시기 바랍니다.\n 1. 신청대상 : 2023학년도 전기 졸업예정자(8학기 이상 모든 재학생 및 수료생) ※ 복수전공/제2전공 이수 예정자 및 조기졸업 신청자 포함 2. 재학생 계속수학·학위유예 신청 기간 및 방법 가. 신청기간 : 2024. 1. 25.(목) 10:00 ~ 1. 30.(일) 23:59 [덕성포털] ※ 기수료생 졸업신청 기간 : 2023. 9. 13(수) 09:00부터 ~ 24. 1. 19(금) 23:59까지 [덕성포털] 나. 신청방법 : 덕성포털 -> 학생서비스 -> 졸업 -> 계속수학·학위유예신청 ※ 메뉴위치 : [덕성포털 → 통합정보시스템 → 졸업 → 졸업이수현황조회] ※ 확인방법 : 조회시 학과별 졸업요건이 ‘Y’ 일 경우 이수처리 완료 다.\n 참고사항 1) 최종 졸업사정 결과대로 졸업사정진행(별도신청 필요없음) - 졸업 합격일 경우 졸업, 수료 합격일 경우 수료, 졸업 불합격일 경우 계속수학으로 처리 2) 학적변동을 희망하는 경우에만 신청 - 졸업 합격일 경우 : '학위유예' 또는 '계속수학' 신청 가능 - 수료 합격일 경우 : '계속수학' 신청 가능 ※ 수료생은 더 이상 수강신청이 불가하기에 학과별 졸업요건 중 이수해야할 과목 미이수인 학생에게는 '계속수학'신청 안내 필요 - 졸업 불합격일 경우 : 신청이 불가능하며 계속수학으로 처리 라. 학사학위취득유예(학위유예)와 수료의 차이 1)‘학위유예’란 소정의 졸업요건을 모두 충족하여 졸업이 가능하지만 이를 유예하는 경우이며 '수료’란 졸업에 필요한 학점은 모두 충족하였으나 학과별 졸업요건을 미이수한 경우 2) 유예생 및 수료생 모두 수강의 의무가 없으나 졸업신청시 유예생의 경우 졸업신청과 함께 해당 학기에 졸업 가능하며 수료생의 경우 졸업신청 후 학과별 졸업요건을 이수하여 졸업이 가능함 ※ 유예생 및 수료생은 모두 졸업하고자하는 학기에 포털에서 졸업신청을 해야 졸업 사정대상자가 됨(재학연한 12학기 이내에 졸업신청) \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1236&bIdx=673776&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-06T23:38:38.937",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12319,
+    "fields": {
+        "major": 5,
+        "title": "[채용공고] 대한항공 C&D : 2024년 상반기 신입사원 채용 (일반직) 채용 공고",
+        "content": "Bonjour! 불어불문학전공입니다.\n 대한항공에서 C&D 신입사원 채용을 진행한다고 합니다.\n 자세한 내용은 아래의 로고 클릭 또는 이미지를 통하여 확인해 주시기 바랍니다.\n ------------------------------------------------------------------------------------------------ ◀ Click 채용 공고 홈페이지 \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1170&bIdx=674096&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-06T23:39:50.681",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12320,
+    "fields": {
+        "major": 5,
+        "title": "한강, 佛 (프랑스) 4대 문학상 '메디치상' 수상",
+        "content": "한강,佛 4대 문학상 '메디치상' 수상 장편소설 '작별하지 않는다' 제주도 4·3 사건 다룬 작품 2014년부터 7년간 집필 한국 작가 작품으로는 처음 리디아 조르즈와 공동 수상 소설가 한강 (53)이 프랑스 4대 문학상으로 꼽히는 메디치 외국문학상을 수상했다.\n 한국 작가의 작품이 메디치 외국문학상을 받은 건 처음이다.\n 9일 메디치 문학상 심사위원단은 프랑스 파리 레스토랑 '메디테라네'에서 한강의 장편 소설 '작별하지 않는다'를 포트루갈 소설가 리디아 조르즈의 '연민 (Misericordia)' 과 함께 메디치 외국문학상 공동 수상작으로 선정했다고 밝혔다.\n 이 작품은 지난 8월 프랑스에서 최경한 · 피에르 비주의 번역으로 '불가능한 작별 (Impossibles adieux)' 이라는 제목으로 출간됐다.\n 1948년 제정된 메디치상을 신선하고 실험적인 작품에 주어지는 젊은 문학상으로 공쿠르상, 르노도상, 페미나상과 함께 프랑스 4대 문학상으로 꼽힌다.\n 한강 작가가 수상한 메디치 외국문학상은 1970년 제정 됐으며 밀란 쿤데라, 움베르토 에코, 폴 오스터, 오르한 파무크 등 세계적인 작가들이 과거 주요 수상자로 상금은 1000유로 (약 140만원)다.\n '작별하지 않는다'는 한강이 2016년 맨부커상을 받은 뒤 5년 만인 2021년에 발표한 장편소설이다.\n 한국 현대사의 비극인 제주도 4·3 사건을 세 여성의 관점으로 그려낸 소설로, 소설가인 주인공 경하가 손가락이 잘리는 사고를 당한 친구 인선의 제주도 집에 가서 어머니 정심의 기억에 의존해 아픈 과거사를 되짚는 이야기를 다룬다.\n 한강은 2014년 여름에 이 작품의 집필을 시작해 7년 만에 완성했다.\n 작가 자신이 \" 이 소설을 포기하지 않음으로써 겨우 자신을 지켜냈다.\n 이 소설이 저를 포기하지 않고 지켜준 것 같기도 하다\" 고 할 만큼 심혈을 기울여 쓴 것으로 알려졌다.\n 출처 : 매일경제 ｜ 한강,佛 4대 문학상 '메디치상' 수상 ｜ 김형주 기자 본문 : https://n.news.naver.com/article/009/0005212738?lfrom=kakao \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1170&bIdx=664217&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-06T23:39:50.681",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12321,
+    "fields": {
+        "major": 7,
+        "title": "[학사] 2023학년도 전기 졸업예정자 계속수학 · 학위유예 신청 안내",
+        "content": "안녕하세요, 스페인어전공입니다.\n 2023학년도 전기(2024년 2월 졸업) 졸업예정자의 계속수학 · 학위유예 신청을 다음과 같이 진행하오니 기한 내 신청하시기 바랍니다.\n 1. 신청대상: 2023학년도 전기 졸업예정자(8학기 이상 모든 재학생 및 수료생) ※ 복수전공/제2전공 이수 예정자 및 조기졸업 신청자 포함 2. 2023학년도 전기 졸업대상자 최종 졸업사정자료 배부: 2024.1.25.(목) ~ 1.26.(금) - 소속학생 중 계속수학판정자(불합격)에게 전공에서 이메일 발송 3. 계속수학 · 학위유예 신청 기간 및 방법 가. 신청기간: 2024. 1. 25.(목) 10:00 ~ 1. 30.(화) 23:59 [덕성포털] 나. 신청방법: 덕성포털 > 학생서비스 > 졸업 > 계속수학 · 학위유예신청 다.\n 참고사항 1) 최종 졸업사정 결과대로 졸업사정진행(별도신청 필요없음) - 졸업 합격일 경우 졸업, 수료 합격일 경우 수료, 졸업 불합격일 경우 계속수학으로 처리 2) 학적변동을 희망하는 경우에만 신청 - 졸업 합격일 경우: '학위유예' 또는 '계속수학' 신청 가능 - 수료 합격일 경우: '계속수학' 신청 가능 ※ 수료생은 더 이상 수강신청이 불가하기에 학과별 졸업요건 중 이수해야 할 과목 미이수인 경우 '계속수학' 신청 필요 - 졸업 불합격일 경우: 신청이 불가능하며 계속수학으로 처리 라. 학사학위취득유예(학위유예)와 수료의 차이 1) '학위유예'란 소정의 졸업요건을 모두 충족하여 졸업이 가능하지만 이를 유예하는 경우이며 '수료'란 졸업에 필요한 학점은 모두 충족하였으나 학과별 졸업요건을 미이수한 경우 2) 유예생 및 수료생 모두 수강의 의무가 없으나 졸업신청시 유예생의 경우 졸업 신청과 함께 해당 학기에 졸업 가능하며 수료생의 경우 졸업신청 후 학과별 졸업요건을 이수하여 졸업이 가능함 ※ 유예생 및 수료생은 모두 졸업하고자 하는 학기에 포털에서 졸업신청을 해야 졸업사정대상자가 됨(재학연한 12학기 이내에 졸업신청) \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1244&bIdx=673856&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-06T23:41:06.462",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12322,
+    "fields": {
+        "major": 28,
+        "title": "[공지]2024년 2월 졸업예정자 관련 공지",
+        "content": "졸업예정자의 계속수학 및 학위유예 신청 등 관련 공지입니다.\n 1. 신청 대상: 2023학년도 전기 졸업예정자(8학기 이상 모든 재학생 및 수료생) *복수전공/제2전공 이수 예정자 및 조기졸업 신청자 포함 2. 계속수학 및 학위유예 신청 기간 및 방법 - 기간: 2024.01.25(목) 10:00 ~ 01.30(화) 23:59 - 방법: 포털 → 학생서비스 → 졸업 → 계속수학 및 학위유에 신청 - 참고사항 1) 최종 졸업사정 결과대로 졸업사정진행(별도 신청 X) : 졸업 합격일 경우 졸업, 수료 합격일 경우 수료, 졸업 불합격일 경우 계속수학으로 처리 2) 학적변동을 희망하는 경우에만 신청 ☆ 졸업 합격일 경우: '학위유예' 또는 '계속수학' 신청 가능 ☆ 수료 합격일 경우: '계속수학' 신청 가능 / 수료생은 더 이상 수강신청 불가하므로 학과별 졸업요건 중 이수가 필요한 과목이 있을 경우 '계속수학' 신청 필요 3) 학위유예생 및 수료생은 모두 졸업하고자 하는 학기에 포털에서 졸업신청을 해야 졸업대상자가 됨 3. 졸업 요건 제출일자: ~12.29(금) \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1272&bIdx=673597&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-06T23:53:47.462",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12323,
+    "fields": {
+        "major": 32,
+        "title": "[채용-공고] 덕산종합과학 2023년 신규 직원 채용 공고",
+        "content": "덕산종합과학에서 2023년 신규 직원을 다음과 같이 채용한다고 하니, 관심 있으신 학생분들은 화학전공 사무실로 연락 주시기 바랍니다.\n Tel) 02-901-8351 Mail) chemi@duksung.ac.kr ★ 채용분야 및 지원자격 1. 쇼핑몰 CS 고객상담 및 쇼핑몰에 관련된 전반적인 업무 관리 분야 ★ 근무조건 1. 근무일시 : 주5일제 (월~금) 오전 9시 ~ 오후 6시 30분 2. 급여 : 초봉 3000만원 3. 근무지역 : 서울시 동대문구 왕산로 19나길 3, 태종빌딩 2층 4. 월차가능 / 식비지원 / 내근 100% / 자율복장 5. 덕성여대 30년 납품 ★ 전형절차 서류심사 – 면접심사 - 최종합격 ★ 경영이념 덕산종합과학은 기업체, 대학, 공공기관 등의 연구실,실험실,생산 현장에서 사용되는 각종 실험기구,시약,연구 및 각종 사무용품, 공구등 전반적인 품목들에 대하여 양질의 우수한제품을 경쟁력 있는 가격으로 공급하는 업체입니다 덕산종합과학은 실험기기,시약,연구관련 분야의 전문성을 가진 인력들로 구성된 회사로 관련 업계에 오랜 기간 종사하면서 축적된 기술과 노하우를 바탕으로 하여 최고로 만족할수 있도록 최선의 노력을 하는 회사입니다 덕산종합과학은 실힘기기 유통 및 판매 분야의 오랜 노하우를 바탕으로 다양한 상품,공정한 가격,정확한배송으로 다양한 고객 니즈를 만족시키고 고객중심의 토탈 서비스의 실현을 위해 투명경영,윤리경영을 바탕으로 보다 가치있는 서비스와 지속적인 혁신을 노력하는 회사입니다 \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1288&bIdx=673636&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-06T23:55:55.955",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12324,
+    "fields": {
+        "major": 12,
+        "title": "[경영학전공] 2023년 전기(2024학년 2월) 졸업요건 및 제출 안내",
+        "content": "안녕하세요, 경영학전공입니다.\n 2023년 전기 졸업요건과 제출 일정을 안내드립니다.\n 첨부파일의 내용을 확인하신 후, 꼭 기한 및 양식을 엄수하여주시고 아래의 내용을 충분히 숙지하지 않아 발생하는 문제로 졸업에 차질이 생기지 않게 주의하시기 바랍니다.\n - 제출 기간 : 2023년 11월 20일(월) ~ 2023년 12월 25일(월) (기한 이전/이후 제출 X!) *기간을 꼭 지켜서 제출해주세요. 이 기간을 넘겨서 졸업요건입력 시스템 마감 기한에 임박해서 제출할 경우, 입력이 누락될 수 있습니다.\n *졸업요건은 졸업하시려는 학기에 맞춰서 제출해주세요. 졸업하려는 학기 전에 미리 제출한다고 하셔도 받지 않습니다.\n (ex. 2024년 8월에 졸업하려는 경우, 위 기간에 제출x) *제출하고자 하는 모든 졸업요건을 한꺼번에 제출해주세요. (ex. 토익 성적표를 먼저 제출하고 나중에 컴퓨터 자격증을 제출하는 것이 아니라 토익과 컴퓨터 자격증을 한꺼번에 제출) *모스 성적표는 정해진 양식의 성적표만 받습니다.\n (점수보고서X, 상장 형태의 성적표O. 첨부파일 예시 참고) 위 사항을 지키지 않으실 경우, 졸업요건 입력 누락의 위험이 있습니다.\n - 제출 방법 : 직접 제출(자격증의 경우 자격증 제출 必), 인문사회관 225호(통합사무실) 단, 직접 제출이 어려운 경우에 한하여 이메일(business@duksung.ac.kr)로 제출 가능 (이메일 제출 시 PDF파일로 제출. 간혹 잠금파일인 경우가 있으니 제출 전 확인요망) * 이메일 제출 제목 양식 : [졸업요건 제출] 전공/학번/이름/연락처 [순서 꼭 지켜주세요] ※ 전산회계(1급), 전산세무(2급), 세무사 1차 - \"21학년도 전기 졸업부터 추가\" 되었습니다.\n 확인 해 주세요. ※ MOS excel(엑셀) 2013버전의 경우 시험 두 개 응시해야 자격증 수령 가능 ※ 자격증이 카드나 수첩 형태로 나오는 경우 필히 카드와 수첩을 발급 받아야 자격증 인정 (예: 컴퓨터 활용능력1급, 사회조사분석사 2급 등) ※ 졸업종합시험은 과사에서 신청 받습니다.\n (시험 일정-오전 시간에 실시 예정- 및 예상문제는 신청 인원에 한해 개별 안내 예정) 졸업시험 불합격 시 합격할 때까지 재시험을 실시하니 신중하게 결정해주세요. (2022년 전기 졸업의 경우, 5차까지 재시험 실시했습니다). 구체적인 신청 일정은 추후 올라오는 공지를 확인해주세요. ※졸업시험의 경우, 신청은 반드시 과사에 직접 방문하셔서 해야합니다.\n (비대면 신청 불가, 예상 문제 유출 방지 목적) 또한 신청 시, 컴퓨터 자격증을 필수로 제출하셔야 합니다.\n 졸업시험 신청 후 컴퓨터 자격증 제출은 어떤 경우에도 허용되지 않습니다.\n ※ 수료생, 유예생은 졸업요건 제출 전에 먼저 졸업신청을 하셔야 졸업대상자로 조회되어 졸업요건을 입력할 수 있습니다.\n ※ 졸업요건은 총 두 가지로 1)졸업논문(대체 가능 요건有) 2)컴퓨터 자격증(필수)입니다.\n 대체 가능한 요건과 그렇지 않은 요건을 숙지하시길 바랍니다.\n ※ 자격증 및 어학성적 유효기간 만료일 기준은 학위수여식 기준입니다.\n (졸업식 당일까지 성적이 유효해야 함) ※졸업요건 기타특이사항 중, '단, 영어 점수는 재학기간에 취득한 점수만 인정함.' 은 편입생들에게만 적용되는 규정입니다.\n 전적 대학이 아닌 우리대학 재학기간에 취득한 점수여야 하며 학위수여식 기준 성적이 유효해야 졸업요건으로 인정됩니다.\n 그 외 문의사항 : 02-901-8261,8263 및 학과 이메일 \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1186&bIdx=654316&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-07T19:53:46.867",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12325,
+    "fields": {
+        "major": 30,
+        "title": "[중요] 2023학년도 전기 졸업예정자 계속수학 · 학위유예 신청 안내",
+        "content": "안녕하세요, 식품영양학전공입니다.\n 2023학년도 전기(2024년 2월 졸업) 졸업예정자 계속수학 · 학위유예 신청 안내합니다.\n 2023학년도 전기 졸업예정자 중 계속수학·학위유예를 신청하고자 하는 학생은 덕성포털을 통하여 기간 내 신청 완료하시길 바랍니다.\n 감사합니다.\n - 아 래 - 제 목 :2023학년도 전기 졸업예정자 계속수학 · 학위유예 신청 진행 및 졸업요건평가보고서 제출 요청 1. 신청대상: 2023학년도 전기 졸업예정자(8학기 이상 모든 재학생 및 수료생) ※ 복수전공/제2전공 이수 예정자 및 조기졸업 신청자 포함 2. 계속수학·학위유예 신청 기간 및 방법 가. 신청기간: 2024. 1. 25.(목) 10:00 ~ 1. 30.(화) 23:59 [덕성포털] 나. 신청방법: 덕성포털 -> 학생서비스 -> 졸업 -> 계속수학·학위유예신청 다.\n 참고사항 1) 최종 졸업사정 결과대로 졸업사정진행(별도신청 필요없음) - 졸업 합격일 경우 졸업, 수료 합격일 경우 수료, 졸업 불합격일 경우 계속수학으로 처리 2) 학적변동을 희망하는 경우에만 신청 - 졸업 합격일 경우 : '학위유예' 또는 '계속수학' 신청 가능 - 수료 합격일 경우 : '계속수학' 신청 가능 ※수료생은 더 이상 수강신청이 불가하기에 학과별 졸업요건 중 이수해야할 과목 미이수인 학생에게는 '계속수학'신청 안내 필요 - 졸업 불합격일 경우 : 신청이 불가능하며 계속수학으로 처리 라. 학사학위취득유예(학위유예)와 수료의 차이 1)‘학위유예’란 소정의 졸업요건을 모두 충족하여 졸업이 가능하지만 이를 유예하는 경우이며 '수료’란 졸업에 필요한 학점은 모두 충족하였으나 학과별 졸업요건을 미이수한 경우 2) 유예생 및 수료생 모두 수강의 의무가 없으나 졸업신청시 유예생의 경우 졸업 신청과 함께 해당 학기에 졸업 가능하며 수료생의 경우 졸업신청 후 학과별 졸업요건을 이수하여 졸업이 가능함 ※유예생 및 수료생은 모두 졸업하고자하는 학기에 포털에서 졸업신청을 해야 졸업 사정대상자가 됨(재학연한 12학기 이내에 졸업신청) \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=1292&bIdx=673956&menuId=1414&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-07T20:01:00.736",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.post",
+    "pk": 12326,
+    "fields": {
+        "major": null,
+        "title": "[덕성여자대학교 총동창회] 제54차 정기총회 개최",
+        "content": "덕성여자대학교 총동창회 제54회 정기총회 개최 ■ 일시 : 2023년 12월 17일(일) 오후 3시 ■ 장소 : 덕성여자대학교 종로운현캠퍼스 평생교육원 304호 ■ 안건: 1) 제53차 정기총회 전차 회의록 2) 26대 1차년도 사업 및 예· 결산 (2022.12.01 ~ 2023.11.30) 3) 26대 2차년도 사업(안) 및 예산(안) (2023.12.01 ~ 2024.11.30) 4) 특별적립기금 현황 (2023.11.30 기준) 5) 감사보고 ※연회비 3만원 2023년 12월 01일 덕성여자대학교 총동창회 회장 정기화 \n\n해당 게시글 바로가기: https://www.duksung.ac.kr/bbs/boardView.do?bsIdx=40&bIdx=674516&menuId=1062&bcIdx=0&searchCondition=SUBJECT&searchKeyword=",
+        "img": null,
+        "time": "2023-12-07T19:44:36.204",
+        "isduksung": true
+    }
+},
+{
+    "model": "community.scrap",
+    "pk": 75,
+    "fields": {
+        "user": 8,
+        "post": 11213
+    }
+},
+{
+    "model": "community.scrap",
+    "pk": 76,
+    "fields": {
+        "user": 8,
+        "post": 10304
+    }
+},
+{
+    "model": "community.scrap",
+    "pk": 77,
+    "fields": {
+        "user": 8,
+        "post": 11005
+    }
+},
+{
+    "model": "community.scrap",
+    "pk": 78,
+    "fields": {
+        "user": 8,
+        "post": 11816
+    }
+},
+{
+    "model": "community.scrap",
+    "pk": 80,
+    "fields": {
+        "user": 1,
+        "post": 11042
+    }
+},
+{
+    "model": "community.team",
+    "pk": 42,
+    "fields": {
+        "post": 12314,
+        "user": 1,
+        "title": "같이 서포터즈 하실 분?",
+        "content": "함께합시다",
+        "time": "2023-12-06T23:55:04.892"
+    }
+},
+{
+    "model": "community.team",
+    "pk": 43,
+    "fields": {
+        "post": 12293,
+        "user": 1,
+        "title": "공모전 같이 나갈 분?",
+        "content": "계세요?",
+        "time": "2023-12-06T23:56:28.195"
+    }
+},
+{
+    "model": "community.team",
+    "pk": 44,
+    "fields": {
+        "post": 11042,
+        "user": 1,
+        "title": "공모전 같이 준비하실 분?",
+        "content": "댓글주세요",
+        "time": "2023-12-07T00:33:38.499"
+    }
+},
+{
+    "model": "community.comment",
+    "pk": 15,
+    "fields": {
+        "user": 1,
+        "team": 44,
+        "content": "!",
+        "time": "2023-12-07T00:34:03.827"
     }
 }
 ]
