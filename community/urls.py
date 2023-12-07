@@ -29,7 +29,8 @@ urlpatterns = [
     path('signup/', views.signup, name='signup'),
     path('login/', auth_views.LoginView.as_view(template_name='community/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-
+    
+    path('check_scrap_status/<int:post_id>/', views.check_scrap_status, name='check_scrap_status'),
     path('scrap/<int:post_id>/', views.toggle_scrap, name='toggle_scrap'),
 
     path('team/', views.TeamList.as_view(), name='team_list'),  # 팀 전체 게시판 url

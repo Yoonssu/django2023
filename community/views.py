@@ -601,20 +601,26 @@ def signup(request):
     if request.method == 'POST':
         form = UserForm(request.POST)
         if form.is_valid():
-            form.save()  # 이 부분에서 모델이 저장됩니다.
+            form.save() 
             username = form.cleaned_data.get('username')
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
-            login(request, user) #로그인 아직 구현 안했는데..
-            # 회원가입 후 'landing' 페이지로 리다이렉션
+            login(request, user) 
             return redirect('/')
     else:
         form = UserForm()
     return render(request, 'community/signup.html', {'form': form})
 
+# ------페이지 로드 시 유저의 스크랩 유무 확인----------------------
+def check_scrap_status(request, post_id):
+    user = request.user
+    post = get_object_or_404(Post, pk=post_id)
+    is_scraped = Scrap.objects.filter(user=user, post=post).exists()
+    return JsonResponse({'is_scraped': is_scraped})
+# ----------------------------------------------------------------
 
 
-
+# ------스크랩 버튼 클릭 시 비동기 화면 처리----------------------
 def toggle_scrap(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     user = request.user
@@ -628,8 +634,7 @@ def toggle_scrap(request, post_id):
         is_scraped = True
 
     return JsonResponse({'scrapped': is_scraped})
-
-
+# ----------------------------------------------------------------
 
 def post_team(request, pk):
     post = get_object_or_404(Post, pk=pk)

@@ -8,51 +8,81 @@
       <p>{{post.title}}</p>
       <br />
     </div>
-    <!-- post_detail 테이블 -->
+    <!-- nav 박스--------------------------------------------------------------->
     <div class="content_nav">
       <a href="{% url 'community:post_detail' pk=post.pk %}">상세정보</a>
       <a href="{% url 'community:post_team' pk=post.id %}">팀원모집</a>
-      <!-- 스크랩 버튼 -->
+
+      <!-- 스크랩 버튼: 유저의 스크랩 유무에 따라 초기 상태 달라짐
+                    / onclick시 scrapPost 함수 호출함----------------------------->
       <button style="color: white; font-size: 14px; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);",
-              id="scrapButton" onclick="scrapPost({{ post.id }})">
-        {% if user and is_scraped %}
-            취소하기
-        {% else %}
-            스크랩
-        {% endif %}
+      id="scrapButton" onclick="scrapPost({{ post.id }})">
+        스크랩
       </button>
-      <!-- 스크랩 버튼 종료 -->
-      
-        <!-- 스크랩 버튼 스크립트 -->
-        <script>
-          function scrapPost(postId) {
-              // 사용자 로그인 여부 확인
-              {% if user.is_authenticated %}
-                  fetch(`/community/scrap/${postId}/`)
-                      .then(response => response.json())
-                      .then(data => {
-                          const scrapButton = document.getElementById('scrapButton');
-                          if (data.scrapped) {
-                              scrapButton.innerText = '취소하기';
-                              scrapButton.style.backgroundColor = '#808080';
-                              scrapButton.style.borderColor = '#808080';
-                              alert('포스트가 스크랩되었습니다!');
-                          } else {
-                              scrapButton.innerText = '스크랩';
-                              scrapButton.style.backgroundColor = '#5a32fb';
-                              scrapButton.style.borderColor = 'rgba(255, 255, 255, 0)';
-                              alert('스크랩이 취소되었습니다.');
-                          }
-                      })
-                      .catch(error => console.error('에러:', error));
-              {% else %}
-                  alert('로그인 후 이용하세요.');
-              {% endif %}
-          }
-      </script>
-      <!-- 스크랩 버튼 스크립트 종료 -->
+      <!-- 스크랩 버튼 종료 ------------------------------------------------------>
+    </div>
+    <!-- nav 박스 종료----------------------------------------------------------->
+
+    <!-- 본문 박스--------------------------------------------------------------->
+    <div class="content_box">{{post.content|linebreaksbr}} <br /></div>
+    <!-- 본문 박스 종료---------------------------------------------------------->
+
   </div>
-  <div class="content_box">{{post.content|linebreaksbr}} <br /></div>
 </div>
-</div>
+
+<!-- 스크랩 스크립트 ------------------------------------------------------------------------->
+<script>
+  // 유저가 이미 게시글을 스크랩한 상태일 경우 버튼 상태 변경하는 함수 ---------------->
+  function checkScrapStatus(postId) {
+      {% if user.is_authenticated %}
+          fetch(`/community/check_scrap_status/${postId}/`)
+              .then(response => response.json())
+              .then(data => {
+                  const scrapButton = document.getElementById('scrapButton');
+                  if (data.is_scraped) {
+                      scrapButton.innerText = '취소하기';
+                      scrapButton.style.backgroundColor = '#808080';
+                      scrapButton.style.borderColor = '#808080';
+                  }
+              })
+              .catch(error => console.error('에러:', error));
+      {% endif %}
+  }
+
+  // 페이지 로드 시 유저의 스크랩 상태 확인하기 ------------------------------------>
+  window.addEventListener('load', function() {
+      checkScrapStatus({{ post.id }});
+  });
+
+  // 로그인 검증 후, 스크랩 버튼 클릭 시 스크랩 동작 ------------------------------->
+  {% if user.is_authenticated %}
+      function scrapPost(postId) {
+          const url = `/community/scrap/${postId}/`;
+          fetch(url)
+              .then(response => response.json())
+              .then(data => {
+                  const scrapButton = document.getElementById('scrapButton');
+                  if (data.scrapped) {
+                      scrapButton.innerText = '취소하기';
+                      scrapButton.style.backgroundColor = '#808080';
+                      scrapButton.style.borderColor = '#808080';
+                      alert('포스트가 스크랩되었습니다!');
+                  } else {
+                      scrapButton.innerText = '스크랩';
+                      scrapButton.style.backgroundColor = '#5a32fb';
+                      scrapButton.style.borderColor = 'rgba(255, 255, 255, 0)';
+                      alert('스크랩이 취소되었습니다.');
+                  }
+              })
+              .catch(error => console.error('에러:', error));
+      }
+  {% else %}
+      function scrapPost(postId) {
+          alert('로그인 후 이용하세요.');
+      }
+  {% endif %}
+</script>
+
+<!-- 스크랩 스크립트 종료 ----------------------------------------------------------------------->
+
 {% endblock %}
