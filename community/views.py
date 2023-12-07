@@ -21,73 +21,46 @@ from django.core.exceptions import PermissionDenied
 from django.http import Http404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-
-# Create your views here.
-# class PostList(ListView):
-#     model = Post
-#     ordering = '-pk'
-
-#     def get_context_data(self, **kwargs):
-#         context = super(PostList, self).get_context_data()
-#         return context
-
+# ------------------------------------------------------------------------------------->
 class PostList(ListView):
     model = Post
     template_name = 'community/post_list.html'
     context_object_name = 'post_list'
-    paginate_by = 10  # 페이지당 보여질 아이템 수를 10으로 설정
+    paginate_by = 10  # 페이지당 post 10개 반환
     
+# -----교내/대외/전체 필터링------------------------------------------>
     def get_queryset(self):
-        # URL에서 전달된 필터값 가져오기
         filter_value = self.request.GET.get('filter', 'all')
 
-        # 필터값에 따라 적절한 쿼리셋 반환
         if filter_value == 'isduksung':
             return Post.objects.filter(isduksung=True).order_by('-time')
         elif filter_value == 'notIsduksung':
             return Post.objects.filter(isduksung=False).order_by('-time')
         else:
             return Post.objects.all().order_by('-time')
-    
+        
+# -----페이지네이션---------------------------------------------------->
     def get_context_data(self, **kwargs):
         context = super(PostList, self).get_context_data(**kwargs)
 
-        # 페이징 처리를 위한 추가적인 컨텍스트 데이터 설정
         paginator = context['paginator']
         page = context['page_obj']
         is_paginated = context['is_paginated']
 
-        # 추가 페이징을 위한 컨텍스트 데이터 설정
-        page_range = paginator.page_range
-        context.update({
-            'page_range': page_range,
-            'filter_value': self.request.GET.get('filter', 'all'),  # 필터값 추가
-        })
-
-        # 페이징 버튼 수 제한을 위한 추가 작업
         try:
             current_page = int(self.request.GET.get('page', 1))
         except ValueError:
             current_page = 1
 
-        max_pages = 5  # 페이지당 최대 페이징 버튼 수
-        middle_range = max_pages // 2
-
-        if current_page <= middle_range:
-            start_page = 1
-        elif current_page + middle_range > paginator.num_pages:
-            start_page = paginator.num_pages - max_pages + 1
-        else:
-            start_page = current_page - middle_range
-
-        end_page = start_page + max_pages - 1
+        max_pages = 5  # 페이지당 페이징 버튼 수
+        start_page = max(1, current_page - ((current_page - 1) % max_pages))
+        end_page = min(start_page + max_pages - 1, paginator.num_pages)
         page_range = range(start_page, end_page + 1)
 
         context.update({
             'page_range': page_range,
         })
 
-        # 이전 페이지 및 다음 페이지 설정
         try:
             previous_page = page.previous_page_number()
         except EmptyPage:
@@ -101,23 +74,23 @@ class PostList(ListView):
         context.update({
             'previous_page': previous_page,
             'next_page': next_page,
-        })
-
-        # 맨 처음과 맨 끝 페이지 설정
-        context.update({
             'first_page': 1,
             'last_page': paginator.num_pages,
+            'filter_value': self.request.GET.get('filter', 'all'),
         })
-
+        
         return context
-    
+
+# ------------------------------------------------------------------------------------------->
+
 class PostDetail(DetailView):
     model = Post
 
     def get_context_data(self, **kwargs):
         context = super(PostDetail, self).get_context_data()
         return context
-
+    
+# ------------------------------------------------------------------------------------------->
 
 class UserDetail(LoginRequiredMixin, DetailView):
     model = User
@@ -595,7 +568,7 @@ def new_comment(request, pk):
         # 사용자가 인증되지 않은 경우 로그인 페이지로 리다이렉트
         return redirect("login")
 
-#-------회원가입 --------------------------------------------------
+#-------회원가입 -------------------------------------------------->
 def signup(request):
     if request.method == 'POST':
         form = UserForm(request.POST)
@@ -612,7 +585,7 @@ def signup(request):
 
 
 
-# ------페이지 로드 시 유저의 스크랩 유무 확인----------------------
+# ------페이지 로드 시 유저의 스크랩 유무 확인---------------------->
 def check_scrap_status(request, post_id):
     user = request.user
     post = get_object_or_404(Post, pk=post_id)
@@ -620,7 +593,7 @@ def check_scrap_status(request, post_id):
     return JsonResponse({'is_scraped': is_scraped})
 
 
-# ------스크랩 버튼 클릭 시 비동기 화면 처리----------------------
+# ------스크랩 버튼 클릭 시 비동기 화면 처리------------------------>
 def toggle_scrap(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     user = request.user
