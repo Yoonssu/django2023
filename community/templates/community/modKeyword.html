@@ -71,7 +71,7 @@
                 event.preventDefault(); // 폼 제출 방지
 
                 // 1.1. 작성된 키워드가 10개 이상일 때
-                if (buttonCount >= 10) {
+                if (buttonCount >= maxAllowed) {
                     alert(`직접 입력할 수 있는 키워드는 최대 ${maxAllowed}개입니다.`);
                     event.target.value = '';
                     return;
