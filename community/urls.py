@@ -12,7 +12,7 @@ urlpatterns = [
     path('', views.PostList.as_view()),
     path('<int:pk>/', views.PostDetail.as_view(), name='post_detail'),
 
-        # mypage관련 url
+    # mypage관련 url
     path('mypage/<int:pk>/', views.UserDetail.as_view(), name='user_detail'),
     path('cancelScrap/', views.UserDetail.cancel_scrap),
     path('mypage/<int:pk>/modKeyword/', views.modKeyWord, name='modKeyword'),
@@ -23,7 +23,6 @@ urlpatterns = [
     path('myteamPage/<int:pk>/', views.myTeam, name='myTeam_detail'),
     path('myCommentPage/<int:pk>/', views.myComment, name='my_comment'),
     path('deleteTeam/', views.UserDetail.delete_team),
-    path('deleteComment/', views.UserDetail.delete_comment),
 
 
     path('recommend/<int:pk>/', views.Recommend.as_view(), name='recommend'),
