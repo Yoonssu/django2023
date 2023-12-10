@@ -30,55 +30,11 @@ DUKJOB은 다음과 같은 주요 기능을 제공합니다.
 ### 덕성여자대학교 23-2 인터넷프로그래밍 02반 1조
 
 
-<style>
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-
-  th, td {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-</style>
-
-<table>
-  <tr>
-    <td></td>
-    <td><img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/1da37b01-151f-4632-a507-f608242af536" width="100" height="100"></td>
-    <td><img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/c11745a4-86ed-4a44-bb33-38ad19f96fb2" width="100" height="100"></td>
-    <td><img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/4ef358f0-b76d-49f5-9507-309be8678704" width="100" height="100"></td>
-    <td><img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/77fa2bad-6b49-4857-82c6-352e04c722a4" width="100" height="100"></td>
-    <td><img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/b78cabfa-aa01-457c-8878-510d3d169792" width="100" height="100"></td>
-  </tr>
-  <tr>
-    <td>성명</td>
-    <td>최연</td>
-    <td>이예서</td>
-    <td>윤수정</td>
-    <td>양민지</td>
-    <td>조시은</td>
-  </tr>
-  <tr>
-    <td>역할</td>
-    <td>팀장</td>
-    <td>팀원</td>
-    <td>팀원</td>
-    <td>팀원</td>
-    <td>팀원</td>
-  </tr>
-  <tr>
-    <td>담당업무</td>
-    <td>- 스크래핑<br> - 회원가입<br>- 필터링/페이지네이션<br> - 스크랩 기능</td>
-    <td>- 관심 키워드/전공 설정 기능<br> - 마이페이지 전반</td>
-    <td>- Single_pages 앱 개발 및 관리<br>- 검색 기능<br>- 검색 결과 강조 스타일링 및 기타 CSS 작업</td>
-    <td>- 팀 모집게시판 글쓰기 및 댓글 작성 기능<br>- 페이지네이션 기능 추가</td>
-    <td>- 추천페이지 추천로직 개발<br>- 필터링/페이지네이션 기능</td>
-  </tr>
-</table>
-
-<br><br><br>
+|      | <img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/1da37b01-151f-4632-a507-f608242af536" width="100" height="100"> | <img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/c11745a4-86ed-4a44-bb33-38ad19f96fb2" width="100" height="100"> | <img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/4ef358f0-b76d-49f5-9507-309be8678704" width="100" height="100"> | <img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/77fa2bad-6b49-4857-82c6-352e04c722a4" width="100" height="100"> | <img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/b78cabfa-aa01-457c-8878-510d3d169792" width="100" height="100"> |
+|------|------|------|------|------|------|
+| 성명  | 최연 | 이예서 | 윤수정 | 양민지 | 조시은 |
+| 역할  | 팀장 | 팀원 | 팀원 | 팀원 | 팀원 |
+| 담당업무 | - 스크래핑<br> - 회원가입<br>- 필터링/페이지네이션<br> - 스크랩 기능 | - 관심 키워드/전공 설정 기능<br> - 마이페이지 전반  | - Single_pages 앱 개발 및 관리<br>- 검색 기능<br>- 검색 결과 강조 스타일링 및 기타 CSS 작업 | - 팀 모집게시판 글쓰기 및 댓글 작성 기능<br>- 페이지네이션 기능 추가 | - 추천페이지 추천로직 개발<br>- 필터링/페이지네이션 기능 |
 
 ## 페이지 구성
 <br><br><br>
