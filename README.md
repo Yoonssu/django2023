@@ -44,7 +44,7 @@ DUKJOB은 다음과 같은 주요 기능을 제공합니다.
 
 ### 1. 서비스 소개 페이지
 <hr>
-![덕잡](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/81a80c2b-fc45-4f04-8ee8-572578975ee6)
+   ![덕잡](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/81a80c2b-fc45-4f04-8ee8-572578975ee6)
 <br><br>
 
 ### 2. landingpage
