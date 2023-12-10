@@ -32,8 +32,8 @@ DUKJOB은 다음과 같은 주요 기능을 제공합니다.
 
 
 |      | ![최연](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/dfee78b1-c165-4b85-9142-24342b9ddb8b) | ![이예서](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/2d1235f6-1ccc-4943-a7d9-694826f14f5f) | ![윤수정](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/3327d053-27d0-4a05-88cd-bc781869759e) | ![양민지](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/b78cabfa-aa01-457c-8878-510d3d169792) | ![조시은](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/b78cabfa-aa01-457c-8878-510d3d169792) |
-
-| 성명  | 최연 | 이예서 | 윤수정 | 양민지 | 조시은 |
 |------|------|------|------|------|------|
+| 성명  | 최연 | 이예서 | 윤수정 | 양민지 | 조시은 |
 | 역할  | 팀장 | 팀원 | 팀원 | 팀원 | 팀원 |
 | 담당업무 | - 스크래핑<br> - 회원가입<br>- 필터링/페이지네이션<br> - 스크랩 기능 | - 관심 키워드/전공 설정 기능<br> - 마이페이지 전반  | - Single_pages 앱 개발 및 관리<br>- 검색 기능<br>- 검색 결과 강조 스타일링 및 기타 CSS 작업 | - 팀 모집게시판 글쓰기 및 댓글 작성 기능<br>- 페이지네이션 기능 추가 | - 추천페이지 추천로직 개발<br>- 필터링/페이지네이션 기능 |
+``
