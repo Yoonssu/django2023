@@ -127,21 +127,19 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // 페이지가 로드될 때 실행할 코드
       var majorButtons = document.querySelectorAll(".major-button");
 
-      // 기존에 선택된 메이저가 있는 경우, 해당 메이저에 대한 컨텐츠와 페이징을 표시
+      // 해당 메이저에 대한 컨텐츠와 페이징을 표시
       var selectedMajor = sessionStorage.getItem("selectedMajor");
       if (selectedMajor) {
         showMajorPosts(selectedMajor);
         showPaging(selectedMajor);
       } else {
-        // 페이지가 로드될 때 "전체" 버튼을 클릭한 효과를 주는 코드
+        // 페이지가 로드될 때 전체 버튼을 클릭한 효과
         var allButton = document.querySelector(".all");
         allButton.click();
       }
 
-      // 각 버튼에 마우스 이벤트 리스너 추가
       majorButtons.forEach(function (button) {
         button.addEventListener("mouseover", function () {
           this.classList.add("hovered"); // 버튼에 hovered 클래스 추가
@@ -151,7 +149,6 @@
         });
 
         button.addEventListener("click", function () {
-          // 선택한 메이저 정보를 세션 스토리지에 저장
           var major = this.textContent.trim();
           sessionStorage.setItem("selectedMajor", major);
           showMajorPosts(major);
@@ -215,8 +212,6 @@
       if (allMajorContent) {  // all_major_content가 존재하는 경우에만 처리
         allMajorContent.classList.remove("hidden");
       }
-
-      //
 
 
       // 페이징 버튼 숨기기

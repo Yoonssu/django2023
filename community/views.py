@@ -310,7 +310,7 @@ class Recommend(LoginRequiredMixin, ListView):
         current_user = self.request.user
 
         #-----------------------추천 posts-----------------------------
-        # 사용자가 선택한 키워드에 맞는 게시글 3개 가져오기
+        # 사용자가 선택한 키워드에 맞는 게시글 10개 가져오기
         selected_keywords = current_user.keyword.all()
 
         posts_dic = {}
@@ -337,7 +337,7 @@ class Recommend(LoginRequiredMixin, ListView):
                 unique_posts.append(post)
                 seen_posts.add(post)
 
-        # 상위 3개 포스트 선택
+        # 상위 8개 포스트 선택
         selected_posts = unique_posts[:8]
 
         #-----------------------덕새 사진 사져오기-----------------------------
