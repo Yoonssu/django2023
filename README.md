@@ -39,9 +39,11 @@ DUKJOB은 다음과 같은 주요 기능을 제공합니다.
 
 
 ## 페이지 구성
+<hr><br><br>
 
 1. landingpage
    ![langing](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/199dff49-7de1-4815-bce6-cf4ca67d5019)
+   <br><br>
 
 2.활동목록 페이지
   ![post_list](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/b6a900a7-c897-4858-8039-2a3bb0b8a236)
