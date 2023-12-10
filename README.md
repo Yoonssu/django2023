@@ -29,11 +29,7 @@ DUKJOB은 다음과 같은 주요 기능을 제공합니다.
 
 ### 덕성여자대학교 23-2 인터넷프로그래밍 02반 1조
 
-![KakaoTalk_20231210_175440331](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/2a0390c4-aee0-43d8-ad16-7658ed9d61b3)
-![KakaoTalk_20231210_175440331_01](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/dfee78b1-c165-4b85-9142-24342b9ddb8b)
-![KakaoTalk_20231210_175440331_02](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/2d1235f6-1ccc-4943-a7d9-694826f14f5f)
-![KakaoTalk_20231210_175440331_03](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/3327d053-27d0-4a05-88cd-bc781869759e)
-![KakaoTalk_20231210_175440331_04](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/b78cabfa-aa01-457c-8878-510d3d169792)
+
 
 
 | 성명  | 최연                                                         | 이예서                                          | 윤수정                                                         | 양민지                                                      | 조시은                                                       |
