@@ -428,14 +428,6 @@ class TeamList(ListView):
             'filter_value': self.request.GET.get('filter', 'all'),  # 필터값 추가
         })
 
-        # 새로운 변수 'team_list_number'를 만들어 각 팀 게시글의 전체 목록에서의 순서를 나타냅니다.
-        team_list_number = range(context['team_list'].count(), 0, -1)
-
-        # 새로운 변수를 컨텍스트에 추가
-        context.update({
-            'team_list_number': team_list_number,
-        })
-
         # 페이징 버튼 수 제한을 위한 추가 작업
         try:
             current_page = int(self.request.GET.get('page', 1))
