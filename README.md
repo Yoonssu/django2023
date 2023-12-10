@@ -30,7 +30,7 @@ DUKJOB은 다음과 같은 주요 기능을 제공합니다.
 ### 덕성여자대학교 23-2 인터넷프로그래밍 02반 1조
 
 
-|      | <img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/1da37b01-151f-4632-a507-f608242af536" width="100" height="100"> | <img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/c11745a4-86ed-4a44-bb33-38ad19f96fb2" width="100" height="100"> | <img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/4ef358f0-b76d-49f5-9507-309be8678704" width="100" height="100"> | <img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/77fa2bad-6b49-4857-82c6-352e04c722a4" width="100" height="100"> | <img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/b78cabfa-aa01-457c-8878-510d3d169792" width="100" height="100"> |
+|      | <img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/1da37b01-151f-4632-a507-f608242af536" width="110" height="100"> | <img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/c11745a4-86ed-4a44-bb33-38ad19f96fb2" width="100" height="110"> | <img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/4ef358f0-b76d-49f5-9507-309be8678704" width="100" height="110"> | <img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/77fa2bad-6b49-4857-82c6-352e04c722a4" width="100" height="110"> | <img src="https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/b78cabfa-aa01-457c-8878-510d3d169792" width="100" height="110"> |
 |------|------|------|------|------|------|
 | 성명  | 최연 | 이예서 | 윤수정 | 양민지 | 조시은 |
 | 역할  | 팀장 | 팀원 | 팀원 | 팀원 | 팀원 |
