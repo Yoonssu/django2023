@@ -43,22 +43,6 @@ DUKJOB은 다음과 같은 주요 기능을 제공합니다.
 ## 페이지 구성
 <br><br><br>
 
-![관심전공 수정](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/70bfdd20-3fde-43f5-83c8-df103f714be4)
-
-![덕잡](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/81a80c2b-fc45-4f04-8ee8-572578975ee6)
-![스크랩취소](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/07c703f0-fc05-4ccb-8281-b5227013b851)
-![추천페이지1](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/fbeb64c2-9824-4c9d-b89e-b85ce840ac4b)
-![추천페이지2_전공](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/54a3a471-c42a-4f51-b076-b49ea8666c57)
-![키워드 수정](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/0d831615-23eb-40e9-be54-170497389f0c)
-![팀댓글](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/2c4d78a8-09e4-4826-8d8b-c5ca58686f0e)
-![팀모집 글쓰기](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/8486377a-df02-4efb-b6f9-1b32d673117c)
-![langing](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/199dff49-7de1-4815-bce6-cf4ca67d5019)
-![mypage](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/7749fe27-7cd8-4f27-a5de-194284fbebd0)
-![post_detail](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/085fb222-276d-4a55-b47d-3d2e279ca1f9)
-![post_list](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/b6a900a7-c897-4858-8039-2a3bb0b8a236)
-![team_list](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/0b08e75d-7ba5-4b67-9ea3-49964154ce16)
-![개별 팀모집게시판](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/21f8805b-1f7e-4b19-bc71-eb8772613509)
-
 
 ### 1. 서비스 소개 페이지
    ![덕잡](https://github.com/duksungDjango23/ds_DjangoTeam01/assets/136547010/81a80c2b-fc45-4f04-8ee8-572578975ee6)
